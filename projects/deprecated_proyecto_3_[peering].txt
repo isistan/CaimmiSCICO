@@ -1,0 +1,22 @@
+# Proyecto Split merge
+# Nombre: 2008 - peering
+#
+
+@ProjectName
+2008 - peering
+
+# Componentes {}
+
+@Requirement
+
+# Service Registration
+
+# Request Initiation to Trigger Peering
+
+# Mediator Invokes Creation of Negotiated Relationship
+
+# Resource Discovery through PA
+
+# Operational Management
+
+# Disband or Re-arrangement

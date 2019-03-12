@@ -1,0 +1,9 @@
+package edu.unicen.tesis.usecasemaps.exporters.jucm;
+
+import org.w3c.dom.Element;
+
+public interface JUCMElement {
+	public Element getNodeElement();
+	
+	public void generate(Element documentElement);
+}

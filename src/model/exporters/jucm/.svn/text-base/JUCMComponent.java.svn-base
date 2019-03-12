@@ -1,0 +1,105 @@
+package edu.unicen.tesis.usecasemaps.exporters.jucm;
+
+import org.w3c.dom.Element;
+
+import edu.unicen.tesis.model.IComponent;
+
+public class JUCMComponent implements JUCMElement {
+	public static final Integer COMPONENT_WIDTH = 200;
+	public static final Integer COMPONENT_HEIGHT = 200;
+	
+	private IComponent component;
+	
+	private Element nodeElement;
+		
+	private JUCMExporter exporter;
+	
+	public JUCMComponent(JUCMExporter exporter, IComponent component) {
+		super();
+		this.component = component;
+		this.exporter = exporter;
+		this.nodeElement = null;
+	}
+
+	@Override
+	public Element getNodeElement() {
+		return nodeElement;
+	}
+
+	public IComponent getUCMComponent(){
+		return this.component;
+	}
+
+	@Override
+	public void generate(Element documentElement) {
+		Element componentElement = exporter.getDocument().createElement("components");
+		documentElement.getParentNode().appendChild(componentElement);
+
+		componentElement.setAttribute("contRefs", new Integer(exporter.getMaxID()+1).toString());
+		componentElement.setAttribute("name", component.getName());
+		componentElement.setAttribute("kind", "Other");
+		componentElement.setAttribute("id", exporter.getMaxID().toString());
+		
+		nodeElement = exporter.getDocument().createElement("contRefs");
+		documentElement.appendChild(nodeElement);
+		
+		exporter.setMaxID(exporter.getMaxID()+1);
+		
+		nodeElement.setAttributeNS(JUCMExporter.xsiNS, "xsi:type", "ucm.map:ComponentRef");
+		nodeElement.setAttribute("name", component.getName());
+		
+		String[] coords = getCoords();
+		nodeElement.setAttribute("x", coords[0]);
+		nodeElement.setAttribute("y", coords[1]);
+		
+		nodeElement.setAttribute("id", exporter.getMaxID().toString());
+		nodeElement.setAttribute("width", COMPONENT_WIDTH.toString());
+		nodeElement.setAttribute("height", COMPONENT_HEIGHT.toString());
+		nodeElement.setAttribute("contDef", componentElement.getAttribute("id"));
+
+		nodeElement.appendChild(exporter.getDocument().createElement("label"));
+		
+		exporter.setMaxID(exporter.getMaxID()+1);
+	}
+	
+	private String[] getCoords(){
+		Integer resultX = null;
+		Integer resultY = null;
+		Boolean colides = true;
+		Integer counter = 0;
+		
+		while(colides||counter>50){
+			colides = false;
+			
+			resultX = new Integer(new Double(
+					JUCMExporter.COMPONENT_SECTOR_X.doubleValue() + Math.random()*JUCMExporter.COMPONENT_SECTOR_WIDTH.doubleValue())
+				.intValue());
+			resultY = new Integer(new Double(
+					JUCMExporter.COMPONENT_SECTOR_Y.doubleValue() + Math.random()*JUCMExporter.COMPONENT_SECTOR_HEIGHT.doubleValue())
+				.intValue());
+			
+			for(JUCMComponent component:this.exporter.getComponents()){
+				if(component.getNodeElement()!=null&&!component.equals(this)){
+					Integer xMin = new Integer(component.getNodeElement().getAttribute("x")) - JUCMComponent.COMPONENT_WIDTH;
+					Integer xMax = new Integer(component.getNodeElement().getAttribute("x")) + JUCMComponent.COMPONENT_WIDTH;
+					Integer yMin = new Integer(component.getNodeElement().getAttribute("y")) - JUCMComponent.COMPONENT_HEIGHT;
+					Integer yMax = new Integer(component.getNodeElement().getAttribute("y")) + JUCMComponent.COMPONENT_HEIGHT;
+					if(resultX>xMin&&resultX<xMax&&resultY>yMin&&resultY<yMax){
+						colides = true;
+					}
+				}
+			}
+			
+			counter++;
+		}
+		
+		String[] result = new String[2];
+		result[0]=resultX.toString();
+		result[1]=resultY.toString();
+		
+		System.out.println("XCoords: " + result[0]);
+		System.out.println("YCoords: " + result[1]);
+		
+		return result;
+	}
+}

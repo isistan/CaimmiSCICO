@@ -1,0 +1,91 @@
+package edu.unicen.tesis.usecasemaps.exporters.jucm;
+
+import org.w3c.dom.Element;
+
+import edu.unicen.tesis.model.IResponsibility;
+
+public class JUCMResponsibility implements JUCMNode {
+	private JUCMConnection prev;
+	
+	private JUCMConnection succ;
+	
+	private IResponsibility responsibility;
+	
+	private Element nodeElement;
+	
+	private JUCMExporter exporter;
+	
+	public JUCMResponsibility(JUCMExporter exporter, IResponsibility responsibility) {
+		super();
+		this.prev = null;
+		this.responsibility = responsibility;
+		this.succ = null;
+		this.exporter = exporter;
+		
+		this.exporter.getNodes().add(this);
+	}
+
+	public void addPrev(JUCMConnection prev) {
+		this.prev = prev;
+	}
+
+	public void addSucc(JUCMConnection succ) {
+		this.succ = succ;
+	}
+
+	@Override
+	public void generate(Element documentElement) {
+		Element responsibilityElement = exporter.getDocument().createElement("responsibilities");
+		documentElement.getParentNode().appendChild(responsibilityElement);
+		
+		responsibilityElement.setAttribute("respRefs", new Integer(exporter.getMaxID()+1).toString());
+		responsibilityElement.setAttribute("name", responsibility.toString());
+		responsibilityElement.setAttribute("id", exporter.getMaxID().toString());
+		
+		nodeElement = exporter.getDocument().createElement("nodes");
+		documentElement.appendChild(nodeElement);
+		
+		exporter.setMaxID(exporter.getMaxID()+1);
+		
+		nodeElement.setAttributeNS(JUCMExporter.xsiNS, "xsi:type", "ucm.map:RespRef");
+		nodeElement.setAttribute("name", responsibility.toString());
+		nodeElement.setAttribute("id", exporter.getMaxID().toString());
+		nodeElement.setAttribute("respDef", responsibilityElement.getAttribute("id"));
+		if(responsibility.getComponent()!=null){
+			JUCMComponent component = exporter.getJUCMComponent(responsibility.getComponent());
+			if(!component.getNodeElement().hasAttribute("nodes")){
+				component.getNodeElement().setAttribute("nodes", nodeElement.getAttribute("id"));
+			} else {
+				component.getNodeElement().setAttribute("nodes", 
+						component.getNodeElement().getAttribute("nodes") +
+						" " +
+						nodeElement.getAttribute("id"));
+			}
+			
+			nodeElement.setAttribute("contRef", component.getNodeElement().getAttribute("id"));
+			nodeElement.setAttribute("x", new Integer(new Integer(component.getNodeElement().getAttribute("x"))+new Double(Math.random()*JUCMComponent.COMPONENT_WIDTH.doubleValue()).intValue()).toString());
+			nodeElement.setAttribute("y", new Integer(new Integer(component.getNodeElement().getAttribute("y"))+new Double(Math.random()*JUCMComponent.COMPONENT_HEIGHT.doubleValue()).intValue()).toString());
+		} else {
+			nodeElement.setAttribute("x", new Integer(new Double(
+					JUCMExporter.COMPONENT_SECTOR_X.doubleValue() + Math.random()*JUCMExporter.COMPONENT_SECTOR_WIDTH.doubleValue())
+				.intValue()).toString());
+			nodeElement.setAttribute("y", new Integer(new Double(
+					JUCMExporter.COMPONENT_SECTOR_Y.doubleValue() + Math.random()*JUCMExporter.COMPONENT_SECTOR_HEIGHT.doubleValue())
+				.intValue()).toString());
+		}
+		nodeElement.setAttribute("pred", "//@urndef/@specDiagrams.0/@connections."+prev.getConnectionNumber());
+		nodeElement.setAttribute("succ", "//@urndef/@specDiagrams.0/@connections."+succ.getConnectionNumber());
+		nodeElement.appendChild(exporter.getDocument().createElement("label"));
+		
+		exporter.setMaxID(exporter.getMaxID()+1);
+	}
+
+	@Override
+	public Element getNodeElement() {
+		return nodeElement;
+	}
+	
+	public IResponsibility getUCMElement(){
+		return this.responsibility;
+	}
+}

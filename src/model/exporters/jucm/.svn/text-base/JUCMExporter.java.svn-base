@@ -1,0 +1,298 @@
+package edu.unicen.tesis.usecasemaps.exporters.jucm;
+
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import edu.unicen.tesis.model.IComponent;
+import edu.unicen.tesis.model.IResponsibility;
+import edu.unicen.tesis.model.IUseCaseMap;
+import edu.unicen.tesis.usecasemaps.exporters.XMLExporter;
+
+public class JUCMExporter extends XMLExporter{
+	public static final String xmiNS = "http://www.omg.org/XMI";
+	public static final String xsiNS = "http://www.w3.org/2001/XMLSchema-instance";
+	public static final String ucmMapNS = "http:///ucm/map.ecore";
+	public static final String urnNS = "http:///urn.ecore";
+	public static final Integer COMPONENT_SECTOR_X = 100;
+	public static final Integer COMPONENT_SECTOR_Y = 0;
+	public static final Integer COMPONENT_SECTOR_WIDTH = 700;
+	public static final Integer COMPONENT_SECTOR_HEIGHT = 1000;
+	public static final Integer START_SECTOR_X = 0;
+	public static final Integer START_SECTOR_Y = 0;
+	public static final Integer START_SECTOR_WIDTH = 50;
+	public static final Integer START_SECTOR_HEIGHT = 1000;
+	public static final Integer END_SECTOR_X = 1000;
+	public static final Integer END_SECTOR_Y = 0;
+	public static final Integer END_SECTOR_WIDTH = 50;
+	public static final Integer END_SECTOR_HEIGHT = 1000;
+	
+	private Document document;
+	
+	private List<JUCMConnection> connections = new LinkedList<JUCMConnection>();
+	
+	private List<JUCMResponsibility> responsibilityNodes = new LinkedList<JUCMResponsibility>();
+	
+	private List<JUCMComponent> componentNodes = new LinkedList<JUCMComponent>();
+	
+	private List<JUCMNode> nodes = new LinkedList<JUCMNode>();
+	
+	private Integer maxID = 100;
+	
+	public JUCMResponsibility getJUCMResponsibility(IResponsibility element){
+		for(JUCMResponsibility jucmResponsibility:responsibilityNodes){
+			if(jucmResponsibility.getUCMElement().equals(element)){
+				return jucmResponsibility;
+			}
+		}
+		
+		return null;
+	}
+	
+	public JUCMComponent getJUCMComponent(IComponent component){
+		for(JUCMComponent jucmComponent:componentNodes){
+			if(jucmComponent.getUCMComponent().getName().equals(component.getName())){
+				return jucmComponent;
+			}
+		}
+		
+		return null;
+	}
+
+	public Document getDocument(){
+		return document;
+	}
+	
+	public List<JUCMConnection> getConnections(){
+		return connections;
+	}
+	
+	public List<JUCMNode> getNodes(){
+		return nodes;
+	}
+	
+	
+	public Integer getMaxID(){
+		return maxID;
+	}
+	
+	public void setMaxID(Integer maxID){
+		this.maxID = maxID;
+	}
+	
+	@Override
+	public Document getDocument(IUseCaseMap useCaseMap) {
+		Document result = null;
+		try{
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			dbf.setValidating(false);
+			dbf.setIgnoringComments(true);
+			dbf.setIgnoringElementContentWhitespace(true);
+			dbf.setNamespaceAware(true);
+
+			DocumentBuilder documentBuilder = dbf.newDocumentBuilder();
+			result = documentBuilder.newDocument();
+			configureHeaders(result);
+			configureUCMSpec(result);
+			configureGrlSpec(result);
+			this.document = result;
+			generate(useCaseMap);
+		} catch (DOMException e){
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	private void configureHeaders(Document document){
+		Element urnSpecificationElement = document.createElementNS(urnNS, "urn:URNspec");
+		document.appendChild(urnSpecificationElement);
+		
+		urnSpecificationElement.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xmi", xmiNS);
+		urnSpecificationElement.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:xsi", xsiNS);
+		urnSpecificationElement.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:ucm.map", ucmMapNS);
+		//urnSpecificationElement.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:urn", "http:///urn.ecore");
+		
+		urnSpecificationElement.setAttributeNS(xmiNS, "xmi:version", "2.0");
+		urnSpecificationElement.setAttribute("name", "URNspec");
+		urnSpecificationElement.setAttribute("author", "clomagno");
+		urnSpecificationElement.setAttribute("specVersion", "9");
+		urnSpecificationElement.setAttribute("urnVersion", "1.27");
+		urnSpecificationElement.setAttribute("nextGlobalID", "117");
+
+		Element metadataElement = document.createElement("metadata");
+		urnSpecificationElement.appendChild(metadataElement);
+		metadataElement.setAttribute("name", "_Use0to100EvaluationRange");
+		metadataElement.setAttribute("value", "false");
+	}
+	
+	private void configureUCMSpec(Document document){
+		Element urnSpecificationElement = document.getDocumentElement();
+		Element ucmSpecElement = document.createElement("ucmspec");
+		urnSpecificationElement.appendChild(ucmSpecElement);
+		
+		Element scenarioGroupsElement = document.createElement("scenarioGroups");
+		scenarioGroupsElement.setAttribute("name", "ScenarioGroup5");
+		scenarioGroupsElement.setAttribute("id", "5");
+		ucmSpecElement.appendChild(scenarioGroupsElement);
+		
+		Element scenariosElement = document.createElement("scenarios");
+		scenariosElement.setAttribute("name", "ScenarioDef6");
+		scenariosElement.setAttribute("id", "6");
+		scenarioGroupsElement.appendChild(scenariosElement);
+	}
+	
+	private void configureGrlSpec(Document document){
+		Element urnSpecificationElement = document.getDocumentElement();
+		Element grlSpecElement = document.createElement("grlspec");
+		urnSpecificationElement.appendChild(grlSpecElement);
+		
+		Element auxElement = document.createElement("groups");
+		auxElement.setAttribute("id", "3");
+		auxElement.setAttribute("name", "StrategiesGroup3");
+		auxElement.setAttribute("strategies", "4");
+		grlSpecElement.appendChild(auxElement);
+		
+		auxElement = document.createElement("strategies");
+		auxElement.setAttribute("id", "4");
+		auxElement.setAttribute("name", "EvaluationStrategy4");
+		auxElement.setAttribute("author", "clomagno");
+		auxElement.setAttribute("group", "3");
+		grlSpecElement.appendChild(auxElement);
+		
+		auxElement = document.createElement("impactModel");
+		grlSpecElement.appendChild(auxElement);
+		
+		auxElement = document.createElement("indicatorGroup");
+		auxElement.setAttribute("id", "7");
+		auxElement.setAttribute("name", "Time");
+		auxElement.setAttribute("isRedesignCategory", "true");
+		grlSpecElement.appendChild(auxElement);
+		
+		auxElement = document.createElement("indicatorGroup");
+		auxElement.setAttribute("id", "8");
+		auxElement.setAttribute("name", "Cost");
+		auxElement.setAttribute("isRedesignCategory", "true");
+		grlSpecElement.appendChild(auxElement);
+		
+		auxElement = document.createElement("indicatorGroup");
+		auxElement.setAttribute("id", "9");
+		auxElement.setAttribute("name", "Quality");
+		auxElement.setAttribute("isRedesignCategory", "true");
+		grlSpecElement.appendChild(auxElement);
+		
+		auxElement = document.createElement("indicatorGroup");
+		auxElement.setAttribute("id", "10");
+		auxElement.setAttribute("name", "Flexibility");
+		auxElement.setAttribute("isRedesignCategory", "true");
+		grlSpecElement.appendChild(auxElement);
+		
+		auxElement = document.createElement("featureModel");
+		grlSpecElement.appendChild(auxElement);
+	}
+
+
+	
+	private void generate(IUseCaseMap useCaseMap){
+		connections.clear();
+		responsibilityNodes.clear();
+		nodes.clear();
+		
+		Element urnSpecificationElement = document.getDocumentElement();
+		Element ucmSpecElement = document.createElement("urndef");
+		urnSpecificationElement.appendChild(ucmSpecElement);
+		
+		Element specDiagrams = document.createElement("specDiagrams");
+		specDiagrams.setAttributeNS(xsiNS, "xsi:type", "ucm.map:UCMmap");
+		specDiagrams.setAttribute("name", "UCMmap2");
+		specDiagrams.setAttribute("id", "2");
+		
+		ucmSpecElement.appendChild(specDiagrams);
+		
+		/* Creo los componentes */
+		for(IComponent element:useCaseMap.getComponents()){
+			JUCMComponent node = new JUCMComponent(this, element);
+			this.componentNodes.add(node);
+		}
+		
+		for(IResponsibility element:useCaseMap.getResponsibilities()){
+			/* Creo el nodo sin ningun vinculo */
+			JUCMResponsibility node = new JUCMResponsibility(this, element);
+			this.responsibilityNodes.add(node);
+		}
+		
+		for(JUCMResponsibility node:responsibilityNodes){
+			/* Comprobar los elementos siguientes al actual, en caso de ser 0 se crea un End Point, en caso de ser mayor a 1 un OrFork */
+			if(node.getUCMElement().getCausedResponsibilities().size()==0){
+				/* Se crea un End Point*/
+				JUCMEndPoint endPointElement = new JUCMEndPoint(this);
+				new JUCMConnection(this, node, endPointElement);
+			} else if(node.getUCMElement().getCausedResponsibilities().size()>1){
+				/* Se crea un OrFork*/
+				JUCMOrFork orForkNode = new JUCMOrFork(this);
+				new JUCMConnection(this, node, orForkNode);
+				
+				for(IResponsibility nextElement:node.getUCMElement().getCausedResponsibilities()){
+					JUCMResponsibility nextNode = getJUCMResponsibility(nextElement);
+					new JUCMConnection(this, orForkNode, nextNode);
+				}
+			} else {
+				/* Se enlazan los elementos directamente */
+				JUCMResponsibility nextElement = getJUCMResponsibility(node.getUCMElement().getCausedResponsibilities().iterator().next());
+				
+				/* Contemplo el caso en el que una responsabilidad tenga mas de un predecesor */
+				if(nextElement.getUCMElement().getCausingResponsibilities().size()==1){
+					new JUCMConnection(this, node, nextElement);
+				}
+			}
+
+			/* Comprobar los elementos previos al actual, en caso de ser 0 se crea un Start Point, en caso de ser mayor a 1 un OrJoin */
+			if(node.getUCMElement().getCausingResponsibilities().size()==0){
+				/* Se crea un Start Point*/
+				JUCMStartPoint startPointElement = new JUCMStartPoint(this);
+				new JUCMConnection(this, startPointElement, node);
+			} else if(node.getUCMElement().getCausingResponsibilities().size()>1){
+				/* Se crea un OrJoin*/
+				JUCMOrJoin orJoinNode = new JUCMOrJoin(this);
+				new JUCMConnection(this, orJoinNode, node);
+				
+				for(IResponsibility prevElement:node.getUCMElement().getCausingResponsibilities()){
+					JUCMResponsibility prevNode = getJUCMResponsibility(prevElement);
+					new JUCMConnection(this, prevNode, orJoinNode);
+				}
+			}
+		}
+		
+		
+		/* Genero el XML de los componentes */
+		for(JUCMComponent component:componentNodes){
+			component.generate(specDiagrams);
+		}
+		
+		/* Genero el XML de las responsabilidades, orJoins, orForks, startPoints y endPoints */
+		for(JUCMNode node:nodes){
+			node.generate(specDiagrams);
+		}
+		
+		/* Genero el XML de las conexiones */
+		for(JUCMConnection connection:connections){
+			connection.generate(specDiagrams);
+		}
+	}
+
+	public Collection<JUCMComponent> getComponents() {
+		return this.componentNodes;
+	}
+	
+
+}

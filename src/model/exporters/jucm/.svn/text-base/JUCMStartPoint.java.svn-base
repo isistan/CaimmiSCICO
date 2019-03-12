@@ -1,0 +1,61 @@
+package edu.unicen.tesis.usecasemaps.exporters.jucm;
+
+import org.w3c.dom.Element;
+
+public class JUCMStartPoint implements JUCMNode {
+	private JUCMConnection succ;
+	
+	private Element nodeElement;
+	
+	private JUCMExporter exporter;
+	
+	public JUCMStartPoint(JUCMExporter exporter){
+		this.exporter = exporter;
+		
+		this.exporter.getNodes().add(this);
+	}
+
+	@Override
+	public Element getNodeElement() {
+		return nodeElement;
+	}
+
+	@Override
+	public void addSucc(JUCMConnection succ) {
+		this.succ = succ;
+	}
+
+	@Override
+	public void addPrev(JUCMConnection prev) {
+		
+	}
+	
+	@Override
+	public void generate(Element documentElement) {
+		nodeElement = exporter.getDocument().createElement("nodes");
+		nodeElement.setAttributeNS(JUCMExporter.xsiNS, "xsi:type", "ucm.map:StartPoint");
+		nodeElement.setAttribute("name", "Start Point");
+		nodeElement.setAttribute("x", new Integer(new Double(
+				JUCMExporter.START_SECTOR_X.doubleValue() + Math.random()*JUCMExporter.START_SECTOR_WIDTH.doubleValue())
+			.intValue()).toString());
+		nodeElement.setAttribute("y", new Integer(new Double(
+				JUCMExporter.START_SECTOR_Y.doubleValue() + Math.random()*JUCMExporter.START_SECTOR_HEIGHT.doubleValue())
+		.intValue()).toString());
+		nodeElement.setAttribute("id", exporter.getMaxID().toString());
+		nodeElement.appendChild(exporter.getDocument().createElement("label"));
+		
+		exporter.setMaxID(exporter.getMaxID()+1);
+		
+		nodeElement.setAttribute("succ", "//@urndef/@specDiagrams.0/@connections."+succ.getConnectionNumber());
+
+		Element preCondition = exporter.getDocument().createElement("precondition");
+		preCondition.setAttribute("deltaX", "-40");
+		preCondition.setAttribute("deltaY", "-20");
+		preCondition.setAttribute("label", "");
+		preCondition.setAttribute("expression", "true");
+		nodeElement.appendChild(preCondition);
+		
+		documentElement.appendChild(nodeElement);
+	}
+
+}

@@ -1,0 +1,123 @@
+REQ=1
+RESP=create_3_account_5:1;enter_19_details_21:2:enter-3_details-5;registered_54_User_56:4:registered-3_User-1;validated_59_information_61:4:validated-8_information-6;agrees_64_terms_67:4:agrees-11_terms-14;
+SEQ=validated_59_information_61 -> agrees_64_terms_67;agrees_64_terms_67 -> registered_54_User_56
+
+REQ=2
+RESP=registered_3_user_5:1;sent_9_link_11:1;verify_26_email-id_28:1;verified_35_account_37:2:verified-4_account-6;marked_38_account_41:2:marked-12_account-8;re-send_64_link_67:4
+SEQ=registered_3_user_5 -> sent_9_link_11;sent_9_link_11 -> verify_26_email-id_28;verified_35_account_37 -> marked_38_account_41
+
+REQ=3
+RESP=registered_1_User_4:1;match_25_hash_28:3:match-6_hash-9;appear_45_captcha_47:4:appear-12_captcha-10;locked_59_account_62:5:locked-14_account-11;sent_65_e-mail_68:5:sent-20_e-mail-17;unlock_80_account_82:6:unlock-2_account-4;click_86_link_90:6:click-8_link-12;clicks_100_password_103:7:clicks-3_password-6;emailed_107_link_104:7:emailed-13_link-10;validated_115_Input_121:8:validated-7_Input-1
+SEQ=locked_59_account_62 -> sent_65_e-mail_68;click_86_link_90 -> unlock_80_account_82;clicks_100_password_103 -> emailed_107_link_104
+
+REQ=4
+RESP=add_13_details_16:2:add-6_details-9;logged_24_User_27:4:logged-4_User-1;marked_31_account_34:4:marked-11_account-8;add_41_education_42:4:add-18_education-19;validated_44_Input_50:6:validated-6_Input-1
+SEQ=logged_24_User_27 -> add_41_education_42;marked_31_account_34 -> add_41_education_42
+
+REQ=5
+RESP=add_13_details_16:2:add-6_details-9;logged_34_User_37:4:logged-4_User-1;add_51_information_53:4:add-18_information-20;marked_41_account_44:4:marked-11_account-8;validated_55_Input_61:6:validated-7_Input-1
+SEQ=logged_34_User_37 -> add_51_information_53;marked_41_account_44 -> add_51_information_53
+
+REQ=6
+RESP=add_13_details_16:2:add-6_details-9;logged_48_User_51:3:logged-4_User-1;validated_54_Input_60:5:validated-7_Input-1
+SEQ=
+
+REQ=7
+RESP=edit_13_details_16:2:edit-6_details-9;changed_49_email_51:3:changed-4_email-2;called_60_module_57:3:called-11_module-8;logged_60_User_63:4:logged-4_User-1;validated_66_Input_72:5:validated-7_Input-1
+SEQ=changed_49_email_51 -> called_60_module_57
+
+REQ=8
+RESP=upload_6_picture_9:1;leave_28_field_30:3:leave-3_field-5
+SEQ=
+
+REQ=9
+RESP=make_6_details_8:1
+SEQ=
+
+REQ=10
+RESP=make_6_information_8:1;
+SEQ=
+
+REQ=11
+RESP=see_8_profile_12:1
+SEQ=
+
+REQ=12
+RESP=delete_3_account_5:1;removed_14_User_17:2:removed-4_User-1;cleared_26_information_29:3:cleared-5_information-2:
+SEQ=
+
+REQ=13
+RESP=send_10_request_13:1;send_22_request_24:2:send-3_request-5;search_34_friend_36:3:search-3_friend-5;send_45_request_48:3:send-14_request-17:
+SEQ=search_34_friend_36 -> send_45_request_48
+
+REQ=14
+RESP=gets_4_request_7:1;have_19_option_21:1;accept_23_request_28:1;ignore_25_request_28:1;accept_35_request_38:2:accept-6_request-9;added_41_requestor_43:2:added-14_requestor-12;ignore_57_request_59:3:ignore-6_request-8;see_65_status_67:3:see-14_status-16;removed_78_request_80:3:removed-29_request-27
+SEQ=gets_4_request_7 -> have_19_option_21;have_19_option_21 -> accept_23_request_28;have_19_option_21 -> ignore_25_request_28;accept_35_request_38 -> added_41_requestor_43;ignore_57_request_59 -> see_65_status_67;see_65_status_67 -> removed_78_request_80
+
+REQ=15
+RESP=un-friend_10_friends_15
+SEQ=
+
+REQ=16
+RESP=have_14_option_16:1;view_18_friends_24:1;implemented_49_paging_52:2:implemented-24_paging-21;show_54_friends_56:2:show-26_friends-28;has_60_friends_64:2:has-32_friend-36
+SEQ=implemented_49_paging_52 -> show_54_friends_56;have_14_option_16 -> view_18_friends_24
+
+REQ=17
+RESP=search_6_friends_11:1;put_19_name_21:2:put-3_name-5;click_26_search_27:2:click-11_search-12;display_34_people_37:2:display-18_people-21;displayed_49_results_51:3:displayed-6_results-4;implemented_66_paging_69:3:implemented-24_paging-21;show_71_results_73:3:show-26_results-28
+SEQ=put_19_name_21 -> click_26_search_27;click_26_search_27 -> display_34_people_37;displayed_49_results_51 -> implemented_66_paging_69;implemented_66_paging_69 -> show_71_results_73
+
+REQ=18
+RESP=given_4_suggestions_5:1;adding_7_friends_9:1;implemented_45_paging_48:3:implemented-19_paging-16;show_50_suggestions_52:3:show-21_suggestions-23
+SEQ=given_4_suggestions_5 -> adding_7_friends_9;implemented_45_paging_48 -> show_50_suggestions_52
+
+REQ=19
+RESP=invite_6_friends_8:1;join_10_network_13:1;enter_22_address_25:2:enter-8_address-11;invite_37_friend_39:3:invite-6_friend-8
+SEQ=invite_6_friends_8 -> join_10_network_13
+
+REQ=20
+RESP=see_6_friends_9:1;chat_20_friends_23:2:chat-4_friends-7;clicking_25_friends_30:2:clicking-9_friends-14
+SEQ=clicking_25_friends_30 -> chat_20_friends_23
+
+REQ=21
+RESP=share_7_scribbles_8:1;enter_28_scribble_30:3:enter-3_scribble-5;clicking_37_button_41:3:clicking-12_button-16
+SEQ=clicking_37_button_41 -> enter_28_scribble_30
+
+REQ=22
+RESP=erase_4_scribble_6:1;remove_37_comments_40:3:remove-7_comments-10
+SEQ=
+
+REQ=23
+RESP=logs_4_Aloha_6:1;see_10_listing_12:1;implemented_36_paging_39:2:implemented-18_paging-15
+SEQ=logs_4_Aloha_6 -> see_10_listing_12
+
+REQ=24
+RESP=comment_13_it_15:1;express_17_opinion_19:1;contain_24_text_26:2:contain-4_text-6;see_41_area_44:3:see-6_area-7;enter_52_text_54:3:enter-15_text-17
+SEQ=comment_13_it_15 -> express_17_opinion_19
+
+REQ=25
+RESP=delete_4_comment_6:1;deleting_18_scribble_20:2:deleting-2_scribble-4;see_31_link_34:2:see-15_link-18
+SEQ=see_31_link_34 -> deleting_18_scribble_20
+
+REQ=26
+RESP=like_3_scribble_5:1;clicking_7_button_16:1;see_27_count_29:2:see-8_count-10
+SEQ=clicking_7_button_16 -> like_3_scribble_5
+
+REQ=27
+RESP=dislike_3_scribble_5:1;clicking_7_button_16:1;see_27_count_29:2:see-8_count-10
+SEQ=clicking_7_button_16 -> dislike_3_scribble_5
+
+REQ=28
+RESP=initiate_6_ChitChat_7:1;initiated_27_ChitChat_30:2:initiate-12_ChitChat-9;forwarded_34_message_37:2:forwarded-19_message-16;receive_48_ChitChat_49:3:receive-6_ChitChat-7;send_74_message_75:4:send-6_message-7;completing_83_conversation_86:4:completing-15_conversation-18
+SEQ=send_74_message_75 -> completing_83_conversation_86
+
+REQ=29
+RESP=send_6_files_8:1;share_17_documents_19:2:share-5_documents-7
+SEQ=
+
+REQ=30
+RESP=store_6_ChitChat_7:1;keep_18_history_19:1
+SEQ=
+
+REQ=31
+RESP=retrieve_6_ChitChat_7:1;see_16_history_18:1
+SEQ=see_16_history_18 -> retrieve_6_ChitChat_7

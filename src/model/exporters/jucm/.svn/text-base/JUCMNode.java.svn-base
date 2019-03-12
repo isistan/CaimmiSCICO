@@ -1,0 +1,17 @@
+package edu.unicen.tesis.usecasemaps.exporters.jucm;
+
+public interface JUCMNode extends JUCMElement{
+	/**
+	 * Este metodo no debe ser llamado directamente, son usados al crear una conexion
+	 * 
+	 * @param succ
+	 */
+	public void addSucc(JUCMConnection succ);
+	
+	/**
+	 * Este metodo no debe ser llamado directamente, son usados al crear una conexion
+	 * 
+	 * @param prev
+	 */
+	public void addPrev(JUCMConnection prev);
+}
