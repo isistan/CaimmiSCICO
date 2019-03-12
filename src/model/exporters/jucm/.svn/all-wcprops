@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/usvn/svn/FLABot/!svn/ver/259/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm
+END
+Class Diagram.ucls
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/usvn/svn/FLABot/!svn/ver/258/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/Class%20Diagram.ucls
+END
+JUCMEndPoint.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMEndPoint.java
+END
+JUCMOrJoin.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMOrJoin.java
+END
+JUCMComponent.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMComponent.java
+END
+JUCMOrFork.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMOrFork.java
+END
+JUCMNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMNode.java
+END
+JUCMStartPoint.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMStartPoint.java
+END
+JUCMExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMExporter.java
+END
+JUCMElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMElement.java
+END
+JUCMConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/usvn/svn/FLABot/!svn/ver/257/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMConnection.java
+END
+JUCMResponsibility.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/usvn/svn/FLABot/!svn/ver/259/trunk/edu.pereyralomagno.tesis/src/main/java/edu/unicen/tesis/usecasemaps/exporters/jucm/JUCMResponsibility.java
+END

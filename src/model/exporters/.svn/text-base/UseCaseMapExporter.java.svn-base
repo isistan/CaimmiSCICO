@@ -1,0 +1,10 @@
+package edu.unicen.tesis.usecasemaps.exporters;
+
+import java.io.File;
+import java.io.IOException;
+
+import edu.unicen.tesis.model.IUseCaseMap;
+
+public interface UseCaseMapExporter {
+	public File export(IUseCaseMap useCaseMap, String fileName) throws IOException;
+}

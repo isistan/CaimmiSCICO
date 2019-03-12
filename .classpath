@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/edu.mit.jwi_2.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/XMeans.jar"/>
+	<classpathentry kind="lib" path="lib/optics_dbScan.jar"/>
+	<classpathentry kind="lib" path="lib/cascadeKMeans.jar"/>
+	<classpathentry kind="lib" path="lib/SelfOrganizingMap.jar"/>
+	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/ejml-0.23.jar"/>
+	<classpathentry kind="lib" path="lib/javax.json-api-1.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/javax.json.jar"/>
+	<classpathentry kind="lib" path="lib/joda-time-2.9-sources.jar"/>
+	<classpathentry kind="lib" path="lib/joda-time.jar"/>
+	<classpathentry kind="lib" path="lib/jollyday-0.4.9-sources.jar"/>
+	<classpathentry kind="lib" path="lib/jollyday.jar"/>
+	<classpathentry kind="lib" path="lib/protobuf.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api.jar"/>
+	<classpathentry kind="lib" path="lib/stanford-corenlp-3.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/stanford-corenlp-3.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/xom-1.2.10-src.jar"/>
+	<classpathentry kind="lib" path="lib/xom.jar"/>
+	<classpathentry kind="lib" path="lib/weblaf-complete-1.29.jar"/>
+	<classpathentry kind="lib" path="lib/snowball-20051019.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="lib/elki-bundle-0.7.1.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
