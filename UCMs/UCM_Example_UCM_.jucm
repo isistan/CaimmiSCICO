@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="bcaimmi" created="April 2, 2019 6:20:23 PM ART" modified="April 6, 2019 1:40:18 PM ART" specVersion="11" urnVersion="1.27" nextGlobalID="128">
+  <ucmspec>
+    <scenarioGroups name="ScenarioGroup5" id="5">
+      <scenarios name="ScenarioDef6" id="6"/>
+    </scenarioGroups>
+  </ucmspec>
+  <grlspec>
+    <groups name="StrategiesGroup3" id="3" strategies="4"/>
+    <strategies name="EvaluationStrategy4" id="4" author="bcaimmi" group="3"/>
+    <impactModel/>
+    <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="8" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="10" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <responsibilities name="access system" id="108" respRefs="109"/>
+    <responsibilities name="add course" id="110" respRefs="111"/>
+    <responsibilities name="list classes" id="112" respRefs="113"/>
+    <responsibilities name="drop course" id="114" respRefs="115"/>
+    <responsibilities name="send information" id="116" respRefs="117"/>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="UCMmap2" id="2">
+      <nodes xsi:type="ucm.map:RespRef" name="access system" id="109" description="accesses the system " x="150" y="300" contRef="103" succ="//@urndef/@specDiagrams.0/@connections.0" pred="//@urndef/@specDiagrams.0/@connections.3" respDef="108">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="add course" id="111" description="add a new course " x="175" y="50" contRef="101" succ="//@urndef/@specDiagrams.0/@connections.4" pred="//@urndef/@specDiagrams.0/@connections.1" respDef="110">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="list classes" id="113" description="list the classes that a student can attend " x="147" y="574" contRef="107" succ="//@urndef/@specDiagrams.0/@connections.5" pred="//@urndef/@specDiagrams.0/@connections.6" respDef="112">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="drop course" id="115" description="drop an added course " x="250" y="150" contRef="101" succ="//@urndef/@specDiagrams.0/@connections.7" pred="//@urndef/@specDiagrams.0/@connections.2" respDef="114">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="send information" id="117" description="sends the transaction information " x="147" y="436" contRef="105" succ="//@urndef/@specDiagrams.0/@connections.8" pred="//@urndef/@specDiagrams.0/@connections.4" respDef="116">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork" id="118" x="408" y="330" succ="//@urndef/@specDiagrams.0/@connections.1 //@urndef/@specDiagrams.0/@connections.2" pred="//@urndef/@specDiagrams.0/@connections.0"/>
+      <nodes xsi:type="ucm.map:StartPoint" name="" id="119" x="25" y="100" succ="//@urndef/@specDiagrams.0/@connections.3">
+        <label/>
+        <precondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="" id="120" x="800" y="100" pred="//@urndef/@specDiagrams.0/@connections.5">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:StartPoint" name="" id="121" x="25" y="150" succ="//@urndef/@specDiagrams.0/@connections.6">
+        <label/>
+        <precondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="" id="122" x="800" y="150" pred="//@urndef/@specDiagrams.0/@connections.7">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="" id="123" x="800" y="200" pred="//@urndef/@specDiagrams.0/@connections.8">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="Component 1" id="101" x="100" width="300" height="200" contDef="100" nodes="111 115">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="Component 2" id="103" x="100" y="250" width="100" height="100" contDef="102" nodes="109">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="Component 3" id="105" x="97" y="386" width="100" height="100" contDef="104" nodes="117">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="Component 4" id="107" x="97" y="524" width="100" height="100" contDef="106" nodes="113">
+        <label/>
+      </contRefs>
+      <connections xsi:type="ucm.map:NodeConnection" source="109" target="118"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="118" target="111"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="118" target="115"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="119" target="109"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="111" target="117"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="113" target="120"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="121" target="113"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="115" target="122"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="117" target="123"/>
+    </specDiagrams>
+    <components name="Component 1" id="100" contRefs="101" kind="Other"/>
+    <components name="Component 2" id="102" contRefs="103" kind="Other"/>
+    <components name="Component 3" id="104" contRefs="105" kind="Other"/>
+    <components name="Component 4" id="106" contRefs="107" kind="Other"/>
+  </urndef>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+</urn:URNspec>
