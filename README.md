@@ -53,7 +53,7 @@ This repository hosts the code of the Req2UCM tool. This is a prototype tool tha
 
 5. Open the diagram using the JUCMNav plugin. To do this, just click a .jucm file under the UCM folder within the project and the pluging will open the diagram. By the time of writing this tutorial, the plugin doesn't have an auto-layout feature so it is probably that you may need to order the paths dragging the lines.
 
-   ![alt text](https://raw.githubusercontent.com/isistan/CaimmiSCICO/tree/master/UCMs/UCMs/UCM_TEST-1.png)
+   ![alt text](https://raw.githubusercontent.com/isistan/CaimmiSCICO/tree/master/UCMs/UCM_TEST-1.png)
 
 ## Contact
 
