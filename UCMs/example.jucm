@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<urn:URNspec xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ucm.map="http:///ucm/map.ecore" xmlns:urn="http:///urn.ecore" name="URNspec" author="bcaimmi" created="March 15, 2018 11:51:21 AM ART" modified="September 19, 2018 2:19:52 PM ART" specVersion="20" urnVersion="1.27" nextGlobalID="218">
+  <ucmspec>
+    <scenarioGroups name="ScenarioGroup5" id="5">
+      <scenarios name="ScenarioDef6" id="6"/>
+    </scenarioGroups>
+  </ucmspec>
+  <grlspec>
+    <groups name="StrategiesGroup3" id="3" strategies="4"/>
+    <strategies name="EvaluationStrategy4" id="4" author="bcaimmi" group="3"/>
+    <impactModel/>
+    <indicatorGroup name="Time" id="7" isRedesignCategory="true"/>
+    <indicatorGroup name="Cost" id="8" isRedesignCategory="true"/>
+    <indicatorGroup name="Quality" id="9" isRedesignCategory="true"/>
+    <indicatorGroup name="Flexibility" id="10" isRedesignCategory="true"/>
+    <featureModel/>
+  </grlspec>
+  <urndef>
+    <responsibilities name="Resp 1.1 (access system)" id="108" respRefs="109"/>
+    <responsibilities name="Resp 4.1 (click button)" id="110" respRefs="111"/>
+    <responsibilities name="Resp 1.3/5.1 (drop course)" id="112" respRefs="113"/>
+    <responsibilities name="Resp 1.2/2.1 (add course)" id="114" respRefs="115"/>
+    <responsibilities name="Resp 3.1 (list classes)" id="116" respRefs="117"/>
+    <responsibilities name="Resp 4.2 (list courses)" id="118" respRefs="119"/>
+    <responsibilities name="Resp 5.2 (display dialog)" id="120" respRefs="121"/>
+    <responsibilities name="Resp 2.2 (send information)" id="122" respRefs="123"/>
+    <specDiagrams xsi:type="ucm.map:UCMmap" name="UCMmap2" id="2">
+      <nodes xsi:type="ucm.map:RespRef" name="access system" id="109" description="accesses the system " x="186" y="135" contRef="103" succ="//@urndef/@specDiagrams.0/@connections.0" pred="//@urndef/@specDiagrams.0/@connections.3" respDef="108">
+        <label deltaX="36" deltaY="6"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="click button" id="111" description="click on the &quot; list courses &quot; button " x="402" y="210" contRef="101" succ="//@urndef/@specDiagrams.0/@connections.4" pred="//@urndef/@specDiagrams.0/@connections.5" respDef="110">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="drop course" id="113" description="drop an added course " x="488" y="173" contRef="101" succ="//@urndef/@specDiagrams.0/@connections.6" pred="//@urndef/@specDiagrams.0/@connections.2" respDef="112">
+        <label deltaX="-17" deltaY="6"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="add course" id="115" description="add a new course " x="482" y="111" contRef="101" succ="//@urndef/@specDiagrams.0/@connections.7" pred="//@urndef/@specDiagrams.0/@connections.1" respDef="114">
+        <label/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="list classes" id="117" description="list the classes that a student can attend " x="406" y="252" contRef="101" succ="//@urndef/@specDiagrams.0/@connections.8" pred="//@urndef/@specDiagrams.0/@connections.9" respDef="116">
+        <label deltaY="-3"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="list courses" id="119" description="listing its added courses " x="582" y="247" contRef="101" succ="//@urndef/@specDiagrams.0/@connections.10" pred="//@urndef/@specDiagrams.0/@connections.4" respDef="118">
+        <label deltaX="-4" deltaY="3"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="display dialog" id="121" description="displayed a confirmation dialog " x="810" y="252" contRef="105" succ="//@urndef/@specDiagrams.0/@connections.11" pred="//@urndef/@specDiagrams.0/@connections.6" respDef="120">
+        <label deltaX="-3" deltaY="6"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:RespRef" name="send information" id="123" description="sends the transaction information " x="785" y="120" contRef="107" succ="//@urndef/@specDiagrams.0/@connections.12" pred="//@urndef/@specDiagrams.0/@connections.7" respDef="122">
+        <label deltaX="-16" deltaY="5"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:OrFork" name="OrFork" id="124" x="267" y="119" contRef="103" succ="//@urndef/@specDiagrams.0/@connections.1 //@urndef/@specDiagrams.0/@connections.2" pred="//@urndef/@specDiagrams.0/@connections.0"/>
+      <nodes xsi:type="ucm.map:StartPoint" name="" id="125" x="41" y="134" succ="//@urndef/@specDiagrams.0/@connections.3">
+        <label/>
+        <precondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:StartPoint" name="" id="126" x="244" y="206" succ="//@urndef/@specDiagrams.0/@connections.5">
+        <label/>
+        <precondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="" id="127" x="554" y="293" pred="//@urndef/@specDiagrams.0/@connections.8">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:StartPoint" name="" id="128" x="243" y="253" succ="//@urndef/@specDiagrams.0/@connections.9">
+        <label/>
+        <precondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="" id="129" x="668" y="284" pred="//@urndef/@specDiagrams.0/@connections.10">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="" id="130" x="907" y="249" contRef="105" pred="//@urndef/@specDiagrams.0/@connections.11">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <nodes xsi:type="ucm.map:EndPoint" name="" id="131" x="914" y="137" pred="//@urndef/@specDiagrams.0/@connections.12">
+        <label/>
+        <postcondition deltaX="-40" deltaY="-20" label="" expression="true"/>
+      </nodes>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="Component 1" id="101" x="294" y="67" width="400" height="200" contDef="100" nodes="113 115 119 111 117">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="Component 2" id="103" x="74" y="70" width="175" height="100" contDef="102" nodes="109 124">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="Component 3" id="105" x="720" y="185" width="175" height="100" contDef="104" nodes="121 130">
+        <label/>
+      </contRefs>
+      <contRefs xsi:type="ucm.map:ComponentRef" name="Component 4" id="107" x="717" y="56" width="175" height="100" contDef="106" nodes="123">
+        <label/>
+      </contRefs>
+      <connections xsi:type="ucm.map:NodeConnection" source="109" target="124"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="124" target="115">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="124" target="113">
+        <condition label="" expression="true"/>
+      </connections>
+      <connections xsi:type="ucm.map:NodeConnection" source="125" target="109"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="111" target="119"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="126" target="111"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="113" target="121"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="115" target="123"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="117" target="127"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="128" target="117"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="119" target="129"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="121" target="130"/>
+      <connections xsi:type="ucm.map:NodeConnection" source="123" target="131"/>
+    </specDiagrams>
+    <components name="Comp 3 (course)" id="100" contRefs="101" kind="Other"/>
+    <components name="Comp 1 (system)" id="102" contRefs="103" kind="Other"/>
+    <components name="Comp 4 (confirmation dialog)" id="104" contRefs="105" kind="Other"/>
+    <components name="Comp 2 (transaction information)" id="106" contRefs="107" kind="Other"/>
+  </urndef>
+  <metadata name="_Use0to100EvaluationRange" value="false"/>
+</urn:URNspec>
