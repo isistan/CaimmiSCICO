@@ -23,7 +23,7 @@ This repository hosts the code of the Req2UCM tool. This is a prototype tool tha
    4. Click on *Apply* button to save the changes.
    5. In you get stuck, you will find more information [here](http://www.planetofbits.com/eclipse/increase-jvm-heap-size-in-eclipse/) on how to do this.
 
-2. When you run the project, a window should pop up.
+2. When you run the project (by running the class appMainWindow.java), a window should pop up.
 
 3. Open a project.
 
