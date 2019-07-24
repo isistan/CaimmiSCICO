@@ -38,10 +38,10 @@ public class SeqAnalyzer_SIMPLE extends SeqAnalyzer {
 
 		Integer retry = 1;
 
-		// Primero interpretar los patrones
+		// First interpret the patterns
 		for (SimplePattern pattern : this.patterns) {
 
-			// Aca esta enganchando una sola vez.. tendria que seguir devolviendo matchs !
+			// Here he is hooking only once .. he would have to keep returning matches!
 			Boolean resultMatched = true;
 			while (resultMatched) {
 				resultMatched = pattern.match(tokens, retry++);
@@ -50,10 +50,10 @@ public class SeqAnalyzer_SIMPLE extends SeqAnalyzer {
 					ArrayList<String> matched = pattern.getMatch();
 					System.out.println("\t\t+ Hubo Match [" + pattern.toString() + "] = " + matched);
 
-					// Devolver las delimitaciones y ahi jugar con las responsabilidades en donde caen
+					// Return the boundaries and then play with the responsibilities where they fall
 					ArrayList<Pair<String, ArrayList<Responsibility>>> result = calculateWhereResponsibilitiesFall(matched, pattern, responsibilitiesInSentence);
 
-					// Recorremos el resultado generando las relaciones causales
+					// We traverse the result generating causal relationships
 					Integer indexDelim_1 = null;
 					Integer index = 0;
 					for (Pair<String, ArrayList<Responsibility>> r : result) {
@@ -76,7 +76,7 @@ public class SeqAnalyzer_SIMPLE extends SeqAnalyzer {
 						respsInLeft = result.get(indexDelim_1 - 1).getPair2();
 					}
 
-					// Se hacen todas las combinaciones
+					// All combinations are made
 					if (pattern.getStructuredDelimiters().get(0).equals("[BY]")) {
 						for (Responsibility resp1 : respsInRight){
 							for (Responsibility resp2 : respsInLeft){
@@ -111,10 +111,10 @@ public class SeqAnalyzer_SIMPLE extends SeqAnalyzer {
 						}
 
 
-						// Si hay repetidas hay que borrarlas
+						// If there are repeated you have to delete them
 						ArrayList<CausalRelationship> outAux = eliminateRepetitions(out);
 
-						// Reconfiguro el out				
+						// I reconfigured the out				
 						out = outAux;
 
 					}

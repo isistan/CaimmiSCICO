@@ -235,7 +235,7 @@ public class JUCMExporter extends XMLExporter{
 
 		ucmSpecElement.appendChild(specDiagrams);
 
-		/* Creo los componentes */
+		/* Creation of components */
 		for (ConceptualComponent component : useCaseMap.getComponents()){
 			if (component.getResponsibilities().size() > 0) {
 				JUCMComponent node = new JUCMComponent(this, component);
@@ -256,7 +256,7 @@ public class JUCMExporter extends XMLExporter{
 
 		}
 
-		// Ordenarlas segun NextResponsibilitiesSize de mayor a menor
+		// Sort them according to NextResponsibilitiesSize from highest to lowest
 		Collections.sort(resps, new Comparator<Responsibility>() {
 
 			@Override
@@ -274,14 +274,14 @@ public class JUCMExporter extends XMLExporter{
 
 		for (JUCMResponsibility node : responsibilityNodes){
 
-			// Comprobar los elementos siguientes al actual, en caso de ser 0 se crea un End Point, en caso de ser mayor a 1 un OrFork
+			// Check the following elements to the current one, in case of being 0 an End Point is created, in case of being greater than 1 an OrFork
 			if (node.getUCMElement().getNextResponsibilities().size() == 0){
-				// Se crea un End Point
+				// EndPoint is created
 				JUCMEndPoint endPointElement = new JUCMEndPoint(this);
 				new JUCMConnection(this, node, endPointElement);
 			} else 
 				if (node.getUCMElement().getNextResponsibilities().size() > 1){
-					// Se crea un OrFork
+					// OrFork is created
 					JUCMOrFork orForkNode = new JUCMOrFork(this);
 					new JUCMConnection(this, node, orForkNode);
 
@@ -290,23 +290,23 @@ public class JUCMExporter extends XMLExporter{
 						new JUCMConnection(this, orForkNode, nextNode);
 					}
 				} else {
-					// Se enlazan los elementos directamente
+					// Elements are linked directly
 					JUCMResponsibility nextElement = getJUCMResponsibility(node.getUCMElement().getNextResponsibilities().iterator().next());
 
-					/// Contemplo el caso en el que una responsabilidad tenga mas de un predecesor
+					// I contemplate the case in which a responsibility has more than one predecessor
 					if(nextElement.getUCMElement().getPrevResponsibilities().size()==1){
 						new JUCMConnection(this, node, nextElement);
 					}
 				}
 
-			// Comprobar los elementos previos al actual, en caso de ser 0 se crea un Start Point, en caso de ser mayor a 1 un OrJoin 
+			// Check the elements prior to the current one, in case of 0 a Start Point is created, in case of being greater than 1 an OrJoin 
 			if(node.getUCMElement().getPrevResponsibilities().size()==0){
-				// Se crea un Start Point
+				// Start Point is created
 				JUCMStartPoint startPointElement = new JUCMStartPoint(this);
 				new JUCMConnection(this, startPointElement, node);
 			} else 
 				if(node.getUCMElement().getPrevResponsibilities().size()>1){
-					// Se crea un OrJoin
+					// OrJoin is created
 					JUCMOrJoin orJoinNode = new JUCMOrJoin(this);
 					new JUCMConnection(this, orJoinNode, node);
 
@@ -317,17 +317,17 @@ public class JUCMExporter extends XMLExporter{
 				}
 		}
 
-		/* Genero el XML de los componentes */
+		/* I generate the XML of the components */
 		for(JUCMComponent component:componentNodes){
 			component.generate(specDiagrams);
 		}
 
-		/* Genero el XML de las responsabilidades, orJoins, orForks, startPoints y endPoints */
+		/* I generate the XML of responsibilities, orJoins, orForks, startPoints and endPoints */
 		for(JUCMNode node : nodes){
 			node.generate(specDiagrams);
 		}
 
-		/* Genero el XML de las conexiones */
+		/* I generate the connections XML */
 		for(JUCMConnection connection:connections){
 			connection.generate(specDiagrams);
 		}

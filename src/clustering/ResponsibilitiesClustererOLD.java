@@ -35,11 +35,11 @@ public class ResponsibilitiesClustererOLD {
 			//ERROR
 		}else{
 			if (arguments != null && filterArguments == null){
-				// Solo clusterizador
+				// Clusterer only
 				this.wekaClusterer = loadClusterer(arguments);				
 			}else{
 				if (arguments != null && filterArguments != null){
-					// Clasificador con filtro
+					// Classifier with filter
 					this.wekaClusterer = loadClusterer(arguments, filterArguments);
 				}else{
 					//ERROR
@@ -97,7 +97,7 @@ public class ResponsibilitiesClustererOLD {
 			e.printStackTrace();
 		}
 
-		// Se adjunta lo cargado
+		// Loaded is attached
 		out.setFilter(filter);
 		out.setClusterer(clusterer);
 
@@ -110,13 +110,13 @@ public class ResponsibilitiesClustererOLD {
 
 		Attribute textAttribute = new Attribute("responsibility", (ArrayList<String>) null);
 
-		// 1 - Se definen los atributos
+		// 1 - Attributes are defined
 		attributes.add(textAttribute);
 
-		// 2 - Se crea la instancia
+		// 2 - Instance is created
 		out = new Instances("responsibilities", attributes, 0);
 
-		// 3 - Se insertan los datos
+		// 3 - Data is inserted
 
 		for (Responsibility responsibility : responsibilities){
 			Instance instance = new DenseInstance(1);

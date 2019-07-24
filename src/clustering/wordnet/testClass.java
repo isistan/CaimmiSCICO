@@ -24,21 +24,21 @@ public class testClass {
 			String workingWord = null;
 
 			if (word.equals(stemmedWord)){
-				// Son iguales entonces se las trata igual
+				// They are equal then they are treated the same
 				workingWord = word;
 			}else{
-				// No son iguales, se intenta primero con la versi�n original
+				// They are not the same, you try first with the original version
 				if (wni.isOk(word, pos)){
-					// seguimos laburando con word
+					// we keep on working with word
 					workingWord = word;
 				}else{
 					if (wni.isOk(stemmedWord, pos)){
-						// seguimos con stemmedWord
+						// we continue with stemmedWord
 						workingWord = stemmedWord;
 					}else{
-						// Ambas fallaron..
-						System.err.println("Ninguna de las dos palabras es valida");
-						// No se haria desambiguaci�n para esa palabra
+						//Both failed ..
+						System.err.println("Neither word is valid");
+						// There would be no disambiguation for that word
 					}
 				}
 			}

@@ -55,7 +55,7 @@ public class PipelineParalelo implements Runnable{
 
 	public PipelineParalelo(Project project, appMainWindow appMainWindow){
 
-		// Valores por defecto para usarlo con el servidor del ISISTAN
+		// Default values for use with the ISISTAN server
 		this.nlpIP = "http://10.1.4.166";
 		this.nlpPort = 9000;
 		this.nlpThreads = 4;
@@ -107,7 +107,7 @@ public class PipelineParalelo implements Runnable{
 
 		for (Requirement requirement : requirements){
 
-			// Separación de coma y puntos
+			// Comma and point separation
 
 			String inputText = requirement.getText();
 			inputText = inputText.replaceAll("\\,", " , ");
@@ -151,7 +151,7 @@ public class PipelineParalelo implements Runnable{
 		extractorProperties.setProperty("annotators", "tokenize, ssplit");
 		NLPConnector nlpConnector = new NLPConnector(extractorProperties, this.nlpIP, this.nlpPort, this.nlpThreads);
 
-		// Analizadores
+		// Analizers
 		SeqAnalyzer seq1 = new SeqAnalyzer_IFTHEN();
 		SeqAnalyzer seq2 = new SeqAnalyzer_TEMPORAL();
 		SeqAnalyzer seq3 = new SeqAnalyzer_TEMPORALINVERTED();
@@ -164,30 +164,30 @@ public class PipelineParalelo implements Runnable{
 			System.out.println("\nReq -  [" + id++ + "/" + requirements.size() + "]");
 			System.out.println("\tRequirement [" + requirement.getId() + "] = [" + requirement.getText() + "]");
 
-			// Verificamos que existan responsabilidades asociadas al requerimiento
+			// We verify that there are responsibilities associated with the requirement
 			if ( ! requirement.getResponsibilities().isEmpty() ){
 				System.out.println("\tTIENE RESPONSABILIDADES");
 
-				// Obtenemos el coreMap
+				// We obtain the coreMap
 				List<CoreMap> coreMaps = nlpConnector.annotate(requirement.getText());
 
-				//Arraylists para dsps
+				//Arraylists for later
 				ArrayList<List<CoreLabel>> tokensInSentences = new ArrayList<List<CoreLabel>>();
 				ArrayList<ArrayList<Responsibility>> responsibilitiesInSentences = new ArrayList<ArrayList<Responsibility>>();
 				ArrayList<ArrayList<CausalRelationship>> relationsInSentences = new ArrayList<ArrayList<CausalRelationship>>();
 
-				// Vamos sentencia por sentencia analizando
+				// We go sentence by sentence analyzing
 				int sentenceNumber = 1;
 				for (CoreMap coreMap : coreMaps) {
 
-					// Sentencia
+					// Sentence
 					String sentence = coreMap.get(TextAnnotation.class);
 
-					// Notacion de Tokens
+					// Token Notation
 					List<CoreLabel> tokens = coreMap.get(edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation.class);
 					tokensInSentences.add(tokens);
 
-					System.out.println("\t\t+ Sentencia [" + sentenceNumber + "] = [" + sentence + "]");
+					System.out.println("\t\t+ Sentence [" + sentenceNumber + "] = [" + sentence + "]");
 					System.out.println("\t\t+ Tokens    [" + sentenceNumber + "] = [" + tokens + "]");
 
 					ArrayList<CausalRelationship> out_aux_requirement = new ArrayList<CausalRelationship>();
@@ -203,7 +203,7 @@ public class PipelineParalelo implements Runnable{
 					ArrayList<CausalRelationship> out_seq4 = seq4.detectSeq(sentenceNumber, sentence, coreMap, tokens, responsibilitiesInSentence);
 					out_aux_requirement.addAll(out_seq4);
 
-					// Se hacen modificaciones (eliminan repetidos, y relaciones innecesarias)
+					// Modifications are made (eliminate repeated, and unnecessary relationships)
 					out_aux_requirement = SeqAnalyzer.eliminateRepetitions(out_aux_requirement);
 					out_aux_requirement = SeqAnalyzer.eliminateJumperRelations(out_aux_requirement);
 					requirement.getCausalRelationships().addAll(out_aux_requirement);
@@ -211,7 +211,7 @@ public class PipelineParalelo implements Runnable{
 
 					relationsInSentences.add(out_aux_requirement);
 
-					// Se actualizan los valores necesarios
+					// The necessary values are updated
 					sentenceNumber++;
 				}
 
@@ -233,7 +233,7 @@ public class PipelineParalelo implements Runnable{
 
 		}
 
-		// Aca hay que generar los PATHS
+		//Here we have to generate the PATHS
 
 		out = generateExecutionPaths(project.getRequirements(), out);
 
@@ -257,16 +257,16 @@ public class PipelineParalelo implements Runnable{
 		for (int i = 0; i < resps.size() - 1 ; i++){
 			for (int j = i + 1; j < resps.size(); j++){
 				if (resps.get(i).similarTo(resps.get(j))){
-					System.out.println("Iguales : " + resps.get(i).getId() + " " + resps.get(j).getId());
-					// Las que son iguales guardo los ID
+					System.out.println("Equals : " + resps.get(i).getId() + " " + resps.get(j).getId());
+					// The same ones I keep the IDs
 					similars.add(new Pair<Responsibility, Responsibility>(resps.get(i), resps.get(j)));
 				}
 			}
 		}
 
-		// Despues buscar conexiones Resp 1 - > Res 2 && Resp 2 - > Resp 3
-		// Si se da ese caso y Resp 2 son dos responsabilidades diferentes consideradas similares
-		// agregar la conexión faltante
+		// Then look for connections Resp 1 -> Res 2 && Resp 2 -> Resp 3
+		// If that is the case and Resp 2 are two different responsibilities considered similar
+		// add the missing connection
 
 		ArrayList<CausalRelationship> toAdd = new ArrayList<CausalRelationship>();
 		ArrayList<CausalRelationship> toDelete = new ArrayList<CausalRelationship>();
@@ -283,7 +283,7 @@ public class PipelineParalelo implements Runnable{
 						CausalRelationship newCR = new CausalRelationship(cr1.getResp2(), cr2.getResp2());
 						toAdd.add(newCR);
 
-						// Hay que sacar el caso malo 
+						// We must take the bad case
 						toDelete.add(cr2);
 						resps.remove(cr2.getResp1());
 					}
@@ -291,10 +291,10 @@ public class PipelineParalelo implements Runnable{
 			}
 		}
 
-		// Agrego las conexiones encontradas
+		// I add the connections found
 		out.addAll(toAdd);
 
-		// Dejo de tener en cuenta a las relaciones que estan de mas
+		// I stop taking into account the relationships that are over
 		for (CausalRelationship cr : outAux) {
 			Boolean aux = false;
 			for (CausalRelationship crToDelete : toDelete) {
@@ -308,8 +308,8 @@ public class PipelineParalelo implements Runnable{
 
 		}
 
-		// Se pueden hacer relaciones causales entre las responsabilidades que quedaron solas
-		// tengo que eliminar de resps todas las responsabilidades existenes
+		// Causal relationships can be made between the responsibilities left alone
+		// I have to remove all existing responsibilities from resps
 		ArrayList<CausalRelationship> halfRelations = new ArrayList<CausalRelationship>();
 		for (Responsibility resp : resps) {
 			Boolean esta = false;
@@ -348,7 +348,7 @@ public class PipelineParalelo implements Runnable{
 			out+= "\nReq - [" + id + "/" + requirements.size() + "]\n";
 			out+= "\tRequirement [" + requirement.getId() + "] = [" + requirement.getText() + "]\n";
 
-			// Identificación de Responsabilidades
+			// Identification of Responsibilities
 			ArrayList<Responsibility> responsibilities = extractor.extractResponsibilitiesFromRequirement(requirement);
 
 			System.out.println("\n\tResponsibilities: [" + responsibilities.size() + "]");
@@ -392,12 +392,12 @@ public class PipelineParalelo implements Runnable{
 			System.out.println("\nReq -  [" + id++ + "/" + requirements.size() + "]");
 			System.out.println("\tRequirement [" + requirement.getId() + "] = [" + requirement.getText() + "]");
 
-			//TODO ver lo de startPOS que no estaba andando bien
+			//TODO see what startPOS was not going well
 			Integer startPOS = 1;
 
 			if (!requirement.getResponsibilities().isEmpty()){
 
-				// Separar por sentencias, y ahi aplicar el splitting por espacios
+				// Separate by sentences, and there apply the splitting by spaces
 				ArrayList<String> sentences = extractor.getSentences(requirement.getText());
 
 				for (String sentence : sentences){
@@ -418,7 +418,7 @@ public class PipelineParalelo implements Runnable{
 					startPOS = words.size() + 1;
 
 					//System.out.println("\t[" + sentence + "]");
-					System.out.println("\t\t Cantidad de Sentencias Condicionales: [" + cantidad + "]\n");
+					System.out.println("\t\t Number of Conditional Sentences: [" + cantidad + "]\n");
 
 					if (!detecciones.isEmpty()){
 						System.out.println("\tCausal Relationships\n\t\t" + detecciones);
@@ -433,10 +433,10 @@ public class PipelineParalelo implements Runnable{
 			}
 		}
 
-		System.out.println("\n\nCantidad de sentencias condicionales en total: [" + total +"]");
-		System.out.println("\n\nCantidad de relaciones causales detectadas en total: [" + out.size() +"]");
+		System.out.println("\n\nTotal number of conditional sentences: [" + total +"]");
+		System.out.println("\n\nNumber of causal relationships detected in total: [" + out.size() +"]");
 
-		// Acá habria que hacer el analisis de responsabilidades similares para secuencializar y agregarlas a la lista de salida
+		// Here we would have to do the analysis of similar responsibilities to sequentialize and add them to the output list
 
 		ArrayList<Responsibility> resps = new ArrayList<Responsibility>();
 		for (Requirement requirement : requirements){
@@ -451,15 +451,15 @@ public class PipelineParalelo implements Runnable{
 			for (int j = i + 1; j < resps.size(); j++){
 				if (resps.get(i).similarTo(resps.get(j))){
 					System.out.println("Iguales : " + resps.get(i).getId() + " " + resps.get(j).getId());
-					// Las que son iguales guardo los ID
+					// The same ones I keep the IDs
 					similars.add(new Pair<Responsibility, Responsibility>(resps.get(i), resps.get(j)));
 				}
 			}
 		}
 
-		// Despues buscar conexiones Resp 1 - > Res 2 && Resp 2 - > Resp 3
-		// Si se da ese caso y Resp 2 son dos responsabilidades diferentes consideradas similares
-		// agregar la conexión faltante
+		// Then look for connections Resp 1 -> Res 2 && Resp 2 -> Resp 3
+		// If that is the case and Resp 2 are two different responsibilities considered similar
+		// add the missing connection
 
 		ArrayList<CausalRelationship> toAdd = new ArrayList<CausalRelationship>();
 		for (Pair<Responsibility, Responsibility> similar : similars){
@@ -488,12 +488,12 @@ public class PipelineParalelo implements Runnable{
 		ArrayList<ConceptualComponent> outAux = new ArrayList<ConceptualComponent>();
 		ArrayList<Responsibility> responsibilities = new ArrayList<Responsibility>();
 
-		// Junto todas las responsabilidades
+		// Get together all the responsibilities
 		for (Requirement requirement : requirements){
 			responsibilities.addAll(requirement.getResponsibilities());
 		}
 
-		// Se tratan las responsabilidades antes de clusterizar
+		// Responsibilities are discussed before clustering
 
 		String filterArguments = "weka.filters.unsupervised.attribute.StringToWordVector -R first-last -W 100000 -prune-rate -1.0 -C -T -I -N 1 -L -stemmer weka.core.stemmers.NullStemmer -stopwords-handler weka.core.stopwords.Null -M 1 -tokenizer \"weka.core.tokenizers.WordTokenizer -delimiters \\\" \\\\r\\\\n\\\\t.,;:\\\\\\\'\\\\\\\"()?!\\\"\"";
 		//ResponsibilitiesClusterer clusterer1 = new ResponsibilitiesClusterer("weka.clusterers.XMeans -I 1 -M 1000 -J 1000 -L 2 -H 4 -B 1.0 -C 0.5 -D \"weka.core.EuclideanDistance -R first-last\" -S 10",filterArguments,true);
@@ -501,15 +501,15 @@ public class PipelineParalelo implements Runnable{
 		ResponsibilitiesClustererOLD clusterer1 = new ResponsibilitiesClustererOLD("weka.clusterers.HierarchicalClusterer -N 4 -L SINGLE -P -A \"weka.core.EuclideanDistance -R first-last\"", filterArguments,true);
 		//ResponsibilitiesClusterer clusterer1 = new DummyResponsibilitiesClusterer("", filterArguments, true, "KMeans");
 
-		// Hacer preprocesamiento de las responsabilidades
+		// Preprocessing responsibilities
 
 		SynonymsOverResponsibilities searcherSynonyms = new SynonymsOverResponsibilities() ;
 		ArrayList<Responsibility> auxiliaryResponsibilities = new ArrayList<Responsibility>();
 		auxiliaryResponsibilities = searcherSynonyms.performWSDOverResponsibilities(responsibilities);
 
-		//System.out.println("Número de cambios hechos en WSD: ["+ searcherSynonyms.getNumberOfChanges() +"]");
+		//System.out.println("Number of changes made in WSD: ["+ searcherSynonyms.getNumberOfChanges() +"]");
 
-		// Clusterizar
+		// Clustering
 		outAux = clusterer1.createDataAndClusterResponsibilities(auxiliaryResponsibilities);
 
 		Integer i = 1;
@@ -539,12 +539,12 @@ public class PipelineParalelo implements Runnable{
 
 		ArrayList<Responsibility> responsibilities = new ArrayList<Responsibility>();
 
-		// Junto todas las responsabilidades
+		// Get together all the responsibilities
 		for (Requirement requirement : requirements){
 			responsibilities.addAll(requirement.getResponsibilities());
 		}
 
-		// Junto todos los componentes conceptuales
+		// Get together all the conceptual components
 		ArrayList<ConceptualComponent> components = resultsClustering;
 		for (ConceptualComponent comp : components){
 			for (Responsibility resp : comp.getResponsibilities()){
@@ -552,10 +552,10 @@ public class PipelineParalelo implements Runnable{
 			}
 		}
 
-		// Genero las trazas de ejecución
+		// I generate the execution traces
 		ArrayList<CausalRelationship> relations = resultsSequencing;
 
-		// Acá habria que hacer el analisis inteligente de responsabilidades que son similares
+		// Here we would have to do the intelligent analysis of responsibilities that are similar
 
 		for (CausalRelationship rel : relations){
 			if (rel.getResp2() != null) {
@@ -564,7 +564,7 @@ public class PipelineParalelo implements Runnable{
 			}
 		}
 
-		// genero el UCM
+		// Generation of the UCM
 		out.setResponsibilities(responsibilities);
 		out.setComponents(components);
 		out.setRelations(relations);
@@ -599,7 +599,7 @@ public class PipelineParalelo implements Runnable{
 				break;
 			}
 			case STAGE4: {
-				// Generación del UCM
+				// Generation of the UCM
 				resultUCM = UCMGeneration(requirementsToProcess);
 				JUCMExporter exporter = new JUCMExporter();
 				Date date = new Date();

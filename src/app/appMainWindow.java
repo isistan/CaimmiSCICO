@@ -212,7 +212,7 @@ public class appMainWindow {
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		mainFrame.getContentPane().add(tabbedPane, BorderLayout.CENTER);
 
-		// Panel de Requerimientos
+		// Requirements Panel
 
 		JPanel panelRequirements = new JPanel();
 		tabbedPane.addTab("(0) Software Requirements", null, panelRequirements, null);
@@ -272,7 +272,7 @@ public class appMainWindow {
 		panelRequirements.add(btnProcess, "4, 4, fill, fill");
 
 
-		// Panel de Responsabilidades
+		// Responsibilities Panel
 
 		JPanel panelResponsibilities = new JPanel();
 		tabbedPane.addTab("(1) UCM Responsibilities", null, panelResponsibilities, null);
@@ -332,7 +332,7 @@ public class appMainWindow {
 		});
 		panelResponsibilities.add(btnProcess_2, "4, 4, fill, fill");
 
-		// Panel Relaciones causales
+		// Causal Relationship Panel
 
 		JPanel panelRelationships = new JPanel();
 		tabbedPane.addTab("(2) UCM Causal Relationships", null, panelRelationships, null);
@@ -392,7 +392,7 @@ public class appMainWindow {
 		});
 		panelRelationships.add(btnProcess_3, "4, 4, fill, fill");
 
-		// Panel de Alocación de responsabilidades
+		// Responsibilities Allocation Panel
 
 		JPanel panelClustering = new JPanel();
 		tabbedPane.addTab("(3) UCM Conceptual Components", null, panelClustering, null);
@@ -452,7 +452,7 @@ public class appMainWindow {
 		});
 		panelClustering.add(btnProcess_4, "4, 4, fill, fill");
 
-		// Panel de Diagrama
+		// Diagram Panel
 
 		JPanel panelDiagram = new JPanel();
 		tabbedPane.addTab("(4) UCM Diagram", null, panelDiagram, null);
@@ -500,13 +500,13 @@ public class appMainWindow {
 
 	private void processTab1() {
 
-		// Ver si cargamos un proyecto
+		// Check if the project is loaded
 		if (actualProject == null)
 			return;
 
-		// Analizar los requerimientos que tengan el tick!
+		// Analyze ticked requirements
 
-		// Creamos un nuevo proyecto con los requerimientos que queremos analizar
+		// We create a new project with the requirements we want to analyze
 		projectToProcess = new Project();
 		projectToProcess.setProjectName(actualProject.getProjectName());
 
@@ -518,13 +518,13 @@ public class appMainWindow {
 			}
 		}
 
-		// Pasar al siguiente tab donde se muestra la lista de responsabilidades
+		// Go to the next tab where the list of responsibilities is shown
 
 		tabbedPane.setSelectedIndex(1);
 
-		// Mostrar en algún lugar que se está procesando
+		// Show somewhere that is being processed
 
-		// Realizar el procesamiento
+		// Perform the processing
 		pipe = new PipelineParalelo(projectToProcess, this);
 		pipe.setNlpIP(this.IP);
 		pipe.setNlpPort(this.PORT);
@@ -537,17 +537,17 @@ public class appMainWindow {
 
 	private void processTab2() {
 
-		// Ver si cargamos un proyecto
+		// See if we load a project
 		if (actualProject == null && projectToProcess == null)
 			return;
 
-		// Pasar al siguiente tab donde se muestra la lista de responsabilidades
+		// Go to the next tab where the list of responsibilities is shown
 
 		tabbedPane.setSelectedIndex(2);
 
-		// Mostrar en algún lugar que se está procesando
+		// Show somewhere that is being processed
 
-		// Realizar el procesamiento
+		// Perform the processing
 		pipe.setType(TOPROCESS.STAGE2);
 
 		Thread t1 = new Thread(pipe);
@@ -557,17 +557,17 @@ public class appMainWindow {
 
 	private void processTab3() {
 
-		// Ver si cargamos un proyecto
+		// See if we load a project
 		if (actualProject == null && projectToProcess == null)
 			return;
 
-		// Pasar al siguiente tab donde se muestra la lista de responsabilidades
+		// Go to the next tab where the list of responsibilities is shown
 
 		tabbedPane.setSelectedIndex(3);
 
-		// Mostrar en algún lugar que se está procesando
+		// Show somewhere that is being processed
 
-		// Realizar el procesamiento
+		// Perform the processing
 		pipe.setType(TOPROCESS.STAGE3);
 
 		Thread t1 = new Thread(pipe);
@@ -575,17 +575,17 @@ public class appMainWindow {
 	}
 
 	protected void processTab4() {
-		// Ver si cargamos un proyecto
+		// See if we load a project
 		if (actualProject == null && projectToProcess == null)
 			return;
 
-		// Pasar al siguiente tab donde se muestra la lista de responsabilidades
+		// Go to the next tab where the list of responsibilities is shown
 
 		tabbedPane.setSelectedIndex(4);
 
-		// Mostrar en algún lugar que se está procesando
+		// Show somewhere that is being processed
 
-		// Realizar el procesamiento
+		// Perform the processing
 		pipe.setType(TOPROCESS.STAGE4);
 
 		Thread t1 = new Thread(pipe);
@@ -593,11 +593,11 @@ public class appMainWindow {
 	}
 
 
-	// Metodos auxiliares
+	// Auxiliary methods
 
 	private void openProject() {
 
-		//Pasamos a cargar el archivo
+		//We proceed to load the file
 		WebFileChooser fileChooser = new WebFileChooser("examples");
 		//fileChooser.setFileFilter(new FiltroCvr());
 		fileChooser.setMultiSelectionEnabled ( false );

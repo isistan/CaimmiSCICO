@@ -31,7 +31,7 @@ public class SeqAnalyzer_IFTHEN extends SeqAnalyzer {
 	public ArrayList<CausalRelationship> detectSeq(Integer id, String sentence, CoreMap coreMap, List<CoreLabel> tokens, ArrayList<Responsibility> responsibilitiesInSentence) {
 		ArrayList<CausalRelationship> out = new ArrayList<CausalRelationship>();
 
-		// Primero interpretar los patrones
+		// First interpret the patterns
 		for (SimplePattern pattern : this.patterns) {
 
 			Boolean resultMatched = pattern.match(tokens);
@@ -40,10 +40,10 @@ public class SeqAnalyzer_IFTHEN extends SeqAnalyzer {
 				ArrayList<String> matched = pattern.getMatch();
 				System.out.println("\t\t+ Hubo Match [" + pattern.toString() + "] = " + matched);
 				
-				// Devolver las delimitaciones y ahi jugar con las responsabilidades en donde caen
+				// Return the boundaries and then play with the responsibilities where they fall
 				ArrayList<Pair<String, ArrayList<Responsibility>>> result = calculateWhereResponsibilitiesFall(matched, pattern, responsibilitiesInSentence);
 				
-				// Recorremos el resultado generando las relaciones causales
+				// We traverse the result generating causal relationships
 				Integer indexIF = null;
 				Integer indexTHEN = null;
 				Integer index = 0;
@@ -62,7 +62,7 @@ public class SeqAnalyzer_IFTHEN extends SeqAnalyzer {
 				ArrayList<Responsibility> respsInConditionalClause = result.get(indexIF + 1).getPair2();
 				ArrayList<Responsibility> respsInConsequentClause = result.get(indexTHEN + 1).getPair2();
 				
-				// Se hacen todas las combinaciones
+				// All combinations are made
 				for (Responsibility resp1 : respsInConditionalClause){
 					for (Responsibility resp2 : respsInConsequentClause){
 						CausalRelationship crToAdd = new CausalRelationship(resp1, resp2);
@@ -72,10 +72,10 @@ public class SeqAnalyzer_IFTHEN extends SeqAnalyzer {
 					}
 				}
 				
-				// Si hay repetidas hay que borrarlas
+				// If there are repeated you have to delete them
 				ArrayList<CausalRelationship> outAux = eliminateRepetitions(out);
 				
-				// Reconfiguro el out				
+				// I reconfigured the out			
 				out = outAux;
 			
 			}

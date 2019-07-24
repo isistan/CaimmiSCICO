@@ -36,7 +36,7 @@ public class SeqAnalyzer_TEMPORALINVERTED extends SeqAnalyzer {
 	public ArrayList<CausalRelationship> detectSeq(Integer id, String sentence, CoreMap coreMap, List<CoreLabel> tokens, ArrayList<Responsibility> responsibilitiesInSentence) {
 		ArrayList<CausalRelationship> out = new ArrayList<CausalRelationship>();
 
-		// Primero interpretar los patrones
+		// First interpret the patterns
 		for (SimplePattern pattern : this.patterns) {
 
 			Boolean resultMatched = pattern.match(tokens);
@@ -45,10 +45,10 @@ public class SeqAnalyzer_TEMPORALINVERTED extends SeqAnalyzer {
 				ArrayList<String> matched = pattern.getMatch();
 				System.out.println("\t\t+ Hubo Match [" + pattern.toString() + "] = " + matched);
 				
-				// Devolver las delimitaciones y ahi jugar con las responsabilidades en donde caen
+				// Return the boundaries and then play with the responsibilities where they fall
 				ArrayList<Pair<String, ArrayList<Responsibility>>> result = calculateWhereResponsibilitiesFall(matched, pattern, responsibilitiesInSentence);
 
-				// Recorremos el resultado generando las relaciones causales
+				// We traverse the result generating causal relationships
 				Integer indexDelim_1 = null;
 				Integer index = 0;
 				for (Pair<String, ArrayList<Responsibility>> r : result) {
@@ -70,7 +70,7 @@ public class SeqAnalyzer_TEMPORALINVERTED extends SeqAnalyzer {
 					respsInIndependentClause = result.get(indexDelim_1 - 3).getPair2();
 				}
 
-				// Se hacen todas las combinaciones
+				// All combinations are made
 				if (pattern.getStructuredDelimiters().get(0).equals("[BEFORE]") || pattern.getStructuredDelimiters().get(0).equals("[UNTIL]")) {
 					for (Responsibility resp1 : respsInTemporalClause){
 						for (Responsibility resp2 : respsInIndependentClause){
@@ -89,10 +89,10 @@ public class SeqAnalyzer_TEMPORALINVERTED extends SeqAnalyzer {
 					}
 				}
 
-				// Si hay repetidas hay que borrarlas
+				// If there are repeated you have to delete them
 				ArrayList<CausalRelationship> outAux = eliminateRepetitions(out);
 
-				// Reconfiguro el out				
+				// I reconfigured the out				
 				out = outAux;
 
 			}

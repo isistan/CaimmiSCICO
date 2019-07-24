@@ -40,12 +40,12 @@ public class ThirdCaseResponsiiblitiesExtractor extends ResponsibilitiesExtracto
 
 		SemgrexMatcher matcher = pattern.matcher(semanticGraph);
 
-		// lista
+		// list
 		List<CoreMap> list = sentence.get(edu.stanford.nlp.ling.CoreAnnotations.NumerizedTokensAnnotation.class);
 
 		while (matcher.find()){
 
-			// Buscar los nodos
+			// Search for nodes
 			IndexedWord nsubjNode = matcher.getNode("NSUBJ");
 			IndexedWord firstVerbNode = matcher.getNode("FIRST_VERB");
 			IndexedWord secondVerbNode = matcher.getNode("SECOND_VERB");
@@ -53,7 +53,7 @@ public class ThirdCaseResponsiiblitiesExtractor extends ResponsibilitiesExtracto
 			IndexedWord nmodifiedNode = matcher.getNode("NMODIFIED_NOUN");
 			IndexedWord representativeCoreferenceNode = null;
 
-			// Obtener la informacion a partir de los nod				
+			// Get the information from the nodes			
 			String long_dobj = "";
 			String dobj = "";
 
@@ -67,7 +67,7 @@ public class ThirdCaseResponsiiblitiesExtractor extends ResponsibilitiesExtracto
 			if (dobjNode != null) {
 				dobj = dobjNode.originalText();
 				long_dobj = constructStringFromNode(semanticGraph, dobjNode, requirement.getText(), false);
-				// Si el objeto directo es una Personal pronoun (PRP) entonces hay que ir a buscar a que hace referencia 
+				// If the direct object is a Personal pronoun (PRP) then you have to go find what it refers to
 				searchBackReference(dobjNode, dobjW, long_dobjW, nodeW, requirement, semanticGraph, dobjNode.sentIndex());
 			} else if (nmodifiedNode != null) {
 				dobj = nmodifiedNode.originalText();
@@ -82,13 +82,13 @@ public class ThirdCaseResponsiiblitiesExtractor extends ResponsibilitiesExtracto
 			String verb = secondVerbNode.originalText();
 			Boolean negationDetected = detectNegation(semanticGraph, firstVerbNode);
 
-			// Creamos la responsabilidad
+			// We create the responsibility
 			Responsibility responsibility = new Responsibility(verb, dobj);
 
-			// La responsabilidad esta negada? (Si esta negada no se tiene que mostrar en el path final)
+			// The responsibility is denied? (If it is denied it does not have to be shown in the final path)
 			responsibility.setNegated(negationDetected);			
 
-			// Reconocimientos	
+			// Acknowledgments
 			ArrayList<Pair<String, POS>> recognitions = new ArrayList<Pair<String, POS>>();
 			recognitions.add(new Pair<String, POS> (verb, POS.VERB));
 			if (representativeCoreferenceNode == null && dobjNode != null)
@@ -101,7 +101,7 @@ public class ThirdCaseResponsiiblitiesExtractor extends ResponsibilitiesExtracto
 						recognitions.addAll(constructRecognitionsFromNode(semanticGraph, representativeCoreferenceNode, requirement.getText()));
 			responsibility.setRecognitions(recognitions);
 
-			// Calculas las posiciones de los elementos
+			// You calculate the positions of the elements
 			Integer lastPosition = null;
 			if (dobjNode != null) {
 				List<IndexedWord> nodes = semanticGraph.getChildList(dobjNode);
@@ -120,11 +120,11 @@ public class ThirdCaseResponsiiblitiesExtractor extends ResponsibilitiesExtracto
 					responsibility.setLastWordPositionLong(wordsCount.get(3) + lastPosition);	
 				}
 
-			// Agregamos la responsabilidad al colector de salida
+			// We add the responsibility to the output manifold
 			out.add(responsibility);
 		}
 
-		// Actualizo el wordsCount
+		// Update the wordsCount
 		wordsCount.put(3, wordsCount.get(3) + list.size());	
 
 		return out;

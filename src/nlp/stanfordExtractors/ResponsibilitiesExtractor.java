@@ -84,7 +84,7 @@ public abstract class ResponsibilitiesExtractor {
 		return out;
 	}
 
-	// Comparador Auxiliar
+	// Auxiliar comparator
 
 	protected class Comparador implements Comparator<IndexedWord>{
 
@@ -103,10 +103,10 @@ public abstract class ResponsibilitiesExtractor {
 		int maxEnd = Integer.MIN_VALUE;
 		IndexedWord firstNode = null;
 
-		// Se recuperan todos los nodos internos
+		// All internal nodes are recovered
 		HashSet<IndexedWord> allNodes = getAllNodes(semanticGraph, dobjNode, new HashSet<IndexedWord>());
 
-		// Se ordenan
+		// Sorting
 		ArrayList<IndexedWord> nodes = new ArrayList<IndexedWord>();
 		for (IndexedWord node : allNodes){
 			if (!node.originalText().equals(",")){
@@ -164,14 +164,14 @@ public abstract class ResponsibilitiesExtractor {
 							}catch (Exception e) {
 								excp = true;
 							}
-							// Actualizamos los valores
+							// Update values
 							if (hacerCambioReferencia(dobj.getString(), nodeW.get().originalText())) {
 								if (!excp) {
 									long_dobj.setString(constructStringFromNode(semanticGraph, nodeW.get(), requirement.getText(), false));
 									dobj.setString(nodeW.get().originalText());
 
 								}else {
-									//FIXME El problema de la referencia para atras se puede arreglar!
+									
 									long_dobj.setString(cc.getRepresentativeMention().mentionSpan);
 									dobj.setString(nodeW.get().originalText());
 								}

@@ -66,7 +66,7 @@ public class StanfordExtractor {
 
 		ArrayList<Responsibility> out = new ArrayList<Responsibility>();
 
-		// Anotamos el texto del requerimiento
+		// We write down the text of the requirement
 		List<CoreMap> sentences = nlp.annotate(requirement.getText());	
 		HashMap<Integer, Integer> wordsCounts = new HashMap<Integer, Integer>();
 		wordsCounts.put(1, 0);
@@ -82,21 +82,21 @@ public class StanfordExtractor {
 		ResponsibilitiesExtractor ext4 = new ForthCaseResponsiiblitiesExtractor(nlp.getDocument());
 		//ResponsibilitiesExtractor ext5 = new FifthCaseResponsiiblitiesExtractor(nlp.getDocument());
 
-		// Vamos sentencia por sentencia
+		// Sentence by sentence
 		Integer sentenceNumber = 1;
 		for (CoreMap sentence : sentences){
 
 			SemanticGraph semanticGraph = sentence.get(edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations.EnhancedPlusPlusDependenciesAnnotation.class);
 
-			// Detectamos las responsabilidades
+			// We detect the responsibilities
 			ArrayList<Responsibility> outAux = new ArrayList<Responsibility>();
 
-			// Caso 1
+			// Case 1
 			ArrayList<Responsibility> out1 = ext1.extractResponsibilitiesFromRequirements(requirement, sentence, semanticGraph, wordsCounts);
 			outAux.addAll(out1);
 			System.out.println("\t\tCaso 1 [" + out1.size() + "]: " + out1);
 
-			// Caso 2
+			// Case 2
 			ArrayList<Responsibility> out2 = ext2.extractResponsibilitiesFromRequirements(requirement, sentence, semanticGraph, wordsCounts);
 			ArrayList<Responsibility> outAux2 = new ArrayList<Responsibility>();
 			for (Responsibility resp2 : out2) {
@@ -115,7 +115,7 @@ public class StanfordExtractor {
 			outAux.addAll(outAux2);
 			System.out.println("\t\tCaso 2 [" + out2.size() + "]: " + out2);
 
-			// Caso 4
+			// Case 4
 			//ArrayList<Responsibility> out4 = extractForthCaseResponsibilitiesFromRequirements(requirement, sentence, wordsCounts);
 			ArrayList<Responsibility> out4 = ext4.extractResponsibilitiesFromRequirements(requirement, sentence, semanticGraph, wordsCounts);
 			ArrayList<Responsibility> outAux4 = new ArrayList<Responsibility>();
@@ -129,7 +129,7 @@ public class StanfordExtractor {
 						meterSiNoEstaRepetido = false;
 					}
 
-					// Considerar si previamente existia
+					// Consider if it previously existed
 					Boolean aux3 = resp4.getDobj().toLowerCase().trim().equals(respAux.getDobj().toLowerCase().trim());
 					if (aux1 && aux3) {
 						meterSiExisteSimilar = true;
@@ -142,7 +142,7 @@ public class StanfordExtractor {
 			outAux.addAll(outAux4);
 			System.out.println("\t\tCaso 4 [" + out4.size() + "]: " + out4);
 			
-			// Verificar que no existan responsabilidades repetidas!!
+			// Verify that there are no repeated responsibilities !!
 			ArrayList<Responsibility> outSinRepes = new ArrayList<Responsibility>();
 			for (Responsibility resp : outAux) {
 				
@@ -158,13 +158,13 @@ public class StanfordExtractor {
 				}
 			}
 			
-			// A las responsabilidades detectadas les asignamos su id de sentencia
+			// To the responsibilities detected we assign their sentence id
 			for (Responsibility resp : outSinRepes) {
 				resp.setSentenceID(sentenceNumber);
 			}
 			sentenceNumber++;
 			
-			// Agregamos al final
+			// We add at the end
 			out.addAll(outSinRepes);
 		}
 

@@ -19,7 +19,7 @@ public class SeqAnalyzer_TEMPORAL extends SeqAnalyzer {
 		super();
 		ArrayList<SimplePattern> patterns = new ArrayList<SimplePattern>();
 		patterns.add(new SimplePattern("[AFTER] <...> [,] <...>"));
-		patterns.add(new SimplePattern("[BEFORE] <...> [,] <...>")); // Ojo que este engancha al revez
+		patterns.add(new SimplePattern("[BEFORE] <...> [,] <...>")); 
 		patterns.add(new SimplePattern("[ONCE] <...> [,] <...>"));
 		patterns.add(new SimplePattern("[WHEN] <...> [,] <...>"));
 		patterns.add(new SimplePattern("[UPON] <...> [,] <...>"));
@@ -35,7 +35,7 @@ public class SeqAnalyzer_TEMPORAL extends SeqAnalyzer {
 	public ArrayList<CausalRelationship> detectSeq(Integer id, String sentence, CoreMap coreMap, List<CoreLabel> tokens, ArrayList<Responsibility> responsibilitiesInSentence) {
 		ArrayList<CausalRelationship> out = new ArrayList<CausalRelationship>();
 
-		// Primero interpretar los patrones
+		// First interpret the patterns
 		for (SimplePattern pattern : this.patterns) {
 
 			Boolean resultMatched = pattern.match(tokens);
@@ -44,10 +44,10 @@ public class SeqAnalyzer_TEMPORAL extends SeqAnalyzer {
 				ArrayList<String> matched = pattern.getMatch();
 				System.out.println("\t\t+ Hubo Match [" + pattern.toString() + "] = " + matched);
 
-				// Devolver las delimitaciones y ahi jugar con las responsabilidades en donde caen
+				// Return the boundaries and then play with the responsibilities where they fall
 				ArrayList<Pair<String, ArrayList<Responsibility>>> result = calculateWhereResponsibilitiesFall(matched, pattern, responsibilitiesInSentence);
 
-				// Recorremos el resultado generando las relaciones causales
+				// We traverse the result generating causal relationships
 				Integer indexDelim_1 = null;
 				Integer indexDelim_2 = null;
 				Integer index = 0;
@@ -74,7 +74,7 @@ public class SeqAnalyzer_TEMPORAL extends SeqAnalyzer {
 				respsInIndependentClause = result.get(indexDelim_2 + 1).getPair2();
 
 
-				// Se hacen todas las combinaciones
+				// All combinations are made
 				if (pattern.getStructuredDelimiters().get(0).equals("[BEFORE]")) {
 					for (Responsibility resp1 : respsInTemporalClause){
 						for (Responsibility resp2 : respsInIndependentClause){
@@ -93,10 +93,10 @@ public class SeqAnalyzer_TEMPORAL extends SeqAnalyzer {
 					}
 				}
 
-				// Si hay repetidas hay que borrarlas
+				// If there are repeated you have to delete them
 				ArrayList<CausalRelationship> outAux = eliminateRepetitions(out);
 
-				// Reconfiguro el out				
+				// I reconfigured the out				
 				out = outAux;
 
 			}

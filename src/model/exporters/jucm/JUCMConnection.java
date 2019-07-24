@@ -22,7 +22,6 @@ public class JUCMConnection {
 		this.setTo(to);
 		this.exporter.getConnections().add(this);
 		
-		// TODO Podria heredar de JUCMELement?
 	}
 	
 	// Getters and Setters

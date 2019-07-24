@@ -42,20 +42,20 @@ public abstract class SeqAnalyzer {
 	protected ArrayList<Pair<String, ArrayList<Responsibility>>> calculateWhereResponsibilitiesFall(ArrayList<String> matched, SimplePattern pattern, ArrayList<Responsibility> responsibilitiesInSentence) {
 		ArrayList<Pair<String, ArrayList<Responsibility>>> out = new ArrayList<Pair<String, ArrayList<Responsibility>>>();
 
-		// Ordenar responsabilidades
+		// Sort responsibilities
 		Collections.sort(responsibilitiesInSentence);
 
 		// Ver en donde caen
 		ArrayList<Integer> delimiterIndex = new ArrayList<Integer>();
 		ArrayList<String> delimiters = new ArrayList<String>();
 
-		// Donde hayan <...> solamente pueden haber responsabilidades
+		// Where there are <...> there can only be responsibilities
 		ArrayList<String> sepPattern = pattern.getSeparatedPattern();
 
-		// Tenemos que sacar las posiciones en donde se ubican los delimitadores
+		// We have to take out the positions where the delimiters are located
 		Integer index = 1;
 		for (String token : matched) {
-			// Si es un delimitador
+			// If it is a delimiter
 			if (token.startsWith("[")) {
 				delimiterIndex.add(index);
 				delimiters.add(token);
@@ -63,7 +63,7 @@ public abstract class SeqAnalyzer {
 			index++;
 		}
 
-		// Recorremos el pattern, y a medida que vamos avanznado vamos conformando el resultado out
+		// We go through the pattern, and as we go forward we are shaping the result out
 
 		Integer index_actualDelim = 0;
 		Integer index_lastDelim = 0;
@@ -74,24 +74,24 @@ public abstract class SeqAnalyzer {
 			String termType = term.substring(0, 1);
 
 			switch (termType) {
-			// Delimitador
+			// Delimiter
 			case "[" :{
 
-				// Agregamos al resultado la indicacion de un delimitador
+				// We add to the result the indication of a delimiter
 				index_lastDelim = index_actualDelim;
 				out.add(new Pair<String, ArrayList<Responsibility>>(delimiters.get(index_actualDelim++), null));	
 				viUnDelimitador = true;
 
 				break;
 			}
-			// Zona de responsabilidades
+			// Area of Responsibilities
 			case "<" :{
 
-				// Tenemos que agarrar todas las responsabilidades considerando el ultimo delimitador y el proximo
+				// We have to hold all the responsibilities considering the last delimiter and the next
 
 				ArrayList<Responsibility> resp2 = new ArrayList<Responsibility>();
 
-				// Verificamos que responsabilidades caen dentro de esta zona
+				// We verify that responsibilities fall within this area
 				if (viUnDelimitador) {
 					for (Responsibility resp : responsibilitiesInSentence) {
 
@@ -134,10 +134,10 @@ public abstract class SeqAnalyzer {
 
 				break;
 			}
-			// Zona de cualquier cosa que no interesa
+			// Zone of anything that doesn't interest
 			case "(" :{
 
-				// No consideramos a las responsabilides que caen dentro de este recinto
+				// We do not consider those responsible that fall within this enclosure
 				out.add(new Pair<String, ArrayList<Responsibility>>(null, null));
 
 				break;
@@ -153,7 +153,7 @@ public abstract class SeqAnalyzer {
 	}
 
 	public static ArrayList<CausalRelationship> eliminateRepetitions(ArrayList<CausalRelationship> out) {
-		// Meter en out si no es que ya existen
+		// Put in out if not already exist
 		ArrayList<CausalRelationship> outAux = new ArrayList<CausalRelationship>();
 		for (CausalRelationship cr1 : out) {
 			Boolean esta = false;
@@ -172,7 +172,7 @@ public abstract class SeqAnalyzer {
 	
 	public static ArrayList<CausalRelationship> eliminateJumperRelations(ArrayList<CausalRelationship> relations) {
 		
-		// Meter en out si no es que ya existen
+		// Put in out if not already exist
 		ArrayList<CausalRelationship> out = new ArrayList<CausalRelationship>();
 		HashMap<String, ArrayList<String>> outAux = new HashMap<String, ArrayList<String>>();
 		
@@ -189,7 +189,7 @@ public abstract class SeqAnalyzer {
 			
 		}
 		
-		// En este punto outAux tiene la referencia a cada Responsabilidad y sus siguientes.
+		// At this point outAux has the reference to each Responsibility and its following.
 		ArrayList<String> crsToCancel = new ArrayList<String>();
 		
 		for (String base : outAux.keySet()) {
@@ -199,7 +199,7 @@ public abstract class SeqAnalyzer {
 				if (destinationsB != null) {
 					for (String destinyB : destinationsB) {
 						if (destinationsA.contains(destinyB)) {
-							// Este caso hay que cancelarlo
+							// This case must be canceled.
 							crsToCancel.add(base + " -> " + destinyB);
 						}
 					}

@@ -66,7 +66,7 @@ public class SimplePattern {
 
 		Boolean out = false;
 		
-		// Buscamos los delimitadores
+		// We look for delimiters
 		
 		match = new ArrayList<String>();
 		Integer delimiterIndex = 0;
@@ -78,7 +78,7 @@ public class SimplePattern {
 			if (delimiterIndex == delimiters.size()) {
 				match.add(token.toString().toLowerCase().trim());
 			}else
-				// Si encontre un delimitador
+				// If I found a delimiter
 				if (token.originalText().toLowerCase().trim().equals(delimiters.get(delimiterIndex))) {
 					match.add("[" + delimiters.get(delimiterIndex).toUpperCase() + "]");
 					delimiterIndex++;
@@ -94,12 +94,12 @@ public class SimplePattern {
 		return out;
 	}
 
-	// FIXME ESTO TRATAR DE HACERLO CON LOS RETRY
+	// FIXME THIS TRY TO DO IT WITH THE RETRY
 	public Boolean match(List<CoreLabel> tokens, Integer retry) {
 
 		Boolean out = false;
 		
-		// Buscamos los delimitadores
+		//We look for delimiters
 		
 		match = new ArrayList<String>();
 		Integer delimiterIndex = 0;
@@ -111,7 +111,7 @@ public class SimplePattern {
 			if (delimiterIndex == delimiters.size()) {
 				match.add(token.toString().toLowerCase().trim());
 			}else
-				// Si encontre un delimitador
+				// If I found a delimiter
 				if (token.originalText().toLowerCase().trim().equals(delimiters.get(delimiterIndex)) && retry-- == 1) {
 					match.add("[" + delimiters.get(delimiterIndex).toUpperCase() + "]");
 					delimiterIndex++;

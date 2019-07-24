@@ -63,7 +63,7 @@ public class ConditionalStructureAnalyzer {
 
 		if (ifPOS > -1 && thenPOS > -1){
 
-			// Se muestra la estructura
+			// Structure is shown
 			System.out.println("\tHay estructura IF THEN");
 			String auxS = "\t";
 			for (int i = 0; i < words.size(); i++){
@@ -80,12 +80,12 @@ public class ConditionalStructureAnalyzer {
 			
 			cantidadIFTHEN++;
 			
-			// Se intentan detectar las relaciones causales
+			// Attempts are made to detect causal relationships
 
 			ArrayList<Responsibility> enClausulaCondicional = new ArrayList<Responsibility>();
 			ArrayList<Responsibility> enClausulaConsecuencia = new ArrayList<Responsibility>();
 
-			// Verificamos que hayan responsabilidades en la clausula de condicion y en las de consecuencia
+			// We verify that there are responsibilities in the condition clause and in the consequence clause
 			for (Responsibility resp : responsibilities){
 
 				if (resp.getFirstWordPosition() > ifPOS && resp.getLastWordPositionShort() < thenPOS /*&& resp.getFirstWordPosition() < startPOS*/){
@@ -96,7 +96,7 @@ public class ConditionalStructureAnalyzer {
 				}
 			}
 
-			// Se hacen todas las combinaciones
+			// All combinations are made
 			for (Responsibility resp1 : enClausulaCondicional){
 				for (Responsibility resp2 : enClausulaConsecuencia){
 					out.add(new CausalRelationship(resp1, resp2));
@@ -137,7 +137,7 @@ public class ConditionalStructureAnalyzer {
 
 		if ((afterPOS > -1 && commaPOS > -1) || (beforePOS > -1 && commaPOS > -1)){
 
-			// Se muestra la estructura
+			// Structure is shown
 			System.out.println("\tHay estructura AFTER/BEFORE");
 			String auxS = "\t";
 			for (int i = 0; i < words.size(); i++){
@@ -157,12 +157,12 @@ public class ConditionalStructureAnalyzer {
 			
 			cantidadAFTERBEFORE++;
 			
-			// Se intentan detectar las relaciones causales
+			// Attempts are made to detect causal relationships
 
 			ArrayList<Responsibility> enClausulaTemporal = new ArrayList<Responsibility>();
 			ArrayList<Responsibility> enClausulaConsecuencia = new ArrayList<Responsibility>();
 
-			// Verificamos que hayan responsabilidades en la clausula de condicion y en las de consecuencia
+			// We verify that there are responsibilities in the condition clause and in the consequence clause
 			for (Responsibility resp : responsibilities){
 
 				if (afterPOS > -1 && resp.getFirstWordPosition() > afterPOS && resp.getLastWordPositionShort() < commaPOS /*&& resp.getFirstWordPosition() < startPOS*/){
@@ -179,7 +179,7 @@ public class ConditionalStructureAnalyzer {
 
 			}
 
-			// Se hacen todas las combinaciones
+			// All combinations are made
 			for (Responsibility resp1 : enClausulaTemporal){
 				for (Responsibility resp2 : enClausulaConsecuencia){
 					if (estructura.equals("after"))

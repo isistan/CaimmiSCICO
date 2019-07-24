@@ -25,7 +25,7 @@ public class SeqAnalyzerBetweenSentences {
 	private Boolean case1Matchs (List<CoreLabel> tokens) {
 		Boolean out = false;
 
-		// Casos = [OTHERWISE, IN OTHER CASE]
+		// Cases = [OTHERWISE, IN OTHER CASE]
 		if (tokens != null && tokens.size() > 1) {
 			out = tokens.get(0).originalText().trim().toLowerCase().equals("otherwise") 
 					|| (tokens.get(0).originalText().trim().toLowerCase().equals("in") 
@@ -39,7 +39,7 @@ public class SeqAnalyzerBetweenSentences {
 	private Boolean case2Matchs (List<CoreLabel> tokens) {
 		Boolean out = false;
 
-		// Casos = [THEN, NEXT, AFTER THAT, AFTERWARD, AFTERWARDS]
+		// Cases = [THEN, NEXT, AFTER THAT, AFTERWARD, AFTERWARDS]
 		if (tokens != null && tokens.size() > 1) {
 			out = tokens.get(0).originalText().trim().toLowerCase().equals("then") 
 					|| tokens.get(0).originalText().trim().toLowerCase().equals("next") 
@@ -54,7 +54,7 @@ public class SeqAnalyzerBetweenSentences {
 
 	private Boolean case3Matchs (ArrayList<CausalRelationship> before, ArrayList<CausalRelationship> here) {
 
-		// Casos = Doble IF con condiciones negadas
+		// Cases = Double IF with denied conditions
 		CausalRelationship first = null;
 		CausalRelationship second = null;
 
@@ -81,20 +81,20 @@ public class SeqAnalyzerBetweenSentences {
 
 		for (int index = 0; index < size; index++) {
 
-			// Obtengo los datos de cada sentencia
+			// I get the data of each sentence
 			List<CoreLabel> tokens = tokensInSentences.get(index);
 			ArrayList<Responsibility> responsibilities = responsibilitiesInSentences.get(index);
 			ArrayList<CausalRelationship> relations = relationsInSentences.get(index);
 
-			// Caso 1 = OTHERWISE / IN OTHER CASE
+			// Case 1 = OTHERWISE / IN OTHER CASE
 			if (case1Matchs(tokens)) {
-				// Buscamos una condicion para atras
+				// We look for a condition for back
 				for (int j = index - 1; j >= 0; j--) {
 					for (CausalRelationship cr : relationsInSentences.get(j)) {
 						if (cr.getResp1IsCondition()) {
-							// Tenemos que anexar el camino de la negacion
+							// We have to annex the path of denial
 							if (relations.size() > 0) {
-								// Seteamos la segunda rama del if
+								// We set the second branch of the if
 								cr.setResp3(relations.get(0).getResp1());
 								cr.setMatchedPattern(cr.getMatchedPattern() + "+ OTHERWISE");
 							}
@@ -103,7 +103,7 @@ public class SeqAnalyzerBetweenSentences {
 				}				
 			}
 
-			// Caso 2 = THEN / NEXT
+			// Case 2 = THEN / NEXT
 
 			if (case2Matchs(tokens)) {
 
@@ -112,7 +112,7 @@ public class SeqAnalyzerBetweenSentences {
 				Responsibility ultimaResp = null;
 
 
-				// Buscamos para atras
+				// We search back
 				for (int j = index - 1; j >= 0 && encontre == 0; j--) {
 					ArrayList<Responsibility> respsInOtherSentene = new ArrayList<Responsibility>();
 
@@ -120,7 +120,7 @@ public class SeqAnalyzerBetweenSentences {
 						respsInOtherSentene.add(r);	
 					}
 
-					// Las ordenamos y nos quedamos con la ultima
+					// We order them and keep the last
 					if (respsInOtherSentene.size() > 0) {
 						Collections.sort(respsInOtherSentene);
 						ultimaResp = respsInOtherSentene.get(respsInOtherSentene.size() - 1);
@@ -128,14 +128,14 @@ public class SeqAnalyzerBetweenSentences {
 					}
 				}
 
-				//Buscamos para adelante
+				//We look forward
 				for (int j = index; j < size && encontre == 1; j++) {
 					ArrayList<Responsibility> respsInOtherSentene = new ArrayList<Responsibility>();
 					for (Responsibility r : responsibilitiesInSentences.get(j)) {
 						respsInOtherSentene.add(r);	
 					}
 
-					// Las ordenamos y nos quedamos con la ultima
+					// We order them and keep the last
 					if (respsInOtherSentene.size() > 0) {
 						Collections.sort(respsInOtherSentene);
 						primeraResp = respsInOtherSentene.get(0);
@@ -153,16 +153,16 @@ public class SeqAnalyzerBetweenSentences {
 
 		}
 
-		// Caso 3
+		// Case 3
 		for (int index = 1; index < size; index++) {
 
-			// Obtengo los datos de cada sentencia
+			// I get the data of each sentence
 			ArrayList<CausalRelationship> relationsBefore = relationsInSentences.get(index - 1);
 			ArrayList<CausalRelationship> relationsHere = relationsInSentences.get(index);
 
 			if (case3Matchs(relationsBefore, relationsHere)) {
 
-				// Busco las relaciones que estan en la condicion de cada sentencia
+				// I look for the relationships that are in the condition of each sentence
 				CausalRelationship first = null;
 				CausalRelationship second = null;
 

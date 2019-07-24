@@ -67,11 +67,11 @@ public class ResponsibilitiesClusterer {
 			//ERROR
 		}else{
 			if (arguments != null && filterArguments == null){
-				// Solo clusterizador
+				// Clusterizer only
 				this.wekaClusterer = loadClusterer(arguments);				
 			}else{
 				if (arguments != null && filterArguments != null){
-					// Clasificador con filtro
+					// Classifier with filter
 					this.wekaClusterer = loadClusterer(arguments, filterArguments);
 				}else{
 					//Dummy
@@ -134,7 +134,7 @@ public class ResponsibilitiesClusterer {
 			e.printStackTrace();
 		}
 
-		// Se adjunta lo cargado
+		// Attached is loaded
 		out.setFilter(filter);
 		if (clusterer != null)
 			out.setClusterer(clusterer);
@@ -256,13 +256,13 @@ public class ResponsibilitiesClusterer {
 			Instances data = arff.getData();		
 			data.setClassIndex(data.numAttributes() - 1);
 
-			// Ac� si es complejo el tratamiento, se cambian las responsabilidades
+			//Here if the treatment is complex, the responsibilities are changed
 
 
-			// tengo que llevar a cabo el WSD
-			// y reescribir el Instances con los nuevos valores
+			// I have to carry out the WSD
+			// and rewrite the Instances with the new values
 
-			// (1) Leemos el archivo arff
+			// (1) We read the arff file
 
 			InputReader inputReader = new InputReader();
 			ArrayList<Responsibility> responsibilitiesFromArff = inputReader.readResponisibilitiesFromARFF(arffPath, "experimento_4_proyecto_" + proyecto + completo +".arff");
@@ -271,10 +271,10 @@ public class ResponsibilitiesClusterer {
 			ArrayList<Responsibility> newResponsibilities = responsibilitiesFromArff;
 			if (complexClustering){
 				newResponsibilities = searcherSynonyms.performWSDOverResponsibilities(responsibilitiesFromArff);
-				System.out.println("N�mero de cambios hechos en WSD: ["+ searcherSynonyms.getNumberOfChanges() +"]");
+				System.out.println("Number of changes made in WSD: ["+ searcherSynonyms.getNumberOfChanges() +"]");
 			}
 						
-			// Pasarlo al Instances
+			// Pass it to Instances
 
 			for (int i = 0; i < data.size(); i++){
 				Instance instance = data.get(i);
@@ -290,13 +290,13 @@ public class ResponsibilitiesClusterer {
 			filter.setInputFormat(data);
 			Instances dataClusterer = Filter.useFilter(data, filter);
 
-			// Se genera el clusterer
+			// clusterer is generated
 			if (this.wekaClusterer != null)
 				this.wekaClusterer.buildClusterer(dataClusterer);
 
 			// DBScan
 			if (getName().toLowerCase().equals("dbscan")){
-				//Se tiene que hacer otro llamado.. pero la escritura del archivo final se mantiene igual
+				//Another call has to be made ... but the writing of the final file remains the same
 
 				Instances dataFiltered = Filter.useFilter(dataClusterer, wekaClusterer.getFilter());
 				double[][] dataArray = new double[dataFiltered.numInstances()][dataFiltered.numAttributes()];
@@ -316,8 +316,8 @@ public class ResponsibilitiesClusterer {
 				// K-means should be used with squared Euclidean (least squares):
 				SquaredEuclideanDistanceFunction dist = SquaredEuclideanDistanceFunction.STATIC;
 
-				// 15 me parecio el valor correcto.. Hipotesis, el epsilon utilizarlo con el numero de responsabilidades
-				// 2 es el minimo, no queremos cluster de tama�o 1
+				// 15 I found the correct value .. Hypothesis, the epsilon use it with the number of responsibilities
+				// 2 is the minimum, we do not want a cluster of size 1
 				DBSCAN<NumberVector> dbscan = new DBSCAN<NumberVector>(dist,15,2);
 				// Run the algorithm:
 				Clustering<Model> c = dbscan.run(db);				
@@ -355,7 +355,7 @@ public class ResponsibilitiesClusterer {
 					//RandomlyGeneratedInitialMeans init = new RandomlyGeneratedInitialMeans(RandomFactory.DEFAULT);
 					KMedoidsInitialization<NumberVector> init = new PAMInitialMeans<NumberVector>();
 
-					// en estos casos se repite el proceso variando el k hasta que se maximize el coeficiente de siluete
+					// in these cases the process is repeated by varying the k until the siluete coefficient is maximized
 
 					Clustering<MedoidModel> c = null;
 					Vector<Double> coeficientes = new Vector<Double>();
@@ -411,7 +411,7 @@ public class ResponsibilitiesClusterer {
 						// K-means should be used with squared Euclidean (least squares):
 						SquaredEuclideanDistanceFunction dist = SquaredEuclideanDistanceFunction.STATIC;
 
-						// en estos casos se repite el proceso variando el k hasta que se maximize el coeficiente de siluete
+						// in these cases the process is repeated by varying the k until the siluete coefficient is maximized
 
 						Clustering<KMeansModel> c = null;
 						Vector<Double> coeficientes = new Vector<Double>();
@@ -452,7 +452,7 @@ public class ResponsibilitiesClusterer {
 
 					}else{
 
-						/*// El hierarquichal hay que ver que k le va bien
+						/*// The hierarchy must see that k is doing well
 						if (getName().toLowerCase().equals("hierarchicalclusterer")){
 
 							Vector<Double> coeficientes = new Vector<Double>();
@@ -467,7 +467,7 @@ public class ResponsibilitiesClusterer {
 									}
 								}
 
-								// Se genera de nuevo el clusterizador
+								// New clusterer is generated
 								this.wekaClusterer.setOptions(options);
 								this.wekaClusterer.buildClusterer(dataClusterer);
 
@@ -495,7 +495,7 @@ public class ResponsibilitiesClusterer {
 								}
 							}
 
-							// Se genera de nuevo el clusterizador
+							// Again, clusterer is generated
 							this.wekaClusterer.setOptions(options);
 							this.wekaClusterer.buildClusterer(dataClusterer);
 

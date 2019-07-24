@@ -27,10 +27,10 @@ public class SeqTests {
 
 		System.out.println("\n\nTEST IF <...> THEN <...>" + barra);
 
-		// Proyecto de ejemplo
+		// Example of a project
 		Project project = new Project("Test_Project");
 
-		// Requerimientos
+		// Requirements
 		Requirement req1 = new Requirement("If the user clicks an image, the system decompresses it.");		
 		project.addRequirement(req1);
 		Requirement req2 = new Requirement("If the user clicks an image then the system decompresses it.");		
@@ -46,26 +46,26 @@ public class SeqTests {
 		Requirement req7 = new Requirement("The user enters to the page and if the user clicks an image, the system decompresses it.");		
 		project.addRequirement(req7);
 
-		//PipelineParalelo
+		//Parallel Pipeline
 		PipelineParalelo pipe = new PipelineParalelo(project, null);
 
-		// Pre-procesamiento de los requerimientos
+		//Pre-processing of the requirements
 		pipe.firstStep();
 
-		// Extraccion de responsabilidades
+		// Extraction of responsibilities
 		pipe.testResponsabilityExtraction();
 
-		// Comprobamos que tenemos dos responsabilidades
+		// We check that we have two responsibilities
 		//Assert.assertTrue(responsibilities.size() == 2);	
 
-		// Secuencializacion de responsabilidades
+		// Sequentialization of responsibilities
 		ArrayList<CausalRelationship> causalRelations = pipe.testResponsibilitiesSequencing();
 		//Assert.assertTrue(causalRelations.size() == 1);
 
 		Assert.assertTrue(req1.getCausalRelationships().size() == 1);
 		Assert.assertTrue(req2.getCausalRelationships().size() == 1);
 		Assert.assertTrue(req3.getCausalRelationships().size() == 1);
-		Assert.assertTrue(req4.getCausalRelationships().size() == 0); // Este tiene que ser 0!
+		Assert.assertTrue(req4.getCausalRelationships().size() == 0); // This has to be 0!
 		Assert.assertTrue(req5.getCausalRelationships().size() == 1);
 		Assert.assertTrue(req6.getCausalRelationships().size() == 1 && req6.getCausalRelationships().get(0).getResp1().getVerb().equals("clicks"));
 		Assert.assertTrue(req7.getCausalRelationships().size() == 1 && req7.getCausalRelationships().get(0).getResp1().getVerb().equals("clicks"));
@@ -75,12 +75,12 @@ public class SeqTests {
 	@Test
 	public void testTEMPORAL() {
 
-		System.out.println("\n\nTEST TEMPORALES" + barra);
+		System.out.println("\n\nTEST TEMPORARY" + barra);
 
-		// Proyecto de ejemplo
+		// Example of a project
 		Project project = new Project("Test_Project");
 
-		// Requerimientos
+		// Requirements
 		Requirement req1 = new Requirement("After the user clicks an image, the system decompresses it.");		
 		project.addRequirement(req1);
 		Requirement req2 = new Requirement("Before the user clicks an image, the system decompresses it.");		
@@ -98,16 +98,16 @@ public class SeqTests {
 		Requirement req8 = new Requirement("The system decompresses the image after the user clicks that image.");		
 		project.addRequirement(req8);
 
-		//PipelineParalelo
+		//Parallel Pipeline
 		PipelineParalelo pipe = new PipelineParalelo(project, null);
 
-		// Pre-procesamiento de los requerimientos
+		//Pre-processing of the requirements
 		pipe.firstStep();
 
-		// Extraccion de responsabilidades
+		// Extraction of responsibilities
 		pipe.testResponsabilityExtraction();
 
-		// Secuencializacion de responsabilidades
+		// Sequentialization of responsibilities
 		ArrayList<CausalRelationship> causalRelations = pipe.testResponsibilitiesSequencing();
 		//Assert.assertTrue(causalRelations.size() == 1);
 
@@ -120,7 +120,7 @@ public class SeqTests {
 
 		Assert.assertTrue(req4.getCausalRelationships().size() == 1);
 
-		Assert.assertTrue(req5.getCausalRelationships().size() == 0); // Este tiene que ser 0! al menos por ahora
+		Assert.assertTrue(req5.getCausalRelationships().size() == 0); // This has to be 0!
 
 		Assert.assertTrue(req6.getCausalRelationships().size() == 1 
 				&& req6.getCausalRelationships().get(0).getResp1().getVerb().equals("clicks"));
@@ -137,12 +137,12 @@ public class SeqTests {
 	@Test
 	public void testSIMPLES() {
 
-		System.out.println("\n\nTEST SIMPLES" + barra);
+		System.out.println("\n\nTEST SIMPLE" + barra);
 
-		// Proyecto de ejemplo
+		// Example of a project
 		Project project = new Project("Test_Project");
 
-		// Requerimientos
+		// Requirements 
 		Requirement req1 = new Requirement("The user clicks an image to decompress it.");		
 		project.addRequirement(req1);
 		Requirement req2 = new Requirement("The user clicks an image for decompressesing it.");		
@@ -158,16 +158,16 @@ public class SeqTests {
 		Requirement req7 = new Requirement("If the user reloads the page, the system presents a splash screen and then the system shows an icon.");		
 		project.addRequirement(req7);
 
-		//PipelineParalelo
+		//Parallel pipeline
 		PipelineParalelo pipe = new PipelineParalelo(project, null);
 
-		// Pre-procesamiento de los requerimientos
+		// Pre-processing of the requirements
 		pipe.firstStep();
 
-		// Extraccion de responsabilidades
+		// Extraction of responsibilities
 		pipe.testResponsabilityExtraction();
 
-		// Secuencializacion de responsabilidades
+		// Sequentialization of responsibilities
 		ArrayList<CausalRelationship> causalRelations = pipe.testResponsibilitiesSequencing();
 
 
@@ -184,7 +184,7 @@ public class SeqTests {
 
 		Assert.assertTrue(req6.getCausalRelationships().size() == 1);
 
-		// Este ultimo requerimiento seria algo conflictivo
+		// This last requirement would be somewhat conflicting.
 		Assert.assertTrue(req7.getCausalRelationships().size() == 2);
 
 	}
@@ -195,25 +195,25 @@ public class SeqTests {
 
 		System.out.println("\n\nTEST BETWEENSENTENCES" + barra);
 
-		// Proyecto de ejemplo
+		// Example of a project
 		Project project = new Project("Test_Project");
 
-		// Requerimientos
+		// Requirements
 		Requirement req1 = new Requirement("If the user opens a window, the system will play the movie and also the system will show a warning. Otherwise, the system will stop the movie and then the system will presents another window.");		
 		project.addRequirement(req1);
 
-		// Requerimientos
+		// Requirements
 		Requirement req2 = new Requirement("The user to click a submission button. Then, the system will show a warning.");		
 		project.addRequirement(req2);
 
-		// Este asi esta en la especificacion
+		// This is in the specification
 		Requirement req3 = new Requirement("If a mouse click is received, this component will terminate the movie and forward the user to the main menu component. Otherwise, the movie will continue to its completion and the user will be moved to the main menu.");		
 		//project.addRequirement(req2);
 		
 		Requirement req4 = new Requirement("If the user selects the correct answer, a message will be displayed and the component will move to the next question. If the incorrect answer is selected, this component will inform the user of this and give them another chance to answer the question.");		
 		project.addRequirement(req4);	
 		// 
-		//PipelineParalelo
+		//Parallel Pipeline
 		PipelineParalelo pipe = new PipelineParalelo(project, null);
 
 		// Pre-procesamiento de los requerimientos
@@ -224,7 +224,7 @@ public class SeqTests {
 
 		Assert.assertTrue(req1.getResponsibilities().size() == 5);
 
-		// Secuencializacion de responsabilidades
+		// Sequentialization of responsibilities
 		ArrayList<CausalRelationship> causalRelations = pipe.testResponsibilitiesSequencing();
 
 		Assert.assertTrue(req1.getCausalRelationships().size() == 3);

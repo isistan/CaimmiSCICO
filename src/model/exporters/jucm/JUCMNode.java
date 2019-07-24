@@ -15,14 +15,14 @@ public abstract class JUCMNode extends JUCMElement{
 	// Methods
 
 	/**
-	 * Este metodo no debe ser llamado directamente, son usados al crear una conexion
+	 * This method should not be called directly, they are used when creating a connection
 	 * 
 	 * @param succ
 	 */
 	public abstract void addSucc(JUCMConnection succ);
 	
 	/**
-	 * Este metodo no debe ser llamado directamente, son usados al crear una conexion
+	 * This method should not be called directly, they are used when creating a connection
 	 * 
 	 * @param prev
 	 */

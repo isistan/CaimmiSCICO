@@ -13,7 +13,7 @@ public class PruebaPublica {
 
 	public static void main(String[] args) {
 		
-		// Modelo
+		// Model
 		
 		Responsibility r1 = new Responsibility("add", "course");
 		r1.setId("Resp 1");
@@ -24,10 +24,10 @@ public class PruebaPublica {
 		
 		
 		ConceptualComponent c1 = new ConceptualComponent();
-		c1.setName("Componente 1");
+		c1.setName("Component 1");
 		c1.addResponsibility(r1);
 		ConceptualComponent c2 = new ConceptualComponent();
-		c2.setName("Componente 2");
+		c2.setName("Component 2");
 		c2.addResponsibility(r2);
 		c2.addResponsibility(r3);
 		
@@ -42,7 +42,7 @@ public class PruebaPublica {
 		CausalRelationship cr1 = new CausalRelationship(r1, r2);
 		CausalRelationship cr2 = new CausalRelationship(r2, r3);
 		
-		// Responsabilidades
+		// Responsibilities
 		ArrayList<Responsibility> responsibilities = new ArrayList<Responsibility>();
 		responsibilities.add(r1);
 		responsibilities.add(r2);
@@ -63,13 +63,13 @@ public class PruebaPublica {
 		
 		JUCMExporter exporter = new JUCMExporter();
 		
-		// Salida
+		// Output
 		
 		exporter.export(ucm, ".\\salida.jucm");
 		
-		// Habria que leer el jUCM ( URN ) 
+		// We would have to read the jUCM (URN)
 				
-		// Obtener la imagen y mostrarla (PNG)		
+		// Get the image and display it (PNG)
 		
 	}
 }

@@ -72,16 +72,16 @@ public class SynonymsOverResponsibilities {
 
 		// (1)
 
-		//  Separo las palabras existentes
+		//  I separate the existing words
 		ArrayList<String> nouns = new ArrayList<String>();
 		ArrayList<String> verbs = new ArrayList<String>();
 		ArrayList<String> adjectives = new ArrayList<String>();
 		ArrayList<String> adverbs = new ArrayList<String>();
 
-		// Itero sobre las responsabilidades de entrada (las de un proyecto especifico)
+		// Itero about the responsibilities of entry (those of a specific project)
 		for (Responsibility responsibility : responsibilities){
 
-			// Separo cada grupo de palabras de acuerdo a su POS
+			// I separate each group of words according to their POS
 			ArrayList<Pair<String, POS>> recognitions = responsibility.getRecognitions();
 			for (int i = 0; i < recognitions.size(); i++){
 				String word = recognitions.get(i).getPair1();
@@ -111,12 +111,12 @@ public class SynonymsOverResponsibilities {
 
 		// (2)
 
-		// Por cada grupo de palabras, hago una contra todas, busco si existen sinonimos
-		// Si los hay, tengo que determinar PARES
-		// Finalmente, determinar cual es el sinonimo optimo e ir hacia ese mismo.
-		// Pal_1 es sinonimo de Pal_2; Pal_3 es sinonimo de Pal_2, pero Pal_1 no es sinonimo de Pal_3 (Entonces pasar todo a palabra 3)
+		// For each group of words, I do one against all, I look for if there are synonyms
+		// If any, I have to determine PARES
+		// Finally, determine which is the optimal synonym and go to that same.
+		// Pal_1 is synonymous with Pal_2; Pal_3 is synonymous with Pal_2, but Pal_1 is not synonymous with Pal_3 (Then turn everything to word 3)
 
-		System.out.println("1) Grupos de palabras");
+		System.out.println("1) Groups of words");
 		System.out.println("  Nouns: \t"+ nouns);
 		System.out.println("  Verbs: \t"+ verbs);
 		System.out.println("  Adjectives: \t"+ adjectives);
@@ -128,7 +128,7 @@ public class SynonymsOverResponsibilities {
 		ArrayList<ArrayList<String>> resultsWordnetAdjectives = searchWordnet(adjectives, POS.ADJECTIVE);
 		ArrayList<ArrayList<String>> resultsWordnetAdverbs = searchWordnet(adverbs, POS.ADVERB);
 
-		System.out.println("2) Resultados de Wordnet");
+		System.out.println("2) Results of Wordnet");
 		System.out.println("  Nouns: \t" + resultsWordnetNouns);
 		System.out.println("  Verbs: \t" + resultsWordnetVerbs);
 		System.out.println("  Adjectives: \t"+ resultsWordnetAdjectives);
@@ -137,14 +137,14 @@ public class SynonymsOverResponsibilities {
 
 		// (3)
 
-		// Por grupo de sinonimos, determinar cuales son los sinonimos prioritarios
+		// By group of synonyms, determine which are the priority synonyms
 
 		ArrayList<Pair<String, String>> synonymsForNouns = searchSynonyms(nouns, resultsWordnetNouns);
 		ArrayList<Pair<String, String>> synonymsForVerbs = searchSynonyms(verbs, resultsWordnetVerbs);
 		ArrayList<Pair<String, String>> synonymsForAdjectives = searchSynonyms(adjectives, resultsWordnetAdjectives);
 		ArrayList<Pair<String, String>> synonymsForAdverbs = searchSynonyms(adverbs, resultsWordnetAdverbs);
 
-		System.out.println("3) Resultados de buscar palabras para intercambiar");
+		System.out.println("3) Results of searching words to interchange");
 		System.out.println("  Nouns: \t" + synonymsForNouns);
 		System.out.println("  Verbs: \t" + synonymsForVerbs);
 		System.out.println("  Adjectives: \t"+ synonymsForAdjectives);
@@ -153,9 +153,9 @@ public class SynonymsOverResponsibilities {
 
 		// (4)
 
-		// Determinamos las palabras prioritarias
+		// We determine the priority words
 
-		System.out.println("4) Priorizacion de palabras");
+		System.out.println("4) Prioritization of words");
 
 		HashMap<String, Integer> prioritizedNouns = prioritizeGroups(synonymsForNouns, nouns , resultsWordnetNouns);
 		HashMap<String, Integer> prioritizedVerbs = prioritizeGroups(synonymsForVerbs, verbs , resultsWordnetVerbs);
@@ -166,9 +166,9 @@ public class SynonymsOverResponsibilities {
 
 		// (5)
 
-		// Eliminamos todas las conversiones que no son necesarias (prioritarias)
+		// We eliminate all conversions that are not necessary (priority)
 
-		System.out.println("5) Definici�n de conversiones");
+		System.out.println("5) Conversion Definition");
 
 		HashMap<String, String> changesNouns = new HashMap<String, String>();
 		HashMap<String, String> changesVerbs = new HashMap<String, String>();
@@ -183,8 +183,8 @@ public class SynonymsOverResponsibilities {
 		System.out.println("-------------------------------------------------------------------------------------------------\n");
 
 		// (6)
-		// Hacemos el cambio en todas las responsabilidades
-		// En un par, el par2 se reemplaza con el par1
+		// We make the change in all responsibilities
+		// In a pair, pair2 is replaced with pair1
 
 		ArrayList<Responsibility> resultsResponsibilities = new ArrayList<Responsibility>();
 
@@ -200,7 +200,7 @@ public class SynonymsOverResponsibilities {
 			resultsResponsibilities.add(newResponsibility);
 		}
 
-		System.out.println("6) Responsabilidades resultantes");
+		System.out.println("6) Resulting responsibilities");
 		for (int i = 0; i < resultsResponsibilities.size(); i++){
 			System.out.println("  + ("+ (i+1) + ") " + resultsResponsibilities.get(i).getLongForm());
 		}
@@ -221,21 +221,21 @@ public class SynonymsOverResponsibilities {
 			String workingWord = null;
 
 			if (word.equals(stemmedWord)){
-				// Son iguales entonces se las trata igual
+				// They are equal then they are treated the same
 				workingWord = word;
 			}else{
-				// No son iguales, se intenta primero con la versi�n original
+				// They are not the same, you try first with the original version
 				if (wni.isOk(word, pos)){
-					// seguimos laburando con word
+					// we keep on working with word
 					workingWord = word;
 				}else{
 					if (wni.isOk(stemmedWord, pos)){
-						// seguimos con stemmedWord
+						// we continue with stemmedWord
 						workingWord = stemmedWord;
 					}else{
-						// Ambas fallaron..
-						//System.out.println("Ninguna de las dos palabras es valida");
-						// No se haria desambiguaci�n para esa palabra
+						// Both failed ..
+						//System.out.println("Neither word is valid");
+						// There would be no disambiguation for that word
 					}
 				}
 			}
@@ -251,10 +251,10 @@ public class SynonymsOverResponsibilities {
 			try{
 				synonyms = wni.getSynonyms(workingWord, pos);
 			}catch (Exception e){
-				// Con esta palabra no se hace nada
+				// With this word nothing is done
 			}
 
-			// TODO todos o solo el primer nivel?
+			// TODO all or just the first level?
 			if (synonyms != null)
 				synonymsList.add(synonyms.get(0));
 			else
@@ -283,7 +283,7 @@ public class SynonymsOverResponsibilities {
 					if (widSynonyms.contains(otherWord)){
 						Pair<String, String> synonymFound = new Pair<String, String>(actualWorkingWord, otherWord);
 						out.add(synonymFound);
-						//System.out.println(" Sinonimos : " + actualWorkingWord + " " + otherWord);
+						//System.out.println(" Synonyms : " + actualWorkingWord + " " + otherWord);
 					}
 				}
 			}
@@ -304,7 +304,7 @@ public class SynonymsOverResponsibilities {
 			}
 		}
 
-		// Se procede con los que se encuentran en el segundo par
+		// We proceed with those in the second pair
 		for (Pair<String, String> pair : synonymsForNouns){
 
 			if (!out.containsKey(pair.getPair2())){
@@ -314,7 +314,7 @@ public class SynonymsOverResponsibilities {
 
 
 		for (String key : out.keySet()){
-			System.out.println("  Key: [" + key + "] Cantidad: [" + out.get(key) + "]");
+			System.out.println("  Key: [" + key + "] Quantity: [" + out.get(key) + "]");
 		}
 
 		return out;
@@ -363,7 +363,7 @@ public class SynonymsOverResponsibilities {
 
 			if (change.get(recognition.getPair1()) != null){
 
-				// Se tiene que hacer el cambio
+				// The change has to be made
 				Pair<String, POS> newRecognition = new Pair<String, POS>();
 				newRecognition.setPair1(change.get(recognition.getPair1()));
 				newRecognition.setPair2(recognition.getPair2());

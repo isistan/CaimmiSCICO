@@ -48,7 +48,7 @@ public class JUCMStartPoint extends JUCMNode {
 		nodeElement.setAttribute("id", exporter.getMaxID().toString());
 		nodeElement.appendChild(exporter.getDocument().createElement("label"));
 		
-		// Actualizo Y
+		// Update Y
 		Y = Y + 50;
 		
 		exporter.setMaxID(exporter.getMaxID()+1);

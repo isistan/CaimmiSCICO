@@ -102,8 +102,8 @@ public class JUCMComponent extends JUCMElement {
 			//resultX = new Integer(new Double(JUCMExporter.COMPONENT_SECTOR_X.doubleValue() + Math.random() * JUCMExporter.COMPONENT_SECTOR_WIDTH.doubleValue()).intValue());
 			//resultY = new Integer(new Double(JUCMExporter.COMPONENT_SECTOR_Y.doubleValue() + Math.random() * JUCMExporter.COMPONENT_SECTOR_HEIGHT.doubleValue()).intValue());
 
-			// De X tiene que estar bien en el medio
-			// De y tiene que ir moviendose hasta no colisionar
+			// X has to be right in the middle
+			// Y has to move until it doesn't collide
 			resultX = new Integer(JUCMExporter.COMPONENT_SECTOR_X);
 			resultY = new Integer((Integer) (counter * (this.COMPONENT_HEIGHT + 50)));
  
