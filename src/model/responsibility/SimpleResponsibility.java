@@ -99,7 +99,7 @@ public class SimpleResponsibility {
 		return "[ ACTOR = " + this.getActor() + " | VERB = " + this.getVerb() + " | DOBJ = " + this.getDobj() + "]";
 	}
 	
-	
+	// This methods allows for gettintg the phrasal verb
 	public String getPhraseVerbDobj(){
 		return this.getVerb().trim() + " " + this.getDobj().trim();
 	}
