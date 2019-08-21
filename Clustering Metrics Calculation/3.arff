@@ -1,0 +1,298 @@
+@relation responsibilities	
+
+@attribute responsibility string	
+@attribute component {Alarm,Presentation,LYR,Server}
+
+
+@data	
+'selects a Field objects from a Hierarchy in the objects browser ',Presentation
+'displays the properties to which the User has read access of the selected Field objects in the Work Area ',Presentation
+'write access to Property ',Server
+'enables " Issue Command " button for those properties for which the User has write access ',Presentation
+'write access ',Server
+'access to Property ',Server
+'selects the " Issue Command " button ',Presentation
+'confirms the Command ',Presentation
+'selecting the " Send Command " button ',Presentation
+'transmits the Command ',Presentation
+'Sends a COV notification ',Server
+'confirming the success of the Command ',Server
+'displays the new Property Value ',Presentation
+'prompts the User for the new Value of the Property ',Presentation
+'sends notification of Change of Value ',Server
+'updates the Property Value in its internal objects model ',Server
+'reflect the new Value of the Property ',Presentation
+'receives a COV event ',Server
+'evaluates Condition of at least one Logical Condition ',LYR
+'configured after the Command that is configured in the Reaction of the Logical Condition that evaluated to true ',LYR
+'determined the order of execution of the rules ',LYR
+'executes all steps of the main success scenario ',LYR
+'determined The order of execution of the rules ',LYR
+'receives a COV event ',Server
+'evaluates Condition of at least one Alarm Rules ',LYR
+'persists the Alarms ',Alarm
+'access to the associated Alarms Property ',Alarm
+'displays Alarm Acknowledgment Request ',Presentation
+'displays dialog for all logged in users with read access to the associated Alarms Property ',Presentation
+'access to the associated Alarms Property ',Alarm
+'executes all steps of the main success scenario ',Alarm
+'determined The order of execution of the rules ',LYR
+'acknowledges the Alarms ',Alarm
+'selecting the " Acknowledge Alarm " button in the Acknowledge Alarm Request dialog box ',Presentation
+'seeing the state of the Alarms in the System database ',Presentation
+'changes the Condition of the Alarms ',Alarm
+'seeing the Alarms ',Alarm
+'assigns the User who acknowledged the Alarms as the owner of the Alarms and will update the database ',Alarm
+'update the database ',Alarm
+'dismisses the Alarms ',Alarm
+'closes ',Server
+'removes the Alarms ',Alarm
+'seeing the System ',Server
+'deletes the Alarms ',Alarm
+'selects the Dismiss Alarm Option ',Alarm
+'selecting the action icon ',Presentation
+'acknowledged the Alarms ',Alarm
+'displays hierarchies ( with parent Logical nodes ',Presentation
+'owns hierarchies ( with parent Logical nodes ',Server
+'expands the first level of the Hierarchy ',Server
+'displays the direct children of the expanded Hierarchy ',Presentation
+'displays the Hierarchy Description ',Presentation
+'displays the Hierarchy name and the Hierarchy Description ',Presentation
+'persisted All hierarchies ',Server
+'selected a Hierarchy ',Server
+'expands a Logical Node in the Hierarchy ',Server
+'displays the Logical Node name ',Presentation
+'selected a Logical Node ',Server
+'displays the direct children of the expanded Logical Node ',Presentation
+'read access in the Work Area ',Server
+'selects a Field objects from the children of the expanded Node ',Presentation
+'verifies the access rights of the User ',Server
+'displays the Field objects name and the Field objects properties to which the User has at least read access in the Work Area ',Presentation
+'displays the Field ',Presentation
+'has the Field objects name and the Field objects properties to which the User has at least read access in the Work Area ',Server
+'has the Field ',Server
+'collapses a Logical Node in the Hierarchy ',Presentation
+'hides all children of the Logical Node ',Server
+'collapses a Hierarchy ',Presentation
+'hides all children of the Hierarchy ',Presentation
+'selects the " Hierarchies " tab on the screen ',Presentation
+'displays the " Configure Hierarchies " screen ',Presentation
+'selects the " Create Hierarchy " button ',Presentation
+'displays the " Create Hierarchy " screen ',Presentation
+'enters a Hierarchy name ',Presentation
+'tab on the screen ',Presentation
+'Create Logical Node ',Server
+'Delete Logical Node ',Server
+'Delete Rename Logical Node ',Server
+'Add Field Object ',Server
+'Remove Field Object ',Server
+'extending use cases ',Server
+'displays the " Configure Hierarchies " screen ',Presentation
+'displays the newly created Hierarchy ',Presentation
+'verifies the Hierarchy name ',Server
+'persists the Hierarchy information in the database ',Server
+'displays the Description of the Hierarchy in the Hierarchy Description box ',Presentation
+'selects a Hierarchy from the Hierarchy list ',Presentation
+'displays the " Configure Hierarchies " screen ',Presentation
+'selects the " Edit Hierarchy " button ',Presentation
+'displays the " Edit Hierarchy " screen ',Presentation
+'modify the Hierarchy name or the Hierarchy Description ',Server
+'modify the Hierarchy Description ',Server
+'Create Logical Node ',Server
+'Delete Rename Logical Node ',Server
+'Delete or Rename Logical Node ',Server
+'Add Field Object ',Server
+'Remove Field Object ',Server
+'extending use cases ',Server
+'persists the Hierarchy information in the MSLite database ',Server
+'displays the " Configure Hierarchies " screen ',Presentation
+'displays the edited Hierarchy ',Presentation
+'selects the " Save Hierarchy " button ',Presentation
+'displays the " Configure Hierarchies " screen ',Presentation
+'displays a Hierarchy deletion confirmation dialog ',Presentation
+'confirms the deletion of the Hierarchy ',Server
+'selects a Hierarchy from the Hierarchy list ',Presentation
+'displays the " Configure Hierarchies " screen ',Presentation
+'deleted a Hierarchy ',Server
+'deleted / or Field objects ',Server
+'deleted all its child Logical nodes and / or Field objects ',Server
+'selects the " Configure Hierarchies " tab ',Presentation
+'selects a Hierarchy from the Hierarchy list ',Presentation
+'selects the " Edit Hierarchy " button ',Presentation
+'displays the " Edit Hierarchy " screen and the User ',Presentation
+'displays the User ',Presentation
+'sets a Logical Node " Insertion item ',Server
+'prompts the User ',Presentation
+'enters a name for the Logical Node ',Presentation
+'creates a Logical Node ',Server
+'verifies no other Logical Node ',Server
+'verifies the " Insertion item " ',Server
+'selecting an item ',Presentation
+'displays the Description of the Hierarchy in the Hierarchy Description box ',Presentation
+'selects the " Configure Hierarchies " tab ',Presentation
+'displays the " Edit Hierarchy " screen ',Presentation
+'displays the " Configure Hierarchies " screen ',Presentation
+'selects a Hierarchy from the Hierarchy list ',Presentation
+'displays the Description of the Hierarchy in the Hierarchy Description box ',Presentation
+'selects the " Edit Hierarchy " button ',Presentation
+'selects a Logical Node from the " Hierarchy Tree Editor \" ',Presentation
+'selects the " Delete Node " button ',Presentation
+'removes the Logical Node and its children ',Server
+'removes its children ',Server
+'displays a confirmation dialog mentioning that all children of the Logical Node will be removed from the Hierarchy ',Presentation
+'confirms the deletion of the Logical Node ',Server
+'verifies the Hierarchy ',Server
+'removed all children of the Logical Node ',Server
+'deleted all its child Logical nodes and / or Field objects ',Server
+'deleted / or Field objects ',Server
+'deleted a Logical Node ',Server
+'selects the " Edit Hierarchy " button ',Presentation
+'displays the " Edit Hierarchy " screen and the User ',Presentation
+'displays the User ',Presentation
+'selects a Field objects ',Server
+'displays the " Configure Hierarchies " screen ',Presentation
+'selects a Hierarchy from the Hierarchy list ',Presentation
+'sets an " Insertion item " ',Presentation
+'selecting an item ',Presentation
+'displays the Description of the Hierarchy in the Hierarchy Description box ',Presentation
+'Add Object ',Server
+'adds the selected Field objects ',Server
+'editing the Hierarchy ',Server
+'access to at least one Property of the Field objects ',Server
+'displays the Description of the Hierarchy in the Hierarchy Description box ',Presentation
+'selects a Hierarchy from the Hierarchy list ',Presentation
+'displays the " Configure Hierarchies " screen ',Presentation
+'selects the " Edit Hierarchy " button ',Presentation
+'displays the " Edit Hierarchy " screen ',Presentation
+'selects a Field objects ',Presentation
+'selects the " Remove Node " button ',Presentation
+'editing the Hierarchy ',Server
+'removes the selected Field Object ',Server
+'selects the " L&R " tab ',Presentation
+'displays the " Logic and Reaction Configuration " screen ',Presentation
+'displays Reaction Configuration " screen ',Presentation
+'Create L&R Rule " button ',Presentation
+'Create L&R Rule " screen ',Presentation
+'enters the name of the L&R Rule ',LYR
+'configures the " Logical Condition " part of the Rules ',LYR
+'configuring individual conditions ',LYR
+'selects an objects from the objects list then the System displays only the properties of the selected objects in the properties list that the User has read access to ',Presentation
+'displays only the properties of the selected objects in the properties list that the User has read access to ',Presentation
+'selects a Property ',Presentation
+'configures an individual Condition ',LYR
+'selects type of Condition which can be one of the following ',LYR
+'enables Condition Value ( s ) ',LYR
+'enters a Condition Value ',LYR
+'verifies the validity of the input ',LYR
+'configures be issued ',LYR
+'selects an objects from the objects list ',Presentation
+'displays the properties of the selected objects ',Presentation
+'selects a Property from the properties list then the System verifies User ',Presentation
+'verifies User ',Server
+'write access to the Property ',Server
+'enters the Value of the Command to be issued ',LYR
+'access to the Property ',Server
+'displays the " Logic and Reaction Configuration " screen list ',Presentation
+'displays Reaction Configuration " screen ',Presentation
+'creates a new Rules with the specified parameters ',LYR
+'persists " ',LYR
+'completes the creation of the Rules ',LYR
+'verifies the correctness of Rules parameters ',LYR
+'selecting the " Create Rule " button ',Presentation
+'selects the " L&R " tab ',Presentation
+'displays the " Logic and Reaction Configuration " screen ',Presentation
+'displays Reaction Configuration " screen ',Presentation
+'selects a Rules from " L&R Rules " list ',Presentation
+'selects the " Edit L&R Rule " button ',Presentation
+'Verifies User ',LYR
+'write access to the Property affected by its Reaction ',Server
+'editing the L&R Rules ',LYR
+'access to all properties in the Logical Condition of the Rules ',Server
+'access to the Property affected by its Reaction ',Server
+'modify the " Reaction " part of the Rules " ',LYR
+'displays the " Edit L&R Rule " screen ',Presentation
+'modify the name of the L&R Rules ',LYR
+'modify the " Logical Condition " part of the Rules ',LYR
+'modifying individual conditions ',LYR
+'displays the " Logic and Reaction Configuration " screen L&R Rule list ',Presentation
+'displays Reaction Configuration " screen ',Presentation
+'completes the edition of the Rules ',LYR
+'verifies the selected Rules ',LYR
+'verifies the correctness of Rules parameters ',LYR
+'edited the " Save Rule " button ',Presentation
+'selects the " L&R " tab ',Presentation
+'selects a Rules from " L&R Rules " list ',Presentation
+'Delete L&R Rule " button ',Presentation
+'write access to the Property affected by Reaction of the Rules ',Server
+'editing the L&R Rules ',Presentation
+'access to all properties that are a part of the Condition and write access to the Property affected by Reaction of the Rules ',Server
+'access to the Property affected by Reaction of the Rules ',Server
+'displays the " Logic and Reaction Configuration " screen ',Presentation
+'displays Reaction Configuration " screen ',Presentation
+'removes the deleted Rules ',LYR
+'displays the " Rule deletion confirmation " dialog ',Presentation
+'confirms the deletion of the Rules ',Presentation
+'selecting the " Delete " button selected Rules ',Presentation
+'verifies the selected Rules ',LYR
+'selects the " Alarms " tab ',Presentation
+'displays the " Configure Alarm Rules " screen ',Presentation
+'enters the name of Alarm ',Alarm
+'Create Alarm Rule " screen ',Presentation
+'enters the name of Alarm Rule to be created ',Presentation
+'configures an individual Condition ',LYR
+'configures the " Alarm Condition " part of the Alarms Rules ',Presentation
+'configuring individual conditions ',LYR
+'selects an objects from the objects list ',Presentation
+'displays read access to ',Presentation
+'selects a Property ',Presentation
+'Create Alarm Rule " button ',Presentation
+'selects type of Condition which can be one of the following ',Presentation
+'enables Condition Value ( s ) ',LYR
+'enters a Condition Value ',LYR
+'combines individual conditions with Boolean operators and parentheses ',LYR
+'selects the " Associated Alarm Property " dropdown list ',Presentation
+'completes the creation of the Rules ',LYR
+'selecting The System verifies the correctness of Rules parameters ',Presentation
+'verifies the correctness of Rules parameters ',LYR
+'creates a new Alarms Rules with the specified parameters ',LYR
+'persists the ',LYR
+'displays the " Configure Alarm Rules " screen ',Presentation
+'selects the " Alarms " tab ',Presentation
+'displays the " Configure Alarm Rules " screen ',Presentation
+'selects a Rules from " Alarm Rules " list ',Presentation
+'modify the " Alarm " ( or Reaction ) part of the Rules ',Presentation
+'modify Reaction ',Presentation
+'modify the name of the Alarm Rule ',Alarm
+'modify the " Alarm Condition " part of the Rules ',Alarm
+'modifying individual conditions or the User ',LYR
+'modifying the User ',Server
+'write access to the associated Alarms Property ',Server
+'Verifies User ',Server
+'access to the associated Alarms Property ',Server
+'access to all properties in the Alarm Condition of the Rules ',Server
+'completes editing the Rules ',LYR
+'editing the Rules ',LYR
+'verifies the correctness of Rules parameters ',LYR
+'verifies the selected Rules ',LYR
+'edited the " Save Rule " button ',Presentation
+'selects the " Alarms " tab ',Presentation
+'displays the " Configure Alarm Rules " screen ',Presentation
+'selects a Rules from " Alarm Rules " list ',Presentation
+'editing the Alarm Rules ',Alarm
+'Delete Alarm Rule " button the System verifies User ',Presentation
+'verifies User ',Server
+'write access to the associated Alarms Property ',Server
+'access to all properties that are a part of the Condition and write access to the associated Alarms Property ',Server
+'access to the associated Alarms Property ',Server
+'displays the " Rule deletion confirmation " dialog ',Presentation
+'confirms the deletion of the Rules ',LYR
+'selecting the " Delete " button ',Presentation
+'verifies the selected Rules ',LYR
+'removes the deleted Rules ',LYR
+'presents a screen containing username and password fields ',Server
+'containing username and password fields ',Server
+'enters his/her username and password ',Server
+'enters password ',Server
+'validates password ',Server
+'browses to MSLite System web page ',Presentation
+'browses the User ',Presentation
