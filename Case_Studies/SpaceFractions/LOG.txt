@@ -1,0 +1,837 @@
+[AWT-EventQueue-0] ERROR com.alee.utils.ProprietaryUtils - java.lang.NoSuchFieldException: AA_TEXT_PROPERTY_KEY
+java.lang.NoSuchFieldException: AA_TEXT_PROPERTY_KEY
+	at java.base/java.lang.Class.getField(Class.java:2000)
+	at com.alee.utils.ReflectUtils.getStaticFieldValue(ReflectUtils.java:440)
+	at com.alee.utils.ProprietaryUtils.setupUIDefaults(ProprietaryUtils.java:103)
+	at com.alee.laf.WebLookAndFeel.initComponentDefaults(WebLookAndFeel.java:537)
+	at java.desktop/javax.swing.plaf.basic.BasicLookAndFeel.getDefaults(BasicLookAndFeel.java:150)
+	at java.desktop/javax.swing.UIManager.setLookAndFeel(UIManager.java:587)
+	at java.desktop/javax.swing.UIManager.setLookAndFeel(UIManager.java:633)
+	at com.alee.utils.LafUtils.setupLookAndFeelSafely(LafUtils.java:1557)
+	at com.alee.utils.LafUtils.setupLookAndFeelSafely(LafUtils.java:1544)
+	at com.alee.laf.WebLookAndFeel.install(WebLookAndFeel.java:939)
+	at com.alee.laf.WebLookAndFeel.install(WebLookAndFeel.java:927)
+	at app.appMainWindow$1.run(appMainWindow.java:113)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/C:/Users/Luis/Downloads/EvalScico/CaimmiSCICO-master/CaimmiSCICO-master/lib/weblaf-complete-1.29.jar) to field java.util.TreeMap.comparator
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Project Name: [2001 - space fractions]
+
+** PreProcess  **
+  + # Requirements [15]
+
+** Identification of Responsibilities **
+
+Req - [1/15]
+	Requirement [REQ-1] = [If the user clicks a mouse button while in the Introductory Movie component , they will skip the movie and proceed to the main menu . No other input is recognized . ]
+	Sentences : [2]
+	[If-1, the-2, user-3, clicks-4, a-5, mouse-6, button-7, while-8, in-9, the-10, Introductory-11, Movie-12, component-13, ,-14, they-15, will-16, skip-17, the-18, movie-19, and-20, proceed-21, to-22, the-23, main-24, menu-25, .-26]
+		Caso 1 [2]: [[skip_17_movie_19, skip movie, skip the movie , 17, 19, 19, [skip/verb, the/NULL, movie/noun], ['skip|VB movie|NN'], OK], [clicks_4_button_7, clicks button, clicks a mouse button , 4, 7, 7, [clicks/verb, a/NULL, mouse/noun, button/noun], ['clicks|VB mouse|NN button|NN'], OK]]
+		Caso 2 [1]: [[proceed_21_menu_25, proceed menu, proceed to the main menu , 21, 25, 25, [proceed/verb, to/NULL, the/NULL, main/adjective, menu/noun], ['proceed|VB main|ADJ menu|NN'], OK]]
+		Caso 4 [0]: []
+	[No-1, other-2, input-3, is-4, recognized-5, .-6]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [3]
+		[skip_17_movie_19, skip movie, skip the movie , 17, 19, 19, [skip/verb, the/NULL, movie/noun], ['skip|VB movie|NN'], OK]
+		[clicks_4_button_7, clicks button, clicks a mouse button , 4, 7, 7, [clicks/verb, a/NULL, mouse/noun, button/noun], ['clicks|VB mouse|NN button|NN'], OK]
+		[proceed_21_menu_25, proceed menu, proceed to the main menu , 21, 25, 25, [proceed/verb, to/NULL, the/NULL, main/adjective, menu/noun], ['proceed|VB main|ADJ menu|NN'], OK]
+
+Req - [2/15]
+	Requirement [REQ-2] = [Upon entrance to the movie component , the introductory movie will begin playing . If a mouse click is received , this component will terminate the movie and forward the user to the main menu component . Otherwise , the movie will continue to its completion and the user will be moved to the main menu . ]
+	Sentences : [3]
+	[Upon-1, entrance-2, to-3, the-4, movie-5, component-6, ,-7, the-8, introductory-9, movie-10, will-11, begin-12, playing-13, .-14]
+		Caso 1 [0]: []
+		Caso 2 [1]: [[entrance_2_component_6, entrance component, entrance to the movie component , 2, 6, 6, [entrance/verb, to/NULL, the/NULL, movie/noun, component/noun], ['entrance|VB movie|NN component|NN'], OK]]
+		Caso 4 [0]: []
+	[If-1, a-2, mouse-3, click-4, is-5, received-6, ,-7, this-8, component-9, will-10, terminate-11, the-12, movie-13, and-14, forward-15, the-16, user-17, to-18, the-19, main-20, menu-21, component-22, .-23]
+		Caso 1 [1]: [[terminate_25_movie_27, terminate movie, terminate the movie , 25, 27, 27, [terminate/verb, the/NULL, movie/noun], ['terminate|VB movie|NN'], OK]]
+		Caso 2 [1]: [[user_31_component_36, user component, user to the main menu component , 31, 36, 36, [user/verb, to/NULL, the/NULL, main/adjective, menu/noun, component/noun], ['user|VB main|ADJ menu|NN component|NN'], OK]]
+		Caso 4 [1]: [[received_18_click_20, received click, received a mouse click , 18, 20, 18, [received/verb, a/NULL, mouse/noun, click/noun], ['received|VB mouse|NN click|NN'], OK]]
+	[Otherwise-1, ,-2, the-3, movie-4, will-5, continue-6, to-7, its-8, completion-9, and-10, the-11, user-12, will-13, be-14, moved-15, to-16, the-17, main-18, menu-19, .-20]
+		Caso 1 [0]: []
+		Caso 2 [2]: [[continue_43_completion_46, continue completion, continue to its completion and the user , 43, 46, 49, [continue/verb, to/NULL, its/NULL, completion/noun, and/NULL, the/NULL, user/noun], ['continue|VB completion|NN user|NN'], OK], [continue_43_user_49, continue user, continue the user , 43, 49, 49, [continue/verb, the/NULL, user/noun], ['continue|VB user|NN'], OK]]
+		Caso 4 [0]: []
+
+	Responsibilities: [6]
+		[entrance_2_component_6, entrance component, entrance to the movie component , 2, 6, 6, [entrance/verb, to/NULL, the/NULL, movie/noun, component/noun], ['entrance|VB movie|NN component|NN'], OK]
+		[terminate_25_movie_27, terminate movie, terminate the movie , 25, 27, 27, [terminate/verb, the/NULL, movie/noun], ['terminate|VB movie|NN'], OK]
+		[user_31_component_36, user component, user to the main menu component , 31, 36, 36, [user/verb, to/NULL, the/NULL, main/adjective, menu/noun, component/noun], ['user|VB main|ADJ menu|NN component|NN'], OK]
+		[received_18_click_20, received click, received a mouse click , 18, 20, 18, [received/verb, a/NULL, mouse/noun, click/noun], ['received|VB mouse|NN click|NN'], OK]
+		[continue_43_completion_46, continue completion, continue to its completion and the user , 43, 46, 49, [continue/verb, to/NULL, its/NULL, completion/noun, and/NULL, the/NULL, user/noun], ['continue|VB completion|NN user|NN'], OK]
+		[continue_43_user_49, continue user, continue the user , 43, 49, 49, [continue/verb, the/NULL, user/noun], ['continue|VB user|NN'], OK]
+
+Req - [3/15]
+	Requirement [REQ-3] = [The user can click on the corresponding button to begin the game or follow the link to the Denominators' web page . ]
+	Sentences : [1]
+	[The-1, user-2, can-3, click-4, on-5, the-6, corresponding-7, button-8, to-9, begin-10, the-11, game-12, or-13, follow-14, the-15, link-16, to-17, the-18, Denominators-19, '-20, web-21, page-22, .-23]
+		Caso 1 [2]: [[begin_10_game_12, begin game, begin the game , 10, 12, 12, [begin/verb, the/NULL, game/noun], ['begin|VB game|NN'], OK], [follow_14_link_16, follow link, follow the link , 14, 16, 16, [follow/verb, the/NULL, link/noun], ['follow|VB link|NN'], OK]]
+		Caso 2 [1]: [[click_4_button_8, click button, click on the corresponding button , 4, 8, 8, [click/verb, on/NULL, the/NULL, corresponding/adjective, button/noun], ['click|VB corresponding|ADJ button|NN'], OK]]
+		Caso 4 [0]: []
+
+	Responsibilities: [3]
+		[begin_10_game_12, begin game, begin the game , 10, 12, 12, [begin/verb, the/NULL, game/noun], ['begin|VB game|NN'], OK]
+		[follow_14_link_16, follow link, follow the link , 14, 16, 16, [follow/verb, the/NULL, link/noun], ['follow|VB link|NN'], OK]
+		[click_4_button_8, click button, click on the corresponding button , 4, 8, 8, [click/verb, on/NULL, the/NULL, corresponding/adjective, button/noun], ['click|VB corresponding|ADJ button|NN'], OK]
+
+Req - [4/15]
+	Requirement [REQ-4] = [This component will wait until the user selects a button . At that time , the user will be forwarded to the game sequence component or the Denominators' web page , depending on the button selected . A movie is displayed on the screen . ]
+	Sentences : [3]
+	[This-1, component-2, will-3, wait-4, until-5, the-6, user-7, selects-8, a-9, button-10, .-11]
+		Caso 1 [1]: [[selects_8_button_10, selects button, selects a button , 8, 10, 10, [selects/verb, a/NULL, button/noun], ['selects|VB button|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[At-1, that-2, time-3, ,-4, the-5, user-6, will-7, be-8, forwarded-9, to-10, the-11, game-12, sequence-13, component-14, or-15, the-16, Denominators-17, '-18, web-19, page-20, ,-21, depending-22, on-23, the-24, button-25, selected-26, .-27]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[forwarded_17_user_20, forwarded user, forwarded the user , 17, 20, 17, [forwarded/verb, the/NULL, user/noun], ['forwarded|VB user|NN'], OK]]
+	[A-1, movie-2, is-3, displayed-4, on-5, the-6, screen-7, .-8]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[displayed_40_movie_42, displayed movie, displayed A movie , 40, 42, 40, [displayed/verb, A/NULL, movie/noun], ['displayed|VB movie|NN'], OK]]
+
+	Responsibilities: [3]
+		[selects_8_button_10, selects button, selects a button , 8, 10, 10, [selects/verb, a/NULL, button/noun], ['selects|VB button|NN'], OK]
+		[forwarded_17_user_20, forwarded user, forwarded the user , 17, 20, 17, [forwarded/verb, the/NULL, user/noun], ['forwarded|VB user|NN'], OK]
+		[displayed_40_movie_42, displayed movie, displayed A movie , 40, 42, 40, [displayed/verb, A/NULL, movie/noun], ['displayed|VB movie|NN'], OK]
+
+Req - [5/15]
+	Requirement [REQ-5] = [The user will respond to questions by clicking on the desired answer from a set of choices . ]
+	Sentences : [1]
+	[The-1, user-2, will-3, respond-4, to-5, questions-6, by-7, clicking-8, on-9, the-10, desired-11, answer-12, from-13, a-14, set-15, of-16, choices-17, .-18]
+		Caso 1 [0]: []
+		Caso 2 [1]: [[respond_4_questions_6, respond questions, respond to questions , 4, 6, 6, [respond/verb, to/NULL, questions/noun], ['respond|VB questions|NN'], OK]]
+		Caso 4 [0]: []
+
+	Responsibilities: [1]
+		[respond_4_questions_6, respond questions, respond to questions , 4, 6, 6, [respond/verb, to/NULL, questions/noun], ['respond|VB questions|NN'], OK]
+
+Req - [6/15]
+	Requirement [REQ-6] = [The Game Sequence component will display a question , and then wait until the user chooses an answer . ]
+	Sentences : [1]
+	[The-1, Game-2, Sequence-3, component-4, will-5, display-6, a-7, question-8, ,-9, and-10, then-11, wait-12, until-13, the-14, user-15, chooses-16, an-17, answer-18, .-19]
+		Caso 1 [2]: [[display_6_question_8, display question, display a question , 6, 8, 8, [display/verb, a/NULL, question/noun], ['display|VB question|NN'], OK], [chooses_16_answer_18, chooses answer, chooses an answer , 16, 18, 18, [chooses/verb, an/NULL, answer/noun], ['chooses|VB answer|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[display_6_question_8, display question, display a question , 6, 8, 8, [display/verb, a/NULL, question/noun], ['display|VB question|NN'], OK]
+		[chooses_16_answer_18, chooses answer, chooses an answer , 16, 18, 18, [chooses/verb, an/NULL, answer/noun], ['chooses|VB answer|NN'], OK]
+
+Req - [7/15]
+	Requirement [REQ-7] = [If the user selects the correct answer , a message to this effect will be displayed and the component will move to the next question . ]
+	Sentences : [1]
+	[If-1, the-2, user-3, selects-4, the-5, correct-6, answer-7, ,-8, a-9, message-10, to-11, this-12, effect-13, will-14, be-15, displayed-16, and-17, the-18, component-19, will-20, move-21, to-22, the-23, next-24, question-25, .-26]
+		Caso 1 [1]: [[selects_4_answer_7, selects answer, selects the correct answer , 4, 7, 7, [selects/verb, the/NULL, correct/adjective, answer/noun], ['selects|VB correct|ADJ answer|NN'], OK]]
+		Caso 2 [2]: [[move_21_question_25, move question, move to the next question , 21, 25, 25, [move/verb, to/NULL, the/NULL, next/adjective, question/noun], ['move|VB next|ADJ question|NN'], OK], [message_10_effect_13, message effect, message to this effect , 10, 13, 13, [message/verb, to/NULL, this/NULL, effect/noun], ['message|VB effect|NN'], OK]]
+		Caso 4 [1]: [[displayed_10_message_16, displayed message, displayed a message to this effect , 10, 16, 13, [displayed/verb, a/NULL, message/noun, to/NULL, this/NULL, effect/noun], ['displayed|VB message|NN effect|NN'], OK]]
+
+	Responsibilities: [4]
+		[selects_4_answer_7, selects answer, selects the correct answer , 4, 7, 7, [selects/verb, the/NULL, correct/adjective, answer/noun], ['selects|VB correct|ADJ answer|NN'], OK]
+		[move_21_question_25, move question, move to the next question , 21, 25, 25, [move/verb, to/NULL, the/NULL, next/adjective, question/noun], ['move|VB next|ADJ question|NN'], OK]
+		[message_10_effect_13, message effect, message to this effect , 10, 13, 13, [message/verb, to/NULL, this/NULL, effect/noun], ['message|VB effect|NN'], OK]
+		[displayed_10_message_16, displayed message, displayed a message to this effect , 10, 16, 13, [displayed/verb, a/NULL, message/noun, to/NULL, this/NULL, effect/noun], ['displayed|VB message|NN effect|NN'], OK]
+
+Req - [8/15]
+	Requirement [REQ-8] = [If the incorrect answer is selected , this component will inform the user of this and give them another chance to answer the question . However , their score will not count this question as being answered correctly . ]
+	Sentences : [2]
+	[If-1, the-2, incorrect-3, answer-4, is-5, selected-6, ,-7, this-8, component-9, will-10, inform-11, the-12, user-13, of-14, this-15, and-16, give-17, them-18, another-19, chance-20, to-21, answer-22, the-23, question-24, .-25]
+		Caso 1 [3]: [[inform_11_user_13, inform user, inform the user of this , 11, 13, 15, [inform/verb, the/NULL, user/noun, of/NULL, this/NULL], ['inform|VB user|NN'], OK], [give_17_chance_20, give chance, give another chance to answer the question , 17, 20, 24, [give/verb, another/NULL, chance/noun, to/NULL, answer/verb, the/NULL, question/noun], ['give|VB chance|NN answer|VB question|NN'], OK], [answer_22_question_24, answer question, answer the question , 22, 24, 24, [answer/verb, the/NULL, question/noun], ['answer|VB question|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[selected_4_answer_6, selected answer, selected the incorrect answer , 4, 6, 4, [selected/verb, the/NULL, incorrect/adjective, answer/noun], ['selected|VB incorrect|ADJ answer|NN'], OK]]
+	[However-1, ,-2, their-3, score-4, will-5, not-6, count-7, this-8, question-9, as-10, being-11, answered-12, correctly-13, .-14]
+		Caso 1 [1]: [[count_32_question_34, count question, count this question , 32, 34, 34, [count/verb, this/NULL, question/noun], ['count|VB question|NN'], NEGATED]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [5]
+		[inform_11_user_13, inform user, inform the user of this , 11, 13, 15, [inform/verb, the/NULL, user/noun, of/NULL, this/NULL], ['inform|VB user|NN'], OK]
+		[give_17_chance_20, give chance, give another chance to answer the question , 17, 20, 24, [give/verb, another/NULL, chance/noun, to/NULL, answer/verb, the/NULL, question/noun], ['give|VB chance|NN answer|VB question|NN'], OK]
+		[answer_22_question_24, answer question, answer the question , 22, 24, 24, [answer/verb, the/NULL, question/noun], ['answer|VB question|NN'], OK]
+		[selected_4_answer_6, selected answer, selected the incorrect answer , 4, 6, 4, [selected/verb, the/NULL, incorrect/adjective, answer/noun], ['selected|VB incorrect|ADJ answer|NN'], OK]
+		[count_32_question_34, count question, count this question , 32, 34, 34, [count/verb, this/NULL, question/noun], ['count|VB question|NN'], NEGATED]
+
+Req - [9/15]
+	Requirement [REQ-9] = [At certain "critical points , " this component will choose different directions in the plot based on whether the question at the critical point was answered correctly . ]
+	Sentences : [1]
+	[At-1, certain-2, ``-3, critical-4, points-5, ,-6, ''-7, this-8, component-9, will-10, choose-11, different-12, directions-13, in-14, the-15, plot-16, based-17, on-18, whether-19, the-20, question-21, at-22, the-23, critical-24, point-25, was-26, answered-27, correctly-28, .-29]
+		Caso 1 [1]: [[choose_11_directions_13, choose directions, choose different directions in the plot based on whether the question at the critical point was answered correctly , 11, 13, 28, [choose/verb, different/adjective, directions/noun, in/NULL, the/NULL, plot/noun, based/verb, on/NULL, whether/NULL, the/NULL, question/noun, at/NULL, the/NULL, critical/adjective, point/noun, was/verb, answered/verb, correctly/adverb], ['choose|VB different|ADJ directions|NN plot|NN based|VB question|NN critical|ADJ point|NN was|VB answered|VB correctly|ADV'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[answered_21_question_27, answered question, answered the question at the critical point , 21, 27, 25, [answered/verb, the/NULL, question/noun, at/NULL, the/NULL, critical/adjective, point/noun], ['answered|VB question|NN critical|ADJ point|NN'], OK]]
+
+	Responsibilities: [2]
+		[choose_11_directions_13, choose directions, choose different directions in the plot based on whether the question at the critical point was answered correctly , 11, 13, 28, [choose/verb, different/adjective, directions/noun, in/NULL, the/NULL, plot/noun, based/verb, on/NULL, whether/NULL, the/NULL, question/noun, at/NULL, the/NULL, critical/adjective, point/noun, was/verb, answered/verb, correctly/adverb], ['choose|VB different|ADJ directions|NN plot|NN based|VB question|NN critical|ADJ point|NN was|VB answered|VB correctly|ADV'], OK]
+		[answered_21_question_27, answered question, answered the question at the critical point , 21, 27, 25, [answered/verb, the/NULL, question/noun, at/NULL, the/NULL, critical/adjective, point/noun], ['answered|VB question|NN critical|ADJ point|NN'], OK]
+
+Req - [10/15]
+	Requirement [REQ-10] = [After the user has proceeded through a set number of questions , they will be directed to the ending scene component . ]
+	Sentences : [1]
+	[After-1, the-2, user-3, has-4, proceeded-5, through-6, a-7, set-8, number-9, of-10, questions-11, ,-12, they-13, will-14, be-15, directed-16, to-17, the-18, ending-19, scene-20, component-21, .-22]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [0]
+
+Req - [11/15]
+	Requirement [REQ-11] = [The user can select either to end the game or return to the main menu via mouse clicks . ]
+	Sentences : [1]
+	[The-1, user-2, can-3, select-4, either-5, to-6, end-7, the-8, game-9, or-10, return-11, to-12, the-13, main-14, menu-15, via-16, mouse-17, clicks-18, .-19]
+		Caso 1 [2]: [[end_7_game_9, end game, end the game or return , 7, 9, 11, [end/verb, the/NULL, game/noun, or/NULL, return/noun], ['end|VB game|NN return|NN'], OK], [end_7_return_11, end return, end return , 7, 11, 11, [end/verb, return/noun], ['end|VB return|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[end_7_game_9, end game, end the game or return , 7, 9, 11, [end/verb, the/NULL, game/noun, or/NULL, return/noun], ['end|VB game|NN return|NN'], OK]
+		[end_7_return_11, end return, end return , 7, 11, 11, [end/verb, return/noun], ['end|VB return|NN'], OK]
+
+Req - [12/15]
+	Requirement [REQ-12] = [This component will wait until the user selects either to return to the main menu or to exit the game . After receiving the user's input , the component will act accordingly . ]
+	Sentences : [2]
+	[This-1, component-2, will-3, wait-4, until-5, the-6, user-7, selects-8, either-9, to-10, return-11, to-12, the-13, main-14, menu-15, or-16, to-17, exit-18, the-19, game-20, .-21]
+		Caso 1 [1]: [[exit_18_game_20, exit game, exit the game , 18, 20, 20, [exit/verb, the/NULL, game/noun], ['exit|VB game|NN'], OK]]
+		Caso 2 [1]: [[return_11_menu_15, return menu, return to the main menu , 11, 15, 15, [return/verb, to/NULL, the/NULL, main/adjective, menu/noun], ['return|VB main|ADJ menu|NN'], OK]]
+		Caso 4 [0]: []
+	[After-1, receiving-2, the-3, user-4, 's-5, input-6, ,-7, the-8, component-9, will-10, act-11, accordingly-12, .-13]
+		Caso 1 [1]: [[receiving_23_input_27, receiving input, receiving the user 's input , 23, 27, 27, [receiving/verb, the/NULL, user/noun, 's/NULL, input/noun], ['receiving|VB user|NN input|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [3]
+		[exit_18_game_20, exit game, exit the game , 18, 20, 20, [exit/verb, the/NULL, game/noun], ['exit|VB game|NN'], OK]
+		[return_11_menu_15, return menu, return to the main menu , 11, 15, 15, [return/verb, to/NULL, the/NULL, main/adjective, menu/noun], ['return|VB main|ADJ menu|NN'], OK]
+		[receiving_23_input_27, receiving input, receiving the user 's input , 23, 27, 27, [receiving/verb, the/NULL, user/noun, 's/NULL, input/noun], ['receiving|VB user|NN input|NN'], OK]
+
+Req - [13/15]
+	Requirement [REQ-13] = [The user will input new data via pulldown menus and text fields . Each question will be updated on a separate page , and the user will click a button to progress between these pages . ]
+	Sentences : [2]
+	[The-1, user-2, will-3, input-4, new-5, data-6, via-7, pulldown-8, menus-9, and-10, text-11, fields-12, .-13]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Each-1, question-2, will-3, be-4, updated-5, on-6, a-7, separate-8, page-9, ,-10, and-11, the-12, user-13, will-14, click-15, a-16, button-17, to-18, progress-19, between-20, these-21, pages-22, .-23]
+		Caso 1 [1]: [[click_28_button_30, click button, click a button to progress between these pages , 28, 30, 35, [click/verb, a/NULL, button/noun, to/NULL, progress/verb, between/NULL, these/NULL, pages/noun], ['click|VB button|NN progress|VB pages|NN'], OK]]
+		Caso 2 [1]: [[progress_32_pages_35, progress pages, progress between these pages , 32, 35, 35, [progress/verb, between/NULL, these/NULL, pages/noun], ['progress|VB pages|NN'], OK]]
+		Caso 4 [1]: [[updated_15_question_18, updated question, updated Each question , 15, 18, 15, [updated/verb, Each/NULL, question/noun], ['updated|VB question|NN'], OK]]
+
+	Responsibilities: [3]
+		[click_28_button_30, click button, click a button to progress between these pages , 28, 30, 35, [click/verb, a/NULL, button/noun, to/NULL, progress/verb, between/NULL, these/NULL, pages/noun], ['click|VB button|NN progress|VB pages|NN'], OK]
+		[progress_32_pages_35, progress pages, progress between these pages , 32, 35, 35, [progress/verb, between/NULL, these/NULL, pages/noun], ['progress|VB pages|NN'], OK]
+		[updated_15_question_18, updated question, updated Each question , 15, 18, 15, [updated/verb, Each/NULL, question/noun], ['updated|VB question|NN'], OK]
+
+Req - [14/15]
+	Requirement [REQ-14] = [The component will wait for the user to click a submission button for each question . After the button is clicked , the component will check that the inputted data is complete and makes sense in the context of the updated question . ]
+	Sentences : [2]
+	[The-1, component-2, will-3, wait-4, for-5, the-6, user-7, to-8, click-9, a-10, submission-11, button-12, for-13, each-14, question-15, .-16]
+		Caso 1 [1]: [[click_9_button_12, click button, click a submission button for each question , 9, 12, 15, [click/verb, a/NULL, submission/noun, button/noun, for/NULL, each/NULL, question/noun], ['click|VB submission|NN button|NN question|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[After-1, the-2, button-3, is-4, clicked-5, ,-6, the-7, component-8, will-9, check-10, that-11, the-12, inputted-13, data-14, is-15, complete-16, and-17, makes-18, sense-19, in-20, the-21, context-22, of-23, the-24, updated-25, question-26, .-27]
+		Caso 1 [1]: [[makes_34_sense_35, makes sense, makes sense , 34, 35, 35, [makes/verb, sense/noun], ['makes|VB sense|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[clicked_19_button_21, clicked button, clicked the button , 19, 21, 19, [clicked/verb, the/NULL, button/noun], ['clicked|VB button|NN'], OK]]
+
+	Responsibilities: [3]
+		[click_9_button_12, click button, click a submission button for each question , 9, 12, 15, [click/verb, a/NULL, submission/noun, button/noun, for/NULL, each/NULL, question/noun], ['click|VB submission|NN button|NN question|NN'], OK]
+		[makes_34_sense_35, makes sense, makes sense , 34, 35, 35, [makes/verb, sense/noun], ['makes|VB sense|NN'], OK]
+		[clicked_19_button_21, clicked button, clicked the button , 19, 21, 19, [clicked/verb, the/NULL, button/noun], ['clicked|VB button|NN'], OK]
+
+Req - [15/15]
+	Requirement [REQ-15] = [The component will generate a text file on the game server , which is used by the game sequence to dynamically load question data . ]
+	Sentences : [1]
+	[The-1, component-2, will-3, generate-4, a-5, text-6, file-7, on-8, the-9, game-10, server-11, ,-12, which-13, is-14, used-15, by-16, the-17, game-18, sequence-19, to-20, dynamically-21, load-22, question-23, data-24, .-25]
+		Caso 1 [2]: [[generate_4_file_7, generate file, generate a text file on the game server , 4, 7, 11, [generate/verb, a/NULL, text/noun, file/noun, on/NULL, the/NULL, game/noun, server/noun], ['generate|VB text|NN file|NN game|NN server|NN'], OK], [load_22_data_24, load data, load question data , 22, 24, 24, [load/verb, question/noun, data/noun], ['load|VB question|NN data|NN'], OK]]
+		Caso 2 [1]: [[file_7_server_11, file server, file on the game server , 7, 11, 11, [file/verb, on/NULL, the/NULL, game/noun, server/noun], ['file|VB game|NN server|NN'], OK]]
+		Caso 4 [1]: [[used_11_server_15, used server, used on the game server , 11, 15, 11, [used/verb, on/NULL, the/NULL, game/noun, server/noun], ['used|VB game|NN server|NN'], OK]]
+
+	Responsibilities: [4]
+		[generate_4_file_7, generate file, generate a text file on the game server , 4, 7, 11, [generate/verb, a/NULL, text/noun, file/noun, on/NULL, the/NULL, game/noun, server/noun], ['generate|VB text|NN file|NN game|NN server|NN'], OK]
+		[load_22_data_24, load data, load question data , 22, 24, 24, [load/verb, question/noun, data/noun], ['load|VB question|NN data|NN'], OK]
+		[file_7_server_11, file server, file on the game server , 7, 11, 11, [file/verb, on/NULL, the/NULL, game/noun, server/noun], ['file|VB game|NN server|NN'], OK]
+		[used_11_server_15, used server, used on the game server , 11, 15, 11, [used/verb, on/NULL, the/NULL, game/noun, server/noun], ['used|VB game|NN server|NN'], OK]
+
+
+** Sequencing of Responsibilities  **
+
+Req -  [1/15]
+	Requirement [REQ-1] = [If the user clicks a mouse button while in the Introductory Movie component , they will skip the movie and proceed to the main menu . No other input is recognized . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [If the user clicks a mouse button while in the Introductory Movie component , they will skip the movie and proceed to the main menu .]
+		+ Tokens    [1] = [[If-1, the-2, user-3, clicks-4, a-5, mouse-6, button-7, while-8, in-9, the-10, Introductory-11, Movie-12, component-13, ,-14, they-15, will-16, skip-17, the-18, movie-19, and-20, proceed-21, to-22, the-23, main-24, menu-25, .-26]]
+		+ Hubo Match [[IF] <...> [,] <...>] = [[IF], the-2, user-3, clicks-4, a-5, mouse-6, button-7, while-8, in-9, the-10, introductory-11, movie-12, component-13, [,], they-15, will-16, skip-17, the-18, movie-19, and-20, proceed-21, to-22, the-23, main-24, menu-25, .-26]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, the-2, user-3, clicks-4, a-5, mouse-6, button-7, while-8, in-9, the-10, introductory-11, movie-12, component-13, ,-14, they-15, will-16, skip-17, the-18, movie-19, and-20, proceed-21, [TO], the-23, main-24, menu-25, .-26]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [if-1, the-2, user-3, clicks-4, a-5, mouse-6, button-7, while-8, in-9, the-10, introductory-11, movie-12, component-13, ,-14, they-15, will-16, skip-17, the-18, movie-19, [AND], proceed-21, to-22, the-23, main-24, menu-25, .-26]
+		+ Sentencia [2] = [No other input is recognized .]
+		+ Tokens    [2] = [[No-1, other-2, input-3, is-4, recognized-5, .-6]]
+		+ Causal Relationship [1/2] = [clicks button -> skip movie]
+		+ Causal Relationship [2/2] = [skip movie -> proceed menu]
+
+Req -  [2/15]
+	Requirement [REQ-2] = [Upon entrance to the movie component , the introductory movie will begin playing . If a mouse click is received , this component will terminate the movie and forward the user to the main menu component . Otherwise , the movie will continue to its completion and the user will be moved to the main menu . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [Upon entrance to the movie component , the introductory movie will begin playing .]
+		+ Tokens    [1] = [[Upon-1, entrance-2, to-3, the-4, movie-5, component-6, ,-7, the-8, introductory-9, movie-10, will-11, begin-12, playing-13, .-14]]
+		+ Hubo Match [[UPON] <...> [,] <...>] = [[UPON], entrance-2, to-3, the-4, movie-5, component-6, [,], the-8, introductory-9, movie-10, will-11, begin-12, playing-13, .-14]
+		+ Hubo Match [<R_A> [UPON] <R_B>] = [[UPON], entrance-2, to-3, the-4, movie-5, component-6, ,-7, the-8, introductory-9, movie-10, will-11, begin-12, playing-13, .-14]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [upon-1, entrance-2, [TO], the-4, movie-5, component-6, ,-7, the-8, introductory-9, movie-10, will-11, begin-12, playing-13, .-14]
+		+ Sentencia [2] = [If a mouse click is received , this component will terminate the movie and forward the user to the main menu component .]
+		+ Tokens    [2] = [[If-1, a-2, mouse-3, click-4, is-5, received-6, ,-7, this-8, component-9, will-10, terminate-11, the-12, movie-13, and-14, forward-15, the-16, user-17, to-18, the-19, main-20, menu-21, component-22, .-23]]
+		+ Hubo Match [[IF] <...> [,] <...>] = [[IF], a-2, mouse-3, click-4, is-5, received-6, [,], this-8, component-9, will-10, terminate-11, the-12, movie-13, and-14, forward-15, the-16, user-17, to-18, the-19, main-20, menu-21, component-22, .-23]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, a-2, mouse-3, click-4, is-5, received-6, ,-7, this-8, component-9, will-10, terminate-11, the-12, movie-13, and-14, forward-15, the-16, user-17, [TO], the-19, main-20, menu-21, component-22, .-23]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [if-1, a-2, mouse-3, click-4, is-5, received-6, ,-7, this-8, component-9, will-10, terminate-11, the-12, movie-13, [AND], forward-15, the-16, user-17, to-18, the-19, main-20, menu-21, component-22, .-23]
+		+ Sentencia [3] = [Otherwise , the movie will continue to its completion and the user will be moved to the main menu .]
+		+ Tokens    [3] = [[Otherwise-1, ,-2, the-3, movie-4, will-5, continue-6, to-7, its-8, completion-9, and-10, the-11, user-12, will-13, be-14, moved-15, to-16, the-17, main-18, menu-19, .-20]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [otherwise-1, ,-2, the-3, movie-4, will-5, continue-6, [TO], its-8, completion-9, and-10, the-11, user-12, will-13, be-14, moved-15, to-16, the-17, main-18, menu-19, .-20]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [otherwise-1, ,-2, the-3, movie-4, will-5, continue-6, to-7, its-8, completion-9, and-10, the-11, user-12, will-13, be-14, moved-15, [TO], the-17, main-18, menu-19, .-20]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [otherwise-1, ,-2, the-3, movie-4, will-5, continue-6, to-7, its-8, completion-9, [AND], the-11, user-12, will-13, be-14, moved-15, to-16, the-17, main-18, menu-19, .-20]
+		+ Causal Relationship [1/2] = [received click -> terminate movie]
+		+ Causal Relationship [2/2] = [terminate movie -> user component]
+
+Req -  [3/15]
+	Requirement [REQ-3] = [The user can click on the corresponding button to begin the game or follow the link to the Denominators' web page . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [The user can click on the corresponding button to begin the game or follow the link to the Denominators' web page .]
+		+ Tokens    [1] = [[The-1, user-2, can-3, click-4, on-5, the-6, corresponding-7, button-8, to-9, begin-10, the-11, game-12, or-13, follow-14, the-15, link-16, to-17, the-18, Denominators-19, '-20, web-21, page-22, .-23]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, user-2, can-3, click-4, on-5, the-6, corresponding-7, button-8, [TO], begin-10, the-11, game-12, or-13, follow-14, the-15, link-16, to-17, the-18, denominators-19, '-20, web-21, page-22, .-23]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, user-2, can-3, click-4, on-5, the-6, corresponding-7, button-8, to-9, begin-10, the-11, game-12, or-13, follow-14, the-15, link-16, [TO], the-18, denominators-19, '-20, web-21, page-22, .-23]
+		+ Causal Relationship [1/2] = [click button -> begin game]
+		+ Causal Relationship [2/2] = [click button -> follow link]
+
+Req -  [4/15]
+	Requirement [REQ-4] = [This component will wait until the user selects a button . At that time , the user will be forwarded to the game sequence component or the Denominators' web page , depending on the button selected . A movie is displayed on the screen . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [This component will wait until the user selects a button .]
+		+ Tokens    [1] = [[This-1, component-2, will-3, wait-4, until-5, the-6, user-7, selects-8, a-9, button-10, .-11]]
+		+ Hubo Match [<R_A> [UNTIL] <R_B>] = [this-1, component-2, will-3, wait-4, [UNTIL], the-6, user-7, selects-8, a-9, button-10, .-11]
+		+ Sentencia [2] = [At that time , the user will be forwarded to the game sequence component or the Denominators' web page , depending on the button selected .]
+		+ Tokens    [2] = [[At-1, that-2, time-3, ,-4, the-5, user-6, will-7, be-8, forwarded-9, to-10, the-11, game-12, sequence-13, component-14, or-15, the-16, Denominators-17, '-18, web-19, page-20, ,-21, depending-22, on-23, the-24, button-25, selected-26, .-27]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [at-1, that-2, time-3, ,-4, the-5, user-6, will-7, be-8, forwarded-9, [TO], the-11, game-12, sequence-13, component-14, or-15, the-16, denominators-17, '-18, web-19, page-20, ,-21, depending-22, on-23, the-24, button-25, selected-26, .-27]
+		+ Sentencia [3] = [A movie is displayed on the screen .]
+		+ Tokens    [3] = [[A-1, movie-2, is-3, displayed-4, on-5, the-6, screen-7, .-8]]
+
+Req -  [5/15]
+	Requirement [REQ-5] = [The user will respond to questions by clicking on the desired answer from a set of choices . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [The user will respond to questions by clicking on the desired answer from a set of choices .]
+		+ Tokens    [1] = [[The-1, user-2, will-3, respond-4, to-5, questions-6, by-7, clicking-8, on-9, the-10, desired-11, answer-12, from-13, a-14, set-15, of-16, choices-17, .-18]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, user-2, will-3, respond-4, [TO], questions-6, by-7, clicking-8, on-9, the-10, desired-11, answer-12, from-13, a-14, set-15, of-16, choices-17, .-18]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [the-1, user-2, will-3, respond-4, to-5, questions-6, [BY], clicking-8, on-9, the-10, desired-11, answer-12, from-13, a-14, set-15, of-16, choices-17, .-18]
+
+Req -  [6/15]
+	Requirement [REQ-6] = [The Game Sequence component will display a question , and then wait until the user chooses an answer . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [The Game Sequence component will display a question , and then wait until the user chooses an answer .]
+		+ Tokens    [1] = [[The-1, Game-2, Sequence-3, component-4, will-5, display-6, a-7, question-8, ,-9, and-10, then-11, wait-12, until-13, the-14, user-15, chooses-16, an-17, answer-18, .-19]]
+		+ Hubo Match [<R_A> [UNTIL] <R_B>] = [the-1, game-2, sequence-3, component-4, will-5, display-6, a-7, question-8, ,-9, and-10, then-11, wait-12, [UNTIL], the-14, user-15, chooses-16, an-17, answer-18, .-19]
+		+ Hubo Match [<R_A> [THEN] <R_B>] = [the-1, game-2, sequence-3, component-4, will-5, display-6, a-7, question-8, ,-9, and-10, [THEN], wait-12, until-13, the-14, user-15, chooses-16, an-17, answer-18, .-19]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [the-1, game-2, sequence-3, component-4, will-5, display-6, a-7, question-8, ,-9, [AND], then-11, wait-12, until-13, the-14, user-15, chooses-16, an-17, answer-18, .-19]
+		+ Causal Relationship [1/1] = [display question -> chooses answer]
+
+Req -  [7/15]
+	Requirement [REQ-7] = [If the user selects the correct answer , a message to this effect will be displayed and the component will move to the next question . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [If the user selects the correct answer , a message to this effect will be displayed and the component will move to the next question .]
+		+ Tokens    [1] = [[If-1, the-2, user-3, selects-4, the-5, correct-6, answer-7, ,-8, a-9, message-10, to-11, this-12, effect-13, will-14, be-15, displayed-16, and-17, the-18, component-19, will-20, move-21, to-22, the-23, next-24, question-25, .-26]]
+		+ Hubo Match [[IF] <...> [,] <...>] = [[IF], the-2, user-3, selects-4, the-5, correct-6, answer-7, [,], a-9, message-10, to-11, this-12, effect-13, will-14, be-15, displayed-16, and-17, the-18, component-19, will-20, move-21, to-22, the-23, next-24, question-25, .-26]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, the-2, user-3, selects-4, the-5, correct-6, answer-7, ,-8, a-9, message-10, [TO], this-12, effect-13, will-14, be-15, displayed-16, and-17, the-18, component-19, will-20, move-21, to-22, the-23, next-24, question-25, .-26]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, the-2, user-3, selects-4, the-5, correct-6, answer-7, ,-8, a-9, message-10, to-11, this-12, effect-13, will-14, be-15, displayed-16, and-17, the-18, component-19, will-20, move-21, [TO], the-23, next-24, question-25, .-26]
+		+ Hubo Match [<R_A> [NEXT] <R_B>] = [if-1, the-2, user-3, selects-4, the-5, correct-6, answer-7, ,-8, a-9, message-10, to-11, this-12, effect-13, will-14, be-15, displayed-16, and-17, the-18, component-19, will-20, move-21, to-22, the-23, [NEXT], question-25, .-26]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [if-1, the-2, user-3, selects-4, the-5, correct-6, answer-7, ,-8, a-9, message-10, to-11, this-12, effect-13, will-14, be-15, displayed-16, [AND], the-18, component-19, will-20, move-21, to-22, the-23, next-24, question-25, .-26]
+		+ Causal Relationship [1/3] = [selects answer -> message effect]
+		+ Causal Relationship [2/3] = [selects answer -> displayed message]
+		+ Causal Relationship [3/3] = [displayed message -> move question]
+
+Req -  [8/15]
+	Requirement [REQ-8] = [If the incorrect answer is selected , this component will inform the user of this and give them another chance to answer the question . However , their score will not count this question as being answered correctly . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [If the incorrect answer is selected , this component will inform the user of this and give them another chance to answer the question .]
+		+ Tokens    [1] = [[If-1, the-2, incorrect-3, answer-4, is-5, selected-6, ,-7, this-8, component-9, will-10, inform-11, the-12, user-13, of-14, this-15, and-16, give-17, them-18, another-19, chance-20, to-21, answer-22, the-23, question-24, .-25]]
+		+ Hubo Match [[IF] <...> [,] <...>] = [[IF], the-2, incorrect-3, answer-4, is-5, selected-6, [,], this-8, component-9, will-10, inform-11, the-12, user-13, of-14, this-15, and-16, give-17, them-18, another-19, chance-20, to-21, answer-22, the-23, question-24, .-25]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, the-2, incorrect-3, answer-4, is-5, selected-6, ,-7, this-8, component-9, will-10, inform-11, the-12, user-13, of-14, this-15, and-16, give-17, them-18, another-19, chance-20, [TO], answer-22, the-23, question-24, .-25]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [if-1, the-2, incorrect-3, answer-4, is-5, selected-6, ,-7, this-8, component-9, will-10, inform-11, the-12, user-13, of-14, this-15, [AND], give-17, them-18, another-19, chance-20, to-21, answer-22, the-23, question-24, .-25]
+		+ Sentencia [2] = [However , their score will not count this question as being answered correctly .]
+		+ Tokens    [2] = [[However-1, ,-2, their-3, score-4, will-5, not-6, count-7, this-8, question-9, as-10, being-11, answered-12, correctly-13, .-14]]
+		+ Causal Relationship [1/4] = [selected answer -> inform user]
+		+ Causal Relationship [2/4] = [selected answer -> give chance]
+		+ Causal Relationship [3/4] = [inform user -> answer question]
+		+ Causal Relationship [4/4] = [give chance -> answer question]
+
+Req -  [9/15]
+	Requirement [REQ-9] = [At certain "critical points , " this component will choose different directions in the plot based on whether the question at the critical point was answered correctly . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [At certain "critical points , " this component will choose different directions in the plot based on whether the question at the critical point was answered correctly .]
+		+ Tokens    [1] = [[At-1, certain-2, ``-3, critical-4, points-5, ,-6, ''-7, this-8, component-9, will-10, choose-11, different-12, directions-13, in-14, the-15, plot-16, based-17, on-18, whether-19, the-20, question-21, at-22, the-23, critical-24, point-25, was-26, answered-27, correctly-28, .-29]]
+
+Req -  [10/15]
+	Requirement [REQ-10] = [After the user has proceeded through a set number of questions , they will be directed to the ending scene component . ]
+
+Req -  [11/15]
+	Requirement [REQ-11] = [The user can select either to end the game or return to the main menu via mouse clicks . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [The user can select either to end the game or return to the main menu via mouse clicks .]
+		+ Tokens    [1] = [[The-1, user-2, can-3, select-4, either-5, to-6, end-7, the-8, game-9, or-10, return-11, to-12, the-13, main-14, menu-15, via-16, mouse-17, clicks-18, .-19]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, user-2, can-3, select-4, either-5, [TO], end-7, the-8, game-9, or-10, return-11, to-12, the-13, main-14, menu-15, via-16, mouse-17, clicks-18, .-19]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, user-2, can-3, select-4, either-5, to-6, end-7, the-8, game-9, or-10, return-11, [TO], the-13, main-14, menu-15, via-16, mouse-17, clicks-18, .-19]
+
+Req -  [12/15]
+	Requirement [REQ-12] = [This component will wait until the user selects either to return to the main menu or to exit the game . After receiving the user's input , the component will act accordingly . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [This component will wait until the user selects either to return to the main menu or to exit the game .]
+		+ Tokens    [1] = [[This-1, component-2, will-3, wait-4, until-5, the-6, user-7, selects-8, either-9, to-10, return-11, to-12, the-13, main-14, menu-15, or-16, to-17, exit-18, the-19, game-20, .-21]]
+		+ Hubo Match [<R_A> [UNTIL] <R_B>] = [this-1, component-2, will-3, wait-4, [UNTIL], the-6, user-7, selects-8, either-9, to-10, return-11, to-12, the-13, main-14, menu-15, or-16, to-17, exit-18, the-19, game-20, .-21]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [this-1, component-2, will-3, wait-4, until-5, the-6, user-7, selects-8, either-9, [TO], return-11, to-12, the-13, main-14, menu-15, or-16, to-17, exit-18, the-19, game-20, .-21]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [this-1, component-2, will-3, wait-4, until-5, the-6, user-7, selects-8, either-9, to-10, return-11, [TO], the-13, main-14, menu-15, or-16, to-17, exit-18, the-19, game-20, .-21]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [this-1, component-2, will-3, wait-4, until-5, the-6, user-7, selects-8, either-9, to-10, return-11, to-12, the-13, main-14, menu-15, or-16, [TO], exit-18, the-19, game-20, .-21]
+		+ Sentencia [2] = [After receiving the user's input , the component will act accordingly .]
+		+ Tokens    [2] = [[After-1, receiving-2, the-3, user-4, 's-5, input-6, ,-7, the-8, component-9, will-10, act-11, accordingly-12, .-13]]
+		+ Hubo Match [[AFTER] <...> [,] <...>] = [[AFTER], receiving-2, the-3, user-4, 's-5, input-6, [,], the-8, component-9, will-10, act-11, accordingly-12, .-13]
+		+ Hubo Match [<R_A> [AFTER] <R_B>] = [[AFTER], receiving-2, the-3, user-4, 's-5, input-6, ,-7, the-8, component-9, will-10, act-11, accordingly-12, .-13]
+		+ Causal Relationship [1/1] = [return menu -> exit game]
+
+Req -  [13/15]
+	Requirement [REQ-13] = [The user will input new data via pulldown menus and text fields . Each question will be updated on a separate page , and the user will click a button to progress between these pages . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [The user will input new data via pulldown menus and text fields .]
+		+ Tokens    [1] = [[The-1, user-2, will-3, input-4, new-5, data-6, via-7, pulldown-8, menus-9, and-10, text-11, fields-12, .-13]]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [the-1, user-2, will-3, input-4, new-5, data-6, via-7, pulldown-8, menus-9, [AND], text-11, fields-12, .-13]
+		+ Sentencia [2] = [Each question will be updated on a separate page , and the user will click a button to progress between these pages .]
+		+ Tokens    [2] = [[Each-1, question-2, will-3, be-4, updated-5, on-6, a-7, separate-8, page-9, ,-10, and-11, the-12, user-13, will-14, click-15, a-16, button-17, to-18, progress-19, between-20, these-21, pages-22, .-23]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [each-1, question-2, will-3, be-4, updated-5, on-6, a-7, separate-8, page-9, ,-10, and-11, the-12, user-13, will-14, click-15, a-16, button-17, [TO], progress-19, between-20, these-21, pages-22, .-23]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [each-1, question-2, will-3, be-4, updated-5, on-6, a-7, separate-8, page-9, ,-10, [AND], the-12, user-13, will-14, click-15, a-16, button-17, to-18, progress-19, between-20, these-21, pages-22, .-23]
+		+ Causal Relationship [1/2] = [updated question -> progress pages]
+		+ Causal Relationship [2/2] = [click button -> progress pages]
+
+Req -  [14/15]
+	Requirement [REQ-14] = [The component will wait for the user to click a submission button for each question . After the button is clicked , the component will check that the inputted data is complete and makes sense in the context of the updated question . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [The component will wait for the user to click a submission button for each question .]
+		+ Tokens    [1] = [[The-1, component-2, will-3, wait-4, for-5, the-6, user-7, to-8, click-9, a-10, submission-11, button-12, for-13, each-14, question-15, .-16]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, component-2, will-3, wait-4, for-5, the-6, user-7, [TO], click-9, a-10, submission-11, button-12, for-13, each-14, question-15, .-16]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [the-1, component-2, will-3, wait-4, [FOR], the-6, user-7, to-8, click-9, a-10, submission-11, button-12, for-13, each-14, question-15, .-16]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [the-1, component-2, will-3, wait-4, for-5, the-6, user-7, to-8, click-9, a-10, submission-11, button-12, [FOR], each-14, question-15, .-16]
+		+ Sentencia [2] = [After the button is clicked , the component will check that the inputted data is complete and makes sense in the context of the updated question .]
+		+ Tokens    [2] = [[After-1, the-2, button-3, is-4, clicked-5, ,-6, the-7, component-8, will-9, check-10, that-11, the-12, inputted-13, data-14, is-15, complete-16, and-17, makes-18, sense-19, in-20, the-21, context-22, of-23, the-24, updated-25, question-26, .-27]]
+		+ Hubo Match [[AFTER] <...> [,] <...>] = [[AFTER], the-2, button-3, is-4, clicked-5, [,], the-7, component-8, will-9, check-10, that-11, the-12, inputted-13, data-14, is-15, complete-16, and-17, makes-18, sense-19, in-20, the-21, context-22, of-23, the-24, updated-25, question-26, .-27]
+		+ Hubo Match [<R_A> [AFTER] <R_B>] = [[AFTER], the-2, button-3, is-4, clicked-5, ,-6, the-7, component-8, will-9, check-10, that-11, the-12, inputted-13, data-14, is-15, complete-16, and-17, makes-18, sense-19, in-20, the-21, context-22, of-23, the-24, updated-25, question-26, .-27]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [after-1, the-2, button-3, is-4, clicked-5, ,-6, the-7, component-8, will-9, check-10, that-11, the-12, inputted-13, data-14, is-15, complete-16, [AND], makes-18, sense-19, in-20, the-21, context-22, of-23, the-24, updated-25, question-26, .-27]
+		+ Causal Relationship [1/1] = [clicked button -> makes sense]
+
+Req -  [15/15]
+	Requirement [REQ-15] = [The component will generate a text file on the game server , which is used by the game sequence to dynamically load question data . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [The component will generate a text file on the game server , which is used by the game sequence to dynamically load question data .]
+		+ Tokens    [1] = [[The-1, component-2, will-3, generate-4, a-5, text-6, file-7, on-8, the-9, game-10, server-11, ,-12, which-13, is-14, used-15, by-16, the-17, game-18, sequence-19, to-20, dynamically-21, load-22, question-23, data-24, .-25]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, component-2, will-3, generate-4, a-5, text-6, file-7, on-8, the-9, game-10, server-11, ,-12, which-13, is-14, used-15, by-16, the-17, game-18, sequence-19, [TO], dynamically-21, load-22, question-23, data-24, .-25]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [the-1, component-2, will-3, generate-4, a-5, text-6, file-7, on-8, the-9, game-10, server-11, ,-12, which-13, is-14, used-15, [BY], the-17, game-18, sequence-19, to-20, dynamically-21, load-22, question-23, data-24, .-25]
+		+ Causal Relationship [1/6] = [generate file -> load data]
+		+ Causal Relationship [2/6] = [file server -> load data]
+		+ Causal Relationship [3/6] = [used server -> load data]
+		+ Causal Relationship [4/6] = [load data -> generate file]
+		+ Causal Relationship [5/6] = [load data -> file server]
+		+ Causal Relationship [6/6] = [load data -> used server]
+Iguales : 1-2 3-3
+Iguales : 1-2 13-1
+Iguales : 1-2 14-1
+Iguales : 1-2 14-3
+Iguales : 3-3 13-1
+Iguales : 3-3 14-1
+Iguales : 3-3 14-3
+Iguales : 7-1 8-4
+Iguales : 8-3 9-2
+Iguales : 13-1 14-1
+Iguales : 13-1 14-3
+Iguales : 14-1 14-3
+
+
+** Allocation of Responsibilities into Conceptual Components **
+Responsabilidades
+  [1] skip the movie 
+  [2] clicks a mouse button 
+  [3] proceed to the main menu 
+  [4] entrance to the movie component 
+  [5] terminate the movie 
+  [6] user to the main menu component 
+  [7] received a mouse click 
+  [8] continue to its completion and the user 
+  [9] continue the user 
+  [10] begin the game 
+  [11] follow the link 
+  [12] click on the corresponding button 
+  [13] selects a button 
+  [14] forwarded the user 
+  [15] displayed A movie 
+  [16] respond to questions 
+  [17] display a question 
+  [18] chooses an answer 
+  [19] selects the correct answer 
+  [20] move to the next question 
+  [21] message to this effect 
+  [22] displayed a message to this effect 
+  [23] inform the user of this 
+  [24] give another chance to answer the question 
+  [25] answer the question 
+  [26] selected the incorrect answer 
+  [27] count this question 
+  [28] choose different directions in the plot based on whether the question at the critical point was answered correctly 
+  [29] answered the question at the critical point 
+  [30] end the game or return 
+  [31] end return 
+  [32] exit the game 
+  [33] return to the main menu 
+  [34] receiving the user 's input 
+  [35] click a button to progress between these pages 
+  [36] progress between these pages 
+  [37] updated Each question 
+  [38] click a submission button for each question 
+  [39] makes sense 
+  [40] clicked the button 
+  [41] generate a text file on the game server 
+  [42] load question data 
+  [43] file on the game server 
+  [44] used on the game server 
+-------------------------------------------------------------------------------------------------
+
+1) Grupos de palabras
+  Nouns: 	[movie, mouse, button, menu, component, click, completion, user, game, link, questions, question, answer, effect, message, chance, directions, plot, point, return, input, pages, submission, sense, text, file, server, data]
+  Verbs: 	[skip, clicks, proceed, entrance, terminate, user, received, continue, begin, follow, click, selects, forwarded, displayed, respond, display, chooses, move, message, inform, give, answer, selected, count, choose, based, was, answered, end, exit, return, receiving, progress, updated, makes, clicked, generate, load, file, used]
+  Adjectives: 	[main, corresponding, correct, next, incorrect, different, critical]
+  Adverbs: 	[correctly]
+-------------------------------------------------------------------------------------------------
+
+2) Resultados de Wordnet
+  Nouns: 	[[movie, film, picture, moving_picture, moving-picture_show, motion_picture, motion-picture_show, picture_show, pic, flick], [mouse], [button], [menu, bill_of_fare, card, carte_du_jour, carte], [component, constituent, element, factor, ingredient], [chink, click, clink], [completion, pass_completion], [user], [game], [link, nexus], [question, inquiry, enquiry, query, interrogation], [question, inquiry, enquiry, query, interrogation], [answer, reply, response], [consequence, effect, outcome, result, event, issue, upshot], [message], [opportunity, chance], null, [plot, secret_plan, game], [point], [tax_return, income_tax_return, return], [input_signal, input], [page], [submission, entry], [sense], [text, textual_matter], [file, data_file], [waiter, server], [data, information]]
+  Verbs: 	[[jump, pass_over, skip, skip_over], [snap, click], [continue, go_on, carry_on, proceed], [capture, enamour, trance, catch, becharm, enamor, captivate, beguile, charm, fascinate, bewitch, entrance, enchant], [end, terminate], null, null, [continue, go_on, proceed, go_along, keep], [get_down, begin, get, start_out, start, set_about, set_out, commence], [follow], [snap, click], [choose, take, select, pick_out], [forward, send_on], null, [react, respond], [expose, exhibit, display], null, [travel, go, move, locomote], [message], [inform], [give], [answer, reply, respond], [choose, take, select, pick_out], [count, number, enumerate, numerate], [choose, take, select, pick_out], [establish, base, ground, found], null, [answer, reply, respond], [end, stop, finish, terminate, cease], [exit, go_out, get_out, leave], [return], null, [progress, come_on, come_along, advance, get_on, get_along, shape_up], null, [make, do], [snap, click], [generate, bring_forth], [load, lade, laden, load_up], [file, register], null]
+  Adjectives: 	[[chief, main, primary, principal, master], [corresponding], [correct, right], [following, next], [incorrect, wrong], [different], [critical]]
+  Adverb: 	[[correctly, right, aright]]
+-------------------------------------------------------------------------------------------------
+
+3) Resultados de buscar palabras para intercambiar
+  Nouns: 	[[questions, question], [plot, game]]
+  Verbs: 	[[clicks, click], [proceed, continue], [terminate, end], [continue, proceed], [selects, choose], [answer, respond], [selected, choose], [answered, respond], [answered, answer], [end, terminate], [clicked, click]]
+  Adjectives: 	[]
+  Adverbs: 	[]
+-------------------------------------------------------------------------------------------------
+
+4) Priorizacion de palabras
+  Key: [game] Cantidad: [0]
+  Key: [question] Cantidad: [0]
+  Key: [plot] Cantidad: [1]
+  Key: [questions] Cantidad: [1]
+  Key: [proceed] Cantidad: [1]
+  Key: [answered] Cantidad: [2]
+  Key: [choose] Cantidad: [0]
+  Key: [clicked] Cantidad: [1]
+  Key: [click] Cantidad: [0]
+  Key: [selects] Cantidad: [1]
+  Key: [answer] Cantidad: [1]
+  Key: [continue] Cantidad: [1]
+  Key: [clicks] Cantidad: [1]
+  Key: [end] Cantidad: [1]
+  Key: [terminate] Cantidad: [1]
+  Key: [respond] Cantidad: [0]
+  Key: [selected] Cantidad: [1]
+-------------------------------------------------------------------------------------------------
+
+5) Definiciï¿½n de conversiones
+  question -> questions
+  game -> plot
+  click -> clicks
+  continue -> proceed
+  end -> terminate
+  choose -> selects
+  respond -> answer
+  choose -> selected
+  respond -> answered
+  answer -> answered
+  click -> clicked
+-------------------------------------------------------------------------------------------------
+
+6) Responsabilidades resultantes
+  + (1) skip the movie 
+  + (2) clicks a mouse button 
+  + (3) proceed to the main menu 
+  + (4) entrance to the movie component 
+  + (5) terminate the movie 
+  + (6) user to the main menu component 
+  + (7) received a mouse clicked 
+  + (8) proceed to its completion and the user 
+  + (9) proceed the user 
+  + (10) begin the plot 
+  + (11) follow the link 
+  + (12) clicked on the corresponding button 
+  + (13) selects a button 
+  + (14) forwarded the user 
+  + (15) displayed A movie 
+  + (16) answered to questions 
+  + (17) display a questions 
+  + (18) chooses an answered 
+  + (19) selects the correct answered 
+  + (20) move to the next questions 
+  + (21) message to this effect 
+  + (22) displayed a message to this effect 
+  + (23) inform the user of this 
+  + (24) give another chance to answered the questions 
+  + (25) answered the questions 
+  + (26) selected the incorrect answered 
+  + (27) count this questions 
+  + (28) selected different directions in the plot based on whether the questions at the critical point was answered correctly 
+  + (29) answered the questions at the critical point 
+  + (30) terminate the plot or return 
+  + (31) terminate return 
+  + (32) exit the plot 
+  + (33) return to the main menu 
+  + (34) receiving the user 's input 
+  + (35) clicked a button to progress between these pages 
+  + (36) progress between these pages 
+  + (37) updated Each questions 
+  + (38) clicked a submission button for each questions 
+  + (39) makes sense 
+  + (40) clicked the button 
+  + (41) generate a text file on the plot server 
+  + (42) load questions data 
+  + (43) file on the plot server 
+  + (44) used on the plot server 
+@relation responsibilities
+
+@attribute responsibility string
+
+@data
+'skip the movie '
+'clicks a mouse button '
+'proceed to the main menu '
+'entrance to the movie component '
+'terminate the movie '
+'user to the main menu component '
+'received a mouse clicked '
+'proceed to its completion and the user '
+'proceed the user '
+'begin the plot '
+'follow the link '
+'clicked on the corresponding button '
+'selects a button '
+'forwarded the user '
+'displayed A movie '
+'answered to questions '
+'display a questions '
+'chooses an answered '
+'selects the correct answered '
+'move to the next questions '
+'message to this effect '
+'displayed a message to this effect '
+'inform the user of this '
+'give another chance to answered the questions '
+'answered the questions '
+'selected the incorrect answered '
+'count this questions '
+'selected different directions in the plot based on whether the questions at the critical point was answered correctly '
+'answered the questions at the critical point '
+'terminate the plot or return '
+'terminate return '
+'exit the plot '
+'return to the main menu '
+'receiving the user \'s input '
+'clicked a button to progress between these pages '
+'progress between these pages '
+'updated Each questions '
+'clicked a submission button for each questions '
+'makes sense '
+'clicked the button '
+'generate a text file on the plot server '
+'load questions data '
+'file on the plot server '
+'used on the plot server '
+jul. 15, 2019 11:09:48 A. M. com.github.fommil.netlib.ARPACK <clinit>
+WARNING: Failed to load implementation from: com.github.fommil.netlib.NativeSystemARPACK
+jul. 15, 2019 11:09:49 A. M. com.github.fommil.jni.JniLoader liberalLoad
+INFO: successfully loaded C:\Users\Luis\AppData\Local\Temp\jniloader2377614750166133191netlib-native_ref-win-x86_64.dll
+4
+Instance 0 -> Cluster 0 
+Instance 1 -> Cluster 0 
+Instance 2 -> Cluster 0 
+Instance 3 -> Cluster 0 
+Instance 4 -> Cluster 0 
+Instance 5 -> Cluster 0 
+Instance 6 -> Cluster 0 
+Instance 7 -> Cluster 0 
+Instance 8 -> Cluster 0 
+Instance 9 -> Cluster 0 
+Instance 10 -> Cluster 0 
+Instance 11 -> Cluster 0 
+Instance 12 -> Cluster 0 
+Instance 13 -> Cluster 0 
+Instance 14 -> Cluster 0 
+Instance 15 -> Cluster 0 
+Instance 16 -> Cluster 0 
+Instance 17 -> Cluster 0 
+Instance 18 -> Cluster 0 
+Instance 19 -> Cluster 0 
+Instance 20 -> Cluster 0 
+Instance 21 -> Cluster 0 
+Instance 22 -> Cluster 0 
+Instance 23 -> Cluster 0 
+Instance 24 -> Cluster 0 
+Instance 25 -> Cluster 0 
+Instance 26 -> Cluster 0 
+Instance 27 -> Cluster 1 
+Instance 28 -> Cluster 0 
+Instance 29 -> Cluster 0 
+Instance 30 -> Cluster 0 
+Instance 31 -> Cluster 0 
+Instance 32 -> Cluster 0 
+Instance 33 -> Cluster 2 
+Instance 34 -> Cluster 3 
+Instance 35 -> Cluster 3 
+Instance 36 -> Cluster 0 
+Instance 37 -> Cluster 0 
+Instance 38 -> Cluster 0 
+Instance 39 -> Cluster 0 
+Instance 40 -> Cluster 0 
+Instance 41 -> Cluster 0 
+Instance 42 -> Cluster 0 
+Instance 43 -> Cluster 0 
+
+
+** UCM generation **
+Inicio -> clicks button
+clicks button -> skip movie
+skip movie -> proceed menu
+proceed menu -> NULL
+Inicio -> received click
+received click -> terminate movie
+terminate movie -> user component
+user component -> NULL
+Inicio -> click button
+click button -> begin game
+begin game -> NULL
+Inicio -> click button
+click button -> follow link
+follow link -> NULL
+Inicio -> display question
+display question -> chooses answer
+chooses answer -> NULL
+Inicio -> selects answer
+selects answer -> message effect
+message effect -> NULL
+Inicio -> selects answer
+selects answer -> displayed message
+displayed message -> move question
+move question -> NULL
+Inicio -> selected answer
+selected answer -> inform user
+Inicio -> selected answer
+selected answer -> give chance
+inform user -> answer question
+answer question -> NULL
+give chance -> answer question
+answer question -> NULL
+Inicio -> return menu
+return menu -> exit game
+exit game -> NULL
+Inicio -> updated question
+updated question -> progress pages
+progress pages -> NULL
+Inicio -> click button
+click button -> progress pages
+progress pages -> NULL
+Inicio -> clicked button
+clicked button -> makes sense
+makes sense -> NULL
+generate file -> load data
+file server -> load data
+used server -> load data
+load data -> generate file
+load data -> file server
+load data -> used server
+Inicio -> entrance component
+entrance component -> NULL
+Inicio -> continue completion
+continue completion -> NULL
+Inicio -> continue user
+continue user -> NULL
+Inicio -> selects button
+selects button -> NULL
+Inicio -> forwarded user
+forwarded user -> NULL
+Inicio -> displayed movie
+displayed movie -> NULL
+Inicio -> respond questions
+respond questions -> NULL
+Inicio -> count question
+count question -> NULL
+Inicio -> choose directions
+choose directions -> NULL
+Inicio -> answered question
+answered question -> NULL
+Inicio -> end game
+end game -> NULL
+Inicio -> end return
+end return -> NULL
+Inicio -> receiving input
+receiving input -> NULL
+Inicio -> click button
+click button -> NULL
+Comp [100, 0]
+Comp [100, 250]
+Comp [100, 500]
+Comp [100, 750]
+Resp [197, 50]
+Resp [294, 150]
+Resp [391, 50]
+Resp [488, 150]
+Resp [585, 50]
+Resp [682, 150]
+Resp [779, 50]
+Resp [876, 150]
+Resp [973, 50]
+Resp [1070, 150]
+Resp [166, 800]
+Resp [1167, 50]
+Resp [1264, 150]
+Resp [1361, 50]
+Resp [1458, 150]
+Resp [1555, 50]
+Resp [1652, 150]
+Resp [1749, 50]
+Resp [1846, 150]
+Resp [1943, 50]
+Resp [150, 550]
+Resp [2040, 150]
+Resp [2137, 50]
+Resp [2234, 150]
+Resp [150, 300]
+Resp [2331, 50]
+Resp [2428, 150]
+Resp [2525, 50]
+Resp [2622, 150]
+Resp [2719, 50]
+Resp [2816, 150]
+Resp [2913, 50]
+Resp [3010, 150]
+Resp [3107, 50]
+Resp [232, 900]
+Resp [3204, 150]
+Resp [3301, 50]
+Resp [3398, 150]
+Resp [3495, 50]
+Resp [3592, 150]
+Resp [3689, 50]
+Resp [3786, 150]
+Resp [3883, 50]
+Resp [3980, 150]

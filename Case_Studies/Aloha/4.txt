@@ -1,0 +1,3 @@
+@Use Case Map
+	 JUCM File : .\UCMs\UCM_Aloha_Social_Network_1563203083371.jucm 
+	 Open this JUCM File using the JUCMNav Plugin

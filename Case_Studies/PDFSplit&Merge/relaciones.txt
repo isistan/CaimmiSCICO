@@ -1,0 +1,421 @@
+enter password -> reload pdf
+reload pdf -> NULL
+enter password -> reload pdf
+reload pdf -> NULL
+merge pages -> pages end
+pages end -> NULL
+merge pages -> pages end
+pages end -> NULL
+merge pages -> pages end
+pages end -> NULL
+change order -> clicking header
+clicking header -> NULL
+change order -> clicking header
+clicking header -> NULL
+Move buttons -> change order
+change order -> NULL
+clicking header -> Move buttons
+Move buttons -> NULL
+clicking header -> ordered list
+ordered list -> NULL
+ordered list -> change order
+change order -> NULL
+enter password -> reload pdf
+reload pdf -> NULL
+selects folder -> default folder
+selects folder -> default folder
+default folder -> NULL
+selects folder -> sets folder
+sets folder -> NULL
+default folder -> selects folder
+default folder -> selects folder
+selects folder -> default folder
+default folder -> NULL
+selects folder -> sets folder
+sets folder -> NULL
+default folder -> selects folder
+selects folder -> sets folder
+sets folder -> NULL
+press button -> start operation
+start operation -> NULL
+press button -> choose Save
+choose Save -> NULL
+press button -> choose Load
+choose Load -> NULL
+press button -> choose Save
+choose Save -> NULL
+press button -> choose Load
+choose Load -> NULL
+Inicio -> divide document
+divide document -> split document
+split document -> save files
+save files -> NULL
+Inicio -> select option
+select option -> display panel
+display panel -> NULL
+Inicio -> press key
+press key -> display panel
+display panel -> NULL
+Inicio -> imported file
+imported file -> displayed information
+displayed information -> NULL
+enter password -> reload pdf
+reload pdf -> NULL
+Inicio -> protected document
+protected document -> enter password
+Inicio -> choose types
+choose types -> split e-book
+split e-book -> NULL
+Inicio -> select option
+select option -> display panel
+display panel -> NULL
+Inicio -> press key
+press key -> display panel
+display panel -> NULL
+Inicio -> enables user
+enables user -> select file
+select file -> NULL
+Inicio -> selects file/files
+selects file/files -> inserted file/files
+inserted file/files -> NULL
+Inicio -> merge document
+merge document -> merge pages
+Inicio -> merge page
+merge page -> merge pages
+Inicio -> merge document
+merge document -> pages page
+pages page -> NULL
+Inicio -> merge page
+merge page -> pages page
+pages page -> NULL
+Inicio -> merge document
+merge document -> pages page
+pages page -> NULL
+Inicio -> merge page
+merge page -> pages page
+pages page -> NULL
+Inicio -> page page
+page page -> merge pages
+Inicio -> page page
+page page -> pages page
+pages page -> NULL
+Inicio -> page page
+page page -> pages page
+pages page -> NULL
+Inicio -> merge page
+merge page -> pages end
+pages end -> NULL
+Inicio -> protected document
+protected document -> reload file
+reload file -> NULL
+Inicio -> set password
+set password -> reload file
+reload file -> NULL
+Move buttons -> change order
+ordered list -> change order
+clicking header -> Move buttons
+clicking header -> ordered list
+change order -> clicking header
+Inicio -> has ability
+has ability -> export list
+export list -> NULL
+Inicio -> has ability
+has ability -> used file
+used file -> NULL
+Inicio -> default folder
+default folder -> selects path
+selects path -> NULL
+Inicio -> taking pages
+taking pages -> combine documents
+combine documents -> NULL
+Inicio -> imported files
+imported files -> displayed information
+displayed information -> NULL
+Inicio -> protected documents
+protected documents -> enter password
+Inicio -> telling PDFsam
+telling PDFsam -> configured step
+configured step -> NULL
+Inicio -> take pages
+take pages -> configured step
+configured step -> NULL
+selects folder -> default folder
+default folder -> selects folder
+Inicio -> have ability
+have ability -> rotate pages
+rotate pages -> NULL
+Inicio -> want pages
+want pages -> rotated document/documents
+rotated document/documents -> NULL
+Inicio -> select documents
+select documents -> rotate pages
+rotate pages -> NULL
+Inicio -> imported files
+imported files -> displayed information
+displayed information -> NULL
+Inicio -> protected documents
+protected documents -> enter password
+enter password -> NULL
+Inicio -> want pages
+want pages -> rotated document/documents
+rotated document/documents -> NULL
+Inicio -> want way
+want way -> manipulate pages
+manipulate pages -> NULL
+Inicio -> creates thumbnails
+creates thumbnails -> presents for
+presents for -> NULL
+Move functions -> change order
+change order -> NULL
+Inicio -> Dragging The
+Dragging The -> Move functions
+Inicio -> select pages
+select pages -> using button
+using button -> NULL
+Inicio -> select pages
+select pages -> reverse order
+reverse order -> NULL
+Inicio -> makes changes
+makes changes -> press button
+press button -> start operation
+start operation -> NULL
+Inicio -> open documents
+open documents -> compose document
+compose document -> NULL
+Inicio -> change size
+change size -> composes document
+composes document -> NULL
+Inicio -> change page
+change page -> composes document
+composes document -> NULL
+Inicio -> offers utilities
+offers utilities -> Reversing pages
+Reversing pages -> NULL
+Inicio -> Delete page
+Delete page -> Reversing pages
+Reversing pages -> NULL
+Inicio -> makes changes
+makes changes -> press button
+Inicio -> have ability
+have ability -> save environment
+save environment -> set options
+set options -> NULL
+save environment -> open application
+open application -> NULL
+access feature -> loading environment
+loading environment -> access feature
+Inicio -> viewing messages
+viewing messages -> responds actions
+responds actions -> NULL
+Inicio -> displayed messages
+displayed messages -> discern function
+discern function -> NULL
+Inicio -> allowed Users
+allowed Users -> make modifications
+Inicio -> allowed Users
+allowed Users -> modifications environment
+make modifications -> adapt preferences
+modifications environment -> adapt preferences
+adapt preferences -> cover needs
+cover needs -> NULL
+Inicio -> refer sounds
+refer sounds -> default directory
+default directory -> NULL
+Inicio -> select Settings
+select Settings -> do choices
+do choices -> NULL
+Inicio -> click button
+click button -> restart application
+restart application -> NULL
+Inicio -> selects document
+selects document -> NULL
+Inicio -> split file
+split file -> NULL
+Inicio -> split file
+split file -> NULL
+Inicio -> split file
+split file -> NULL
+Inicio -> split file
+split file -> NULL
+Inicio -> split file
+split file -> NULL
+Inicio -> split file
+split file -> NULL
+Inicio -> split file
+split file -> NULL
+Inicio -> selects folder
+selects folder -> NULL
+Inicio -> wants files
+wants files -> NULL
+Inicio -> define pattern
+define pattern -> NULL
+Inicio -> generate filenames
+generate filenames -> NULL
+Inicio -> take pattern
+take pattern -> NULL
+Inicio -> sets parameters
+sets parameters -> NULL
+Inicio -> merge documents
+merge documents -> NULL
+Inicio -> merge subsections
+merge subsections -> NULL
+Inicio -> extract sections
+extract sections -> NULL
+Inicio -> change order
+change order -> NULL
+Inicio -> select pages
+select pages -> NULL
+Inicio -> wants pages
+wants pages -> NULL
+Inicio -> merge pages
+merge pages -> NULL
+Inicio -> merge pages
+merge pages -> NULL
+Inicio -> separate values
+separate values -> NULL
+Inicio -> merge pages
+merge pages -> NULL
+Inicio -> has option
+has option -> NULL
+Inicio -> contain forms
+contain forms -> NULL
+Inicio -> wants file
+wants file -> NULL
+Inicio -> presses button
+presses button -> NULL
+Inicio -> composed document
+composed document -> NULL
+Inicio -> selects documents
+selects documents -> NULL
+Inicio -> wants documents
+wants documents -> NULL
+Inicio -> Mix options
+Mix options -> NULL
+Inicio -> modify parameters
+modify parameters -> NULL
+Inicio -> switch document
+switch document -> NULL
+Inicio -> take pages
+take pages -> NULL
+Inicio -> define size
+define size -> NULL
+Inicio -> take pages
+take pages -> NULL
+Inicio -> take page
+take page -> NULL
+Inicio -> wants files
+wants files -> NULL
+Inicio -> sets parameters
+sets parameters -> NULL
+Inicio -> select pages
+select pages -> NULL
+Inicio -> select pages
+select pages -> NULL
+Inicio -> modify parameters
+modify parameters -> NULL
+Inicio -> select degrees
+select degrees -> NULL
+Inicio -> select pages
+select pages -> NULL
+Inicio -> applied rotation
+applied rotation -> NULL
+Inicio -> wants files
+wants files -> NULL
+Inicio -> define pattern
+define pattern -> NULL
+Inicio -> generate filenames
+generate filenames -> NULL
+Inicio -> sets parameters
+sets parameters -> NULL
+Inicio -> delete pages
+delete pages -> NULL
+Inicio -> select document
+select document -> NULL
+Inicio -> have abilities
+have abilities -> NULL
+Inicio -> Reversing pages
+Reversing pages -> NULL
+Inicio -> reverse order
+reverse order -> NULL
+Inicio -> change level
+change level -> NULL
+Inicio -> Rotate left/right
+Rotate left/right -> NULL
+Inicio -> rotate pages
+rotate pages -> NULL
+Inicio -> Preview page
+Preview page -> NULL
+Inicio -> accessed conversions
+accessed conversions -> NULL
+Inicio -> applied changes
+applied changes -> NULL
+Inicio -> wants file
+wants file -> NULL
+Inicio -> combine documents
+combine documents -> NULL
+Inicio -> make functions
+make functions -> NULL
+Inicio -> open documents
+open documents -> NULL
+Inicio -> divided panel
+divided panel -> NULL
+Inicio -> open files
+open files -> NULL
+Inicio -> Move functions
+Move functions -> NULL
+Inicio -> accessed conversions
+accessed conversions -> NULL
+Inicio -> applied changes
+applied changes -> NULL
+Inicio -> wants file
+wants file -> NULL
+Inicio -> save time
+save time -> NULL
+Inicio -> Pressing Alt
+Pressing Alt -> NULL
+Inicio -> Pressing S
+Pressing S -> NULL
+Inicio -> Pressing icons
+Pressing icons -> NULL
+Inicio -> handle error
+handle error -> NULL
+Inicio -> save text
+save text -> NULL
+Inicio -> select text
+select text -> NULL
+Inicio -> default environment
+default environment -> NULL
+Inicio -> refer boxes
+refer boxes -> NULL
+Inicio -> refer language
+refer language -> NULL
+Inicio -> refer theme
+refer theme -> NULL
+Inicio -> refer level
+refer level -> NULL
+Inicio -> refer library
+refer library -> NULL
+Inicio -> modify options
+modify options -> NULL
+Inicio -> select language
+select language -> NULL
+Inicio -> sets look
+sets look -> NULL
+Inicio -> want messages
+want messages -> NULL
+Inicio -> set detail
+set detail -> NULL
+Inicio -> Turn sounds
+Turn sounds -> NULL
+Inicio -> asking user
+asking user -> NULL
+Inicio -> selected box
+selected box -> NULL
+Inicio -> selects file
+selects file -> NULL
+Inicio -> loaded file
+loaded file -> NULL
+Inicio -> saved documents
+saved documents -> NULL
+Inicio -> loaded documents
+loaded documents -> NULL

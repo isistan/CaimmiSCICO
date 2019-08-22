@@ -1,0 +1,2172 @@
+[AWT-EventQueue-0] ERROR com.alee.utils.ProprietaryUtils - java.lang.NoSuchFieldException: AA_TEXT_PROPERTY_KEY
+java.lang.NoSuchFieldException: AA_TEXT_PROPERTY_KEY
+	at java.base/java.lang.Class.getField(Class.java:2000)
+	at com.alee.utils.ReflectUtils.getStaticFieldValue(ReflectUtils.java:440)
+	at com.alee.utils.ProprietaryUtils.setupUIDefaults(ProprietaryUtils.java:103)
+	at com.alee.laf.WebLookAndFeel.initComponentDefaults(WebLookAndFeel.java:537)
+	at java.desktop/javax.swing.plaf.basic.BasicLookAndFeel.getDefaults(BasicLookAndFeel.java:150)
+	at java.desktop/javax.swing.UIManager.setLookAndFeel(UIManager.java:587)
+	at java.desktop/javax.swing.UIManager.setLookAndFeel(UIManager.java:633)
+	at com.alee.utils.LafUtils.setupLookAndFeelSafely(LafUtils.java:1557)
+	at com.alee.utils.LafUtils.setupLookAndFeelSafely(LafUtils.java:1544)
+	at com.alee.laf.WebLookAndFeel.install(WebLookAndFeel.java:939)
+	at com.alee.laf.WebLookAndFeel.install(WebLookAndFeel.java:927)
+	at app.appMainWindow$1.run(appMainWindow.java:113)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.thoughtworks.xstream.core.util.Fields (file:/C:/Users/Luis/Downloads/EvalScico/CaimmiSCICO-master/CaimmiSCICO-master/lib/weblaf-complete-1.29.jar) to field java.util.TreeMap.comparator
+WARNING: Please consider reporting this to the maintainers of com.thoughtworks.xstream.core.util.Fields
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Project Name: [Aloha Social Network]
+
+** PreProcess  **
+  + # Requirements [31]
+
+** Identification of Responsibilities **
+
+Req - [1/31]
+	Requirement [REQ-1] = [User will create an account if there is no existing account associated with users email-id . User should enter account details such as name , email-id , contact number , birth date , captcha and password . All these are required fields and account creation cannot proceed unless these are filled . User is registered after this information is validated and user agrees with the terms and conditions . User must be 18 years old or more . Contact number should be a 10 digit numeric field . First and last name should not exceed 20 characters each . Password should be at least 8 characters long , at most 15 characters including at least one capital and small letter , a special character and a number . Any of the above fields must not have ( ‘ , “ , : , ; , < , > , { , } , - , % , $ , | , ] , [) . ]
+	Sentences : [9]
+	[User-1, will-2, create-3, an-4, account-5, if-6, there-7, is-8, no-9, existing-10, account-11, associated-12, with-13, users-14, email-id-15, .-16]
+		Caso 1 [1]: [[create_3_account_5, create account, create an account , 3, 5, 5, [create/verb, an/NULL, account/noun], ['create|VB account|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, should-2, enter-3, account-4, details-5, such-6, as-7, name-8, ,-9, email-id-10, ,-11, contact-12, number-13, ,-14, birth-15, date-16, ,-17, captcha-18, and-19, password-20, .-21]
+		Caso 1 [1]: [[enter_19_details_21, enter details, enter account details such as name , 19, 21, 24, [enter/verb, account/noun, details/noun, such/adjective, as/NULL, name/noun], ['enter|VB account|NN details|NN such|ADJ name|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[All-1, these-2, are-3, required-4, fields-5, and-6, account-7, creation-8, can-9, not-10, proceed-11, unless-12, these-13, are-14, filled-15, .-16]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, is-2, registered-3, after-4, this-5, information-6, is-7, validated-8, and-9, user-10, agrees-11, with-12, the-13, terms-14, and-15, conditions-16, .-17]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [2]: [[registered_54_User_56, registered User, registered User , 54, 56, 54, [registered/verb, User/noun], ['registered|VB User|NN'], OK], [validated_59_information_61, validated information, validated this information , 59, 61, 59, [validated/verb, this/NULL, information/noun], ['validated|VB information|NN'], OK]]
+	[User-1, must-2, be-3, 18, years-5, old-6, or-7, more-8, .-9]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Contact-1, number-2, should-3, be-4, a-5, 10, digit-7, numeric-8, field-9, .-10]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[First, and-2, last-3, name-4, should-5, not-6, exceed-7, 20, characters-9, each-10, .-11]
+		Caso 1 [1]: [[exceed_96_characters_98, exceed characters, exceed 20 characters each , 96, 98, 99, [exceed/verb, 20/NULL, characters/noun, each/NULL], ['exceed|VB characters|NN'], NEGATED]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Password-1, should-2, be-3, at-4, least-5, 8, characters-7, long-8, ,-9, at-10, most-11, 15, characters-13, including-14, at-15, least-16, one, capital-18, and-19, small-20, letter-21, ,-22, a-23, special-24, character-25, and-26, a-27, number-28, .-29]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Any-1, of-2, the-3, above-4, fields-5, must-6, not-7, have-8, -LRB--9, `-10, ,-11, ``-12, ,-13, :-14, ,-15, ;-16, ,-17, <-18, ,-19, >-20, ,-21, -LCB--22, ,-23, -RCB--24, ,-25, --26, ,-27, %-28, ,-29, $-30, ,-31, |-32, ,-33, -RSB--34, ,-35, -LSB--36, -RRB--37, .-38]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [5]
+		[create_3_account_5, create account, create an account , 3, 5, 5, [create/verb, an/NULL, account/noun], ['create|VB account|NN'], OK]
+		[enter_19_details_21, enter details, enter account details such as name , 19, 21, 24, [enter/verb, account/noun, details/noun, such/adjective, as/NULL, name/noun], ['enter|VB account|NN details|NN such|ADJ name|NN'], OK]
+		[registered_54_User_56, registered User, registered User , 54, 56, 54, [registered/verb, User/noun], ['registered|VB User|NN'], OK]
+		[validated_59_information_61, validated information, validated this information , 59, 61, 59, [validated/verb, this/NULL, information/noun], ['validated|VB information|NN'], OK]
+		[exceed_96_characters_98, exceed characters, exceed 20 characters each , 96, 98, 99, [exceed/verb, 20/NULL, characters/noun, each/NULL], ['exceed|VB characters|NN'], NEGATED]
+
+Req - [2/31]
+	Requirement [REQ-2] = [When the user has registered , a verification link is sent to the email-id set at the time of registration so as to verify given email-id as genuine . After the user has verified the account , it will be marked as verified . Account privileges will not be given to the user until verification is complete . User should be able to re-send the verification link to his email-id . ]
+	Sentences : [4]
+	[When-1, the-2, user-3, has-4, registered-5, ,-6, a-7, verification-8, link-9, is-10, sent-11, to-12, the-13, email-id-14, set-15, at-16, the-17, time-18, of-19, registration-20, so-21, as-22, to-23, verify-24, given-25, email-id-26, as-27, genuine-28, .-29]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[sent_9_link_11, sent link, sent a verification link , 9, 11, 9, [sent/verb, a/NULL, verification/noun, link/noun], ['sent|VB verification|NN link|NN'], OK]]
+	[After-1, the-2, user-3, has-4, verified-5, the-6, account-7, ,-8, it-9, will-10, be-11, marked-12, as-13, verified-14, .-15]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Account-1, privileges-2, will-3, not-4, be-5, given-6, to-7, the-8, user-9, until-10, verification-11, is-12, complete-13, .-14]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, should-2, be-3, able-4, to-5, re-send-6, the-7, verification-8, link-9, to-10, his-11, email-id-12, .-13]
+		Caso 1 [1]: [[re-send_64_link_67, re-send link, re-send the verification link , 64, 67, 67, [re-send/verb, the/NULL, verification/noun, link/noun], ['re-send|VB verification|NN link|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[sent_9_link_11, sent link, sent a verification link , 9, 11, 9, [sent/verb, a/NULL, verification/noun, link/noun], ['sent|VB verification|NN link|NN'], OK]
+		[re-send_64_link_67, re-send link, re-send the verification link , 64, 67, 67, [re-send/verb, the/NULL, verification/noun, link/noun], ['re-send|VB verification|NN link|NN'], OK]
+
+Req - [3/31]
+	Requirement [REQ-3] = [User must be registered in order to Login . Input will be the email-id and password for login . The hash of password should match to the hash of password stored in the database . If three attempts of password are wrong then a captcha should appear . If more than 8 attempts go wrong , then the account will be locked and an e-mail will be sent to the user notifying about the wrong password attempts . To unlock the account , user must click on the unlock link sent to him in the email . If user clicks on forgot password then reset password link should be emailed to the user . Input to each field must be validated . ]
+	Sentences : [8]
+	[User-1, must-2, be-3, registered-4, in-5, order-6, to-7, Login-8, .-9]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[registered_1_User_4, registered User, registered User , 1, 4, 1, [registered/verb, User/noun], ['registered|VB User|NN'], OK]]
+	[Input-1, will-2, be-3, the-4, email-id-5, and-6, password-7, for-8, login-9, .-10]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[The-1, hash-2, of-3, password-4, should-5, match-6, to-7, the-8, hash-9, of-10, password-11, stored-12, in-13, the-14, database-15, .-16]
+		Caso 1 [0]: []
+		Caso 2 [1]: [[match_25_hash_28, match hash, match to the hash of password stored in the database , 25, 28, 34, [match/verb, to/NULL, the/NULL, hash/noun, of/NULL, password/noun, stored/verb, in/NULL, the/NULL, database/noun], ['match|VB hash|NN password|NN stored|VB database|NN'], OK]]
+		Caso 4 [0]: []
+	[If-1, three, attempts-3, of-4, password-5, are-6, wrong-7, then-8, a-9, captcha-10, should-11, appear-12, .-13]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[If-1, more-2, than-3, 8, attempts-5, go-6, wrong-7, ,-8, then-9, the-10, account-11, will-12, be-13, locked-14, and-15, an-16, e-mail-17, will-18, be-19, sent-20, to-21, the-22, user-23, notifying-24, about-25, the-26, wrong-27, password-28, attempts-29, .-30]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [2]: [[locked_59_account_62, locked account, locked then the account , 59, 62, 59, [locked/verb, then/adverb, the/NULL, account/noun], ['locked|VB then|ADV account|NN'], OK], [sent_65_e-mail_68, sent e-mail, sent an e-mail , 65, 68, 65, [sent/verb, an/NULL, e-mail/noun], ['sent|VB e-mail|NN'], OK]]
+	[To-1, unlock-2, the-3, account-4, ,-5, user-6, must-7, click-8, on-9, the-10, unlock-11, link-12, sent-13, to-14, him-15, in-16, the-17, email-18, .-19]
+		Caso 1 [1]: [[unlock_80_account_82, unlock account, unlock the account , 80, 82, 82, [unlock/verb, the/NULL, account/noun], ['unlock|VB account|NN'], OK]]
+		Caso 2 [1]: [[click_86_link_90, click link, click on the unlock link sent to him in the email , 86, 90, 96, [click/verb, on/NULL, the/NULL, unlock/noun, link/noun, sent/verb, to/NULL, him/NULL, in/NULL, the/NULL, email/noun], ['click|VB unlock|NN link|NN sent|VB email|NN'], OK]]
+		Caso 4 [0]: []
+	[If-1, user-2, clicks-3, on-4, forgot-5, password-6, then-7, reset-8, password-9, link-10, should-11, be-12, emailed-13, to-14, the-15, user-16, .-17]
+		Caso 1 [1]: [[reset_105_link_107, reset link, reset password link , 105, 107, 107, [reset/verb, password/noun, link/noun], ['reset|VB password|NN link|NN'], OK]]
+		Caso 2 [1]: [[clicks_100_password_103, clicks password, clicks on forgot password , 100, 103, 103, [clicks/verb, on/NULL, forgot/verb, password/noun], ['clicks|VB forgot|VB password|NN'], OK]]
+		Caso 4 [0]: []
+	[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]
+		Caso 1 [0]: []
+		Caso 2 [1]: [[Input_115_field_118, Input field, Input to each field , 115, 118, 118, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]]
+		Caso 4 [1]: [[validated_115_Input_121, validated Input, validated Input to each field , 115, 121, 118, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]]
+
+	Responsibilities: [10]
+		[registered_1_User_4, registered User, registered User , 1, 4, 1, [registered/verb, User/noun], ['registered|VB User|NN'], OK]
+		[match_25_hash_28, match hash, match to the hash of password stored in the database , 25, 28, 34, [match/verb, to/NULL, the/NULL, hash/noun, of/NULL, password/noun, stored/verb, in/NULL, the/NULL, database/noun], ['match|VB hash|NN password|NN stored|VB database|NN'], OK]
+		[locked_59_account_62, locked account, locked then the account , 59, 62, 59, [locked/verb, then/adverb, the/NULL, account/noun], ['locked|VB then|ADV account|NN'], OK]
+		[sent_65_e-mail_68, sent e-mail, sent an e-mail , 65, 68, 65, [sent/verb, an/NULL, e-mail/noun], ['sent|VB e-mail|NN'], OK]
+		[unlock_80_account_82, unlock account, unlock the account , 80, 82, 82, [unlock/verb, the/NULL, account/noun], ['unlock|VB account|NN'], OK]
+		[click_86_link_90, click link, click on the unlock link sent to him in the email , 86, 90, 96, [click/verb, on/NULL, the/NULL, unlock/noun, link/noun, sent/verb, to/NULL, him/NULL, in/NULL, the/NULL, email/noun], ['click|VB unlock|NN link|NN sent|VB email|NN'], OK]
+		[reset_105_link_107, reset link, reset password link , 105, 107, 107, [reset/verb, password/noun, link/noun], ['reset|VB password|NN link|NN'], OK]
+		[clicks_100_password_103, clicks password, clicks on forgot password , 100, 103, 103, [clicks/verb, on/NULL, forgot/verb, password/noun], ['clicks|VB forgot|VB password|NN'], OK]
+		[Input_115_field_118, Input field, Input to each field , 115, 118, 118, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+		[validated_115_Input_121, validated Input, validated Input to each field , 115, 121, 118, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+Req - [4/31]
+	Requirement [REQ-4] = [A part of building user profile . User should be able to add the educational details . These fields can remain empty . User must be logged in and his account should be marked as verified to be able to add education . Input to each field must be validated . ]
+	Sentences : [5]
+	[A-1, part-2, of-3, building-4, user-5, profile-6, .-7]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, should-2, be-3, able-4, to-5, add-6, the-7, educational-8, details-9, .-10]
+		Caso 1 [1]: [[add_13_details_16, add details, add the educational details , 13, 16, 16, [add/verb, the/NULL, educational/adjective, details/noun], ['add|VB educational|ADJ details|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[These-1, fields-2, can-3, remain-4, empty-5, .-6]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, must-2, be-3, logged-4, in-5, and-6, his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, to-14, be-15, able-16, to-17, add-18, education-19, .-20]
+		Caso 1 [1]: [[add_41_education_42, add education, add education , 41, 42, 42, [add/verb, education/noun], ['add|VB education|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[logged_24_User_27, logged User, logged User , 24, 27, 24, [logged/verb, User/noun], ['logged|VB User|NN'], OK]]
+	[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]
+		Caso 1 [0]: []
+		Caso 2 [1]: [[Input_44_field_47, Input field, Input to each field , 44, 47, 47, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]]
+		Caso 4 [1]: [[validated_44_Input_50, validated Input, validated Input to each field , 44, 50, 47, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]]
+
+	Responsibilities: [5]
+		[add_13_details_16, add details, add the educational details , 13, 16, 16, [add/verb, the/NULL, educational/adjective, details/noun], ['add|VB educational|ADJ details|NN'], OK]
+		[add_41_education_42, add education, add education , 41, 42, 42, [add/verb, education/noun], ['add|VB education|NN'], OK]
+		[logged_24_User_27, logged User, logged User , 24, 27, 24, [logged/verb, User/noun], ['logged|VB User|NN'], OK]
+		[Input_44_field_47, Input field, Input to each field , 44, 47, 47, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+		[validated_44_Input_50, validated Input, validated Input to each field , 44, 50, 47, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+Req - [5/31]
+	Requirement [REQ-5] = [A part of building user profile . User should be able to add the personal details like language , gender , about user and his interests . These fields can remain empty . User must be logged in and his account should be marked as verified to be able to add personal information . Input to each field must be validated . ]
+	Sentences : [5]
+	[A-1, part-2, of-3, building-4, user-5, profile-6, .-7]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, should-2, be-3, able-4, to-5, add-6, the-7, personal-8, details-9, like-10, language-11, ,-12, gender-13, ,-14, about-15, user-16, and-17, his-18, interests-19, .-20]
+		Caso 1 [2]: [[add_13_details_16, add details, add the personal details details like language , 13, 16, 18, [add/verb, the/NULL, personal/adjective, details/noun, details/noun, like/NULL, language/noun], ['add|VB personal|ADJ details|NN details|NN language|NN'], OK], [add_13_details_16, add details, add details about user , 13, 16, 23, [add/verb, details/noun, about/NULL, user/noun], ['add|VB details|NN user|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[These-1, fields-2, can-3, remain-4, empty-5, .-6]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, must-2, be-3, logged-4, in-5, and-6, his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, to-14, be-15, able-16, to-17, add-18, personal-19, information-20, .-21]
+		Caso 1 [1]: [[add_51_information_53, add information, add personal information , 51, 53, 53, [add/verb, personal/adjective, information/noun], ['add|VB personal|ADJ information|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[logged_34_User_37, logged User, logged User , 34, 37, 34, [logged/verb, User/noun], ['logged|VB User|NN'], OK]]
+	[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]
+		Caso 1 [0]: []
+		Caso 2 [1]: [[Input_55_field_58, Input field, Input to each field , 55, 58, 58, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]]
+		Caso 4 [1]: [[validated_55_Input_61, validated Input, validated Input to each field , 55, 61, 58, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]]
+
+	Responsibilities: [5]
+		[add_13_details_16, add details, add the personal details details like language , 13, 16, 18, [add/verb, the/NULL, personal/adjective, details/noun, details/noun, like/NULL, language/noun], ['add|VB personal|ADJ details|NN details|NN language|NN'], OK]
+		[add_51_information_53, add information, add personal information , 51, 53, 53, [add/verb, personal/adjective, information/noun], ['add|VB personal|ADJ information|NN'], OK]
+		[logged_34_User_37, logged User, logged User , 34, 37, 34, [logged/verb, User/noun], ['logged|VB User|NN'], OK]
+		[Input_55_field_58, Input field, Input to each field , 55, 58, 58, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+		[validated_55_Input_61, validated Input, validated Input to each field , 55, 61, 58, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+Req - [6/31]
+	Requirement [REQ-6] = [A part of building user profile . User should be able to add the account details like name , birth date , email-id , phone number and address . Name , birth date and email-id cannot be empty while the other two can remain empty . User must be logged in . Input to each field must be validated . ]
+	Sentences : [5]
+	[A-1, part-2, of-3, building-4, user-5, profile-6, .-7]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, should-2, be-3, able-4, to-5, add-6, the-7, account-8, details-9, like-10, name-11, ,-12, birth-13, date-14, ,-15, email-id-16, ,-17, phone-18, number-19, and-20, address-21, .-22]
+		Caso 1 [1]: [[add_13_details_16, add details, add the account details like name , 13, 16, 18, [add/verb, the/NULL, account/noun, details/noun, like/NULL, name/noun], ['add|VB account|NN details|NN name|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Name-1, ,-2, birth-3, date-4, and-5, email-id-6, can-7, not-8, be-9, empty-10, while-11, the-12, other-13, two, can-15, remain-16, empty-17, .-18]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, must-2, be-3, logged-4, in-5, .-6]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[logged_48_User_51, logged User, logged User , 48, 51, 48, [logged/verb, User/noun], ['logged|VB User|NN'], OK]]
+	[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]
+		Caso 1 [0]: []
+		Caso 2 [1]: [[Input_54_field_57, Input field, Input to each field , 54, 57, 57, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]]
+		Caso 4 [1]: [[validated_54_Input_60, validated Input, validated Input to each field , 54, 60, 57, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]]
+
+	Responsibilities: [4]
+		[add_13_details_16, add details, add the account details like name , 13, 16, 18, [add/verb, the/NULL, account/noun, details/noun, like/NULL, name/noun], ['add|VB account|NN details|NN name|NN'], OK]
+		[logged_48_User_51, logged User, logged User , 48, 51, 48, [logged/verb, User/noun], ['logged|VB User|NN'], OK]
+		[Input_54_field_57, Input field, Input to each field , 54, 57, 57, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+		[validated_54_Input_60, validated Input, validated Input to each field , 54, 60, 57, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+Req - [7/31]
+	Requirement [REQ-7] = [A part of building user profile . User should be able to edit the account details like name , birth date , email-id , phone number and address . Name , birth date and email-id cannot be empty while the other two can remain empty . If email is changed then email verification module should be called . User must be logged in . Input to each field must be validated . ]
+	Sentences : [6]
+	[A-1, part-2, of-3, building-4, user-5, profile-6, .-7]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, should-2, be-3, able-4, to-5, edit-6, the-7, account-8, details-9, like-10, name-11, ,-12, birth-13, date-14, ,-15, email-id-16, ,-17, phone-18, number-19, and-20, address-21, .-22]
+		Caso 1 [1]: [[edit_13_details_16, edit details, edit the account details like name , 13, 16, 18, [edit/verb, the/NULL, account/noun, details/noun, like/NULL, name/noun], ['edit|VB account|NN details|NN name|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Name-1, ,-2, birth-3, date-4, and-5, email-id-6, can-7, not-8, be-9, empty-10, while-11, the-12, other-13, two, can-15, remain-16, empty-17, .-18]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[If-1, email-2, is-3, changed-4, then-5, email-6, verification-7, module-8, should-9, be-10, called-11, .-12]
+		Caso 1 [1]: [[email_53_module_55, email module, email verification module , 53, 55, 55, [email/verb, verification/noun, module/noun], ['email|VB verification|NN module|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[changed_49_email_51, changed email, changed email , 49, 51, 49, [changed/verb, email/noun], ['changed|VB email|NN'], OK]]
+	[User-1, must-2, be-3, logged-4, in-5, .-6]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[logged_60_User_63, logged User, logged User , 60, 63, 60, [logged/verb, User/noun], ['logged|VB User|NN'], OK]]
+	[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]
+		Caso 1 [0]: []
+		Caso 2 [1]: [[Input_66_field_69, Input field, Input to each field , 66, 69, 69, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]]
+		Caso 4 [1]: [[validated_66_Input_72, validated Input, validated Input to each field , 66, 72, 69, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]]
+
+	Responsibilities: [6]
+		[edit_13_details_16, edit details, edit the account details like name , 13, 16, 18, [edit/verb, the/NULL, account/noun, details/noun, like/NULL, name/noun], ['edit|VB account|NN details|NN name|NN'], OK]
+		[email_53_module_55, email module, email verification module , 53, 55, 55, [email/verb, verification/noun, module/noun], ['email|VB verification|NN module|NN'], OK]
+		[changed_49_email_51, changed email, changed email , 49, 51, 49, [changed/verb, email/noun], ['changed|VB email|NN'], OK]
+		[logged_60_User_63, logged User, logged User , 60, 63, 60, [logged/verb, User/noun], ['logged|VB User|NN'], OK]
+		[Input_66_field_69, Input field, Input to each field , 66, 69, 69, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+		[validated_66_Input_72, validated Input, validated Input to each field , 66, 72, 69, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+Req - [8/31]
+	Requirement [REQ-8] = [User should be able to upload the profile picture . The size of profile picture should be at least 160px * 160px . User may leave this field empty . Profile image should be visible to all . ]
+	Sentences : [4]
+	[User-1, should-2, be-3, able-4, to-5, upload-6, the-7, profile-8, picture-9, .-10]
+		Caso 1 [1]: [[upload_6_picture_9, upload picture, upload the profile picture , 6, 9, 9, [upload/verb, the/NULL, profile/noun, picture/noun], ['upload|VB profile|NN picture|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[The-1, size-2, of-3, profile-4, picture-5, should-6, be-7, at-8, least-9, 160px-10, *-11, 160px-12, .-13]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, may-2, leave-3, this-4, field-5, empty-6, .-7]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Profile-1, image-2, should-3, be-4, visible-5, to-6, all-7, .-8]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [1]
+		[upload_6_picture_9, upload picture, upload the profile picture , 6, 9, 9, [upload/verb, the/NULL, profile/noun, picture/noun], ['upload|VB profile|NN picture|NN'], OK]
+
+Req - [9/31]
+	Requirement [REQ-9] = [User should be able to make account details private or public according to his wish . By default the account details will be visible to public . ]
+	Sentences : [2]
+	[User-1, should-2, be-3, able-4, to-5, make-6, account-7, details-8, private-9, or-10, public-11, according-12, to-13, his-14, wish-15, .-16]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[By-1, default-2, the-3, account-4, details-5, will-6, be-7, visible-8, to-9, public-10, .-11]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [0]
+
+Req - [10/31]
+	Requirement [REQ-10] = [User should be able to make personal information private or public according to his wish . By default the personal information will be visible to public . ]
+	Sentences : [2]
+	[User-1, should-2, be-3, able-4, to-5, make-6, personal-7, information-8, private-9, or-10, public-11, according-12, to-13, his-14, wish-15, .-16]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[By-1, default-2, the-3, personal-4, information-5, will-6, be-7, visible-8, to-9, public-10, .-11]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [0]
+
+Req - [11/31]
+	Requirement [REQ-11] = [Any logged-in user should be able to see any user’s profile on Aloha . ]
+	Sentences : [1]
+	[Any-1, logged-in-2, user-3, should-4, be-5, able-6, to-7, see-8, any-9, user-10, 's-11, profile-12, on-13, Aloha-14, .-15]
+		Caso 1 [1]: [[see_8_profile_12, see profile, see any user ’s profile on Aloha , 8, 12, 14, [see/verb, any/NULL, user/noun, ’s/NULL, profile/noun, on/NULL, Aloha/noun], ['see|VB user|NN profile|NN Aloha|NN'], OK]]
+		Caso 2 [1]: [[profile_12_Aloha_14, profile Aloha, profile on Aloha , 12, 14, 14, [profile/verb, on/NULL, Aloha/noun], ['profile|VB Aloha|NN'], OK]]
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[see_8_profile_12, see profile, see any user ’s profile on Aloha , 8, 12, 14, [see/verb, any/NULL, user/noun, ’s/NULL, profile/noun, on/NULL, Aloha/noun], ['see|VB user|NN profile|NN Aloha|NN'], OK]
+		[profile_12_Aloha_14, profile Aloha, profile on Aloha , 12, 14, 14, [profile/verb, on/NULL, Aloha/noun], ['profile|VB Aloha|NN'], OK]
+
+Req - [12/31]
+	Requirement [REQ-12] = [User may delete his account permanently from ALOHA depending on his wish . User will be removed from his friends list once deleted . User information will be cleared . ]
+	Sentences : [3]
+	[User-1, may-2, delete-3, his-4, account-5, permanently-6, from-7, ALOHA-8, depending-9, on-10, his-11, wish-12, .-13]
+		Caso 1 [1]: [[delete_3_account_5, delete account, delete his account , 3, 5, 5, [delete/verb, his/NULL, account/noun], ['delete|VB account|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, will-2, be-3, removed-4, from-5, his-6, friends-7, list-8, once-9, deleted-10, .-11]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[removed_14_User_17, removed User, removed User , 14, 17, 14, [removed/verb, User/noun], ['removed|VB User|NN'], OK]]
+	[User-1, information-2, will-3, be-4, cleared-5, .-6]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[cleared_26_information_29, cleared information, cleared User information , 26, 29, 26, [cleared/verb, User/noun, information/noun], ['cleared|VB User|NN information|NN'], OK]]
+
+	Responsibilities: [3]
+		[delete_3_account_5, delete account, delete his account , 3, 5, 5, [delete/verb, his/NULL, account/noun], ['delete|VB account|NN'], OK]
+		[removed_14_User_17, removed User, removed User , 14, 17, 14, [removed/verb, User/noun], ['removed|VB User|NN'], OK]
+		[cleared_26_information_29, cleared information, cleared User information , 26, 29, 26, [cleared/verb, User/noun, information/noun], ['cleared|VB User|NN information|NN'], OK]
+
+Req - [13/31]
+	Requirement [REQ-13] = [A registered user of Aloha should be able to send add friend requests to other users of Aloha . User can send friend request to already registered users of Aloha . User can search his friend on Aloha among the registered users and then send a friend request to him/her . ]
+	Sentences : [3]
+	[A-1, registered-2, user-3, of-4, Aloha-5, should-6, be-7, able-8, to-9, send-10, add-11, friend-12, requests-13, to-14, other-15, users-16, of-17, Aloha-18, .-19]
+		Caso 1 [1]: [[add_11_requests_13, add requests, add friend requests , 11, 13, 13, [add/verb, friend/noun, requests/noun], ['add|VB friend|NN requests|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, can-2, send-3, friend-4, request-5, to-6, already-7, registered-8, users-9, of-10, Aloha-11, .-12]
+		Caso 1 [1]: [[send_22_request_24, send request, send friend request , 22, 24, 24, [send/verb, friend/noun, request/noun], ['send|VB friend|NN request|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, can-2, search-3, his-4, friend-5, on-6, Aloha-7, among-8, the-9, registered-10, users-11, and-12, then-13, send-14, a-15, friend-16, request-17, to-18, him/her-19, .-20]
+		Caso 1 [2]: [[search_34_friend_36, search friend, search his friend , 34, 36, 36, [search/verb, his/NULL, friend/noun], ['search|VB friend|NN'], OK], [send_45_request_48, send request, send a friend request , 45, 48, 48, [send/verb, a/NULL, friend/noun, request/noun], ['send|VB friend|NN request|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [4]
+		[add_11_requests_13, add requests, add friend requests , 11, 13, 13, [add/verb, friend/noun, requests/noun], ['add|VB friend|NN requests|NN'], OK]
+		[send_22_request_24, send request, send friend request , 22, 24, 24, [send/verb, friend/noun, request/noun], ['send|VB friend|NN request|NN'], OK]
+		[search_34_friend_36, search friend, search his friend , 34, 36, 36, [search/verb, his/NULL, friend/noun], ['search|VB friend|NN'], OK]
+		[send_45_request_48, send request, send a friend request , 45, 48, 48, [send/verb, a/NULL, friend/noun, request/noun], ['send|VB friend|NN request|NN'], OK]
+
+Req - [14/31]
+	Requirement [REQ-14] = [If a user gets a friend request from another user , then the user receiving the request should have an option to accept or ignore the friend request . If the user selects to accept the friend request , the requestor is added to the friend list of the acceptor . If the user selected to ignore the request , the sender continues to see the status of the request as “Request Sent” and the request is removed from the queue of the request receiver . ]
+	Sentences : [3]
+	[If-1, a-2, user-3, gets-4, a-5, friend-6, request-7, from-8, another-9, user-10, ,-11, then-12, the-13, user-14, receiving-15, the-16, request-17, should-18, have-19, an-20, option-21, to-22, accept-23, or-24, ignore-25, the-26, friend-27, request-28, .-29]
+		Caso 1 [4]: [[have_19_option_21, have option, have an option to accept or ignore the friend request , 19, 21, 28, [have/verb, an/NULL, option/noun, to/NULL, accept/verb, or/NULL, ignore/verb, the/NULL, friend/noun, request/noun], ['have|VB option|NN accept|VB ignore|VB friend|NN request|NN'], OK], [accept_23_request_28, accept request, accept the friend request , 23, 28, 28, [accept/verb, the/NULL, friend/noun, request/noun], ['accept|VB friend|NN request|NN'], OK], [receiving_15_request_17, receiving request, receiving the request , 15, 17, 17, [receiving/verb, the/NULL, request/noun], ['receiving|VB request|NN'], OK], [gets_4_request_7, gets request, gets a friend request from another user , 4, 7, 10, [gets/verb, a/NULL, friend/noun, request/noun, from/NULL, another/NULL, user/noun], ['gets|VB friend|NN request|NN user|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[If-1, the-2, user-3, selects-4, to-5, accept-6, the-7, friend-8, request-9, ,-10, the-11, requestor-12, is-13, added-14, to-15, the-16, friend-17, list-18, of-19, the-20, acceptor-21, .-22]
+		Caso 1 [1]: [[accept_35_request_38, accept request, accept the friend request , 35, 38, 38, [accept/verb, the/NULL, friend/noun, request/noun], ['accept|VB friend|NN request|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[added_41_requestor_43, added requestor, added the requestor , 41, 43, 41, [added/verb, the/NULL, requestor/noun], ['added|VB requestor|NN'], OK]]
+	[If-1, the-2, user-3, selected-4, to-5, ignore-6, the-7, request-8, ,-9, the-10, sender-11, continues-12, to-13, see-14, the-15, status-16, of-17, the-18, request-19, as-20, ``-21, Request-22, Sent-23, ''-24, and-25, the-26, request-27, is-28, removed-29, from-30, the-31, queue-32, of-33, the-34, request-35, receiver-36, .-37]
+		Caso 1 [2]: [[see_65_status_67, see status, see the status of the request , 65, 67, 70, [see/verb, the/NULL, status/noun, of/NULL, the/NULL, request/noun], ['see|VB status|NN request|NN'], OK], [ignore_57_request_59, ignore request, ignore the request , 57, 59, 59, [ignore/verb, the/NULL, request/noun], ['ignore|VB request|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[removed_78_request_80, removed request, removed the request , 78, 80, 78, [removed/verb, the/NULL, request/noun], ['removed|VB request|NN'], OK]]
+
+	Responsibilities: [9]
+		[have_19_option_21, have option, have an option to accept or ignore the friend request , 19, 21, 28, [have/verb, an/NULL, option/noun, to/NULL, accept/verb, or/NULL, ignore/verb, the/NULL, friend/noun, request/noun], ['have|VB option|NN accept|VB ignore|VB friend|NN request|NN'], OK]
+		[accept_23_request_28, accept request, accept the friend request , 23, 28, 28, [accept/verb, the/NULL, friend/noun, request/noun], ['accept|VB friend|NN request|NN'], OK]
+		[receiving_15_request_17, receiving request, receiving the request , 15, 17, 17, [receiving/verb, the/NULL, request/noun], ['receiving|VB request|NN'], OK]
+		[gets_4_request_7, gets request, gets a friend request from another user , 4, 7, 10, [gets/verb, a/NULL, friend/noun, request/noun, from/NULL, another/NULL, user/noun], ['gets|VB friend|NN request|NN user|NN'], OK]
+		[accept_35_request_38, accept request, accept the friend request , 35, 38, 38, [accept/verb, the/NULL, friend/noun, request/noun], ['accept|VB friend|NN request|NN'], OK]
+		[added_41_requestor_43, added requestor, added the requestor , 41, 43, 41, [added/verb, the/NULL, requestor/noun], ['added|VB requestor|NN'], OK]
+		[see_65_status_67, see status, see the status of the request , 65, 67, 70, [see/verb, the/NULL, status/noun, of/NULL, the/NULL, request/noun], ['see|VB status|NN request|NN'], OK]
+		[ignore_57_request_59, ignore request, ignore the request , 57, 59, 59, [ignore/verb, the/NULL, request/noun], ['ignore|VB request|NN'], OK]
+		[removed_78_request_80, removed request, removed the request , 78, 80, 78, [removed/verb, the/NULL, request/noun], ['removed|VB request|NN'], OK]
+
+Req - [15/31]
+	Requirement [REQ-15] = [A registered user of Aloha should be able to un-friend any of the existing friends in his/her friend’s list . ]
+	Sentences : [1]
+	[A-1, registered-2, user-3, of-4, Aloha-5, should-6, be-7, able-8, to-9, un-friend-10, any-11, of-12, the-13, existing-14, friends-15, in-16, his/her-17, friend-18, 's-19, list-20, .-21]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [0]
+
+Req - [16/31]
+	Requirement [REQ-16] = [Whenever the user is on any person’s profile page , he should have an option to view currently open user profile’s friends on a page . User can have many friends and the maximum number of friends shown at a time will be 20 , and paging will be implemented to show more friends if the user has more than 20 friends . ]
+	Sentences : [2]
+	[Whenever-1, the-2, user-3, is-4, on-5, any-6, person-7, 's-8, profile-9, page-10, ,-11, he-12, should-13, have-14, an-15, option-16, to-17, view-18, currently-19, open-20, user-21, profile-22, 's-23, friends-24, on-25, a-26, page-27, .-28]
+		Caso 1 [2]: [[have_14_option_16, have option, have an option to view currently open user profile ’s friends on a page , 14, 16, 27, [have/verb, an/NULL, option/noun, to/NULL, view/verb, currently/adverb, open/adjective, user/noun, profile/noun, ’s/NULL, friends/noun, on/NULL, a/NULL, page/noun], ['have|VB option|NN view|VB currently|ADV open|ADJ user|NN profile|NN friends|NN page|NN'], OK], [view_18_friends_24, view friends, view currently open user profile ’s friends , 18, 24, 24, [view/verb, currently/adverb, open/adjective, user/noun, profile/noun, ’s/NULL, friends/noun], ['view|VB currently|ADV open|ADJ user|NN profile|NN friends|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, can-2, have-3, many-4, friends-5, and-6, the-7, maximum-8, number-9, of-10, friends-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20, ,-19, and-20, paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, friends-28, if-29, the-30, user-31, has-32, more-33, than-34, 20, friends-36, .-37]
+		Caso 1 [2]: [[show_54_friends_56, show friends, show more friends , 54, 56, 56, [show/verb, more/adjective, friends/noun], ['show|VB more|ADJ friends|NN'], OK], [has_60_friends_64, has friends, has more than 20 friends , 60, 64, 64, [has/verb, more/adjective, than/NULL, 20/NULL, friends/noun], ['has|VB more|ADJ friends|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[implemented_49_paging_52, implemented paging, implemented paging , 49, 52, 49, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]]
+
+	Responsibilities: [5]
+		[have_14_option_16, have option, have an option to view currently open user profile ’s friends on a page , 14, 16, 27, [have/verb, an/NULL, option/noun, to/NULL, view/verb, currently/adverb, open/adjective, user/noun, profile/noun, ’s/NULL, friends/noun, on/NULL, a/NULL, page/noun], ['have|VB option|NN view|VB currently|ADV open|ADJ user|NN profile|NN friends|NN page|NN'], OK]
+		[view_18_friends_24, view friends, view currently open user profile ’s friends , 18, 24, 24, [view/verb, currently/adverb, open/adjective, user/noun, profile/noun, ’s/NULL, friends/noun], ['view|VB currently|ADV open|ADJ user|NN profile|NN friends|NN'], OK]
+		[show_54_friends_56, show friends, show more friends , 54, 56, 56, [show/verb, more/adjective, friends/noun], ['show|VB more|ADJ friends|NN'], OK]
+		[has_60_friends_64, has friends, has more than 20 friends , 60, 64, 64, [has/verb, more/adjective, than/NULL, 20/NULL, friends/noun], ['has|VB more|ADJ friends|NN'], OK]
+		[implemented_49_paging_52, implemented paging, implemented paging , 49, 52, 49, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]
+
+Req - [17/31]
+	Requirement [REQ-17] = [User should be able to search for his/her friends who may be registered on Aloha . User will put the name of the friend and click search after which the search results will display all the people registered on Aloha by the searched name . When the search results are displayed the maximum number of results shown at a time will be 20 , and paging will be implemented to show more results . ]
+	Sentences : [3]
+	[User-1, should-2, be-3, able-4, to-5, search-6, for-7, his/her-8, friends-9, who-10, may-11, be-12, registered-13, on-14, Aloha-15, .-16]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[registered_9_friends_13, registered friends, registered for his/her friends who may be registered on Aloha , 9, 13, 15, [registered/verb, for/NULL, his/her/adjective, friends/noun, who/NULL, may/NULL, be/verb, registered/verb, on/NULL, Aloha/noun], ['registered|VB his/her|ADJ friends|NN be|VB registered|VB Aloha|NN'], OK]]
+	[User-1, will-2, put-3, the-4, name-5, of-6, the-7, friend-8, and-9, click-10, search-11, after-12, which-13, the-14, search-15, results-16, will-17, display-18, all-19, the-20, people-21, registered-22, on-23, Aloha-24, by-25, the-26, searched-27, name-28, .-29]
+		Caso 1 [2]: [[put_19_name_21, put name, put the name of the friend and click search after which the search results will display all the people registered on Aloha by the searched name , 19, 21, 44, [put/verb, the/NULL, name/noun, of/NULL, the/NULL, friend/noun, and/NULL, click/noun, search/noun, after/NULL, which/NULL, the/NULL, search/noun, results/noun, will/NULL, display/verb, all/NULL, the/NULL, people/noun, registered/verb, on/NULL, Aloha/noun, by/NULL, the/NULL, searched/verb, name/noun], ['put|VB name|NN friend|NN click|NN search|NN search|NN results|NN display|VB people|NN registered|VB Aloha|NN searched|VB name|NN'], OK], [display_34_people_37, display people, display all the people registered on Aloha by the searched name , 34, 37, 44, [display/verb, all/NULL, the/NULL, people/noun, registered/verb, on/NULL, Aloha/noun, by/NULL, the/NULL, searched/verb, name/noun], ['display|VB people|NN registered|VB Aloha|NN searched|VB name|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[When-1, the-2, search-3, results-4, are-5, displayed-6, the-7, maximum-8, number-9, of-10, results-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20, ,-19, and-20, paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, results-28, .-29]
+		Caso 1 [1]: [[show_71_results_73, show results, show more results , 71, 73, 73, [show/verb, more/adjective, results/noun], ['show|VB more|ADJ results|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [2]: [[implemented_66_paging_69, implemented paging, implemented paging , 66, 69, 66, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK], [displayed_49_results_51, displayed results, displayed the search results , 49, 51, 49, [displayed/verb, the/NULL, search/noun, results/noun], ['displayed|VB search|NN results|NN'], OK]]
+
+	Responsibilities: [6]
+		[registered_9_friends_13, registered friends, registered for his/her friends who may be registered on Aloha , 9, 13, 15, [registered/verb, for/NULL, his/her/adjective, friends/noun, who/NULL, may/NULL, be/verb, registered/verb, on/NULL, Aloha/noun], ['registered|VB his/her|ADJ friends|NN be|VB registered|VB Aloha|NN'], OK]
+		[put_19_name_21, put name, put the name of the friend and click search after which the search results will display all the people registered on Aloha by the searched name , 19, 21, 44, [put/verb, the/NULL, name/noun, of/NULL, the/NULL, friend/noun, and/NULL, click/noun, search/noun, after/NULL, which/NULL, the/NULL, search/noun, results/noun, will/NULL, display/verb, all/NULL, the/NULL, people/noun, registered/verb, on/NULL, Aloha/noun, by/NULL, the/NULL, searched/verb, name/noun], ['put|VB name|NN friend|NN click|NN search|NN search|NN results|NN display|VB people|NN registered|VB Aloha|NN searched|VB name|NN'], OK]
+		[display_34_people_37, display people, display all the people registered on Aloha by the searched name , 34, 37, 44, [display/verb, all/NULL, the/NULL, people/noun, registered/verb, on/NULL, Aloha/noun, by/NULL, the/NULL, searched/verb, name/noun], ['display|VB people|NN registered|VB Aloha|NN searched|VB name|NN'], OK]
+		[show_71_results_73, show results, show more results , 71, 73, 73, [show/verb, more/adjective, results/noun], ['show|VB more|ADJ results|NN'], OK]
+		[implemented_66_paging_69, implemented paging, implemented paging , 66, 69, 66, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]
+		[displayed_49_results_51, displayed results, displayed the search results , 49, 51, 49, [displayed/verb, the/NULL, search/noun, results/noun], ['displayed|VB search|NN results|NN'], OK]
+
+Req - [18/31]
+	Requirement [REQ-18] = [User will be given suggestions for adding more friends . The friend suggestions will be based on the users having maximum number of mutual friends with the user . The maximum number of friend suggestions displayed will be 20 at a time , and paging will be implemented to show more suggestions . ]
+	Sentences : [3]
+	[User-1, will-2, be-3, given-4, suggestions-5, for-6, adding-7, more-8, friends-9, .-10]
+		Caso 1 [1]: [[adding_7_friends_9, adding friends, adding more friends , 7, 9, 9, [adding/verb, more/adjective, friends/noun], ['adding|VB more|ADJ friends|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[given_1_User_4, given User, given User , 1, 4, 1, [given/verb, User/noun], ['given|VB User|NN'], OK]]
+	[The-1, friend-2, suggestions-3, will-4, be-5, based-6, on-7, the-8, users-9, having-10, maximum-11, number-12, of-13, mutual-14, friends-15, with-16, the-17, user-18, .-19]
+		Caso 1 [1]: [[having_20_number_22, having number, having maximum number of mutual friends , 20, 22, 25, [having/verb, maximum/noun, number/noun, of/NULL, mutual/adjective, friends/noun], ['having|VB maximum|NN number|NN mutual|ADJ friends|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[based_13_suggestions_16, based suggestions, based The friend suggestions , 13, 16, 13, [based/verb, The/NULL, friend/noun, suggestions/noun], ['based|VB friend|NN suggestions|NN'], OK]]
+	[The-1, maximum-2, number-3, of-4, friend-5, suggestions-6, displayed-7, will-8, be-9, 20, at-11, a-12, time-13, ,-14, and-15, paging-16, will-17, be-18, implemented-19, to-20, show-21, more-22, suggestions-23, .-24]
+		Caso 1 [1]: [[show_50_suggestions_52, show suggestions, show more suggestions , 50, 52, 52, [show/verb, more/adjective, suggestions/noun], ['show|VB more|ADJ suggestions|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[implemented_45_paging_48, implemented paging, implemented paging , 45, 48, 45, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]]
+
+	Responsibilities: [6]
+		[adding_7_friends_9, adding friends, adding more friends , 7, 9, 9, [adding/verb, more/adjective, friends/noun], ['adding|VB more|ADJ friends|NN'], OK]
+		[given_1_User_4, given User, given User , 1, 4, 1, [given/verb, User/noun], ['given|VB User|NN'], OK]
+		[having_20_number_22, having number, having maximum number of mutual friends , 20, 22, 25, [having/verb, maximum/noun, number/noun, of/NULL, mutual/adjective, friends/noun], ['having|VB maximum|NN number|NN mutual|ADJ friends|NN'], OK]
+		[based_13_suggestions_16, based suggestions, based The friend suggestions , 13, 16, 13, [based/verb, The/NULL, friend/noun, suggestions/noun], ['based|VB friend|NN suggestions|NN'], OK]
+		[show_50_suggestions_52, show suggestions, show more suggestions , 50, 52, 52, [show/verb, more/adjective, suggestions/noun], ['show|VB more|ADJ suggestions|NN'], OK]
+		[implemented_45_paging_48, implemented paging, implemented paging , 45, 48, 45, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]
+
+Req - [19/31]
+	Requirement [REQ-19] = [User should be able to invite more friends to join the Aloha network . User will be given an option to enter the email address of the person to invite . User will be able to invite one friend at a time . ]
+	Sentences : [3]
+	[User-1, should-2, be-3, able-4, to-5, invite-6, more-7, friends-8, to-9, join-10, the-11, Aloha-12, network-13, .-14]
+		Caso 1 [2]: [[invite_6_friends_8, invite friends, invite more friends , 6, 8, 8, [invite/verb, more/adjective, friends/noun], ['invite|VB more|ADJ friends|NN'], OK], [join_10_network_13, join network, join the Aloha network , 10, 13, 13, [join/verb, the/NULL, Aloha/noun, network/noun], ['join|VB Aloha|NN network|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, will-2, be-3, given-4, an-5, option-6, to-7, enter-8, the-9, email-10, address-11, of-12, the-13, person-14, to-15, invite-16, .-17]
+		Caso 1 [1]: [[enter_22_address_25, enter address, enter the email address of the person , 22, 25, 28, [enter/verb, the/NULL, email/noun, address/noun, of/NULL, the/NULL, person/noun], ['enter|VB email|NN address|NN person|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[given_15_User_18, given User, given User , 15, 18, 15, [given/verb, User/noun], ['given|VB User|NN'], OK]]
+	[User-1, will-2, be-3, able-4, to-5, invite-6, one, friend-8, at-9, a-10, time-11, .-12]
+		Caso 1 [1]: [[invite_37_friend_39, invite friend, invite one friend , 37, 39, 39, [invite/verb, one/NULL, friend/noun], ['invite|VB friend|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [5]
+		[invite_6_friends_8, invite friends, invite more friends , 6, 8, 8, [invite/verb, more/adjective, friends/noun], ['invite|VB more|ADJ friends|NN'], OK]
+		[join_10_network_13, join network, join the Aloha network , 10, 13, 13, [join/verb, the/NULL, Aloha/noun, network/noun], ['join|VB Aloha|NN network|NN'], OK]
+		[enter_22_address_25, enter address, enter the email address of the person , 22, 25, 28, [enter/verb, the/NULL, email/noun, address/noun, of/NULL, the/NULL, person/noun], ['enter|VB email|NN address|NN person|NN'], OK]
+		[given_15_User_18, given User, given User , 15, 18, 15, [given/verb, User/noun], ['given|VB User|NN'], OK]
+		[invite_37_friend_39, invite friend, invite one friend , 37, 39, 39, [invite/verb, one/NULL, friend/noun], ['invite|VB friend|NN'], OK]
+
+Req - [20/31]
+	Requirement [REQ-20] = [User should be able to see currently online friends among all his friends on Aloha . The user can chat with online friends by clicking on the currently available friends in the online friends list . ]
+	Sentences : [2]
+	[User-1, should-2, be-3, able-4, to-5, see-6, currently-7, online-8, friends-9, among-10, all-11, his-12, friends-13, on-14, Aloha-15, .-16]
+		Caso 1 [1]: [[see_6_friends_9, see friends, see currently online friends among all his friends on Aloha , 6, 9, 15, [see/verb, currently/adverb, online/adjective, friends/noun, among/NULL, all/NULL, his/NULL, friends/noun, on/NULL, Aloha/noun], ['see|VB currently|ADV online|ADJ friends|NN friends|NN Aloha|NN'], OK]]
+		Caso 2 [1]: [[friends_13_Aloha_15, friends Aloha, friends on Aloha , 13, 15, 15, [friends/verb, on/NULL, Aloha/noun], ['friends|VB Aloha|NN'], OK]]
+		Caso 4 [0]: []
+	[The-1, user-2, can-3, chat-4, with-5, online-6, friends-7, by-8, clicking-9, on-10, the-11, currently-12, available-13, friends-14, in-15, the-16, online-17, friends-18, list-19, .-20]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[see_6_friends_9, see friends, see currently online friends among all his friends on Aloha , 6, 9, 15, [see/verb, currently/adverb, online/adjective, friends/noun, among/NULL, all/NULL, his/NULL, friends/noun, on/NULL, Aloha/noun], ['see|VB currently|ADV online|ADJ friends|NN friends|NN Aloha|NN'], OK]
+		[friends_13_Aloha_15, friends Aloha, friends on Aloha , 13, 15, 15, [friends/verb, on/NULL, Aloha/noun], ['friends|VB Aloha|NN'], OK]
+
+Req - [21/31]
+	Requirement [REQ-21] = [A registered user of Aloha can share scribbles with his friends . The scribble can only be plain English text with maximum 500 characters . User can enter the scribble in the designated text area by clicking on the Scribble button; it should be visible to the user and his friends . ]
+	Sentences : [3]
+	[A-1, registered-2, user-3, of-4, Aloha-5, can-6, share-7, scribbles-8, with-9, his-10, friends-11, .-12]
+		Caso 1 [1]: [[share_7_scribbles_8, share scribbles, share scribbles , 7, 8, 8, [share/verb, scribbles/noun], ['share|VB scribbles|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[The-1, scribble-2, can-3, only-4, be-5, plain-6, English-7, text-8, with-9, maximum-10, 500, characters-12, .-13]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[User-1, can-2, enter-3, the-4, scribble-5, in-6, the-7, designated-8, text-9, area-10, by-11, clicking-12, on-13, the-14, Scribble-15, button-16, ;-17, it-18, should-19, be-20, visible-21, to-22, the-23, user-24, and-25, his-26, friends-27, .-28]
+		Caso 1 [1]: [[enter_28_scribble_30, enter scribble, enter the scribble , 28, 30, 30, [enter/verb, the/NULL, scribble/noun], ['enter|VB scribble|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[share_7_scribbles_8, share scribbles, share scribbles , 7, 8, 8, [share/verb, scribbles/noun], ['share|VB scribbles|NN'], OK]
+		[enter_28_scribble_30, enter scribble, enter the scribble , 28, 30, 30, [enter/verb, the/NULL, scribble/noun], ['enter|VB scribble|NN'], OK]
+
+Req - [22/31]
+	Requirement [REQ-22] = [A user can erase a scribble that has been posted . After deletion , the scribble should not be visible on the users’ or his friends’ slates . Deletion of a scribble should also remove all the comments associated with that scribble . ]
+	Sentences : [3]
+	[A-1, user-2, can-3, erase-4, a-5, scribble-6, that-7, has-8, been-9, posted-10, .-11]
+		Caso 1 [1]: [[erase_4_scribble_6, erase scribble, erase a scribble that has been posted , 4, 6, 10, [erase/verb, a/NULL, scribble/noun, that/NULL, has/verb, been/verb, posted/verb], ['erase|VB scribble|NN has|VB been|VB posted|VB'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[posted_6_scribble_10, posted scribble, posted a scribble that has been posted , 6, 10, 10, [posted/verb, a/NULL, scribble/noun, that/NULL, has/verb, been/verb, posted/verb], ['posted|VB scribble|NN has|VB been|VB posted|VB'], OK]]
+	[After-1, deletion-2, ,-3, the-4, scribble-5, should-6, not-7, be-8, visible-9, on-10, the-11, users-12, '-13, or-14, his-15, friends-16, '-17, slates-18, .-19]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Deletion-1, of-2, a-3, scribble-4, should-5, also-6, remove-7, all-8, the-9, comments-10, associated-11, with-12, that-13, scribble-14, .-15]
+		Caso 1 [1]: [[remove_37_comments_40, remove comments, remove all the comments associated with that scribble , 37, 40, 44, [remove/verb, all/NULL, the/NULL, comments/noun, associated/verb, with/NULL, that/NULL, scribble/noun], ['remove|VB comments|NN associated|VB scribble|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [3]
+		[erase_4_scribble_6, erase scribble, erase a scribble that has been posted , 4, 6, 10, [erase/verb, a/NULL, scribble/noun, that/NULL, has/verb, been/verb, posted/verb], ['erase|VB scribble|NN has|VB been|VB posted|VB'], OK]
+		[posted_6_scribble_10, posted scribble, posted a scribble that has been posted , 6, 10, 10, [posted/verb, a/NULL, scribble/noun, that/NULL, has/verb, been/verb, posted/verb], ['posted|VB scribble|NN has|VB been|VB posted|VB'], OK]
+		[remove_37_comments_40, remove comments, remove all the comments associated with that scribble , 37, 40, 44, [remove/verb, all/NULL, the/NULL, comments/noun, associated/verb, with/NULL, that/NULL, scribble/noun], ['remove|VB comments|NN associated|VB scribble|NN'], OK]
+
+Req - [23/31]
+	Requirement [REQ-23] = [After a user logs into Aloha , he can see a listing of scribbles posted by him and his friends . The maximum number of scribbles displayed at a time will be 20 , and paging will be implemented for more scribbles . ]
+	Sentences : [2]
+	[After-1, a-2, user-3, logs-4, into-5, Aloha-6, ,-7, he-8, can-9, see-10, a-11, listing-12, of-13, scribbles-14, posted-15, by-16, him-17, and-18, his-19, friends-20, .-21]
+		Caso 1 [1]: [[see_10_listing_12, see listing, see a listing of scribbles posted by him and his friends , 10, 12, 20, [see/verb, a/NULL, listing/noun, of/NULL, scribbles/noun, posted/verb, by/NULL, him/NULL, and/NULL, his/NULL, friends/noun], ['see|VB listing|NN scribbles|NN posted|VB friends|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[The-1, maximum-2, number-3, of-4, scribbles-5, displayed-6, at-7, a-8, time-9, will-10, be-11, 20, ,-13, and-14, paging-15, will-16, be-17, implemented-18, for-19, more-20, scribbles-21, .-22]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[implemented_36_paging_39, implemented paging, implemented paging , 36, 39, 36, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]]
+
+	Responsibilities: [2]
+		[see_10_listing_12, see listing, see a listing of scribbles posted by him and his friends , 10, 12, 20, [see/verb, a/NULL, listing/noun, of/NULL, scribbles/noun, posted/verb, by/NULL, him/NULL, and/NULL, his/NULL, friends/noun], ['see|VB listing|NN scribbles|NN posted|VB friends|NN'], OK]
+		[implemented_36_paging_39, implemented paging, implemented paging , 36, 39, 36, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]
+
+Req - [24/31]
+	Requirement [REQ-24] = [For each scribble visible to the user he has the ability to comment on it to express his opinion . The comment can contain only text and cannot exceed 500 characters in length . To comment , user can see a text area under the scribble , where he can enter the text . ]
+	Sentences : [3]
+	[For-1, each-2, scribble-3, visible-4, to-5, the-6, user-7, he-8, has-9, the-10, ability-11, to-12, comment-13, on-14, it-15, to-16, express-17, his-18, opinion-19, .-20]
+		Caso 1 [2]: [[has_9_ability_11, has ability, has the ability to comment on it to express his opinion , 9, 11, 19, [has/verb, the/NULL, ability/noun, to/NULL, comment/verb, on/NULL, it/NULL, to/NULL, express/verb, his/NULL, opinion/noun], ['has|VB ability|NN comment|VB express|VB opinion|NN'], OK], [express_17_opinion_19, express opinion, express his opinion , 17, 19, 19, [express/verb, his/NULL, opinion/noun], ['express|VB opinion|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[The-1, comment-2, can-3, contain-4, only-5, text-6, and-7, can-8, not-9, exceed-10, 500, characters-12, in-13, length-14, .-15]
+		Caso 1 [2]: [[contain_24_text_26, contain text, contain only text , 24, 26, 26, [contain/verb, only/adverb, text/noun], ['contain|VB only|ADV text|NN'], OK], [exceed_30_characters_32, exceed characters, exceed 500 characters , 30, 32, 32, [exceed/verb, 500/NULL, characters/noun], ['exceed|VB characters|NN'], NEGATED]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[To-1, comment-2, ,-3, user-4, can-5, see-6, a-7, text-8, area-9, under-10, the-11, scribble-12, ,-13, where-14, he-15, can-16, enter-17, the-18, text-19, .-20]
+		Caso 1 [2]: [[see_41_area_44, see area, see a text area under the scribble , 41, 44, 47, [see/verb, a/NULL, text/noun, area/noun, under/NULL, the/NULL, scribble/noun], ['see|VB text|NN area|NN scribble|NN'], OK], [enter_52_text_54, enter text, enter the text , 52, 54, 54, [enter/verb, the/NULL, text/noun], ['enter|VB text|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [6]
+		[has_9_ability_11, has ability, has the ability to comment on it to express his opinion , 9, 11, 19, [has/verb, the/NULL, ability/noun, to/NULL, comment/verb, on/NULL, it/NULL, to/NULL, express/verb, his/NULL, opinion/noun], ['has|VB ability|NN comment|VB express|VB opinion|NN'], OK]
+		[express_17_opinion_19, express opinion, express his opinion , 17, 19, 19, [express/verb, his/NULL, opinion/noun], ['express|VB opinion|NN'], OK]
+		[contain_24_text_26, contain text, contain only text , 24, 26, 26, [contain/verb, only/adverb, text/noun], ['contain|VB only|ADV text|NN'], OK]
+		[exceed_30_characters_32, exceed characters, exceed 500 characters , 30, 32, 32, [exceed/verb, 500/NULL, characters/noun], ['exceed|VB characters|NN'], NEGATED]
+		[see_41_area_44, see area, see a text area under the scribble , 41, 44, 47, [see/verb, a/NULL, text/noun, area/noun, under/NULL, the/NULL, scribble/noun], ['see|VB text|NN area|NN scribble|NN'], OK]
+		[enter_52_text_54, enter text, enter the text , 52, 54, 54, [enter/verb, the/NULL, text/noun], ['enter|VB text|NN'], OK]
+
+Req - [25/31]
+	Requirement [REQ-25] = [A user can delete a comment written by him or a comment on his scribbles . For deleting a scribble that he is authorized to delete , a user can see a delete link near the comment . ]
+	Sentences : [2]
+	[A-1, user-2, can-3, delete-4, a-5, comment-6, written-7, by-8, him-9, or-10, a-11, comment-12, on-13, his-14, scribbles-15, .-16]
+		Caso 1 [1]: [[delete_4_comment_6, delete comment, delete a comment written by him or a comment on his scribbles , 4, 6, 15, [delete/verb, a/NULL, comment/noun, written/verb, by/NULL, him/NULL, or/NULL, a/NULL, comment/noun, on/NULL, his/NULL, scribbles/noun], ['delete|VB comment|NN written|VB comment|NN scribbles|NN'], OK]]
+		Caso 2 [1]: [[comment_12_scribbles_15, comment scribbles, comment on his scribbles , 12, 15, 15, [comment/verb, on/NULL, his/NULL, scribbles/noun], ['comment|VB scribbles|NN'], OK]]
+		Caso 4 [0]: []
+	[For-1, deleting-2, a-3, scribble-4, that-5, he-6, is-7, authorized-8, to-9, delete-10, ,-11, a-12, user-13, can-14, see-15, a-16, delete-17, link-18, near-19, the-20, comment-21, .-22]
+		Caso 1 [2]: [[see_31_link_34, see link, see a delete link near the comment , 31, 34, 37, [see/verb, a/NULL, delete/verb, link/noun, near/NULL, the/NULL, comment/noun], ['see|VB delete|VB link|NN comment|NN'], OK], [deleting_18_scribble_20, deleting scribble, deleting a scribble that he is authorized to delete , 18, 20, 26, [deleting/verb, a/NULL, scribble/noun, that/NULL, he/NULL, is/verb, authorized/verb, to/NULL, delete/verb], ['deleting|VB scribble|NN is|VB authorized|VB delete|VB'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [1]: [[authorized_22_deleting_24, authorized deleting, authorized For deleting a scribble that he is authorized to delete , 22, 24, 22, [authorized/verb, For/NULL, deleting/verb, a/NULL, scribble/noun, that/NULL, he/NULL, is/verb, authorized/verb, to/NULL, delete/verb], ['authorized|VB deleting|VB scribble|NN is|VB authorized|VB delete|VB'], OK]]
+
+	Responsibilities: [5]
+		[delete_4_comment_6, delete comment, delete a comment written by him or a comment on his scribbles , 4, 6, 15, [delete/verb, a/NULL, comment/noun, written/verb, by/NULL, him/NULL, or/NULL, a/NULL, comment/noun, on/NULL, his/NULL, scribbles/noun], ['delete|VB comment|NN written|VB comment|NN scribbles|NN'], OK]
+		[comment_12_scribbles_15, comment scribbles, comment on his scribbles , 12, 15, 15, [comment/verb, on/NULL, his/NULL, scribbles/noun], ['comment|VB scribbles|NN'], OK]
+		[see_31_link_34, see link, see a delete link near the comment , 31, 34, 37, [see/verb, a/NULL, delete/verb, link/noun, near/NULL, the/NULL, comment/noun], ['see|VB delete|VB link|NN comment|NN'], OK]
+		[deleting_18_scribble_20, deleting scribble, deleting a scribble that he is authorized to delete , 18, 20, 26, [deleting/verb, a/NULL, scribble/noun, that/NULL, he/NULL, is/verb, authorized/verb, to/NULL, delete/verb], ['deleting|VB scribble|NN is|VB authorized|VB delete|VB'], OK]
+		[authorized_22_deleting_24, authorized deleting, authorized For deleting a scribble that he is authorized to delete , 22, 24, 22, [authorized/verb, For/NULL, deleting/verb, a/NULL, scribble/noun, that/NULL, he/NULL, is/verb, authorized/verb, to/NULL, delete/verb], ['authorized|VB deleting|VB scribble|NN is|VB authorized|VB delete|VB'], OK]
+
+Req - [26/31]
+	Requirement [REQ-26] = [Users can like a scribble by clicking on the “Thumb’s Up” button below the scribble . For any scribble , all users can see a count of the “Liked” scribble]
+	Sentences : [2]
+	[Users-1, can-2, like-3, a-4, scribble-5, by-6, clicking-7, on-8, the-9, ``-10, Thumb-11, 's-12, Up-13, ''-14, button-15, below-16, the-17, scribble-18, .-19]
+		Caso 1 [1]: [[like_3_scribble_5, like scribble, like a scribble , 3, 5, 5, [like/verb, a/NULL, scribble/noun], ['like|VB scribble|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[For-1, any-2, scribble-3, ,-4, all-5, users-6, can-7, see-8, a-9, count-10, of-11, the-12, ``-13, Liked-14, ''-15, scribble-16]
+		Caso 1 [1]: [[see_27_count_29, see count, see a count of the “ Liked ” , 27, 29, 34, [see/verb, a/NULL, count/noun, of/NULL, the/NULL, “/NULL, Liked/verb, ”/NULL], ['see|VB count|NN Liked|VB'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[like_3_scribble_5, like scribble, like a scribble , 3, 5, 5, [like/verb, a/NULL, scribble/noun], ['like|VB scribble|NN'], OK]
+		[see_27_count_29, see count, see a count of the “ Liked ” , 27, 29, 34, [see/verb, a/NULL, count/noun, of/NULL, the/NULL, “/NULL, Liked/verb, ”/NULL], ['see|VB count|NN Liked|VB'], OK]
+
+Req - [27/31]
+	Requirement [REQ-27] = [Users can dislike a scribble by clicking on the “Thumb’s Down” button below the scribble . For any scribble , all users can see a count of the “Disliked” scribble . ]
+	Sentences : [2]
+	[Users-1, can-2, dislike-3, a-4, scribble-5, by-6, clicking-7, on-8, the-9, ``-10, Thumb-11, 's-12, Down-13, ''-14, button-15, below-16, the-17, scribble-18, .-19]
+		Caso 1 [1]: [[dislike_3_scribble_5, dislike scribble, dislike a scribble , 3, 5, 5, [dislike/verb, a/NULL, scribble/noun], ['dislike|VB scribble|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[For-1, any-2, scribble-3, ,-4, all-5, users-6, can-7, see-8, a-9, count-10, of-11, the-12, ``-13, Disliked-14, ''-15, scribble-16, .-17]
+		Caso 1 [1]: [[see_27_count_29, see count, see a count of the “ Disliked ” scribble , 27, 29, 35, [see/verb, a/NULL, count/noun, of/NULL, the/NULL, “/NULL, Disliked/verb, ”/NULL, scribble/noun], ['see|VB count|NN Disliked|VB scribble|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[dislike_3_scribble_5, dislike scribble, dislike a scribble , 3, 5, 5, [dislike/verb, a/NULL, scribble/noun], ['dislike|VB scribble|NN'], OK]
+		[see_27_count_29, see count, see a count of the “ Disliked ” scribble , 27, 29, 35, [see/verb, a/NULL, count/noun, of/NULL, the/NULL, “/NULL, Disliked/verb, ”/NULL, scribble/noun], ['see|VB count|NN Disliked|VB scribble|NN'], OK]
+
+Req - [28/31]
+	Requirement [REQ-28] = [User should be able to initiate ChitChat with any user in the friend list who is online . The other user must seamlessly understand that the ChitChat has been initiated and the ChitChat message must be forwarded to the intended user . User should be able to receive ChitChat from any user in the friend list who is online and within the friend list of that user . Thus the receiving entity can send message back to the originator , thus , completing a two-way conversation . The message cannot be greater than 250 characters in length . ]
+	Sentences : [5]
+	[User-1, should-2, be-3, able-4, to-5, initiate-6, ChitChat-7, with-8, any-9, user-10, in-11, the-12, friend-13, list-14, who-15, is-16, online-17, .-18]
+		Caso 1 [1]: [[initiate_6_ChitChat_7, initiate ChitChat, initiate ChitChat , 6, 7, 7, [initiate/verb, ChitChat/noun], ['initiate|VB ChitChat|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[The-1, other-2, user-3, must-4, seamlessly-5, understand-6, that-7, the-8, ChitChat-9, has-10, been-11, initiated-12, and-13, the-14, ChitChat-15, message-16, must-17, be-18, forwarded-19, to-20, the-21, intended-22, user-23, .-24]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [2]: [[initiated_27_ChitChat_30, initiated ChitChat, initiated the ChitChat , 27, 30, 27, [initiated/verb, the/NULL, ChitChat/noun], ['initiated|VB ChitChat|NN'], OK], [forwarded_34_message_37, forwarded message, forwarded the ChitChat message , 34, 37, 34, [forwarded/verb, the/NULL, ChitChat/noun, message/noun], ['forwarded|VB ChitChat|NN message|NN'], OK]]
+	[User-1, should-2, be-3, able-4, to-5, receive-6, ChitChat-7, from-8, any-9, user-10, in-11, the-12, friend-13, list-14, who-15, is-16, online-17, and-18, within-19, the-20, friend-21, list-22, of-23, that-24, user-25, .-26]
+		Caso 1 [1]: [[receive_48_ChitChat_49, receive ChitChat, receive ChitChat , 48, 49, 49, [receive/verb, ChitChat/noun], ['receive|VB ChitChat|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[Thus-1, the-2, receiving-3, entity-4, can-5, send-6, message-7, back-8, to-9, the-10, originator-11, ,-12, thus-13, ,-14, completing-15, a-16, two-way-17, conversation-18, .-19]
+		Caso 1 [2]: [[send_74_message_75, send message, send message , 74, 75, 75, [send/verb, message/noun], ['send|VB message|NN'], OK], [completing_83_conversation_86, completing conversation, completing a two-way conversation , 83, 86, 86, [completing/verb, a/NULL, two-way/adjective, conversation/noun], ['completing|VB two-way|ADJ conversation|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[The-1, message-2, can-3, not-4, be-5, greater-6, than-7, 250, characters-9, in-10, length-11, .-12]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [6]
+		[initiate_6_ChitChat_7, initiate ChitChat, initiate ChitChat , 6, 7, 7, [initiate/verb, ChitChat/noun], ['initiate|VB ChitChat|NN'], OK]
+		[initiated_27_ChitChat_30, initiated ChitChat, initiated the ChitChat , 27, 30, 27, [initiated/verb, the/NULL, ChitChat/noun], ['initiated|VB ChitChat|NN'], OK]
+		[forwarded_34_message_37, forwarded message, forwarded the ChitChat message , 34, 37, 34, [forwarded/verb, the/NULL, ChitChat/noun, message/noun], ['forwarded|VB ChitChat|NN message|NN'], OK]
+		[receive_48_ChitChat_49, receive ChitChat, receive ChitChat , 48, 49, 49, [receive/verb, ChitChat/noun], ['receive|VB ChitChat|NN'], OK]
+		[send_74_message_75, send message, send message , 74, 75, 75, [send/verb, message/noun], ['send|VB message|NN'], OK]
+		[completing_83_conversation_86, completing conversation, completing a two-way conversation , 83, 86, 86, [completing/verb, a/NULL, two-way/adjective, conversation/noun], ['completing|VB two-way|ADJ conversation|NN'], OK]
+
+Req - [29/31]
+	Requirement [REQ-29] = [Using this functionality user can send text files to online users . This helps user to share text documents with users on this platform . The maximum file size would be limited to 25 MB . ]
+	Sentences : [3]
+	[Using-1, this-2, functionality-3, user-4, can-5, send-6, text-7, files-8, to-9, online-10, users-11, .-12]
+		Caso 1 [2]: [[send_6_files_8, send files, send text files , 6, 8, 8, [send/verb, text/noun, files/noun], ['send|VB text|NN files|NN'], OK], [Using_1_user_4, Using user, Using this functionality user , 1, 4, 4, [Using/verb, this/NULL, functionality/noun, user/noun], ['Using|VB functionality|NN user|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[This-1, helps-2, user-3, to-4, share-5, text-6, documents-7, with-8, users-9, on-10, this-11, platform-12, .-13]
+		Caso 1 [2]: [[helps_14_user_15, helps user, helps user , 14, 15, 15, [helps/verb, user/noun], ['helps|VB user|NN'], OK], [share_17_documents_19, share documents, share text documents , 17, 19, 19, [share/verb, text/noun, documents/noun], ['share|VB text|NN documents|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[The-1, maximum-2, file-3, size-4, would-5, be-6, limited-7, to-8, 25, MB-10, .-11]
+		Caso 1 [0]: []
+		Caso 2 [0]: []
+		Caso 4 [1]: [[limited_29_size_32, limited size, limited The maximum file size , 29, 32, 29, [limited/verb, The/NULL, maximum/noun, file/noun, size/noun], ['limited|VB maximum|NN file|NN size|NN'], OK]]
+
+	Responsibilities: [5]
+		[send_6_files_8, send files, send text files , 6, 8, 8, [send/verb, text/noun, files/noun], ['send|VB text|NN files|NN'], OK]
+		[Using_1_user_4, Using user, Using this functionality user , 1, 4, 4, [Using/verb, this/NULL, functionality/noun, user/noun], ['Using|VB functionality|NN user|NN'], OK]
+		[helps_14_user_15, helps user, helps user , 14, 15, 15, [helps/verb, user/noun], ['helps|VB user|NN'], OK]
+		[share_17_documents_19, share documents, share text documents , 17, 19, 19, [share/verb, text/noun, documents/noun], ['share|VB text|NN documents|NN'], OK]
+		[limited_29_size_32, limited size, limited The maximum file size , 29, 32, 29, [limited/verb, The/NULL, maximum/noun, file/noun, size/noun], ['limited|VB maximum|NN file|NN size|NN'], OK]
+
+Req - [30/31]
+	Requirement [REQ-30] = [User should be able to store ChitChat on exit . So that if the user wants to keep history of the previous session , he can keep it to be brought back . ]
+	Sentences : [2]
+	[User-1, should-2, be-3, able-4, to-5, store-6, ChitChat-7, on-8, exit-9, .-10]
+		Caso 1 [1]: [[store_6_ChitChat_7, store ChitChat, store ChitChat , 6, 7, 7, [store/verb, ChitChat/noun], ['store|VB ChitChat|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+	[So-1, that-2, if-3, the-4, user-5, wants-6, to-7, keep-8, history-9, of-10, the-11, previous-12, session-13, ,-14, he-15, can-16, keep-17, it-18, to-19, be-20, brought-21, back-22, .-23]
+		Caso 1 [2]: [[keep_27_to_28, keep to, keep to , 27, 28, 28, [keep/verb, to/NULL], ['keep|VB'], OK], [keep_18_history_19, keep history, keep history of the previous session , 18, 19, 23, [keep/verb, history/noun, of/NULL, the/NULL, previous/adjective, session/noun], ['keep|VB history|NN previous|ADJ session|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [3]
+		[store_6_ChitChat_7, store ChitChat, store ChitChat , 6, 7, 7, [store/verb, ChitChat/noun], ['store|VB ChitChat|NN'], OK]
+		[keep_27_to_28, keep to, keep to , 27, 28, 28, [keep/verb, to/NULL], ['keep|VB'], OK]
+		[keep_18_history_19, keep history, keep history of the previous session , 18, 19, 23, [keep/verb, history/noun, of/NULL, the/NULL, previous/adjective, session/noun], ['keep|VB history|NN previous|ADJ session|NN'], OK]
+
+Req - [31/31]
+	Requirement [REQ-31] = [User should be able to retrieve ChitChat when the ChitChat when the user wants to see ChitChat history . ]
+	Sentences : [1]
+	[User-1, should-2, be-3, able-4, to-5, retrieve-6, ChitChat-7, when-8, the-9, ChitChat-10, when-11, the-12, user-13, wants-14, to-15, see-16, ChitChat-17, history-18, .-19]
+		Caso 1 [2]: [[see_16_history_18, see history, see ChitChat history , 16, 18, 18, [see/verb, ChitChat/noun, history/noun], ['see|VB ChitChat|NN history|NN'], OK], [retrieve_6_ChitChat_7, retrieve ChitChat, retrieve ChitChat , 6, 7, 7, [retrieve/verb, ChitChat/noun], ['retrieve|VB ChitChat|NN'], OK]]
+		Caso 2 [0]: []
+		Caso 4 [0]: []
+
+	Responsibilities: [2]
+		[see_16_history_18, see history, see ChitChat history , 16, 18, 18, [see/verb, ChitChat/noun, history/noun], ['see|VB ChitChat|NN history|NN'], OK]
+		[retrieve_6_ChitChat_7, retrieve ChitChat, retrieve ChitChat , 6, 7, 7, [retrieve/verb, ChitChat/noun], ['retrieve|VB ChitChat|NN'], OK]
+
+
+** Sequencing of Responsibilities  **
+
+Req -  [1/31]
+	Requirement [REQ-1] = [User will create an account if there is no existing account associated with users email-id . User should enter account details such as name , email-id , contact number , birth date , captcha and password . All these are required fields and account creation cannot proceed unless these are filled . User is registered after this information is validated and user agrees with the terms and conditions . User must be 18 years old or more . Contact number should be a 10 digit numeric field . First and last name should not exceed 20 characters each . Password should be at least 8 characters long , at most 15 characters including at least one capital and small letter , a special character and a number . Any of the above fields must not have ( ‘ , “ , : , ; , < , > , { , } , - , % , $ , | , ] , [) . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User will create an account if there is no existing account associated with users email-id .]
+		+ Tokens    [1] = [[User-1, will-2, create-3, an-4, account-5, if-6, there-7, is-8, no-9, existing-10, account-11, associated-12, with-13, users-14, email-id-15, .-16]]
+		+ Sentencia [2] = [User should enter account details such as name , email-id , contact number , birth date , captcha and password .]
+		+ Tokens    [2] = [[User-1, should-2, enter-3, account-4, details-5, such-6, as-7, name-8, ,-9, email-id-10, ,-11, contact-12, number-13, ,-14, birth-15, date-16, ,-17, captcha-18, and-19, password-20, .-21]]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, should-2, enter-3, account-4, details-5, such-6, as-7, name-8, ,-9, email-id-10, ,-11, contact-12, number-13, ,-14, birth-15, date-16, ,-17, captcha-18, [AND], password-20, .-21]
+		+ Sentencia [3] = [All these are required fields and account creation cannot proceed unless these are filled .]
+		+ Tokens    [3] = [[All-1, these-2, are-3, required-4, fields-5, and-6, account-7, creation-8, can-9, not-10, proceed-11, unless-12, these-13, are-14, filled-15, .-16]]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [all-1, these-2, are-3, required-4, fields-5, [AND], account-7, creation-8, can-9, not-10, proceed-11, unless-12, these-13, are-14, filled-15, .-16]
+		+ Sentencia [4] = [User is registered after this information is validated and user agrees with the terms and conditions .]
+		+ Tokens    [4] = [[User-1, is-2, registered-3, after-4, this-5, information-6, is-7, validated-8, and-9, user-10, agrees-11, with-12, the-13, terms-14, and-15, conditions-16, .-17]]
+		+ Hubo Match [<R_A> [AFTER] <R_B>] = [user-1, is-2, registered-3, [AFTER], this-5, information-6, is-7, validated-8, and-9, user-10, agrees-11, with-12, the-13, terms-14, and-15, conditions-16, .-17]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, is-2, registered-3, after-4, this-5, information-6, is-7, validated-8, [AND], user-10, agrees-11, with-12, the-13, terms-14, and-15, conditions-16, .-17]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, is-2, registered-3, after-4, this-5, information-6, is-7, validated-8, and-9, user-10, agrees-11, with-12, the-13, terms-14, [AND], conditions-16, .-17]
+		+ Sentencia [5] = [User must be 18 years old or more .]
+		+ Tokens    [5] = [[User-1, must-2, be-3, 18-4, years-5, old-6, or-7, more-8, .-9]]
+		+ Sentencia [6] = [Contact number should be a 10 digit numeric field .]
+		+ Tokens    [6] = [[Contact-1, number-2, should-3, be-4, a-5, 10-6, digit-7, numeric-8, field-9, .-10]]
+		+ Sentencia [7] = [First and last name should not exceed 20 characters each .]
+		+ Tokens    [7] = [[First-1, and-2, last-3, name-4, should-5, not-6, exceed-7, 20-8, characters-9, each-10, .-11]]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [first-1, [AND], last-3, name-4, should-5, not-6, exceed-7, 20-8, characters-9, each-10, .-11]
+		+ Sentencia [8] = [Password should be at least 8 characters long , at most 15 characters including at least one capital and small letter , a special character and a number .]
+		+ Tokens    [8] = [[Password-1, should-2, be-3, at-4, least-5, 8-6, characters-7, long-8, ,-9, at-10, most-11, 15-12, characters-13, including-14, at-15, least-16, one-17, capital-18, and-19, small-20, letter-21, ,-22, a-23, special-24, character-25, and-26, a-27, number-28, .-29]]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [password-1, should-2, be-3, at-4, least-5, 8-6, characters-7, long-8, ,-9, at-10, most-11, 15-12, characters-13, including-14, at-15, least-16, one-17, capital-18, [AND], small-20, letter-21, ,-22, a-23, special-24, character-25, and-26, a-27, number-28, .-29]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [password-1, should-2, be-3, at-4, least-5, 8-6, characters-7, long-8, ,-9, at-10, most-11, 15-12, characters-13, including-14, at-15, least-16, one-17, capital-18, and-19, small-20, letter-21, ,-22, a-23, special-24, character-25, [AND], a-27, number-28, .-29]
+		+ Sentencia [9] = [Any of the above fields must not have ( ‘ , “ , : , ; , < , > , { , } , - , % , $ , | , ] , [) .]
+		+ Tokens    [9] = [[Any-1, of-2, the-3, above-4, fields-5, must-6, not-7, have-8, -LRB--9, `-10, ,-11, ``-12, ,-13, :-14, ,-15, ;-16, ,-17, <-18, ,-19, >-20, ,-21, -LCB--22, ,-23, -RCB--24, ,-25, --26, ,-27, %-28, ,-29, $-30, ,-31, |-32, ,-33, -RSB--34, ,-35, -LSB--36, -RRB--37, .-38]]
+		+ Causal Relationship [1/1] = [validated information -> registered User]
+
+Req -  [2/31]
+	Requirement [REQ-2] = [When the user has registered , a verification link is sent to the email-id set at the time of registration so as to verify given email-id as genuine . After the user has verified the account , it will be marked as verified . Account privileges will not be given to the user until verification is complete . User should be able to re-send the verification link to his email-id . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [When the user has registered , a verification link is sent to the email-id set at the time of registration so as to verify given email-id as genuine .]
+		+ Tokens    [1] = [[When-1, the-2, user-3, has-4, registered-5, ,-6, a-7, verification-8, link-9, is-10, sent-11, to-12, the-13, email-id-14, set-15, at-16, the-17, time-18, of-19, registration-20, so-21, as-22, to-23, verify-24, given-25, email-id-26, as-27, genuine-28, .-29]]
+		+ Hubo Match [[WHEN] <...> [,] <...>] = [[WHEN], the-2, user-3, has-4, registered-5, [,], a-7, verification-8, link-9, is-10, sent-11, to-12, the-13, email-id-14, set-15, at-16, the-17, time-18, of-19, registration-20, so-21, as-22, to-23, verify-24, given-25, email-id-26, as-27, genuine-28, .-29]
+		+ Hubo Match [<R_A> [WHEN] <R_B>] = [[WHEN], the-2, user-3, has-4, registered-5, ,-6, a-7, verification-8, link-9, is-10, sent-11, to-12, the-13, email-id-14, set-15, at-16, the-17, time-18, of-19, registration-20, so-21, as-22, to-23, verify-24, given-25, email-id-26, as-27, genuine-28, .-29]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [when-1, the-2, user-3, has-4, registered-5, ,-6, a-7, verification-8, link-9, is-10, sent-11, [TO], the-13, email-id-14, set-15, at-16, the-17, time-18, of-19, registration-20, so-21, as-22, to-23, verify-24, given-25, email-id-26, as-27, genuine-28, .-29]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [when-1, the-2, user-3, has-4, registered-5, ,-6, a-7, verification-8, link-9, is-10, sent-11, to-12, the-13, email-id-14, set-15, at-16, the-17, time-18, of-19, registration-20, so-21, as-22, [TO], verify-24, given-25, email-id-26, as-27, genuine-28, .-29]
+		+ Sentencia [2] = [After the user has verified the account , it will be marked as verified .]
+		+ Tokens    [2] = [[After-1, the-2, user-3, has-4, verified-5, the-6, account-7, ,-8, it-9, will-10, be-11, marked-12, as-13, verified-14, .-15]]
+		+ Hubo Match [[AFTER] <...> [,] <...>] = [[AFTER], the-2, user-3, has-4, verified-5, the-6, account-7, [,], it-9, will-10, be-11, marked-12, as-13, verified-14, .-15]
+		+ Hubo Match [<R_A> [AFTER] <R_B>] = [[AFTER], the-2, user-3, has-4, verified-5, the-6, account-7, ,-8, it-9, will-10, be-11, marked-12, as-13, verified-14, .-15]
+		+ Sentencia [3] = [Account privileges will not be given to the user until verification is complete .]
+		+ Tokens    [3] = [[Account-1, privileges-2, will-3, not-4, be-5, given-6, to-7, the-8, user-9, until-10, verification-11, is-12, complete-13, .-14]]
+		+ Hubo Match [<R_A> [UNTIL] <R_B>] = [account-1, privileges-2, will-3, not-4, be-5, given-6, to-7, the-8, user-9, [UNTIL], verification-11, is-12, complete-13, .-14]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [account-1, privileges-2, will-3, not-4, be-5, given-6, [TO], the-8, user-9, until-10, verification-11, is-12, complete-13, .-14]
+		+ Sentencia [4] = [User should be able to re-send the verification link to his email-id .]
+		+ Tokens    [4] = [[User-1, should-2, be-3, able-4, to-5, re-send-6, the-7, verification-8, link-9, to-10, his-11, email-id-12, .-13]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], re-send-6, the-7, verification-8, link-9, to-10, his-11, email-id-12, .-13]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, to-5, re-send-6, the-7, verification-8, link-9, [TO], his-11, email-id-12, .-13]
+
+Req -  [3/31]
+	Requirement [REQ-3] = [User must be registered in order to Login . Input will be the email-id and password for login . The hash of password should match to the hash of password stored in the database . If three attempts of password are wrong then a captcha should appear . If more than 8 attempts go wrong , then the account will be locked and an e-mail will be sent to the user notifying about the wrong password attempts . To unlock the account , user must click on the unlock link sent to him in the email . If user clicks on forgot password then reset password link should be emailed to the user . Input to each field must be validated . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User must be registered in order to Login .]
+		+ Tokens    [1] = [[User-1, must-2, be-3, registered-4, in-5, order-6, to-7, Login-8, .-9]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, must-2, be-3, registered-4, in-5, order-6, [TO], login-8, .-9]
+		+ Sentencia [2] = [Input will be the email-id and password for login .]
+		+ Tokens    [2] = [[Input-1, will-2, be-3, the-4, email-id-5, and-6, password-7, for-8, login-9, .-10]]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [input-1, will-2, be-3, the-4, email-id-5, and-6, password-7, [FOR], login-9, .-10]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [input-1, will-2, be-3, the-4, email-id-5, [AND], password-7, for-8, login-9, .-10]
+		+ Sentencia [3] = [The hash of password should match to the hash of password stored in the database .]
+		+ Tokens    [3] = [[The-1, hash-2, of-3, password-4, should-5, match-6, to-7, the-8, hash-9, of-10, password-11, stored-12, in-13, the-14, database-15, .-16]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, hash-2, of-3, password-4, should-5, match-6, [TO], the-8, hash-9, of-10, password-11, stored-12, in-13, the-14, database-15, .-16]
+		+ Sentencia [4] = [If three attempts of password are wrong then a captcha should appear .]
+		+ Tokens    [4] = [[If-1, three-2, attempts-3, of-4, password-5, are-6, wrong-7, then-8, a-9, captcha-10, should-11, appear-12, .-13]]
+		+ Hubo Match [[IF] <...> [THEN] <...>] = [[IF], three-2, attempts-3, of-4, password-5, are-6, wrong-7, [THEN], a-9, captcha-10, should-11, appear-12, .-13]
+		+ Hubo Match [<R_A> [THEN] <R_B>] = [if-1, three-2, attempts-3, of-4, password-5, are-6, wrong-7, [THEN], a-9, captcha-10, should-11, appear-12, .-13]
+		+ Sentencia [5] = [If more than 8 attempts go wrong , then the account will be locked and an e-mail will be sent to the user notifying about the wrong password attempts .]
+		+ Tokens    [5] = [[If-1, more-2, than-3, 8-4, attempts-5, go-6, wrong-7, ,-8, then-9, the-10, account-11, will-12, be-13, locked-14, and-15, an-16, e-mail-17, will-18, be-19, sent-20, to-21, the-22, user-23, notifying-24, about-25, the-26, wrong-27, password-28, attempts-29, .-30]]
+		+ Hubo Match [[IF] <...> [THEN] <...>] = [[IF], more-2, than-3, 8-4, attempts-5, go-6, wrong-7, ,-8, [THEN], the-10, account-11, will-12, be-13, locked-14, and-15, an-16, e-mail-17, will-18, be-19, sent-20, to-21, the-22, user-23, notifying-24, about-25, the-26, wrong-27, password-28, attempts-29, .-30]
+		+ Hubo Match [[IF] <...> [,] <...>] = [[IF], more-2, than-3, 8-4, attempts-5, go-6, wrong-7, [,], then-9, the-10, account-11, will-12, be-13, locked-14, and-15, an-16, e-mail-17, will-18, be-19, sent-20, to-21, the-22, user-23, notifying-24, about-25, the-26, wrong-27, password-28, attempts-29, .-30]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, more-2, than-3, 8-4, attempts-5, go-6, wrong-7, ,-8, then-9, the-10, account-11, will-12, be-13, locked-14, and-15, an-16, e-mail-17, will-18, be-19, sent-20, [TO], the-22, user-23, notifying-24, about-25, the-26, wrong-27, password-28, attempts-29, .-30]
+		+ Hubo Match [<R_A> [THEN] <R_B>] = [if-1, more-2, than-3, 8-4, attempts-5, go-6, wrong-7, ,-8, [THEN], the-10, account-11, will-12, be-13, locked-14, and-15, an-16, e-mail-17, will-18, be-19, sent-20, to-21, the-22, user-23, notifying-24, about-25, the-26, wrong-27, password-28, attempts-29, .-30]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [if-1, more-2, than-3, 8-4, attempts-5, go-6, wrong-7, ,-8, then-9, the-10, account-11, will-12, be-13, locked-14, [AND], an-16, e-mail-17, will-18, be-19, sent-20, to-21, the-22, user-23, notifying-24, about-25, the-26, wrong-27, password-28, attempts-29, .-30]
+		+ Sentencia [6] = [To unlock the account , user must click on the unlock link sent to him in the email .]
+		+ Tokens    [6] = [[To-1, unlock-2, the-3, account-4, ,-5, user-6, must-7, click-8, on-9, the-10, unlock-11, link-12, sent-13, to-14, him-15, in-16, the-17, email-18, .-19]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [[TO], unlock-2, the-3, account-4, ,-5, user-6, must-7, click-8, on-9, the-10, unlock-11, link-12, sent-13, to-14, him-15, in-16, the-17, email-18, .-19]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [to-1, unlock-2, the-3, account-4, ,-5, user-6, must-7, click-8, on-9, the-10, unlock-11, link-12, sent-13, [TO], him-15, in-16, the-17, email-18, .-19]
+		+ Sentencia [7] = [If user clicks on forgot password then reset password link should be emailed to the user .]
+		+ Tokens    [7] = [[If-1, user-2, clicks-3, on-4, forgot-5, password-6, then-7, reset-8, password-9, link-10, should-11, be-12, emailed-13, to-14, the-15, user-16, .-17]]
+		+ Hubo Match [[IF] <...> [THEN] <...>] = [[IF], user-2, clicks-3, on-4, forgot-5, password-6, [THEN], reset-8, password-9, link-10, should-11, be-12, emailed-13, to-14, the-15, user-16, .-17]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, user-2, clicks-3, on-4, forgot-5, password-6, then-7, reset-8, password-9, link-10, should-11, be-12, emailed-13, [TO], the-15, user-16, .-17]
+		+ Hubo Match [<R_A> [THEN] <R_B>] = [if-1, user-2, clicks-3, on-4, forgot-5, password-6, [THEN], reset-8, password-9, link-10, should-11, be-12, emailed-13, to-14, the-15, user-16, .-17]
+		+ Sentencia [8] = [Input to each field must be validated .]
+		+ Tokens    [8] = [[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [input-1, [TO], each-3, field-4, must-5, be-6, validated-7, .-8]
+		+ Causal Relationship [1/2] = [locked account -> sent e-mail]
+		+ Causal Relationship [2/2] = [clicks password -> reset link]
+
+Req -  [4/31]
+	Requirement [REQ-4] = [A part of building user profile . User should be able to add the educational details . These fields can remain empty . User must be logged in and his account should be marked as verified to be able to add education . Input to each field must be validated . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [A part of building user profile .]
+		+ Tokens    [1] = [[A-1, part-2, of-3, building-4, user-5, profile-6, .-7]]
+		+ Sentencia [2] = [User should be able to add the educational details .]
+		+ Tokens    [2] = [[User-1, should-2, be-3, able-4, to-5, add-6, the-7, educational-8, details-9, .-10]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], add-6, the-7, educational-8, details-9, .-10]
+		+ Sentencia [3] = [These fields can remain empty .]
+		+ Tokens    [3] = [[These-1, fields-2, can-3, remain-4, empty-5, .-6]]
+		+ Sentencia [4] = [User must be logged in and his account should be marked as verified to be able to add education .]
+		+ Tokens    [4] = [[User-1, must-2, be-3, logged-4, in-5, and-6, his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, to-14, be-15, able-16, to-17, add-18, education-19, .-20]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, must-2, be-3, logged-4, in-5, and-6, his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, [TO], be-15, able-16, to-17, add-18, education-19, .-20]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, must-2, be-3, logged-4, in-5, and-6, his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, to-14, be-15, able-16, [TO], add-18, education-19, .-20]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, must-2, be-3, logged-4, in-5, [AND], his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, to-14, be-15, able-16, to-17, add-18, education-19, .-20]
+		+ Sentencia [5] = [Input to each field must be validated .]
+		+ Tokens    [5] = [[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [input-1, [TO], each-3, field-4, must-5, be-6, validated-7, .-8]
+		+ Causal Relationship [1/1] = [logged User -> add education]
+
+Req -  [5/31]
+	Requirement [REQ-5] = [A part of building user profile . User should be able to add the personal details like language , gender , about user and his interests . These fields can remain empty . User must be logged in and his account should be marked as verified to be able to add personal information . Input to each field must be validated . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [A part of building user profile .]
+		+ Tokens    [1] = [[A-1, part-2, of-3, building-4, user-5, profile-6, .-7]]
+		+ Sentencia [2] = [User should be able to add the personal details like language , gender , about user and his interests .]
+		+ Tokens    [2] = [[User-1, should-2, be-3, able-4, to-5, add-6, the-7, personal-8, details-9, like-10, language-11, ,-12, gender-13, ,-14, about-15, user-16, and-17, his-18, interests-19, .-20]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], add-6, the-7, personal-8, details-9, like-10, language-11, ,-12, gender-13, ,-14, about-15, user-16, and-17, his-18, interests-19, .-20]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, should-2, be-3, able-4, to-5, add-6, the-7, personal-8, details-9, like-10, language-11, ,-12, gender-13, ,-14, about-15, user-16, [AND], his-18, interests-19, .-20]
+		+ Sentencia [3] = [These fields can remain empty .]
+		+ Tokens    [3] = [[These-1, fields-2, can-3, remain-4, empty-5, .-6]]
+		+ Sentencia [4] = [User must be logged in and his account should be marked as verified to be able to add personal information .]
+		+ Tokens    [4] = [[User-1, must-2, be-3, logged-4, in-5, and-6, his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, to-14, be-15, able-16, to-17, add-18, personal-19, information-20, .-21]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, must-2, be-3, logged-4, in-5, and-6, his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, [TO], be-15, able-16, to-17, add-18, personal-19, information-20, .-21]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, must-2, be-3, logged-4, in-5, and-6, his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, to-14, be-15, able-16, [TO], add-18, personal-19, information-20, .-21]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, must-2, be-3, logged-4, in-5, [AND], his-7, account-8, should-9, be-10, marked-11, as-12, verified-13, to-14, be-15, able-16, to-17, add-18, personal-19, information-20, .-21]
+		+ Sentencia [5] = [Input to each field must be validated .]
+		+ Tokens    [5] = [[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [input-1, [TO], each-3, field-4, must-5, be-6, validated-7, .-8]
+		+ Causal Relationship [1/1] = [logged User -> add information]
+
+Req -  [6/31]
+	Requirement [REQ-6] = [A part of building user profile . User should be able to add the account details like name , birth date , email-id , phone number and address . Name , birth date and email-id cannot be empty while the other two can remain empty . User must be logged in . Input to each field must be validated . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [A part of building user profile .]
+		+ Tokens    [1] = [[A-1, part-2, of-3, building-4, user-5, profile-6, .-7]]
+		+ Sentencia [2] = [User should be able to add the account details like name , birth date , email-id , phone number and address .]
+		+ Tokens    [2] = [[User-1, should-2, be-3, able-4, to-5, add-6, the-7, account-8, details-9, like-10, name-11, ,-12, birth-13, date-14, ,-15, email-id-16, ,-17, phone-18, number-19, and-20, address-21, .-22]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], add-6, the-7, account-8, details-9, like-10, name-11, ,-12, birth-13, date-14, ,-15, email-id-16, ,-17, phone-18, number-19, and-20, address-21, .-22]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, should-2, be-3, able-4, to-5, add-6, the-7, account-8, details-9, like-10, name-11, ,-12, birth-13, date-14, ,-15, email-id-16, ,-17, phone-18, number-19, [AND], address-21, .-22]
+		+ Sentencia [3] = [Name , birth date and email-id cannot be empty while the other two can remain empty .]
+		+ Tokens    [3] = [[Name-1, ,-2, birth-3, date-4, and-5, email-id-6, can-7, not-8, be-9, empty-10, while-11, the-12, other-13, two-14, can-15, remain-16, empty-17, .-18]]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [name-1, ,-2, birth-3, date-4, [AND], email-id-6, can-7, not-8, be-9, empty-10, while-11, the-12, other-13, two-14, can-15, remain-16, empty-17, .-18]
+		+ Sentencia [4] = [User must be logged in .]
+		+ Tokens    [4] = [[User-1, must-2, be-3, logged-4, in-5, .-6]]
+		+ Sentencia [5] = [Input to each field must be validated .]
+		+ Tokens    [5] = [[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [input-1, [TO], each-3, field-4, must-5, be-6, validated-7, .-8]
+
+Req -  [7/31]
+	Requirement [REQ-7] = [A part of building user profile . User should be able to edit the account details like name , birth date , email-id , phone number and address . Name , birth date and email-id cannot be empty while the other two can remain empty . If email is changed then email verification module should be called . User must be logged in . Input to each field must be validated . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [A part of building user profile .]
+		+ Tokens    [1] = [[A-1, part-2, of-3, building-4, user-5, profile-6, .-7]]
+		+ Sentencia [2] = [User should be able to edit the account details like name , birth date , email-id , phone number and address .]
+		+ Tokens    [2] = [[User-1, should-2, be-3, able-4, to-5, edit-6, the-7, account-8, details-9, like-10, name-11, ,-12, birth-13, date-14, ,-15, email-id-16, ,-17, phone-18, number-19, and-20, address-21, .-22]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], edit-6, the-7, account-8, details-9, like-10, name-11, ,-12, birth-13, date-14, ,-15, email-id-16, ,-17, phone-18, number-19, and-20, address-21, .-22]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, should-2, be-3, able-4, to-5, edit-6, the-7, account-8, details-9, like-10, name-11, ,-12, birth-13, date-14, ,-15, email-id-16, ,-17, phone-18, number-19, [AND], address-21, .-22]
+		+ Sentencia [3] = [Name , birth date and email-id cannot be empty while the other two can remain empty .]
+		+ Tokens    [3] = [[Name-1, ,-2, birth-3, date-4, and-5, email-id-6, can-7, not-8, be-9, empty-10, while-11, the-12, other-13, two-14, can-15, remain-16, empty-17, .-18]]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [name-1, ,-2, birth-3, date-4, [AND], email-id-6, can-7, not-8, be-9, empty-10, while-11, the-12, other-13, two-14, can-15, remain-16, empty-17, .-18]
+		+ Sentencia [4] = [If email is changed then email verification module should be called .]
+		+ Tokens    [4] = [[If-1, email-2, is-3, changed-4, then-5, email-6, verification-7, module-8, should-9, be-10, called-11, .-12]]
+		+ Hubo Match [[IF] <...> [THEN] <...>] = [[IF], email-2, is-3, changed-4, [THEN], email-6, verification-7, module-8, should-9, be-10, called-11, .-12]
+		+ Hubo Match [<R_A> [THEN] <R_B>] = [if-1, email-2, is-3, changed-4, [THEN], email-6, verification-7, module-8, should-9, be-10, called-11, .-12]
+		+ Sentencia [5] = [User must be logged in .]
+		+ Tokens    [5] = [[User-1, must-2, be-3, logged-4, in-5, .-6]]
+		+ Sentencia [6] = [Input to each field must be validated .]
+		+ Tokens    [6] = [[Input-1, to-2, each-3, field-4, must-5, be-6, validated-7, .-8]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [input-1, [TO], each-3, field-4, must-5, be-6, validated-7, .-8]
+		+ Causal Relationship [1/1] = [changed email -> email module]
+
+Req -  [8/31]
+	Requirement [REQ-8] = [User should be able to upload the profile picture . The size of profile picture should be at least 160px * 160px . User may leave this field empty . Profile image should be visible to all . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User should be able to upload the profile picture .]
+		+ Tokens    [1] = [[User-1, should-2, be-3, able-4, to-5, upload-6, the-7, profile-8, picture-9, .-10]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], upload-6, the-7, profile-8, picture-9, .-10]
+		+ Sentencia [2] = [The size of profile picture should be at least 160px * 160px .]
+		+ Tokens    [2] = [[The-1, size-2, of-3, profile-4, picture-5, should-6, be-7, at-8, least-9, 160px-10, *-11, 160px-12, .-13]]
+		+ Sentencia [3] = [User may leave this field empty .]
+		+ Tokens    [3] = [[User-1, may-2, leave-3, this-4, field-5, empty-6, .-7]]
+		+ Sentencia [4] = [Profile image should be visible to all .]
+		+ Tokens    [4] = [[Profile-1, image-2, should-3, be-4, visible-5, to-6, all-7, .-8]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [profile-1, image-2, should-3, be-4, visible-5, [TO], all-7, .-8]
+
+Req -  [9/31]
+	Requirement [REQ-9] = [User should be able to make account details private or public according to his wish . By default the account details will be visible to public . ]
+
+Req -  [10/31]
+	Requirement [REQ-10] = [User should be able to make personal information private or public according to his wish . By default the personal information will be visible to public . ]
+
+Req -  [11/31]
+	Requirement [REQ-11] = [Any logged-in user should be able to see any user’s profile on Aloha . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [Any logged-in user should be able to see any user’s profile on Aloha .]
+		+ Tokens    [1] = [[Any-1, logged-in-2, user-3, should-4, be-5, able-6, to-7, see-8, any-9, user-10, 's-11, profile-12, on-13, Aloha-14, .-15]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [any-1, logged-in-2, user-3, should-4, be-5, able-6, [TO], see-8, any-9, user-10, 's-11, profile-12, on-13, aloha-14, .-15]
+
+Req -  [12/31]
+	Requirement [REQ-12] = [User may delete his account permanently from ALOHA depending on his wish . User will be removed from his friends list once deleted . User information will be cleared . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User may delete his account permanently from ALOHA depending on his wish .]
+		+ Tokens    [1] = [[User-1, may-2, delete-3, his-4, account-5, permanently-6, from-7, ALOHA-8, depending-9, on-10, his-11, wish-12, .-13]]
+		+ Sentencia [2] = [User will be removed from his friends list once deleted .]
+		+ Tokens    [2] = [[User-1, will-2, be-3, removed-4, from-5, his-6, friends-7, list-8, once-9, deleted-10, .-11]]
+		+ Hubo Match [<R_A> [ONCE] <R_B>] = [user-1, will-2, be-3, removed-4, from-5, his-6, friends-7, list-8, [ONCE], deleted-10, .-11]
+		+ Sentencia [3] = [User information will be cleared .]
+		+ Tokens    [3] = [[User-1, information-2, will-3, be-4, cleared-5, .-6]]
+
+Req -  [13/31]
+	Requirement [REQ-13] = [A registered user of Aloha should be able to send add friend requests to other users of Aloha . User can send friend request to already registered users of Aloha . User can search his friend on Aloha among the registered users and then send a friend request to him/her . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [A registered user of Aloha should be able to send add friend requests to other users of Aloha .]
+		+ Tokens    [1] = [[A-1, registered-2, user-3, of-4, Aloha-5, should-6, be-7, able-8, to-9, send-10, add-11, friend-12, requests-13, to-14, other-15, users-16, of-17, Aloha-18, .-19]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [a-1, registered-2, user-3, of-4, aloha-5, should-6, be-7, able-8, [TO], send-10, add-11, friend-12, requests-13, to-14, other-15, users-16, of-17, aloha-18, .-19]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [a-1, registered-2, user-3, of-4, aloha-5, should-6, be-7, able-8, to-9, send-10, add-11, friend-12, requests-13, [TO], other-15, users-16, of-17, aloha-18, .-19]
+		+ Sentencia [2] = [User can send friend request to already registered users of Aloha .]
+		+ Tokens    [2] = [[User-1, can-2, send-3, friend-4, request-5, to-6, already-7, registered-8, users-9, of-10, Aloha-11, .-12]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, can-2, send-3, friend-4, request-5, [TO], already-7, registered-8, users-9, of-10, aloha-11, .-12]
+		+ Sentencia [3] = [User can search his friend on Aloha among the registered users and then send a friend request to him/her .]
+		+ Tokens    [3] = [[User-1, can-2, search-3, his-4, friend-5, on-6, Aloha-7, among-8, the-9, registered-10, users-11, and-12, then-13, send-14, a-15, friend-16, request-17, to-18, him/her-19, .-20]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, can-2, search-3, his-4, friend-5, on-6, aloha-7, among-8, the-9, registered-10, users-11, and-12, then-13, send-14, a-15, friend-16, request-17, [TO], him/her-19, .-20]
+		+ Hubo Match [<R_A> [THEN] <R_B>] = [user-1, can-2, search-3, his-4, friend-5, on-6, aloha-7, among-8, the-9, registered-10, users-11, and-12, [THEN], send-14, a-15, friend-16, request-17, to-18, him/her-19, .-20]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, can-2, search-3, his-4, friend-5, on-6, aloha-7, among-8, the-9, registered-10, users-11, [AND], then-13, send-14, a-15, friend-16, request-17, to-18, him/her-19, .-20]
+		+ Causal Relationship [1/1] = [search friend -> send request]
+
+Req -  [14/31]
+	Requirement [REQ-14] = [If a user gets a friend request from another user , then the user receiving the request should have an option to accept or ignore the friend request . If the user selects to accept the friend request , the requestor is added to the friend list of the acceptor . If the user selected to ignore the request , the sender continues to see the status of the request as “Request Sent” and the request is removed from the queue of the request receiver . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [If a user gets a friend request from another user , then the user receiving the request should have an option to accept or ignore the friend request .]
+		+ Tokens    [1] = [[If-1, a-2, user-3, gets-4, a-5, friend-6, request-7, from-8, another-9, user-10, ,-11, then-12, the-13, user-14, receiving-15, the-16, request-17, should-18, have-19, an-20, option-21, to-22, accept-23, or-24, ignore-25, the-26, friend-27, request-28, .-29]]
+		+ Hubo Match [[IF] <...> [THEN] <...>] = [[IF], a-2, user-3, gets-4, a-5, friend-6, request-7, from-8, another-9, user-10, ,-11, [THEN], the-13, user-14, receiving-15, the-16, request-17, should-18, have-19, an-20, option-21, to-22, accept-23, or-24, ignore-25, the-26, friend-27, request-28, .-29]
+		+ Hubo Match [[IF] <...> [,] <...>] = [[IF], a-2, user-3, gets-4, a-5, friend-6, request-7, from-8, another-9, user-10, [,], then-12, the-13, user-14, receiving-15, the-16, request-17, should-18, have-19, an-20, option-21, to-22, accept-23, or-24, ignore-25, the-26, friend-27, request-28, .-29]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, a-2, user-3, gets-4, a-5, friend-6, request-7, from-8, another-9, user-10, ,-11, then-12, the-13, user-14, receiving-15, the-16, request-17, should-18, have-19, an-20, option-21, [TO], accept-23, or-24, ignore-25, the-26, friend-27, request-28, .-29]
+		+ Hubo Match [<R_A> [THEN] <R_B>] = [if-1, a-2, user-3, gets-4, a-5, friend-6, request-7, from-8, another-9, user-10, ,-11, [THEN], the-13, user-14, receiving-15, the-16, request-17, should-18, have-19, an-20, option-21, to-22, accept-23, or-24, ignore-25, the-26, friend-27, request-28, .-29]
+		+ Sentencia [2] = [If the user selects to accept the friend request , the requestor is added to the friend list of the acceptor .]
+		+ Tokens    [2] = [[If-1, the-2, user-3, selects-4, to-5, accept-6, the-7, friend-8, request-9, ,-10, the-11, requestor-12, is-13, added-14, to-15, the-16, friend-17, list-18, of-19, the-20, acceptor-21, .-22]]
+		+ Hubo Match [[IF] <...> [,] <...>] = [[IF], the-2, user-3, selects-4, to-5, accept-6, the-7, friend-8, request-9, [,], the-11, requestor-12, is-13, added-14, to-15, the-16, friend-17, list-18, of-19, the-20, acceptor-21, .-22]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, the-2, user-3, selects-4, [TO], accept-6, the-7, friend-8, request-9, ,-10, the-11, requestor-12, is-13, added-14, to-15, the-16, friend-17, list-18, of-19, the-20, acceptor-21, .-22]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, the-2, user-3, selects-4, to-5, accept-6, the-7, friend-8, request-9, ,-10, the-11, requestor-12, is-13, added-14, [TO], the-16, friend-17, list-18, of-19, the-20, acceptor-21, .-22]
+		+ Sentencia [3] = [If the user selected to ignore the request , the sender continues to see the status of the request as “Request Sent” and the request is removed from the queue of the request receiver .]
+		+ Tokens    [3] = [[If-1, the-2, user-3, selected-4, to-5, ignore-6, the-7, request-8, ,-9, the-10, sender-11, continues-12, to-13, see-14, the-15, status-16, of-17, the-18, request-19, as-20, ``-21, Request-22, Sent-23, ''-24, and-25, the-26, request-27, is-28, removed-29, from-30, the-31, queue-32, of-33, the-34, request-35, receiver-36, .-37]]
+		+ Hubo Match [[IF] <...> [,] <...>] = [[IF], the-2, user-3, selected-4, to-5, ignore-6, the-7, request-8, [,], the-10, sender-11, continues-12, to-13, see-14, the-15, status-16, of-17, the-18, request-19, as-20, ``-21, request-22, sent-23, ''-24, and-25, the-26, request-27, is-28, removed-29, from-30, the-31, queue-32, of-33, the-34, request-35, receiver-36, .-37]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, the-2, user-3, selected-4, [TO], ignore-6, the-7, request-8, ,-9, the-10, sender-11, continues-12, to-13, see-14, the-15, status-16, of-17, the-18, request-19, as-20, ``-21, request-22, sent-23, ''-24, and-25, the-26, request-27, is-28, removed-29, from-30, the-31, queue-32, of-33, the-34, request-35, receiver-36, .-37]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [if-1, the-2, user-3, selected-4, to-5, ignore-6, the-7, request-8, ,-9, the-10, sender-11, continues-12, [TO], see-14, the-15, status-16, of-17, the-18, request-19, as-20, ``-21, request-22, sent-23, ''-24, and-25, the-26, request-27, is-28, removed-29, from-30, the-31, queue-32, of-33, the-34, request-35, receiver-36, .-37]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [if-1, the-2, user-3, selected-4, to-5, ignore-6, the-7, request-8, ,-9, the-10, sender-11, continues-12, to-13, see-14, the-15, status-16, of-17, the-18, request-19, as-20, ``-21, request-22, sent-23, ''-24, [AND], the-26, request-27, is-28, removed-29, from-30, the-31, queue-32, of-33, the-34, request-35, receiver-36, .-37]
+		+ Causal Relationship [1/7] = [gets request -> receiving request]
+		+ Causal Relationship [2/7] = [gets request -> have option]
+		+ Causal Relationship [3/7] = [receiving request -> accept request]
+		+ Causal Relationship [4/7] = [have option -> accept request]
+		+ Causal Relationship [5/7] = [accept request -> added requestor]
+		+ Causal Relationship [6/7] = [ignore request -> see status]
+		+ Causal Relationship [7/7] = [see status -> removed request]
+
+Req -  [15/31]
+	Requirement [REQ-15] = [A registered user of Aloha should be able to un-friend any of the existing friends in his/her friend’s list . ]
+
+Req -  [16/31]
+	Requirement [REQ-16] = [Whenever the user is on any person’s profile page , he should have an option to view currently open user profile’s friends on a page . User can have many friends and the maximum number of friends shown at a time will be 20 , and paging will be implemented to show more friends if the user has more than 20 friends . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [Whenever the user is on any person’s profile page , he should have an option to view currently open user profile’s friends on a page .]
+		+ Tokens    [1] = [[Whenever-1, the-2, user-3, is-4, on-5, any-6, person-7, 's-8, profile-9, page-10, ,-11, he-12, should-13, have-14, an-15, option-16, to-17, view-18, currently-19, open-20, user-21, profile-22, 's-23, friends-24, on-25, a-26, page-27, .-28]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [whenever-1, the-2, user-3, is-4, on-5, any-6, person-7, 's-8, profile-9, page-10, ,-11, he-12, should-13, have-14, an-15, option-16, [TO], view-18, currently-19, open-20, user-21, profile-22, 's-23, friends-24, on-25, a-26, page-27, .-28]
+		+ Sentencia [2] = [User can have many friends and the maximum number of friends shown at a time will be 20 , and paging will be implemented to show more friends if the user has more than 20 friends .]
+		+ Tokens    [2] = [[User-1, can-2, have-3, many-4, friends-5, and-6, the-7, maximum-8, number-9, of-10, friends-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, ,-19, and-20, paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, friends-28, if-29, the-30, user-31, has-32, more-33, than-34, 20-35, friends-36, .-37]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, can-2, have-3, many-4, friends-5, and-6, the-7, maximum-8, number-9, of-10, friends-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, ,-19, and-20, paging-21, will-22, be-23, implemented-24, [TO], show-26, more-27, friends-28, if-29, the-30, user-31, has-32, more-33, than-34, 20-35, friends-36, .-37]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, can-2, have-3, many-4, friends-5, [AND], the-7, maximum-8, number-9, of-10, friends-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, ,-19, and-20, paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, friends-28, if-29, the-30, user-31, has-32, more-33, than-34, 20-35, friends-36, .-37]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, can-2, have-3, many-4, friends-5, and-6, the-7, maximum-8, number-9, of-10, friends-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, ,-19, [AND], paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, friends-28, if-29, the-30, user-31, has-32, more-33, than-34, 20-35, friends-36, .-37]
+		+ Causal Relationship [1/3] = [have option -> view friends]
+		+ Causal Relationship [2/3] = [implemented paging -> show friends]
+		+ Causal Relationship [3/3] = [implemented paging -> has friends]
+
+Req -  [17/31]
+	Requirement [REQ-17] = [User should be able to search for his/her friends who may be registered on Aloha . User will put the name of the friend and click search after which the search results will display all the people registered on Aloha by the searched name . When the search results are displayed the maximum number of results shown at a time will be 20 , and paging will be implemented to show more results . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User should be able to search for his/her friends who may be registered on Aloha .]
+		+ Tokens    [1] = [[User-1, should-2, be-3, able-4, to-5, search-6, for-7, his/her-8, friends-9, who-10, may-11, be-12, registered-13, on-14, Aloha-15, .-16]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], search-6, for-7, his/her-8, friends-9, who-10, may-11, be-12, registered-13, on-14, aloha-15, .-16]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [user-1, should-2, be-3, able-4, to-5, search-6, [FOR], his/her-8, friends-9, who-10, may-11, be-12, registered-13, on-14, aloha-15, .-16]
+		+ Sentencia [2] = [User will put the name of the friend and click search after which the search results will display all the people registered on Aloha by the searched name .]
+		+ Tokens    [2] = [[User-1, will-2, put-3, the-4, name-5, of-6, the-7, friend-8, and-9, click-10, search-11, after-12, which-13, the-14, search-15, results-16, will-17, display-18, all-19, the-20, people-21, registered-22, on-23, Aloha-24, by-25, the-26, searched-27, name-28, .-29]]
+		+ Hubo Match [<R_A> [AFTER] <R_B>] = [user-1, will-2, put-3, the-4, name-5, of-6, the-7, friend-8, and-9, click-10, search-11, [AFTER], which-13, the-14, search-15, results-16, will-17, display-18, all-19, the-20, people-21, registered-22, on-23, aloha-24, by-25, the-26, searched-27, name-28, .-29]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [user-1, will-2, put-3, the-4, name-5, of-6, the-7, friend-8, and-9, click-10, search-11, after-12, which-13, the-14, search-15, results-16, will-17, display-18, all-19, the-20, people-21, registered-22, on-23, aloha-24, [BY], the-26, searched-27, name-28, .-29]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, will-2, put-3, the-4, name-5, of-6, the-7, friend-8, [AND], click-10, search-11, after-12, which-13, the-14, search-15, results-16, will-17, display-18, all-19, the-20, people-21, registered-22, on-23, aloha-24, by-25, the-26, searched-27, name-28, .-29]
+		+ Sentencia [3] = [When the search results are displayed the maximum number of results shown at a time will be 20 , and paging will be implemented to show more results .]
+		+ Tokens    [3] = [[When-1, the-2, search-3, results-4, are-5, displayed-6, the-7, maximum-8, number-9, of-10, results-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, ,-19, and-20, paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, results-28, .-29]]
+		+ Hubo Match [[WHEN] <...> [,] <...>] = [[WHEN], the-2, search-3, results-4, are-5, displayed-6, the-7, maximum-8, number-9, of-10, results-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, [,], and-20, paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, results-28, .-29]
+		+ Hubo Match [<R_A> [WHEN] <R_B>] = [[WHEN], the-2, search-3, results-4, are-5, displayed-6, the-7, maximum-8, number-9, of-10, results-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, ,-19, and-20, paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, results-28, .-29]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [when-1, the-2, search-3, results-4, are-5, displayed-6, the-7, maximum-8, number-9, of-10, results-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, ,-19, and-20, paging-21, will-22, be-23, implemented-24, [TO], show-26, more-27, results-28, .-29]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [when-1, the-2, search-3, results-4, are-5, displayed-6, the-7, maximum-8, number-9, of-10, results-11, shown-12, at-13, a-14, time-15, will-16, be-17, 20-18, ,-19, [AND], paging-21, will-22, be-23, implemented-24, to-25, show-26, more-27, results-28, .-29]
+		+ Causal Relationship [1/4] = [display people -> put name]
+		+ Causal Relationship [2/4] = [put name -> display people]
+		+ Causal Relationship [3/4] = [displayed results -> implemented paging]
+		+ Causal Relationship [4/4] = [implemented paging -> show results]
+
+Req -  [18/31]
+	Requirement [REQ-18] = [User will be given suggestions for adding more friends . The friend suggestions will be based on the users having maximum number of mutual friends with the user . The maximum number of friend suggestions displayed will be 20 at a time , and paging will be implemented to show more suggestions . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User will be given suggestions for adding more friends .]
+		+ Tokens    [1] = [[User-1, will-2, be-3, given-4, suggestions-5, for-6, adding-7, more-8, friends-9, .-10]]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [user-1, will-2, be-3, given-4, suggestions-5, [FOR], adding-7, more-8, friends-9, .-10]
+		+ Sentencia [2] = [The friend suggestions will be based on the users having maximum number of mutual friends with the user .]
+		+ Tokens    [2] = [[The-1, friend-2, suggestions-3, will-4, be-5, based-6, on-7, the-8, users-9, having-10, maximum-11, number-12, of-13, mutual-14, friends-15, with-16, the-17, user-18, .-19]]
+		+ Sentencia [3] = [The maximum number of friend suggestions displayed will be 20 at a time , and paging will be implemented to show more suggestions .]
+		+ Tokens    [3] = [[The-1, maximum-2, number-3, of-4, friend-5, suggestions-6, displayed-7, will-8, be-9, 20-10, at-11, a-12, time-13, ,-14, and-15, paging-16, will-17, be-18, implemented-19, to-20, show-21, more-22, suggestions-23, .-24]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, maximum-2, number-3, of-4, friend-5, suggestions-6, displayed-7, will-8, be-9, 20-10, at-11, a-12, time-13, ,-14, and-15, paging-16, will-17, be-18, implemented-19, [TO], show-21, more-22, suggestions-23, .-24]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [the-1, maximum-2, number-3, of-4, friend-5, suggestions-6, displayed-7, will-8, be-9, 20-10, at-11, a-12, time-13, ,-14, [AND], paging-16, will-17, be-18, implemented-19, to-20, show-21, more-22, suggestions-23, .-24]
+		+ Causal Relationship [1/2] = [given User -> adding friends]
+		+ Causal Relationship [2/2] = [implemented paging -> show suggestions]
+
+Req -  [19/31]
+	Requirement [REQ-19] = [User should be able to invite more friends to join the Aloha network . User will be given an option to enter the email address of the person to invite . User will be able to invite one friend at a time . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User should be able to invite more friends to join the Aloha network .]
+		+ Tokens    [1] = [[User-1, should-2, be-3, able-4, to-5, invite-6, more-7, friends-8, to-9, join-10, the-11, Aloha-12, network-13, .-14]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], invite-6, more-7, friends-8, to-9, join-10, the-11, aloha-12, network-13, .-14]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, to-5, invite-6, more-7, friends-8, [TO], join-10, the-11, aloha-12, network-13, .-14]
+		+ Sentencia [2] = [User will be given an option to enter the email address of the person to invite .]
+		+ Tokens    [2] = [[User-1, will-2, be-3, given-4, an-5, option-6, to-7, enter-8, the-9, email-10, address-11, of-12, the-13, person-14, to-15, invite-16, .-17]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, will-2, be-3, given-4, an-5, option-6, [TO], enter-8, the-9, email-10, address-11, of-12, the-13, person-14, to-15, invite-16, .-17]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, will-2, be-3, given-4, an-5, option-6, to-7, enter-8, the-9, email-10, address-11, of-12, the-13, person-14, [TO], invite-16, .-17]
+		+ Sentencia [3] = [User will be able to invite one friend at a time .]
+		+ Tokens    [3] = [[User-1, will-2, be-3, able-4, to-5, invite-6, one-7, friend-8, at-9, a-10, time-11, .-12]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, will-2, be-3, able-4, [TO], invite-6, one-7, friend-8, at-9, a-10, time-11, .-12]
+		+ Causal Relationship [1/2] = [invite friends -> join network]
+		+ Causal Relationship [2/2] = [given User -> enter address]
+
+Req -  [20/31]
+	Requirement [REQ-20] = [User should be able to see currently online friends among all his friends on Aloha . The user can chat with online friends by clicking on the currently available friends in the online friends list . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User should be able to see currently online friends among all his friends on Aloha .]
+		+ Tokens    [1] = [[User-1, should-2, be-3, able-4, to-5, see-6, currently-7, online-8, friends-9, among-10, all-11, his-12, friends-13, on-14, Aloha-15, .-16]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], see-6, currently-7, online-8, friends-9, among-10, all-11, his-12, friends-13, on-14, aloha-15, .-16]
+		+ Sentencia [2] = [The user can chat with online friends by clicking on the currently available friends in the online friends list .]
+		+ Tokens    [2] = [[The-1, user-2, can-3, chat-4, with-5, online-6, friends-7, by-8, clicking-9, on-10, the-11, currently-12, available-13, friends-14, in-15, the-16, online-17, friends-18, list-19, .-20]]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [the-1, user-2, can-3, chat-4, with-5, online-6, friends-7, [BY], clicking-9, on-10, the-11, currently-12, available-13, friends-14, in-15, the-16, online-17, friends-18, list-19, .-20]
+
+Req -  [21/31]
+	Requirement [REQ-21] = [A registered user of Aloha can share scribbles with his friends . The scribble can only be plain English text with maximum 500 characters . User can enter the scribble in the designated text area by clicking on the Scribble button; it should be visible to the user and his friends . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [A registered user of Aloha can share scribbles with his friends .]
+		+ Tokens    [1] = [[A-1, registered-2, user-3, of-4, Aloha-5, can-6, share-7, scribbles-8, with-9, his-10, friends-11, .-12]]
+		+ Sentencia [2] = [The scribble can only be plain English text with maximum 500 characters .]
+		+ Tokens    [2] = [[The-1, scribble-2, can-3, only-4, be-5, plain-6, English-7, text-8, with-9, maximum-10, 500-11, characters-12, .-13]]
+		+ Sentencia [3] = [User can enter the scribble in the designated text area by clicking on the Scribble button; it should be visible to the user and his friends .]
+		+ Tokens    [3] = [[User-1, can-2, enter-3, the-4, scribble-5, in-6, the-7, designated-8, text-9, area-10, by-11, clicking-12, on-13, the-14, Scribble-15, button-16, ;-17, it-18, should-19, be-20, visible-21, to-22, the-23, user-24, and-25, his-26, friends-27, .-28]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, can-2, enter-3, the-4, scribble-5, in-6, the-7, designated-8, text-9, area-10, by-11, clicking-12, on-13, the-14, scribble-15, button-16, ;-17, it-18, should-19, be-20, visible-21, [TO], the-23, user-24, and-25, his-26, friends-27, .-28]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [user-1, can-2, enter-3, the-4, scribble-5, in-6, the-7, designated-8, text-9, area-10, [BY], clicking-12, on-13, the-14, scribble-15, button-16, ;-17, it-18, should-19, be-20, visible-21, to-22, the-23, user-24, and-25, his-26, friends-27, .-28]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, can-2, enter-3, the-4, scribble-5, in-6, the-7, designated-8, text-9, area-10, by-11, clicking-12, on-13, the-14, scribble-15, button-16, ;-17, it-18, should-19, be-20, visible-21, to-22, the-23, user-24, [AND], his-26, friends-27, .-28]
+
+Req -  [22/31]
+	Requirement [REQ-22] = [A user can erase a scribble that has been posted . After deletion , the scribble should not be visible on the users’ or his friends’ slates . Deletion of a scribble should also remove all the comments associated with that scribble . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [A user can erase a scribble that has been posted .]
+		+ Tokens    [1] = [[A-1, user-2, can-3, erase-4, a-5, scribble-6, that-7, has-8, been-9, posted-10, .-11]]
+		+ Sentencia [2] = [After deletion , the scribble should not be visible on the users’ or his friends’ slates .]
+		+ Tokens    [2] = [[After-1, deletion-2, ,-3, the-4, scribble-5, should-6, not-7, be-8, visible-9, on-10, the-11, users-12, '-13, or-14, his-15, friends-16, '-17, slates-18, .-19]]
+		+ Hubo Match [[AFTER] <...> [,] <...>] = [[AFTER], deletion-2, [,], the-4, scribble-5, should-6, not-7, be-8, visible-9, on-10, the-11, users-12, '-13, or-14, his-15, friends-16, '-17, slates-18, .-19]
+		+ Hubo Match [<R_A> [AFTER] <R_B>] = [[AFTER], deletion-2, ,-3, the-4, scribble-5, should-6, not-7, be-8, visible-9, on-10, the-11, users-12, '-13, or-14, his-15, friends-16, '-17, slates-18, .-19]
+		+ Sentencia [3] = [Deletion of a scribble should also remove all the comments associated with that scribble .]
+		+ Tokens    [3] = [[Deletion-1, of-2, a-3, scribble-4, should-5, also-6, remove-7, all-8, the-9, comments-10, associated-11, with-12, that-13, scribble-14, .-15]]
+
+Req -  [23/31]
+	Requirement [REQ-23] = [After a user logs into Aloha , he can see a listing of scribbles posted by him and his friends . The maximum number of scribbles displayed at a time will be 20 , and paging will be implemented for more scribbles . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [After a user logs into Aloha , he can see a listing of scribbles posted by him and his friends .]
+		+ Tokens    [1] = [[After-1, a-2, user-3, logs-4, into-5, Aloha-6, ,-7, he-8, can-9, see-10, a-11, listing-12, of-13, scribbles-14, posted-15, by-16, him-17, and-18, his-19, friends-20, .-21]]
+		+ Hubo Match [[AFTER] <...> [,] <...>] = [[AFTER], a-2, user-3, logs-4, into-5, aloha-6, [,], he-8, can-9, see-10, a-11, listing-12, of-13, scribbles-14, posted-15, by-16, him-17, and-18, his-19, friends-20, .-21]
+		+ Hubo Match [<R_A> [AFTER] <R_B>] = [[AFTER], a-2, user-3, logs-4, into-5, aloha-6, ,-7, he-8, can-9, see-10, a-11, listing-12, of-13, scribbles-14, posted-15, by-16, him-17, and-18, his-19, friends-20, .-21]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [after-1, a-2, user-3, logs-4, into-5, aloha-6, ,-7, he-8, can-9, see-10, a-11, listing-12, of-13, scribbles-14, posted-15, [BY], him-17, and-18, his-19, friends-20, .-21]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [after-1, a-2, user-3, logs-4, into-5, aloha-6, ,-7, he-8, can-9, see-10, a-11, listing-12, of-13, scribbles-14, posted-15, by-16, him-17, [AND], his-19, friends-20, .-21]
+		+ Sentencia [2] = [The maximum number of scribbles displayed at a time will be 20 , and paging will be implemented for more scribbles .]
+		+ Tokens    [2] = [[The-1, maximum-2, number-3, of-4, scribbles-5, displayed-6, at-7, a-8, time-9, will-10, be-11, 20-12, ,-13, and-14, paging-15, will-16, be-17, implemented-18, for-19, more-20, scribbles-21, .-22]]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [the-1, maximum-2, number-3, of-4, scribbles-5, displayed-6, at-7, a-8, time-9, will-10, be-11, 20-12, ,-13, and-14, paging-15, will-16, be-17, implemented-18, [FOR], more-20, scribbles-21, .-22]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [the-1, maximum-2, number-3, of-4, scribbles-5, displayed-6, at-7, a-8, time-9, will-10, be-11, 20-12, ,-13, [AND], paging-15, will-16, be-17, implemented-18, for-19, more-20, scribbles-21, .-22]
+
+Req -  [24/31]
+	Requirement [REQ-24] = [For each scribble visible to the user he has the ability to comment on it to express his opinion . The comment can contain only text and cannot exceed 500 characters in length . To comment , user can see a text area under the scribble , where he can enter the text . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [For each scribble visible to the user he has the ability to comment on it to express his opinion .]
+		+ Tokens    [1] = [[For-1, each-2, scribble-3, visible-4, to-5, the-6, user-7, he-8, has-9, the-10, ability-11, to-12, comment-13, on-14, it-15, to-16, express-17, his-18, opinion-19, .-20]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [for-1, each-2, scribble-3, visible-4, [TO], the-6, user-7, he-8, has-9, the-10, ability-11, to-12, comment-13, on-14, it-15, to-16, express-17, his-18, opinion-19, .-20]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [for-1, each-2, scribble-3, visible-4, to-5, the-6, user-7, he-8, has-9, the-10, ability-11, [TO], comment-13, on-14, it-15, to-16, express-17, his-18, opinion-19, .-20]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [for-1, each-2, scribble-3, visible-4, to-5, the-6, user-7, he-8, has-9, the-10, ability-11, to-12, comment-13, on-14, it-15, [TO], express-17, his-18, opinion-19, .-20]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [[FOR], each-2, scribble-3, visible-4, to-5, the-6, user-7, he-8, has-9, the-10, ability-11, to-12, comment-13, on-14, it-15, to-16, express-17, his-18, opinion-19, .-20]
+		+ Sentencia [2] = [The comment can contain only text and cannot exceed 500 characters in length .]
+		+ Tokens    [2] = [[The-1, comment-2, can-3, contain-4, only-5, text-6, and-7, can-8, not-9, exceed-10, 500-11, characters-12, in-13, length-14, .-15]]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [the-1, comment-2, can-3, contain-4, only-5, text-6, [AND], can-8, not-9, exceed-10, 500-11, characters-12, in-13, length-14, .-15]
+		+ Sentencia [3] = [To comment , user can see a text area under the scribble , where he can enter the text .]
+		+ Tokens    [3] = [[To-1, comment-2, ,-3, user-4, can-5, see-6, a-7, text-8, area-9, under-10, the-11, scribble-12, ,-13, where-14, he-15, can-16, enter-17, the-18, text-19, .-20]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [[TO], comment-2, ,-3, user-4, can-5, see-6, a-7, text-8, area-9, under-10, the-11, scribble-12, ,-13, where-14, he-15, can-16, enter-17, the-18, text-19, .-20]
+		+ Causal Relationship [1/2] = [has ability -> express opinion]
+		+ Causal Relationship [2/2] = [contain text -> exceed characters]
+
+Req -  [25/31]
+	Requirement [REQ-25] = [A user can delete a comment written by him or a comment on his scribbles . For deleting a scribble that he is authorized to delete , a user can see a delete link near the comment . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [A user can delete a comment written by him or a comment on his scribbles .]
+		+ Tokens    [1] = [[A-1, user-2, can-3, delete-4, a-5, comment-6, written-7, by-8, him-9, or-10, a-11, comment-12, on-13, his-14, scribbles-15, .-16]]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [a-1, user-2, can-3, delete-4, a-5, comment-6, written-7, [BY], him-9, or-10, a-11, comment-12, on-13, his-14, scribbles-15, .-16]
+		+ Sentencia [2] = [For deleting a scribble that he is authorized to delete , a user can see a delete link near the comment .]
+		+ Tokens    [2] = [[For-1, deleting-2, a-3, scribble-4, that-5, he-6, is-7, authorized-8, to-9, delete-10, ,-11, a-12, user-13, can-14, see-15, a-16, delete-17, link-18, near-19, the-20, comment-21, .-22]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [for-1, deleting-2, a-3, scribble-4, that-5, he-6, is-7, authorized-8, [TO], delete-10, ,-11, a-12, user-13, can-14, see-15, a-16, delete-17, link-18, near-19, the-20, comment-21, .-22]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [[FOR], deleting-2, a-3, scribble-4, that-5, he-6, is-7, authorized-8, to-9, delete-10, ,-11, a-12, user-13, can-14, see-15, a-16, delete-17, link-18, near-19, the-20, comment-21, .-22]
+		+ Causal Relationship [1/3] = [comment scribbles -> delete comment]
+		+ Causal Relationship [2/3] = [deleting scribble -> see link]
+		+ Causal Relationship [3/3] = [authorized deleting -> see link]
+
+Req -  [26/31]
+	Requirement [REQ-26] = [Users can like a scribble by clicking on the “Thumb’s Up” button below the scribble . For any scribble , all users can see a count of the “Liked” scribble]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [Users can like a scribble by clicking on the “Thumb’s Up” button below the scribble .]
+		+ Tokens    [1] = [[Users-1, can-2, like-3, a-4, scribble-5, by-6, clicking-7, on-8, the-9, ``-10, Thumb-11, 's-12, Up-13, ''-14, button-15, below-16, the-17, scribble-18, .-19]]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [users-1, can-2, like-3, a-4, scribble-5, [BY], clicking-7, on-8, the-9, ``-10, thumb-11, 's-12, up-13, ''-14, button-15, below-16, the-17, scribble-18, .-19]
+		+ Sentencia [2] = [For any scribble , all users can see a count of the “Liked” scribble]
+		+ Tokens    [2] = [[For-1, any-2, scribble-3, ,-4, all-5, users-6, can-7, see-8, a-9, count-10, of-11, the-12, ``-13, Liked-14, ''-15, scribble-16]]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [[FOR], any-2, scribble-3, ,-4, all-5, users-6, can-7, see-8, a-9, count-10, of-11, the-12, ``-13, liked-14, ''-15, scribble-16]
+
+Req -  [27/31]
+	Requirement [REQ-27] = [Users can dislike a scribble by clicking on the “Thumb’s Down” button below the scribble . For any scribble , all users can see a count of the “Disliked” scribble . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [Users can dislike a scribble by clicking on the “Thumb’s Down” button below the scribble .]
+		+ Tokens    [1] = [[Users-1, can-2, dislike-3, a-4, scribble-5, by-6, clicking-7, on-8, the-9, ``-10, Thumb-11, 's-12, Down-13, ''-14, button-15, below-16, the-17, scribble-18, .-19]]
+		+ Hubo Match [<R_A> [BY] <R_B>] = [users-1, can-2, dislike-3, a-4, scribble-5, [BY], clicking-7, on-8, the-9, ``-10, thumb-11, 's-12, down-13, ''-14, button-15, below-16, the-17, scribble-18, .-19]
+		+ Sentencia [2] = [For any scribble , all users can see a count of the “Disliked” scribble .]
+		+ Tokens    [2] = [[For-1, any-2, scribble-3, ,-4, all-5, users-6, can-7, see-8, a-9, count-10, of-11, the-12, ``-13, Disliked-14, ''-15, scribble-16, .-17]]
+		+ Hubo Match [<R_A> [FOR] <R_B>] = [[FOR], any-2, scribble-3, ,-4, all-5, users-6, can-7, see-8, a-9, count-10, of-11, the-12, ``-13, disliked-14, ''-15, scribble-16, .-17]
+
+Req -  [28/31]
+	Requirement [REQ-28] = [User should be able to initiate ChitChat with any user in the friend list who is online . The other user must seamlessly understand that the ChitChat has been initiated and the ChitChat message must be forwarded to the intended user . User should be able to receive ChitChat from any user in the friend list who is online and within the friend list of that user . Thus the receiving entity can send message back to the originator , thus , completing a two-way conversation . The message cannot be greater than 250 characters in length . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User should be able to initiate ChitChat with any user in the friend list who is online .]
+		+ Tokens    [1] = [[User-1, should-2, be-3, able-4, to-5, initiate-6, ChitChat-7, with-8, any-9, user-10, in-11, the-12, friend-13, list-14, who-15, is-16, online-17, .-18]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], initiate-6, chitchat-7, with-8, any-9, user-10, in-11, the-12, friend-13, list-14, who-15, is-16, online-17, .-18]
+		+ Sentencia [2] = [The other user must seamlessly understand that the ChitChat has been initiated and the ChitChat message must be forwarded to the intended user .]
+		+ Tokens    [2] = [[The-1, other-2, user-3, must-4, seamlessly-5, understand-6, that-7, the-8, ChitChat-9, has-10, been-11, initiated-12, and-13, the-14, ChitChat-15, message-16, must-17, be-18, forwarded-19, to-20, the-21, intended-22, user-23, .-24]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, other-2, user-3, must-4, seamlessly-5, understand-6, that-7, the-8, chitchat-9, has-10, been-11, initiated-12, and-13, the-14, chitchat-15, message-16, must-17, be-18, forwarded-19, [TO], the-21, intended-22, user-23, .-24]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [the-1, other-2, user-3, must-4, seamlessly-5, understand-6, that-7, the-8, chitchat-9, has-10, been-11, initiated-12, [AND], the-14, chitchat-15, message-16, must-17, be-18, forwarded-19, to-20, the-21, intended-22, user-23, .-24]
+		+ Sentencia [3] = [User should be able to receive ChitChat from any user in the friend list who is online and within the friend list of that user .]
+		+ Tokens    [3] = [[User-1, should-2, be-3, able-4, to-5, receive-6, ChitChat-7, from-8, any-9, user-10, in-11, the-12, friend-13, list-14, who-15, is-16, online-17, and-18, within-19, the-20, friend-21, list-22, of-23, that-24, user-25, .-26]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], receive-6, chitchat-7, from-8, any-9, user-10, in-11, the-12, friend-13, list-14, who-15, is-16, online-17, and-18, within-19, the-20, friend-21, list-22, of-23, that-24, user-25, .-26]
+		+ Hubo Match [<R_A> [AND] <R_B>] = [user-1, should-2, be-3, able-4, to-5, receive-6, chitchat-7, from-8, any-9, user-10, in-11, the-12, friend-13, list-14, who-15, is-16, online-17, [AND], within-19, the-20, friend-21, list-22, of-23, that-24, user-25, .-26]
+		+ Sentencia [4] = [Thus the receiving entity can send message back to the originator , thus , completing a two-way conversation .]
+		+ Tokens    [4] = [[Thus-1, the-2, receiving-3, entity-4, can-5, send-6, message-7, back-8, to-9, the-10, originator-11, ,-12, thus-13, ,-14, completing-15, a-16, two-way-17, conversation-18, .-19]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [thus-1, the-2, receiving-3, entity-4, can-5, send-6, message-7, back-8, [TO], the-10, originator-11, ,-12, thus-13, ,-14, completing-15, a-16, two-way-17, conversation-18, .-19]
+		+ Sentencia [5] = [The message cannot be greater than 250 characters in length .]
+		+ Tokens    [5] = [[The-1, message-2, can-3, not-4, be-5, greater-6, than-7, 250-8, characters-9, in-10, length-11, .-12]]
+		+ Causal Relationship [1/2] = [initiated ChitChat -> forwarded message]
+		+ Causal Relationship [2/2] = [send message -> completing conversation]
+
+Req -  [29/31]
+	Requirement [REQ-29] = [Using this functionality user can send text files to online users . This helps user to share text documents with users on this platform . The maximum file size would be limited to 25 MB . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [Using this functionality user can send text files to online users .]
+		+ Tokens    [1] = [[Using-1, this-2, functionality-3, user-4, can-5, send-6, text-7, files-8, to-9, online-10, users-11, .-12]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [using-1, this-2, functionality-3, user-4, can-5, send-6, text-7, files-8, [TO], online-10, users-11, .-12]
+		+ Sentencia [2] = [This helps user to share text documents with users on this platform .]
+		+ Tokens    [2] = [[This-1, helps-2, user-3, to-4, share-5, text-6, documents-7, with-8, users-9, on-10, this-11, platform-12, .-13]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [this-1, helps-2, user-3, [TO], share-5, text-6, documents-7, with-8, users-9, on-10, this-11, platform-12, .-13]
+		+ Sentencia [3] = [The maximum file size would be limited to 25 MB .]
+		+ Tokens    [3] = [[The-1, maximum-2, file-3, size-4, would-5, be-6, limited-7, to-8, 25-9, MB-10, .-11]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [the-1, maximum-2, file-3, size-4, would-5, be-6, limited-7, [TO], 25-9, mb-10, .-11]
+		+ Causal Relationship [1/1] = [helps user -> share documents]
+
+Req -  [30/31]
+	Requirement [REQ-30] = [User should be able to store ChitChat on exit . So that if the user wants to keep history of the previous session , he can keep it to be brought back . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User should be able to store ChitChat on exit .]
+		+ Tokens    [1] = [[User-1, should-2, be-3, able-4, to-5, store-6, ChitChat-7, on-8, exit-9, .-10]]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], store-6, chitchat-7, on-8, exit-9, .-10]
+		+ Sentencia [2] = [So that if the user wants to keep history of the previous session , he can keep it to be brought back .]
+		+ Tokens    [2] = [[So-1, that-2, if-3, the-4, user-5, wants-6, to-7, keep-8, history-9, of-10, the-11, previous-12, session-13, ,-14, he-15, can-16, keep-17, it-18, to-19, be-20, brought-21, back-22, .-23]]
+		+ Hubo Match [[IF] <...> [,] <...>] = [so-1, that-2, [IF], the-4, user-5, wants-6, to-7, keep-8, history-9, of-10, the-11, previous-12, session-13, [,], he-15, can-16, keep-17, it-18, to-19, be-20, brought-21, back-22, .-23]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [so-1, that-2, if-3, the-4, user-5, wants-6, [TO], keep-8, history-9, of-10, the-11, previous-12, session-13, ,-14, he-15, can-16, keep-17, it-18, to-19, be-20, brought-21, back-22, .-23]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [so-1, that-2, if-3, the-4, user-5, wants-6, to-7, keep-8, history-9, of-10, the-11, previous-12, session-13, ,-14, he-15, can-16, keep-17, it-18, [TO], be-20, brought-21, back-22, .-23]
+		+ Causal Relationship [1/1] = [keep history -> keep to]
+
+Req -  [31/31]
+	Requirement [REQ-31] = [User should be able to retrieve ChitChat when the ChitChat when the user wants to see ChitChat history . ]
+	TIENE RESPONSABILIDADES
+		+ Sentencia [1] = [User should be able to retrieve ChitChat when the ChitChat when the user wants to see ChitChat history .]
+		+ Tokens    [1] = [[User-1, should-2, be-3, able-4, to-5, retrieve-6, ChitChat-7, when-8, the-9, ChitChat-10, when-11, the-12, user-13, wants-14, to-15, see-16, ChitChat-17, history-18, .-19]]
+		+ Hubo Match [<R_A> [WHEN] <R_B>] = [user-1, should-2, be-3, able-4, to-5, retrieve-6, chitchat-7, [WHEN], the-9, chitchat-10, when-11, the-12, user-13, wants-14, to-15, see-16, chitchat-17, history-18, .-19]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, [TO], retrieve-6, chitchat-7, when-8, the-9, chitchat-10, when-11, the-12, user-13, wants-14, to-15, see-16, chitchat-17, history-18, .-19]
+		+ Hubo Match [<R_A> [TO] <R_B>] = [user-1, should-2, be-3, able-4, to-5, retrieve-6, chitchat-7, when-8, the-9, chitchat-10, when-11, the-12, user-13, wants-14, [TO], see-16, chitchat-17, history-18, .-19]
+		+ Causal Relationship [1/2] = [see history -> retrieve ChitChat]
+		+ Causal Relationship [2/2] = [retrieve ChitChat -> see history]
+Iguales : 1-3 3-1
+Iguales : 1-5 24-4
+Iguales : 3-9 4-4
+Iguales : 3-9 5-4
+Iguales : 3-9 6-3
+Iguales : 3-9 7-5
+Iguales : 3-10 4-5
+Iguales : 3-10 5-5
+Iguales : 3-10 6-4
+Iguales : 3-10 7-6
+Iguales : 4-1 5-1
+Iguales : 4-1 6-1
+Iguales : 4-3 5-3
+Iguales : 4-3 6-2
+Iguales : 4-3 7-4
+Iguales : 4-4 5-4
+Iguales : 4-4 6-3
+Iguales : 4-4 7-5
+Iguales : 4-5 5-5
+Iguales : 4-5 6-4
+Iguales : 4-5 7-6
+Iguales : 5-1 6-1
+Iguales : 5-3 6-2
+Iguales : 5-3 7-4
+Iguales : 5-4 6-3
+Iguales : 5-4 7-5
+Iguales : 5-5 6-4
+Iguales : 5-5 7-6
+Iguales : 6-2 7-4
+Iguales : 6-3 7-5
+Iguales : 6-4 7-6
+Iguales : 13-2 13-4
+Iguales : 14-1 16-1
+Iguales : 14-2 14-5
+Iguales : 16-5 17-5
+Iguales : 16-5 18-6
+Iguales : 16-5 23-2
+Iguales : 17-5 18-6
+Iguales : 17-5 23-2
+Iguales : 18-2 19-4
+Iguales : 18-6 23-2
+Iguales : 26-2 27-2
+Iguales : 28-1 28-2
+
+
+** Allocation of Responsibilities into Conceptual Components **
+Responsabilidades
+  [1] create an account 
+  [2] enter account details such as name 
+  [3] registered User 
+  [4] validated this information 
+  [5] exceed 20 characters each 
+  [6] sent a verification link 
+  [7] re-send the verification link 
+  [8] registered User 
+  [9] match to the hash of password stored in the database 
+  [10] locked then the account 
+  [11] sent an e-mail 
+  [12] unlock the account 
+  [13] click on the unlock link sent to him in the email 
+  [14] reset password link 
+  [15] clicks on forgot password 
+  [16] Input to each field 
+  [17] validated Input to each field 
+  [18] add the educational details 
+  [19] add education 
+  [20] logged User 
+  [21] Input to each field 
+  [22] validated Input to each field 
+  [23] add the personal details details like language 
+  [24] add personal information 
+  [25] logged User 
+  [26] Input to each field 
+  [27] validated Input to each field 
+  [28] add the account details like name 
+  [29] logged User 
+  [30] Input to each field 
+  [31] validated Input to each field 
+  [32] edit the account details like name 
+  [33] email verification module 
+  [34] changed email 
+  [35] logged User 
+  [36] Input to each field 
+  [37] validated Input to each field 
+  [38] upload the profile picture 
+  [39] see any user ’s profile on Aloha 
+  [40] profile on Aloha 
+  [41] delete his account 
+  [42] removed User 
+  [43] cleared User information 
+  [44] add friend requests 
+  [45] send friend request 
+  [46] search his friend 
+  [47] send a friend request 
+  [48] have an option to accept or ignore the friend request 
+  [49] accept the friend request 
+  [50] receiving the request 
+  [51] gets a friend request from another user 
+  [52] accept the friend request 
+  [53] added the requestor 
+  [54] see the status of the request 
+  [55] ignore the request 
+  [56] removed the request 
+  [57] have an option to view currently open user profile ’s friends on a page 
+  [58] view currently open user profile ’s friends 
+  [59] show more friends 
+  [60] has more than 20 friends 
+  [61] implemented paging 
+  [62] registered for his/her friends who may be registered on Aloha 
+  [63] put the name of the friend and click search after which the search results will display all the people registered on Aloha by the searched name 
+  [64] display all the people registered on Aloha by the searched name 
+  [65] show more results 
+  [66] implemented paging 
+  [67] displayed the search results 
+  [68] adding more friends 
+  [69] given User 
+  [70] having maximum number of mutual friends 
+  [71] based The friend suggestions 
+  [72] show more suggestions 
+  [73] implemented paging 
+  [74] invite more friends 
+  [75] join the Aloha network 
+  [76] enter the email address of the person 
+  [77] given User 
+  [78] invite one friend 
+  [79] see currently online friends among all his friends on Aloha 
+  [80] friends on Aloha 
+  [81] share scribbles 
+  [82] enter the scribble 
+  [83] erase a scribble that has been posted 
+  [84] posted a scribble that has been posted 
+  [85] remove all the comments associated with that scribble 
+  [86] see a listing of scribbles posted by him and his friends 
+  [87] implemented paging 
+  [88] has the ability to comment on it to express his opinion 
+  [89] express his opinion 
+  [90] contain only text 
+  [91] exceed 500 characters 
+  [92] see a text area under the scribble 
+  [93] enter the text 
+  [94] delete a comment written by him or a comment on his scribbles 
+  [95] comment on his scribbles 
+  [96] see a delete link near the comment 
+  [97] deleting a scribble that he is authorized to delete 
+  [98] authorized For deleting a scribble that he is authorized to delete 
+  [99] like a scribble 
+  [100] see a count of the “ Liked ” 
+  [101] dislike a scribble 
+  [102] see a count of the “ Disliked ” scribble 
+  [103] initiate ChitChat 
+  [104] initiated the ChitChat 
+  [105] forwarded the ChitChat message 
+  [106] receive ChitChat 
+  [107] send message 
+  [108] completing a two-way conversation 
+  [109] send text files 
+  [110] Using this functionality user 
+  [111] helps user 
+  [112] share text documents 
+  [113] limited The maximum file size 
+  [114] store ChitChat 
+  [115] keep to 
+  [116] keep history of the previous session 
+  [117] see ChitChat history 
+  [118] retrieve ChitChat 
+-------------------------------------------------------------------------------------------------
+
+1) Grupos de palabras
+  Nouns: 	[account, details, name, User, information, characters, verification, link, hash, password, database, e-mail, unlock, email, field, Input, education, language, module, profile, picture, user, Aloha, friend, requests, request, option, requestor, status, friends, page, paging, click, search, results, people, maximum, number, suggestions, network, address, person, scribbles, scribble, comments, listing, ability, opinion, text, area, comment, count, ChitChat, message, conversation, files, functionality, documents, file, size, history, session]
+  Verbs: 	[create, enter, registered, validated, exceed, sent, re-send, match, stored, locked, unlock, click, reset, clicks, forgot, Input, add, logged, edit, email, changed, upload, see, profile, delete, removed, cleared, send, search, have, accept, ignore, receiving, gets, added, view, show, has, implemented, be, put, display, searched, displayed, adding, given, having, based, invite, join, friends, share, erase, been, posted, remove, associated, comment, express, contain, written, deleting, is, authorized, like, Liked, dislike, Disliked, initiate, initiated, forwarded, receive, completing, Using, helps, limited, store, keep, retrieve]
+  Adjectives: 	[such, educational, personal, open, more, his/her, mutual, online, two-way, previous]
+  Adverbs: 	[then, currently, only]
+-------------------------------------------------------------------------------------------------
+
+2) Resultados de Wordnet
+  Nouns: 	[[history, account, chronicle, story], [details, inside_information], [name], [user], [information, info], null, [confirmation, verification, check, substantiation], [link, nexus], [hash], [password, watchword, word, parole, countersign], [database], [electronic_mail, e-mail, email], null, [electronic_mail, e-mail, email], [field], [input_signal, input], [education, instruction, teaching, pedagogy, didactics, educational_activity], [language, linguistic_communication], [faculty, mental_faculty, module], [profile], [picture, image, icon, ikon], [user], [aloha, ciao], [friend], [request, petition, postulation], [request, petition, postulation], [option], null, [status, position], [friend], [page], [paging], [chink, click, clink], [search, hunt, hunting], [consequence, effect, outcome, result, event, issue, upshot], [people], [maximum, upper_limit], [number, figure], null, [network, web], [address, computer_address, reference], [person, individual, someone, somebody, mortal, soul], null, [scribble, scratch, scrawl, cacography], [remark, comment, input], [list, listing], [ability], [opinion, sentiment, persuasion, view, thought], [text, textual_matter], [area, country], [remark, comment, input], [count], [chitchat, chit-chat, chit_chat, small_talk, gab, gabfest, gossip, tittle-tattle, chin_wag, chin-wag, chin_wagging, chin-wagging, causerie], [message], [conversation], [file, data_file], [functionality], [document, written_document, papers], [file, data_file], [size], [history], [session]]
+  Verbs: 	[[make, create], [enter, come_in, get_into, get_in, go_into, go_in, move_into], null, null, [exceed, transcend, surpass], null, null, [match, fit, correspond, check, jibe, gibe, tally, agree], [store, hive_away, lay_in, put_in, salt_away, stack_away, stash_away], [lock], [unlock], [snap, click], [reset], [snap, click], null, [input], [add], [log], [edit, redact], [e-mail, email, netmail], null, [upload], [see], [profile], [delete, cancel], null, [unclutter, clear], [send, direct], [search, seek, look_for], [have, have_got, hold], [accept], [ignore, disregard, snub, cut], null, [get, acquire], null, [see, consider, reckon, view, regard], [show, demo, exhibit, present, demonstrate], null, [implement], [be], [put, set, place, pose, position, lay], [expose, exhibit, display], [search, seek, look_for], null, null, null, [have, have_got, hold], [establish, base, ground, found], [invite, ask_for], [join, fall_in, get_together], null, [share], [erase, wipe_out], null, [post], [remove, take, take_away, withdraw], null, [comment, notice, remark, point_out], [express, show, evince], [incorporate, contain, comprise], null, null, null, [author], [wish, care, like], [wish, care, like], [dislike], null, [originate, initiate, start], null, [forward, send_on], [receive, have], null, null, [help, assist, aid], [restrict, trammel, limit, bound, confine, throttle], [store, hive_away, lay_in, put_in, salt_away, stack_away, stash_away], [keep, maintain, hold], [recover, retrieve, find, regain]]
+  Adjectives: 	[[such], [educational], [personal], [open, unfastened], [more, more_than], null, [common, mutual], [on-line, online], [bipartisan, bipartizan, two-party, two-way], [previous, old]]
+  Adverb: 	[[then, so, and_so], [presently, currently], [merely, simply, just, only, but]]
+-------------------------------------------------------------------------------------------------
+
+3) Resultados de buscar palabras para intercambiar
+  Nouns: 	[[account, history], [User, user], [e-mail, email], [email, e-mail], [requests, request], [friends, friend], [comments, comment], [files, file]]
+  Verbs: 	[[stored, store], [clicks, click], [view, see], [searched, search], [having, have], [express, show], [Liked, like], [receive, have]]
+  Adjectives: 	[]
+  Adverbs: 	[]
+-------------------------------------------------------------------------------------------------
+
+4) Priorizacion de palabras
+  Key: [request] Cantidad: [0]
+  Key: [User] Cantidad: [1]
+  Key: [comments] Cantidad: [1]
+  Key: [requests] Cantidad: [1]
+  Key: [history] Cantidad: [0]
+  Key: [friends] Cantidad: [1]
+  Key: [file] Cantidad: [0]
+  Key: [friend] Cantidad: [0]
+  Key: [e-mail] Cantidad: [1]
+  Key: [files] Cantidad: [1]
+  Key: [comment] Cantidad: [0]
+  Key: [user] Cantidad: [0]
+  Key: [account] Cantidad: [1]
+  Key: [email] Cantidad: [1]
+  Key: [receive] Cantidad: [1]
+  Key: [having] Cantidad: [1]
+  Key: [like] Cantidad: [0]
+  Key: [show] Cantidad: [0]
+  Key: [express] Cantidad: [1]
+  Key: [store] Cantidad: [0]
+  Key: [Liked] Cantidad: [1]
+  Key: [click] Cantidad: [0]
+  Key: [searched] Cantidad: [1]
+  Key: [view] Cantidad: [1]
+  Key: [see] Cantidad: [0]
+  Key: [search] Cantidad: [0]
+  Key: [stored] Cantidad: [1]
+  Key: [have] Cantidad: [0]
+  Key: [clicks] Cantidad: [1]
+-------------------------------------------------------------------------------------------------
+
+5) Definiciï¿½n de conversiones
+  history -> account
+  user -> User
+  email -> e-mail
+  request -> requests
+  friend -> friends
+  comment -> comments
+  file -> files
+  store -> stored
+  click -> clicks
+  see -> view
+  search -> searched
+  have -> having
+  show -> express
+  like -> Liked
+  have -> receive
+-------------------------------------------------------------------------------------------------
+
+6) Responsabilidades resultantes
+  + (1) create an account 
+  + (2) enter account details such as name 
+  + (3) registered User 
+  + (4) validated this information 
+  + (5) exceed 20 characters each 
+  + (6) sent a verification link 
+  + (7) re-send the verification link 
+  + (8) registered User 
+  + (9) match to the hash of password stored in the database 
+  + (10) locked then the account 
+  + (11) sent an e-mail 
+  + (12) unlock the account 
+  + (13) clicks on the unlock link sent to him in the e-mail 
+  + (14) reset password link 
+  + (15) clicks on forgot password 
+  + (16) Input to each field 
+  + (17) validated Input to each field 
+  + (18) add the educational details 
+  + (19) add education 
+  + (20) logged User 
+  + (21) Input to each field 
+  + (22) validated Input to each field 
+  + (23) add the personal details details Liked language 
+  + (24) add personal information 
+  + (25) logged User 
+  + (26) Input to each field 
+  + (27) validated Input to each field 
+  + (28) add the account details Liked name 
+  + (29) logged User 
+  + (30) Input to each field 
+  + (31) validated Input to each field 
+  + (32) edit the account details Liked name 
+  + (33) e-mail verification module 
+  + (34) changed e-mail 
+  + (35) logged User 
+  + (36) Input to each field 
+  + (37) validated Input to each field 
+  + (38) upload the profile picture 
+  + (39) view any User ’s profile on Aloha 
+  + (40) profile on Aloha 
+  + (41) delete his account 
+  + (42) removed User 
+  + (43) cleared User information 
+  + (44) add friends requests 
+  + (45) send friends requests 
+  + (46) searched his friends 
+  + (47) send a friends requests 
+  + (48) receive an option to accept or ignore the friends requests 
+  + (49) accept the friends requests 
+  + (50) receiving the requests 
+  + (51) gets a friends requests from another User 
+  + (52) accept the friends requests 
+  + (53) added the requestor 
+  + (54) view the status of the requests 
+  + (55) ignore the requests 
+  + (56) removed the requests 
+  + (57) receive an option to view currently open User profile ’s friends on a page 
+  + (58) view currently open User profile ’s friends 
+  + (59) express more friends 
+  + (60) has more than 20 friends 
+  + (61) implemented paging 
+  + (62) registered for his/her friends who may be registered on Aloha 
+  + (63) put the name of the friends and clicks searched after which the searched results will display all the people registered on Aloha by the searched name 
+  + (64) display all the people registered on Aloha by the searched name 
+  + (65) express more results 
+  + (66) implemented paging 
+  + (67) displayed the searched results 
+  + (68) adding more friends 
+  + (69) given User 
+  + (70) having maximum number of mutual friends 
+  + (71) based The friends suggestions 
+  + (72) express more suggestions 
+  + (73) implemented paging 
+  + (74) invite more friends 
+  + (75) join the Aloha network 
+  + (76) enter the e-mail address of the person 
+  + (77) given User 
+  + (78) invite one friends 
+  + (79) view currently online friends among all his friends on Aloha 
+  + (80) friends on Aloha 
+  + (81) share scribbles 
+  + (82) enter the scribble 
+  + (83) erase a scribble that has been posted 
+  + (84) posted a scribble that has been posted 
+  + (85) remove all the comments associated with that scribble 
+  + (86) view a listing of scribbles posted by him and his friends 
+  + (87) implemented paging 
+  + (88) has the ability to comments on it to express his opinion 
+  + (89) express his opinion 
+  + (90) contain only text 
+  + (91) exceed 500 characters 
+  + (92) view a text area under the scribble 
+  + (93) enter the text 
+  + (94) delete a comments written by him or a comments on his scribbles 
+  + (95) comments on his scribbles 
+  + (96) view a delete link near the comments 
+  + (97) deleting a scribble that he is authorized to delete 
+  + (98) authorized For deleting a scribble that he is authorized to delete 
+  + (99) Liked a scribble 
+  + (100) view a count of the “ Liked ” 
+  + (101) dislike a scribble 
+  + (102) view a count of the “ Disliked ” scribble 
+  + (103) initiate ChitChat 
+  + (104) initiated the ChitChat 
+  + (105) forwarded the ChitChat message 
+  + (106) receive ChitChat 
+  + (107) send message 
+  + (108) completing a two-way conversation 
+  + (109) send text files 
+  + (110) Using this functionality User 
+  + (111) helps User 
+  + (112) share text documents 
+  + (113) limited The maximum files size 
+  + (114) stored ChitChat 
+  + (115) keep to 
+  + (116) keep account of the previous session 
+  + (117) view ChitChat account 
+  + (118) retrieve ChitChat 
+@relation responsibilities
+
+@attribute responsibility string
+
+@data
+'create an account '
+'enter account details such as name '
+'registered User '
+'validated this information '
+'exceed 20 characters each '
+'sent a verification link '
+'re-send the verification link '
+'registered User '
+'match to the hash of password stored in the database '
+'locked then the account '
+'sent an e-mail '
+'unlock the account '
+'clicks on the unlock link sent to him in the e-mail '
+'reset password link '
+'clicks on forgot password '
+'Input to each field '
+'validated Input to each field '
+'add the educational details '
+'add education '
+'logged User '
+'Input to each field '
+'validated Input to each field '
+'add the personal details details Liked language '
+'add personal information '
+'logged User '
+'Input to each field '
+'validated Input to each field '
+'add the account details Liked name '
+'logged User '
+'Input to each field '
+'validated Input to each field '
+'edit the account details Liked name '
+'e-mail verification module '
+'changed e-mail '
+'logged User '
+'Input to each field '
+'validated Input to each field '
+'upload the profile picture '
+'view any User ’s profile on Aloha '
+'profile on Aloha '
+'delete his account '
+'removed User '
+'cleared User information '
+'add friends requests '
+'send friends requests '
+'searched his friends '
+'send a friends requests '
+'receive an option to accept or ignore the friends requests '
+'accept the friends requests '
+'receiving the requests '
+'gets a friends requests from another User '
+'accept the friends requests '
+'added the requestor '
+'view the status of the requests '
+'ignore the requests '
+'removed the requests '
+'receive an option to view currently open User profile ’s friends on a page '
+'view currently open User profile ’s friends '
+'express more friends '
+'has more than 20 friends '
+'implemented paging '
+'registered for his/her friends who may be registered on Aloha '
+'put the name of the friends and clicks searched after which the searched results will display all the people registered on Aloha by the searched name '
+'display all the people registered on Aloha by the searched name '
+'express more results '
+'implemented paging '
+'displayed the searched results '
+'adding more friends '
+'given User '
+'having maximum number of mutual friends '
+'based The friends suggestions '
+'express more suggestions '
+'implemented paging '
+'invite more friends '
+'join the Aloha network '
+'enter the e-mail address of the person '
+'given User '
+'invite one friends '
+'view currently online friends among all his friends on Aloha '
+'friends on Aloha '
+'share scribbles '
+'enter the scribble '
+'erase a scribble that has been posted '
+'posted a scribble that has been posted '
+'remove all the comments associated with that scribble '
+'view a listing of scribbles posted by him and his friends '
+'implemented paging '
+'has the ability to comments on it to express his opinion '
+'express his opinion '
+'contain only text '
+'exceed 500 characters '
+'view a text area under the scribble '
+'enter the text '
+'delete a comments written by him or a comments on his scribbles '
+'comments on his scribbles '
+'view a delete link near the comments '
+'deleting a scribble that he is authorized to delete '
+'authorized For deleting a scribble that he is authorized to delete '
+'Liked a scribble '
+'view a count of the “ Liked ” '
+'dislike a scribble '
+'view a count of the “ Disliked ” scribble '
+'initiate ChitChat '
+'initiated the ChitChat '
+'forwarded the ChitChat message '
+'receive ChitChat '
+'send message '
+'completing a two-way conversation '
+'send text files '
+'Using this functionality User '
+'helps User '
+'share text documents '
+'limited The maximum files size '
+'stored ChitChat '
+'keep to '
+'keep account of the previous session '
+'view ChitChat account '
+'retrieve ChitChat '
+jul. 15, 2019 12:04:29 P. M. com.github.fommil.netlib.ARPACK <clinit>
+WARNING: Failed to load implementation from: com.github.fommil.netlib.NativeSystemARPACK
+jul. 15, 2019 12:04:30 P. M. com.github.fommil.jni.JniLoader liberalLoad
+INFO: successfully loaded C:\Users\Luis\AppData\Local\Temp\jniloader774930877735892569netlib-native_ref-win-x86_64.dll
+4
+Instance 0 -> Cluster 0 
+Instance 1 -> Cluster 0 
+Instance 2 -> Cluster 0 
+Instance 3 -> Cluster 0 
+Instance 4 -> Cluster 0 
+Instance 5 -> Cluster 0 
+Instance 6 -> Cluster 0 
+Instance 7 -> Cluster 0 
+Instance 8 -> Cluster 0 
+Instance 9 -> Cluster 0 
+Instance 10 -> Cluster 0 
+Instance 11 -> Cluster 0 
+Instance 12 -> Cluster 0 
+Instance 13 -> Cluster 0 
+Instance 14 -> Cluster 0 
+Instance 15 -> Cluster 0 
+Instance 16 -> Cluster 0 
+Instance 17 -> Cluster 0 
+Instance 18 -> Cluster 0 
+Instance 19 -> Cluster 0 
+Instance 20 -> Cluster 0 
+Instance 21 -> Cluster 0 
+Instance 22 -> Cluster 0 
+Instance 23 -> Cluster 0 
+Instance 24 -> Cluster 0 
+Instance 25 -> Cluster 0 
+Instance 26 -> Cluster 0 
+Instance 27 -> Cluster 0 
+Instance 28 -> Cluster 0 
+Instance 29 -> Cluster 0 
+Instance 30 -> Cluster 0 
+Instance 31 -> Cluster 0 
+Instance 32 -> Cluster 0 
+Instance 33 -> Cluster 0 
+Instance 34 -> Cluster 0 
+Instance 35 -> Cluster 0 
+Instance 36 -> Cluster 0 
+Instance 37 -> Cluster 0 
+Instance 38 -> Cluster 0 
+Instance 39 -> Cluster 0 
+Instance 40 -> Cluster 0 
+Instance 41 -> Cluster 0 
+Instance 42 -> Cluster 0 
+Instance 43 -> Cluster 0 
+Instance 44 -> Cluster 0 
+Instance 45 -> Cluster 0 
+Instance 46 -> Cluster 0 
+Instance 47 -> Cluster 0 
+Instance 48 -> Cluster 0 
+Instance 49 -> Cluster 0 
+Instance 50 -> Cluster 0 
+Instance 51 -> Cluster 0 
+Instance 52 -> Cluster 0 
+Instance 53 -> Cluster 0 
+Instance 54 -> Cluster 0 
+Instance 55 -> Cluster 0 
+Instance 56 -> Cluster 0 
+Instance 57 -> Cluster 0 
+Instance 58 -> Cluster 0 
+Instance 59 -> Cluster 0 
+Instance 60 -> Cluster 0 
+Instance 61 -> Cluster 1 
+Instance 62 -> Cluster 2 
+Instance 63 -> Cluster 2 
+Instance 64 -> Cluster 0 
+Instance 65 -> Cluster 0 
+Instance 66 -> Cluster 0 
+Instance 67 -> Cluster 0 
+Instance 68 -> Cluster 0 
+Instance 69 -> Cluster 0 
+Instance 70 -> Cluster 0 
+Instance 71 -> Cluster 0 
+Instance 72 -> Cluster 0 
+Instance 73 -> Cluster 0 
+Instance 74 -> Cluster 0 
+Instance 75 -> Cluster 0 
+Instance 76 -> Cluster 0 
+Instance 77 -> Cluster 0 
+Instance 78 -> Cluster 0 
+Instance 79 -> Cluster 0 
+Instance 80 -> Cluster 0 
+Instance 81 -> Cluster 0 
+Instance 82 -> Cluster 0 
+Instance 83 -> Cluster 0 
+Instance 84 -> Cluster 3 
+Instance 85 -> Cluster 0 
+Instance 86 -> Cluster 0 
+Instance 87 -> Cluster 0 
+Instance 88 -> Cluster 0 
+Instance 89 -> Cluster 0 
+Instance 90 -> Cluster 0 
+Instance 91 -> Cluster 0 
+Instance 92 -> Cluster 0 
+Instance 93 -> Cluster 0 
+Instance 94 -> Cluster 0 
+Instance 95 -> Cluster 0 
+Instance 96 -> Cluster 0 
+Instance 97 -> Cluster 0 
+Instance 98 -> Cluster 0 
+Instance 99 -> Cluster 0 
+Instance 100 -> Cluster 0 
+Instance 101 -> Cluster 0 
+Instance 102 -> Cluster 0 
+Instance 103 -> Cluster 0 
+Instance 104 -> Cluster 0 
+Instance 105 -> Cluster 0 
+Instance 106 -> Cluster 0 
+Instance 107 -> Cluster 0 
+Instance 108 -> Cluster 0 
+Instance 109 -> Cluster 0 
+Instance 110 -> Cluster 0 
+Instance 111 -> Cluster 0 
+Instance 112 -> Cluster 0 
+Instance 113 -> Cluster 0 
+Instance 114 -> Cluster 0 
+Instance 115 -> Cluster 0 
+Instance 116 -> Cluster 0 
+Instance 117 -> Cluster 0 
+
+
+** UCM generation **
+have option -> view friends
+view friends -> NULL
+accept request -> added requestor
+added requestor -> NULL
+accept request -> added requestor
+added requestor -> NULL
+implemented paging -> show suggestions
+show suggestions -> NULL
+Inicio -> validated information
+validated information -> registered User
+registered User -> NULL
+Inicio -> locked account
+locked account -> sent e-mail
+sent e-mail -> NULL
+Inicio -> clicks password
+clicks password -> reset link
+reset link -> NULL
+Inicio -> logged User
+logged User -> add education
+add education -> NULL
+Inicio -> logged User
+logged User -> add information
+add information -> NULL
+Inicio -> changed email
+changed email -> email module
+email module -> NULL
+Inicio -> search friend
+search friend -> send request
+send request -> NULL
+Inicio -> gets request
+gets request -> receiving request
+Inicio -> gets request
+gets request -> have option
+receiving request -> accept request
+have option -> accept request
+Inicio -> ignore request
+ignore request -> see status
+see status -> removed request
+removed request -> NULL
+Inicio -> implemented paging
+implemented paging -> show friends
+show friends -> NULL
+Inicio -> implemented paging
+implemented paging -> has friends
+has friends -> NULL
+display people -> put name
+put name -> display people
+Inicio -> displayed results
+displayed results -> implemented paging
+implemented paging -> show results
+show results -> NULL
+Inicio -> given User
+given User -> adding friends
+adding friends -> NULL
+Inicio -> invite friends
+invite friends -> join network
+join network -> NULL
+Inicio -> given User
+given User -> enter address
+enter address -> NULL
+Inicio -> has ability
+has ability -> express opinion
+express opinion -> NULL
+Inicio -> comment scribbles
+comment scribbles -> delete comment
+delete comment -> NULL
+Inicio -> deleting scribble
+deleting scribble -> see link
+see link -> NULL
+Inicio -> authorized deleting
+authorized deleting -> see link
+see link -> NULL
+Inicio -> initiated ChitChat
+initiated ChitChat -> forwarded message
+forwarded message -> NULL
+Inicio -> send message
+send message -> completing conversation
+completing conversation -> NULL
+Inicio -> helps user
+helps user -> share documents
+share documents -> NULL
+Inicio -> keep history
+keep history -> keep to
+keep to -> NULL
+see history -> retrieve ChitChat
+retrieve ChitChat -> see history
+Inicio -> create account
+create account -> NULL
+Inicio -> enter details
+enter details -> NULL
+Inicio -> exceed characters
+exceed characters -> NULL
+Inicio -> sent link
+sent link -> NULL
+Inicio -> re-send link
+re-send link -> NULL
+Inicio -> registered User
+registered User -> NULL
+Inicio -> match hash
+match hash -> NULL
+Inicio -> unlock account
+unlock account -> NULL
+Inicio -> click link
+click link -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> add details
+add details -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> add details
+add details -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> add details
+add details -> NULL
+Inicio -> logged User
+logged User -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> edit details
+edit details -> NULL
+Inicio -> logged User
+logged User -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> upload picture
+upload picture -> NULL
+Inicio -> see profile
+see profile -> NULL
+Inicio -> profile Aloha
+profile Aloha -> NULL
+Inicio -> delete account
+delete account -> NULL
+Inicio -> removed User
+removed User -> NULL
+Inicio -> cleared information
+cleared information -> NULL
+Inicio -> add requests
+add requests -> NULL
+Inicio -> send request
+send request -> NULL
+Inicio -> registered friends
+registered friends -> NULL
+Inicio -> having number
+having number -> NULL
+Inicio -> based suggestions
+based suggestions -> NULL
+Inicio -> invite friend
+invite friend -> NULL
+Inicio -> see friends
+see friends -> NULL
+Inicio -> friends Aloha
+friends Aloha -> NULL
+Inicio -> share scribbles
+share scribbles -> NULL
+Inicio -> enter scribble
+enter scribble -> NULL
+Inicio -> erase scribble
+erase scribble -> NULL
+Inicio -> posted scribble
+posted scribble -> NULL
+Inicio -> remove comments
+remove comments -> NULL
+Inicio -> see listing
+see listing -> NULL
+Inicio -> implemented paging
+implemented paging -> NULL
+Inicio -> contain text
+contain text -> NULL
+Inicio -> exceed characters
+exceed characters -> NULL
+Inicio -> see area
+see area -> NULL
+Inicio -> enter text
+enter text -> NULL
+Inicio -> like scribble
+like scribble -> NULL
+Inicio -> see count
+see count -> NULL
+Inicio -> dislike scribble
+dislike scribble -> NULL
+Inicio -> see count
+see count -> NULL
+Inicio -> initiate ChitChat
+initiate ChitChat -> NULL
+Inicio -> receive ChitChat
+receive ChitChat -> NULL
+Inicio -> send files
+send files -> NULL
+Inicio -> Using user
+Using user -> NULL
+Inicio -> limited size
+limited size -> NULL
+Inicio -> store ChitChat
+store ChitChat -> NULL
+Comp [100, 0]
+Comp [100, 250]
+Comp [100, 500]
+Comp [100, 750]
+Resp [199, 50]
+Resp [298, 150]
+Resp [397, 50]
+Resp [496, 150]
+Resp [595, 50]
+Resp [694, 150]
+Resp [793, 50]
+Resp [892, 150]
+Resp [991, 50]
+Resp [1090, 150]
+Resp [1189, 50]
+Resp [1288, 150]
+Resp [1387, 50]
+Resp [1486, 150]
+Resp [1585, 50]
+Resp [1684, 150]
+Resp [1783, 50]
+Resp [1882, 150]
+Resp [1981, 50]
+Resp [2080, 150]
+Resp [2179, 50]
+Resp [166, 550]
+Resp [232, 650]
+Resp [2278, 150]
+Resp [2377, 50]
+Resp [2476, 150]
+Resp [2575, 50]
+Resp [2674, 150]
+Resp [2773, 50]
+Resp [2872, 150]
+Resp [2971, 50]
+Resp [3070, 150]
+Resp [3169, 50]
+Resp [3268, 150]
+Resp [3367, 50]
+Resp [3466, 150]
+Resp [3565, 50]
+Resp [3664, 150]
+Resp [3763, 50]
+Resp [3862, 150]
+Resp [3961, 50]
+Resp [4060, 150]
+Resp [4159, 50]
+Resp [4258, 150]
+Resp [4357, 50]
+Resp [4456, 150]
+Resp [150, 800]
+Resp [4555, 50]
+Resp [4654, 150]
+Resp [4753, 50]
+Resp [4852, 150]
+Resp [4951, 50]
+Resp [5050, 150]
+Resp [5149, 50]
+Resp [5248, 150]
+Resp [5347, 50]
+Resp [150, 300]
+Resp [5446, 150]
+Resp [5545, 50]
+Resp [5644, 150]
+Resp [5743, 50]
+Resp [5842, 150]
+Resp [5941, 50]
+Resp [6040, 150]
+Resp [6139, 50]
+Resp [6238, 150]
+Resp [6337, 50]
+Resp [6436, 150]
+Resp [6535, 50]
+Resp [6634, 150]
+Resp [6733, 50]
+Resp [6832, 150]
+Resp [6931, 50]
+Resp [7030, 150]
+Resp [7129, 50]
+Resp [7228, 150]
+Resp [7327, 50]
+Resp [7426, 150]
+Resp [7525, 50]
+Resp [7624, 150]
+Resp [7723, 50]
+Resp [7822, 150]
+Resp [7921, 50]
+Resp [8020, 150]
+Resp [8119, 50]
+Resp [8218, 150]
+Resp [8317, 50]
+Resp [8416, 150]
+Resp [8515, 50]
+Resp [8614, 150]
+Resp [8713, 50]
+Resp [8812, 150]
+Resp [8911, 50]
+Resp [9010, 150]
+Resp [9109, 50]
+Resp [9208, 150]
+Resp [9307, 50]
+Resp [9406, 150]
+Resp [9505, 50]
+Resp [9604, 150]
+Resp [9703, 50]
+Resp [9802, 150]
+Resp [9901, 50]
+Resp [10000, 150]
+Resp [10099, 50]
+Resp [10198, 150]
+Resp [10297, 50]
+Resp [10396, 150]
+Resp [10495, 50]
+Resp [10594, 150]
+Resp [10693, 50]
+Resp [10792, 150]

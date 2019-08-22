@@ -1,0 +1,344 @@
+@Requirement=REQ-1
+User will create an account if there is no existing account associated with users email-id . User should enter account details such as name , email-id , contact number , birth date , captcha and password . All these are required fields and account creation cannot proceed unless these are filled . User is registered after this information is validated and user agrees with the terms and conditions . User must be 18 years old or more . Contact number should be a 10 digit numeric field . First and last name should not exceed 20 characters each . Password should be at least 8 characters long , at most 15 characters including at least one capital and small letter , a special character and a number . Any of the above fields must not have ( ‘ , “ , : , ; , < , > , { , } , - , % , $ , | , ] , [) . 
+@Responsibilities=5
+	 Resp [1-1] [create_3_account_5, create account, create an account , 3, 5, 5, [create/verb, an/NULL, account/noun], ['create|VB account|NN'], OK]
+	 Resp [1-2] [enter_19_details_21, enter details, enter account details such as name , 19, 21, 24, [enter/verb, account/noun, details/noun, such/adjective, as/NULL, name/noun], ['enter|VB account|NN details|NN such|ADJ name|NN'], OK]
+	 Resp [1-3] [registered_54_User_56, registered User, registered User , 54, 56, 54, [registered/verb, User/noun], ['registered|VB User|NN'], OK]
+	 Resp [1-4] [validated_59_information_61, validated information, validated this information , 59, 61, 59, [validated/verb, this/NULL, information/noun], ['validated|VB information|NN'], OK]
+	 Resp [1-5] [exceed_96_characters_98, exceed characters, exceed 20 characters each , 96, 98, 99, [exceed/verb, 20/NULL, characters/noun, each/NULL], ['exceed|VB characters|NN'], NEGATED]
+
+@Causal Relationships=1
+	 Causal Relationship : validated information -> registered User
+
+@Requirement=REQ-2
+When the user has registered , a verification link is sent to the email-id set at the time of registration so as to verify given email-id as genuine . After the user has verified the account , it will be marked as verified . Account privileges will not be given to the user until verification is complete . User should be able to re-send the verification link to his email-id . 
+@Responsibilities=2
+	 Resp [2-1] [sent_9_link_11, sent link, sent a verification link , 9, 11, 9, [sent/verb, a/NULL, verification/noun, link/noun], ['sent|VB verification|NN link|NN'], OK]
+	 Resp [2-2] [re-send_64_link_67, re-send link, re-send the verification link , 64, 67, 67, [re-send/verb, the/NULL, verification/noun, link/noun], ['re-send|VB verification|NN link|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-3
+User must be registered in order to Login . Input will be the email-id and password for login . The hash of password should match to the hash of password stored in the database . If three attempts of password are wrong then a captcha should appear . If more than 8 attempts go wrong , then the account will be locked and an e-mail will be sent to the user notifying about the wrong password attempts . To unlock the account , user must click on the unlock link sent to him in the email . If user clicks on forgot password then reset password link should be emailed to the user . Input to each field must be validated . 
+@Responsibilities=10
+	 Resp [3-1] [registered_1_User_4, registered User, registered User , 1, 4, 1, [registered/verb, User/noun], ['registered|VB User|NN'], OK]
+	 Resp [3-2] [match_25_hash_28, match hash, match to the hash of password stored in the database , 25, 28, 34, [match/verb, to/NULL, the/NULL, hash/noun, of/NULL, password/noun, stored/verb, in/NULL, the/NULL, database/noun], ['match|VB hash|NN password|NN stored|VB database|NN'], OK]
+	 Resp [3-3] [locked_59_account_62, locked account, locked then the account , 59, 62, 59, [locked/verb, then/adverb, the/NULL, account/noun], ['locked|VB then|ADV account|NN'], OK]
+	 Resp [3-4] [sent_65_e-mail_68, sent e-mail, sent an e-mail , 65, 68, 65, [sent/verb, an/NULL, e-mail/noun], ['sent|VB e-mail|NN'], OK]
+	 Resp [3-5] [unlock_80_account_82, unlock account, unlock the account , 80, 82, 82, [unlock/verb, the/NULL, account/noun], ['unlock|VB account|NN'], OK]
+	 Resp [3-6] [click_86_link_90, click link, click on the unlock link sent to him in the email , 86, 90, 96, [click/verb, on/NULL, the/NULL, unlock/noun, link/noun, sent/verb, to/NULL, him/NULL, in/NULL, the/NULL, email/noun], ['click|VB unlock|NN link|NN sent|VB email|NN'], OK]
+	 Resp [3-7] [reset_105_link_107, reset link, reset password link , 105, 107, 107, [reset/verb, password/noun, link/noun], ['reset|VB password|NN link|NN'], OK]
+	 Resp [3-8] [clicks_100_password_103, clicks password, clicks on forgot password , 100, 103, 103, [clicks/verb, on/NULL, forgot/verb, password/noun], ['clicks|VB forgot|VB password|NN'], OK]
+	 Resp [3-9] [Input_115_field_118, Input field, Input to each field , 115, 118, 118, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+	 Resp [3-10] [validated_115_Input_121, validated Input, validated Input to each field , 115, 121, 118, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : locked account -> sent e-mail
+
+	 Causal Relationship : clicks password -> reset link
+
+@Requirement=REQ-4
+A part of building user profile . User should be able to add the educational details . These fields can remain empty . User must be logged in and his account should be marked as verified to be able to add education . Input to each field must be validated . 
+@Responsibilities=5
+	 Resp [4-1] [add_13_details_16, add details, add the educational details , 13, 16, 16, [add/verb, the/NULL, educational/adjective, details/noun], ['add|VB educational|ADJ details|NN'], OK]
+	 Resp [4-2] [add_41_education_42, add education, add education , 41, 42, 42, [add/verb, education/noun], ['add|VB education|NN'], OK]
+	 Resp [4-3] [logged_24_User_27, logged User, logged User , 24, 27, 24, [logged/verb, User/noun], ['logged|VB User|NN'], OK]
+	 Resp [4-4] [Input_44_field_47, Input field, Input to each field , 44, 47, 47, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+	 Resp [4-5] [validated_44_Input_50, validated Input, validated Input to each field , 44, 50, 47, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : logged User -> add education
+
+@Requirement=REQ-5
+A part of building user profile . User should be able to add the personal details like language , gender , about user and his interests . These fields can remain empty . User must be logged in and his account should be marked as verified to be able to add personal information . Input to each field must be validated . 
+@Responsibilities=5
+	 Resp [5-1] [add_13_details_16, add details, add the personal details details like language , 13, 16, 18, [add/verb, the/NULL, personal/adjective, details/noun, details/noun, like/NULL, language/noun], ['add|VB personal|ADJ details|NN details|NN language|NN'], OK]
+	 Resp [5-2] [add_51_information_53, add information, add personal information , 51, 53, 53, [add/verb, personal/adjective, information/noun], ['add|VB personal|ADJ information|NN'], OK]
+	 Resp [5-3] [logged_34_User_37, logged User, logged User , 34, 37, 34, [logged/verb, User/noun], ['logged|VB User|NN'], OK]
+	 Resp [5-4] [Input_55_field_58, Input field, Input to each field , 55, 58, 58, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+	 Resp [5-5] [validated_55_Input_61, validated Input, validated Input to each field , 55, 61, 58, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : logged User -> add information
+
+@Requirement=REQ-6
+A part of building user profile . User should be able to add the account details like name , birth date , email-id , phone number and address . Name , birth date and email-id cannot be empty while the other two can remain empty . User must be logged in . Input to each field must be validated . 
+@Responsibilities=4
+	 Resp [6-1] [add_13_details_16, add details, add the account details like name , 13, 16, 18, [add/verb, the/NULL, account/noun, details/noun, like/NULL, name/noun], ['add|VB account|NN details|NN name|NN'], OK]
+	 Resp [6-2] [logged_48_User_51, logged User, logged User , 48, 51, 48, [logged/verb, User/noun], ['logged|VB User|NN'], OK]
+	 Resp [6-3] [Input_54_field_57, Input field, Input to each field , 54, 57, 57, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+	 Resp [6-4] [validated_54_Input_60, validated Input, validated Input to each field , 54, 60, 57, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-7
+A part of building user profile . User should be able to edit the account details like name , birth date , email-id , phone number and address . Name , birth date and email-id cannot be empty while the other two can remain empty . If email is changed then email verification module should be called . User must be logged in . Input to each field must be validated . 
+@Responsibilities=6
+	 Resp [7-1] [edit_13_details_16, edit details, edit the account details like name , 13, 16, 18, [edit/verb, the/NULL, account/noun, details/noun, like/NULL, name/noun], ['edit|VB account|NN details|NN name|NN'], OK]
+	 Resp [7-2] [email_53_module_55, email module, email verification module , 53, 55, 55, [email/verb, verification/noun, module/noun], ['email|VB verification|NN module|NN'], OK]
+	 Resp [7-3] [changed_49_email_51, changed email, changed email , 49, 51, 49, [changed/verb, email/noun], ['changed|VB email|NN'], OK]
+	 Resp [7-4] [logged_60_User_63, logged User, logged User , 60, 63, 60, [logged/verb, User/noun], ['logged|VB User|NN'], OK]
+	 Resp [7-5] [Input_66_field_69, Input field, Input to each field , 66, 69, 69, [Input/verb, to/NULL, each/NULL, field/noun], ['Input|VB field|NN'], OK]
+	 Resp [7-6] [validated_66_Input_72, validated Input, validated Input to each field , 66, 72, 69, [validated/verb, Input/noun, to/NULL, each/NULL, field/noun], ['validated|VB Input|NN field|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : changed email -> email module
+
+@Requirement=REQ-8
+User should be able to upload the profile picture . The size of profile picture should be at least 160px * 160px . User may leave this field empty . Profile image should be visible to all . 
+@Responsibilities=1
+	 Resp [8-1] [upload_6_picture_9, upload picture, upload the profile picture , 6, 9, 9, [upload/verb, the/NULL, profile/noun, picture/noun], ['upload|VB profile|NN picture|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-9
+User should be able to make account details private or public according to his wish . By default the account details will be visible to public . 
+@Responsibilities=0
+
+@Causal Relationships=0
+@Requirement=REQ-10
+User should be able to make personal information private or public according to his wish . By default the personal information will be visible to public . 
+@Responsibilities=0
+
+@Causal Relationships=0
+@Requirement=REQ-11
+Any logged-in user should be able to see any user’s profile on Aloha . 
+@Responsibilities=2
+	 Resp [11-1] [see_8_profile_12, see profile, see any user ’s profile on Aloha , 8, 12, 14, [see/verb, any/NULL, user/noun, ’s/NULL, profile/noun, on/NULL, Aloha/noun], ['see|VB user|NN profile|NN Aloha|NN'], OK]
+	 Resp [11-2] [profile_12_Aloha_14, profile Aloha, profile on Aloha , 12, 14, 14, [profile/verb, on/NULL, Aloha/noun], ['profile|VB Aloha|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-12
+User may delete his account permanently from ALOHA depending on his wish . User will be removed from his friends list once deleted . User information will be cleared . 
+@Responsibilities=3
+	 Resp [12-1] [delete_3_account_5, delete account, delete his account , 3, 5, 5, [delete/verb, his/NULL, account/noun], ['delete|VB account|NN'], OK]
+	 Resp [12-2] [removed_14_User_17, removed User, removed User , 14, 17, 14, [removed/verb, User/noun], ['removed|VB User|NN'], OK]
+	 Resp [12-3] [cleared_26_information_29, cleared information, cleared User information , 26, 29, 26, [cleared/verb, User/noun, information/noun], ['cleared|VB User|NN information|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-13
+A registered user of Aloha should be able to send add friend requests to other users of Aloha . User can send friend request to already registered users of Aloha . User can search his friend on Aloha among the registered users and then send a friend request to him/her . 
+@Responsibilities=4
+	 Resp [13-1] [add_11_requests_13, add requests, add friend requests , 11, 13, 13, [add/verb, friend/noun, requests/noun], ['add|VB friend|NN requests|NN'], OK]
+	 Resp [13-2] [send_22_request_24, send request, send friend request , 22, 24, 24, [send/verb, friend/noun, request/noun], ['send|VB friend|NN request|NN'], OK]
+	 Resp [13-3] [search_34_friend_36, search friend, search his friend , 34, 36, 36, [search/verb, his/NULL, friend/noun], ['search|VB friend|NN'], OK]
+	 Resp [13-4] [send_45_request_48, send request, send a friend request , 45, 48, 48, [send/verb, a/NULL, friend/noun, request/noun], ['send|VB friend|NN request|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : search friend -> send request
+
+@Requirement=REQ-14
+If a user gets a friend request from another user , then the user receiving the request should have an option to accept or ignore the friend request . If the user selects to accept the friend request , the requestor is added to the friend list of the acceptor . If the user selected to ignore the request , the sender continues to see the status of the request as “Request Sent” and the request is removed from the queue of the request receiver . 
+@Responsibilities=9
+	 Resp [14-1] [have_19_option_21, have option, have an option to accept or ignore the friend request , 19, 21, 28, [have/verb, an/NULL, option/noun, to/NULL, accept/verb, or/NULL, ignore/verb, the/NULL, friend/noun, request/noun], ['have|VB option|NN accept|VB ignore|VB friend|NN request|NN'], OK]
+	 Resp [14-2] [accept_23_request_28, accept request, accept the friend request , 23, 28, 28, [accept/verb, the/NULL, friend/noun, request/noun], ['accept|VB friend|NN request|NN'], OK]
+	 Resp [14-3] [receiving_15_request_17, receiving request, receiving the request , 15, 17, 17, [receiving/verb, the/NULL, request/noun], ['receiving|VB request|NN'], OK]
+	 Resp [14-4] [gets_4_request_7, gets request, gets a friend request from another user , 4, 7, 10, [gets/verb, a/NULL, friend/noun, request/noun, from/NULL, another/NULL, user/noun], ['gets|VB friend|NN request|NN user|NN'], OK]
+	 Resp [14-5] [accept_35_request_38, accept request, accept the friend request , 35, 38, 38, [accept/verb, the/NULL, friend/noun, request/noun], ['accept|VB friend|NN request|NN'], OK]
+	 Resp [14-6] [added_41_requestor_43, added requestor, added the requestor , 41, 43, 41, [added/verb, the/NULL, requestor/noun], ['added|VB requestor|NN'], OK]
+	 Resp [14-7] [see_65_status_67, see status, see the status of the request , 65, 67, 70, [see/verb, the/NULL, status/noun, of/NULL, the/NULL, request/noun], ['see|VB status|NN request|NN'], OK]
+	 Resp [14-8] [ignore_57_request_59, ignore request, ignore the request , 57, 59, 59, [ignore/verb, the/NULL, request/noun], ['ignore|VB request|NN'], OK]
+	 Resp [14-9] [removed_78_request_80, removed request, removed the request , 78, 80, 78, [removed/verb, the/NULL, request/noun], ['removed|VB request|NN'], OK]
+
+@Causal Relationships=7
+	 Causal Relationship : gets request -> receiving request
+
+	 Causal Relationship : gets request -> have option
+
+	 Causal Relationship : receiving request -> accept request
+
+	 Causal Relationship : have option -> accept request
+
+	 Causal Relationship : accept request -> added requestor
+
+	 Causal Relationship : ignore request -> see status
+
+	 Causal Relationship : see status -> removed request
+
+@Requirement=REQ-15
+A registered user of Aloha should be able to un-friend any of the existing friends in his/her friend’s list . 
+@Responsibilities=0
+
+@Causal Relationships=0
+@Requirement=REQ-16
+Whenever the user is on any person’s profile page , he should have an option to view currently open user profile’s friends on a page . User can have many friends and the maximum number of friends shown at a time will be 20 , and paging will be implemented to show more friends if the user has more than 20 friends . 
+@Responsibilities=5
+	 Resp [16-1] [have_14_option_16, have option, have an option to view currently open user profile ’s friends on a page , 14, 16, 27, [have/verb, an/NULL, option/noun, to/NULL, view/verb, currently/adverb, open/adjective, user/noun, profile/noun, ’s/NULL, friends/noun, on/NULL, a/NULL, page/noun], ['have|VB option|NN view|VB currently|ADV open|ADJ user|NN profile|NN friends|NN page|NN'], OK]
+	 Resp [16-2] [view_18_friends_24, view friends, view currently open user profile ’s friends , 18, 24, 24, [view/verb, currently/adverb, open/adjective, user/noun, profile/noun, ’s/NULL, friends/noun], ['view|VB currently|ADV open|ADJ user|NN profile|NN friends|NN'], OK]
+	 Resp [16-3] [show_54_friends_56, show friends, show more friends , 54, 56, 56, [show/verb, more/adjective, friends/noun], ['show|VB more|ADJ friends|NN'], OK]
+	 Resp [16-4] [has_60_friends_64, has friends, has more than 20 friends , 60, 64, 64, [has/verb, more/adjective, than/NULL, 20/NULL, friends/noun], ['has|VB more|ADJ friends|NN'], OK]
+	 Resp [16-5] [implemented_49_paging_52, implemented paging, implemented paging , 49, 52, 49, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]
+
+@Causal Relationships=3
+	 Causal Relationship : have option -> view friends
+
+	 Causal Relationship : implemented paging -> show friends
+
+	 Causal Relationship : implemented paging -> has friends
+
+@Requirement=REQ-17
+User should be able to search for his/her friends who may be registered on Aloha . User will put the name of the friend and click search after which the search results will display all the people registered on Aloha by the searched name . When the search results are displayed the maximum number of results shown at a time will be 20 , and paging will be implemented to show more results . 
+@Responsibilities=6
+	 Resp [17-1] [registered_9_friends_13, registered friends, registered for his/her friends who may be registered on Aloha , 9, 13, 15, [registered/verb, for/NULL, his/her/adjective, friends/noun, who/NULL, may/NULL, be/verb, registered/verb, on/NULL, Aloha/noun], ['registered|VB his/her|ADJ friends|NN be|VB registered|VB Aloha|NN'], OK]
+	 Resp [17-2] [put_19_name_21, put name, put the name of the friend and click search after which the search results will display all the people registered on Aloha by the searched name , 19, 21, 44, [put/verb, the/NULL, name/noun, of/NULL, the/NULL, friend/noun, and/NULL, click/noun, search/noun, after/NULL, which/NULL, the/NULL, search/noun, results/noun, will/NULL, display/verb, all/NULL, the/NULL, people/noun, registered/verb, on/NULL, Aloha/noun, by/NULL, the/NULL, searched/verb, name/noun], ['put|VB name|NN friend|NN click|NN search|NN search|NN results|NN display|VB people|NN registered|VB Aloha|NN searched|VB name|NN'], OK]
+	 Resp [17-3] [display_34_people_37, display people, display all the people registered on Aloha by the searched name , 34, 37, 44, [display/verb, all/NULL, the/NULL, people/noun, registered/verb, on/NULL, Aloha/noun, by/NULL, the/NULL, searched/verb, name/noun], ['display|VB people|NN registered|VB Aloha|NN searched|VB name|NN'], OK]
+	 Resp [17-4] [show_71_results_73, show results, show more results , 71, 73, 73, [show/verb, more/adjective, results/noun], ['show|VB more|ADJ results|NN'], OK]
+	 Resp [17-5] [implemented_66_paging_69, implemented paging, implemented paging , 66, 69, 66, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]
+	 Resp [17-6] [displayed_49_results_51, displayed results, displayed the search results , 49, 51, 49, [displayed/verb, the/NULL, search/noun, results/noun], ['displayed|VB search|NN results|NN'], OK]
+
+@Causal Relationships=4
+	 Causal Relationship : display people -> put name
+
+	 Causal Relationship : put name -> display people
+
+	 Causal Relationship : displayed results -> implemented paging
+
+	 Causal Relationship : implemented paging -> show results
+
+@Requirement=REQ-18
+User will be given suggestions for adding more friends . The friend suggestions will be based on the users having maximum number of mutual friends with the user . The maximum number of friend suggestions displayed will be 20 at a time , and paging will be implemented to show more suggestions . 
+@Responsibilities=6
+	 Resp [18-1] [adding_7_friends_9, adding friends, adding more friends , 7, 9, 9, [adding/verb, more/adjective, friends/noun], ['adding|VB more|ADJ friends|NN'], OK]
+	 Resp [18-2] [given_1_User_4, given User, given User , 1, 4, 1, [given/verb, User/noun], ['given|VB User|NN'], OK]
+	 Resp [18-3] [having_20_number_22, having number, having maximum number of mutual friends , 20, 22, 25, [having/verb, maximum/noun, number/noun, of/NULL, mutual/adjective, friends/noun], ['having|VB maximum|NN number|NN mutual|ADJ friends|NN'], OK]
+	 Resp [18-4] [based_13_suggestions_16, based suggestions, based The friend suggestions , 13, 16, 13, [based/verb, The/NULL, friend/noun, suggestions/noun], ['based|VB friend|NN suggestions|NN'], OK]
+	 Resp [18-5] [show_50_suggestions_52, show suggestions, show more suggestions , 50, 52, 52, [show/verb, more/adjective, suggestions/noun], ['show|VB more|ADJ suggestions|NN'], OK]
+	 Resp [18-6] [implemented_45_paging_48, implemented paging, implemented paging , 45, 48, 45, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : given User -> adding friends
+
+	 Causal Relationship : implemented paging -> show suggestions
+
+@Requirement=REQ-19
+User should be able to invite more friends to join the Aloha network . User will be given an option to enter the email address of the person to invite . User will be able to invite one friend at a time . 
+@Responsibilities=5
+	 Resp [19-1] [invite_6_friends_8, invite friends, invite more friends , 6, 8, 8, [invite/verb, more/adjective, friends/noun], ['invite|VB more|ADJ friends|NN'], OK]
+	 Resp [19-2] [join_10_network_13, join network, join the Aloha network , 10, 13, 13, [join/verb, the/NULL, Aloha/noun, network/noun], ['join|VB Aloha|NN network|NN'], OK]
+	 Resp [19-3] [enter_22_address_25, enter address, enter the email address of the person , 22, 25, 28, [enter/verb, the/NULL, email/noun, address/noun, of/NULL, the/NULL, person/noun], ['enter|VB email|NN address|NN person|NN'], OK]
+	 Resp [19-4] [given_15_User_18, given User, given User , 15, 18, 15, [given/verb, User/noun], ['given|VB User|NN'], OK]
+	 Resp [19-5] [invite_37_friend_39, invite friend, invite one friend , 37, 39, 39, [invite/verb, one/NULL, friend/noun], ['invite|VB friend|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : invite friends -> join network
+
+	 Causal Relationship : given User -> enter address
+
+@Requirement=REQ-20
+User should be able to see currently online friends among all his friends on Aloha . The user can chat with online friends by clicking on the currently available friends in the online friends list . 
+@Responsibilities=2
+	 Resp [20-1] [see_6_friends_9, see friends, see currently online friends among all his friends on Aloha , 6, 9, 15, [see/verb, currently/adverb, online/adjective, friends/noun, among/NULL, all/NULL, his/NULL, friends/noun, on/NULL, Aloha/noun], ['see|VB currently|ADV online|ADJ friends|NN friends|NN Aloha|NN'], OK]
+	 Resp [20-2] [friends_13_Aloha_15, friends Aloha, friends on Aloha , 13, 15, 15, [friends/verb, on/NULL, Aloha/noun], ['friends|VB Aloha|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-21
+A registered user of Aloha can share scribbles with his friends . The scribble can only be plain English text with maximum 500 characters . User can enter the scribble in the designated text area by clicking on the Scribble button; it should be visible to the user and his friends . 
+@Responsibilities=2
+	 Resp [21-1] [share_7_scribbles_8, share scribbles, share scribbles , 7, 8, 8, [share/verb, scribbles/noun], ['share|VB scribbles|NN'], OK]
+	 Resp [21-2] [enter_28_scribble_30, enter scribble, enter the scribble , 28, 30, 30, [enter/verb, the/NULL, scribble/noun], ['enter|VB scribble|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-22
+A user can erase a scribble that has been posted . After deletion , the scribble should not be visible on the users’ or his friends’ slates . Deletion of a scribble should also remove all the comments associated with that scribble . 
+@Responsibilities=3
+	 Resp [22-1] [erase_4_scribble_6, erase scribble, erase a scribble that has been posted , 4, 6, 10, [erase/verb, a/NULL, scribble/noun, that/NULL, has/verb, been/verb, posted/verb], ['erase|VB scribble|NN has|VB been|VB posted|VB'], OK]
+	 Resp [22-2] [posted_6_scribble_10, posted scribble, posted a scribble that has been posted , 6, 10, 10, [posted/verb, a/NULL, scribble/noun, that/NULL, has/verb, been/verb, posted/verb], ['posted|VB scribble|NN has|VB been|VB posted|VB'], OK]
+	 Resp [22-3] [remove_37_comments_40, remove comments, remove all the comments associated with that scribble , 37, 40, 44, [remove/verb, all/NULL, the/NULL, comments/noun, associated/verb, with/NULL, that/NULL, scribble/noun], ['remove|VB comments|NN associated|VB scribble|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-23
+After a user logs into Aloha , he can see a listing of scribbles posted by him and his friends . The maximum number of scribbles displayed at a time will be 20 , and paging will be implemented for more scribbles . 
+@Responsibilities=2
+	 Resp [23-1] [see_10_listing_12, see listing, see a listing of scribbles posted by him and his friends , 10, 12, 20, [see/verb, a/NULL, listing/noun, of/NULL, scribbles/noun, posted/verb, by/NULL, him/NULL, and/NULL, his/NULL, friends/noun], ['see|VB listing|NN scribbles|NN posted|VB friends|NN'], OK]
+	 Resp [23-2] [implemented_36_paging_39, implemented paging, implemented paging , 36, 39, 36, [implemented/verb, paging/noun], ['implemented|VB paging|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-24
+For each scribble visible to the user he has the ability to comment on it to express his opinion . The comment can contain only text and cannot exceed 500 characters in length . To comment , user can see a text area under the scribble , where he can enter the text . 
+@Responsibilities=6
+	 Resp [24-1] [has_9_ability_11, has ability, has the ability to comment on it to express his opinion , 9, 11, 19, [has/verb, the/NULL, ability/noun, to/NULL, comment/verb, on/NULL, it/NULL, to/NULL, express/verb, his/NULL, opinion/noun], ['has|VB ability|NN comment|VB express|VB opinion|NN'], OK]
+	 Resp [24-2] [express_17_opinion_19, express opinion, express his opinion , 17, 19, 19, [express/verb, his/NULL, opinion/noun], ['express|VB opinion|NN'], OK]
+	 Resp [24-3] [contain_24_text_26, contain text, contain only text , 24, 26, 26, [contain/verb, only/adverb, text/noun], ['contain|VB only|ADV text|NN'], OK]
+	 Resp [24-4] [exceed_30_characters_32, exceed characters, exceed 500 characters , 30, 32, 32, [exceed/verb, 500/NULL, characters/noun], ['exceed|VB characters|NN'], NEGATED]
+	 Resp [24-5] [see_41_area_44, see area, see a text area under the scribble , 41, 44, 47, [see/verb, a/NULL, text/noun, area/noun, under/NULL, the/NULL, scribble/noun], ['see|VB text|NN area|NN scribble|NN'], OK]
+	 Resp [24-6] [enter_52_text_54, enter text, enter the text , 52, 54, 54, [enter/verb, the/NULL, text/noun], ['enter|VB text|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : has ability -> express opinion
+
+	 Causal Relationship : contain text -> exceed characters
+
+@Requirement=REQ-25
+A user can delete a comment written by him or a comment on his scribbles . For deleting a scribble that he is authorized to delete , a user can see a delete link near the comment . 
+@Responsibilities=5
+	 Resp [25-1] [delete_4_comment_6, delete comment, delete a comment written by him or a comment on his scribbles , 4, 6, 15, [delete/verb, a/NULL, comment/noun, written/verb, by/NULL, him/NULL, or/NULL, a/NULL, comment/noun, on/NULL, his/NULL, scribbles/noun], ['delete|VB comment|NN written|VB comment|NN scribbles|NN'], OK]
+	 Resp [25-2] [comment_12_scribbles_15, comment scribbles, comment on his scribbles , 12, 15, 15, [comment/verb, on/NULL, his/NULL, scribbles/noun], ['comment|VB scribbles|NN'], OK]
+	 Resp [25-3] [see_31_link_34, see link, see a delete link near the comment , 31, 34, 37, [see/verb, a/NULL, delete/verb, link/noun, near/NULL, the/NULL, comment/noun], ['see|VB delete|VB link|NN comment|NN'], OK]
+	 Resp [25-4] [deleting_18_scribble_20, deleting scribble, deleting a scribble that he is authorized to delete , 18, 20, 26, [deleting/verb, a/NULL, scribble/noun, that/NULL, he/NULL, is/verb, authorized/verb, to/NULL, delete/verb], ['deleting|VB scribble|NN is|VB authorized|VB delete|VB'], OK]
+	 Resp [25-5] [authorized_22_deleting_24, authorized deleting, authorized For deleting a scribble that he is authorized to delete , 22, 24, 22, [authorized/verb, For/NULL, deleting/verb, a/NULL, scribble/noun, that/NULL, he/NULL, is/verb, authorized/verb, to/NULL, delete/verb], ['authorized|VB deleting|VB scribble|NN is|VB authorized|VB delete|VB'], OK]
+
+@Causal Relationships=3
+	 Causal Relationship : comment scribbles -> delete comment
+
+	 Causal Relationship : deleting scribble -> see link
+
+	 Causal Relationship : authorized deleting -> see link
+
+@Requirement=REQ-26
+Users can like a scribble by clicking on the “Thumb’s Up” button below the scribble . For any scribble , all users can see a count of the “Liked” scribble
+@Responsibilities=2
+	 Resp [26-1] [like_3_scribble_5, like scribble, like a scribble , 3, 5, 5, [like/verb, a/NULL, scribble/noun], ['like|VB scribble|NN'], OK]
+	 Resp [26-2] [see_27_count_29, see count, see a count of the “ Liked ” , 27, 29, 34, [see/verb, a/NULL, count/noun, of/NULL, the/NULL, “/NULL, Liked/verb, ”/NULL], ['see|VB count|NN Liked|VB'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-27
+Users can dislike a scribble by clicking on the “Thumb’s Down” button below the scribble . For any scribble , all users can see a count of the “Disliked” scribble . 
+@Responsibilities=2
+	 Resp [27-1] [dislike_3_scribble_5, dislike scribble, dislike a scribble , 3, 5, 5, [dislike/verb, a/NULL, scribble/noun], ['dislike|VB scribble|NN'], OK]
+	 Resp [27-2] [see_27_count_29, see count, see a count of the “ Disliked ” scribble , 27, 29, 35, [see/verb, a/NULL, count/noun, of/NULL, the/NULL, “/NULL, Disliked/verb, ”/NULL, scribble/noun], ['see|VB count|NN Disliked|VB scribble|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-28
+User should be able to initiate ChitChat with any user in the friend list who is online . The other user must seamlessly understand that the ChitChat has been initiated and the ChitChat message must be forwarded to the intended user . User should be able to receive ChitChat from any user in the friend list who is online and within the friend list of that user . Thus the receiving entity can send message back to the originator , thus , completing a two-way conversation . The message cannot be greater than 250 characters in length . 
+@Responsibilities=6
+	 Resp [28-1] [initiate_6_ChitChat_7, initiate ChitChat, initiate ChitChat , 6, 7, 7, [initiate/verb, ChitChat/noun], ['initiate|VB ChitChat|NN'], OK]
+	 Resp [28-2] [initiated_27_ChitChat_30, initiated ChitChat, initiated the ChitChat , 27, 30, 27, [initiated/verb, the/NULL, ChitChat/noun], ['initiated|VB ChitChat|NN'], OK]
+	 Resp [28-3] [forwarded_34_message_37, forwarded message, forwarded the ChitChat message , 34, 37, 34, [forwarded/verb, the/NULL, ChitChat/noun, message/noun], ['forwarded|VB ChitChat|NN message|NN'], OK]
+	 Resp [28-4] [receive_48_ChitChat_49, receive ChitChat, receive ChitChat , 48, 49, 49, [receive/verb, ChitChat/noun], ['receive|VB ChitChat|NN'], OK]
+	 Resp [28-5] [send_74_message_75, send message, send message , 74, 75, 75, [send/verb, message/noun], ['send|VB message|NN'], OK]
+	 Resp [28-6] [completing_83_conversation_86, completing conversation, completing a two-way conversation , 83, 86, 86, [completing/verb, a/NULL, two-way/adjective, conversation/noun], ['completing|VB two-way|ADJ conversation|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : initiated ChitChat -> forwarded message
+
+	 Causal Relationship : send message -> completing conversation
+
+@Requirement=REQ-29
+Using this functionality user can send text files to online users . This helps user to share text documents with users on this platform . The maximum file size would be limited to 25 MB . 
+@Responsibilities=5
+	 Resp [29-1] [send_6_files_8, send files, send text files , 6, 8, 8, [send/verb, text/noun, files/noun], ['send|VB text|NN files|NN'], OK]
+	 Resp [29-2] [Using_1_user_4, Using user, Using this functionality user , 1, 4, 4, [Using/verb, this/NULL, functionality/noun, user/noun], ['Using|VB functionality|NN user|NN'], OK]
+	 Resp [29-3] [helps_14_user_15, helps user, helps user , 14, 15, 15, [helps/verb, user/noun], ['helps|VB user|NN'], OK]
+	 Resp [29-4] [share_17_documents_19, share documents, share text documents , 17, 19, 19, [share/verb, text/noun, documents/noun], ['share|VB text|NN documents|NN'], OK]
+	 Resp [29-5] [limited_29_size_32, limited size, limited The maximum file size , 29, 32, 29, [limited/verb, The/NULL, maximum/noun, file/noun, size/noun], ['limited|VB maximum|NN file|NN size|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : helps user -> share documents
+
+@Requirement=REQ-30
+User should be able to store ChitChat on exit . So that if the user wants to keep history of the previous session , he can keep it to be brought back . 
+@Responsibilities=3
+	 Resp [30-1] [store_6_ChitChat_7, store ChitChat, store ChitChat , 6, 7, 7, [store/verb, ChitChat/noun], ['store|VB ChitChat|NN'], OK]
+	 Resp [30-2] [keep_27_to_28, keep to, keep to , 27, 28, 28, [keep/verb, to/NULL], ['keep|VB'], OK]
+	 Resp [30-3] [keep_18_history_19, keep history, keep history of the previous session , 18, 19, 23, [keep/verb, history/noun, of/NULL, the/NULL, previous/adjective, session/noun], ['keep|VB history|NN previous|ADJ session|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : keep history -> keep to
+
+@Requirement=REQ-31
+User should be able to retrieve ChitChat when the ChitChat when the user wants to see ChitChat history . 
+@Responsibilities=2
+	 Resp [31-1] [see_16_history_18, see history, see ChitChat history , 16, 18, 18, [see/verb, ChitChat/noun, history/noun], ['see|VB ChitChat|NN history|NN'], OK]
+	 Resp [31-2] [retrieve_6_ChitChat_7, retrieve ChitChat, retrieve ChitChat , 6, 7, 7, [retrieve/verb, ChitChat/noun], ['retrieve|VB ChitChat|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : see history -> retrieve ChitChat
+
+	 Causal Relationship : retrieve ChitChat -> see history

@@ -1,0 +1,679 @@
+access property -> displays Request
+access property -> verifies validity
+access property -> modifying conditions
+modifying conditions -> NULL
+access property -> modifying User
+access property -> modify Alarm
+access property -> modify reaction
+access property -> edit rule
+edit rule -> NULL
+receives event -> persists alarm
+access property -> verifies validity
+access property -> verifies validity
+access property -> modifying conditions
+modifying conditions -> NULL
+access property -> modifying User
+access property -> modify Alarm
+access property -> modify reaction
+access property -> modifying conditions
+modifying conditions -> NULL
+access property -> modifying User
+access property -> modify Alarm
+access property -> modify reaction
+access property -> edit rule
+edit rule -> NULL
+access property -> edit rule
+edit rule -> NULL
+selecting button -> modify name
+selecting button -> modify description
+selecting button -> modify name
+selecting button -> modify description
+selecting button -> persists information
+persists information -> NULL
+selecting button -> displays screen
+selecting button -> persists information
+persists information -> NULL
+selecting button -> displays screen
+selecting button -> verifies point
+verifies point -> NULL
+selecting button -> prompts user
+prompts user -> NULL
+selecting button -> verifies point
+verifies point -> NULL
+selecting button -> prompts user
+prompts user -> NULL
+hides children -> collapses hierarchy
+selects tab -> selecting item
+selects tab -> displays screen
+selects tab -> displays screen
+displays screen -> NULL
+displays screen -> displays description
+displays screen -> selects node
+selects node -> NULL
+displays screen -> displays description
+displays description -> NULL
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> edited button
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> combines conditions
+displays screen -> selects list
+displays screen -> completes creation
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+displays hierarchy -> selects button
+displays description -> verifies point
+verifies point -> NULL
+displays description -> prompts user
+prompts user -> NULL
+displays description -> displays screen
+displays screen -> selects node
+selects node -> NULL
+displays screen -> displays description
+displays description -> NULL
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> edited button
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> combines conditions
+displays screen -> selects list
+displays screen -> completes creation
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+selects button -> persists information
+persists information -> NULL
+selects button -> displays screen
+selects button -> persists information
+persists information -> NULL
+selects button -> displays screen
+selects button -> verifies point
+verifies point -> NULL
+selects button -> prompts user
+prompts user -> NULL
+selects button -> verifies point
+verifies point -> NULL
+selects button -> prompts user
+prompts user -> NULL
+modify name -> modifying conditions
+modify name -> modify part
+displays screen -> selects node
+selects node -> NULL
+displays screen -> displays description
+displays description -> NULL
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> edited button
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> combines conditions
+displays screen -> selects list
+displays screen -> completes creation
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+selects button -> verifies point
+verifies point -> NULL
+selects button -> prompts user
+prompts user -> NULL
+selects button -> verifies point
+verifies point -> NULL
+selects button -> prompts user
+prompts user -> NULL
+selecting item -> displays description
+displays description -> displays screen
+access property -> verifies validity
+access property -> modifying conditions
+modifying conditions -> NULL
+access property -> modifying User
+access property -> modify Alarm
+access property -> modify reaction
+access property -> edit rule
+edit rule -> NULL
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> edited button
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> combines conditions
+displays screen -> selects list
+displays screen -> completes creation
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+selects type -> enables value
+enables value -> NULL
+displays Logic -> edited button
+displays Logic -> selecting button
+selecting button -> NULL
+displays screen -> edited button
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> combines conditions
+displays screen -> selects list
+displays screen -> completes creation
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> edited button
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> combines conditions
+displays screen -> selects list
+displays screen -> completes creation
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+modifying conditions -> Verifies user
+modifying conditions -> access properties
+displays Logic -> selecting button
+selecting button -> NULL
+displays screen -> selecting button
+selecting button -> NULL
+displays screen -> combines conditions
+displays screen -> selects list
+displays screen -> completes creation
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+edited button -> completes editing
+completes editing -> NULL
+edited button -> editing rule
+editing rule -> NULL
+edited button -> completes editing
+completes editing -> NULL
+edited button -> editing rule
+editing rule -> NULL
+access properties -> modifying conditions
+modifying conditions -> NULL
+access properties -> modifying User
+access properties -> modify Alarm
+access properties -> modify reaction
+access properties -> edit rule
+edit rule -> NULL
+displays screen -> combines conditions
+displays screen -> selects list
+displays screen -> completes creation
+displays screen -> selects rule
+selects rule -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+removes rule -> selecting button
+selecting button -> NULL
+displays screen -> selects rule
+selects rule -> NULL
+Verifies user -> write access
+Verifies user -> access property
+access property -> NULL
+Verifies user -> write access
+Verifies user -> access property
+access property -> NULL
+Verifies user -> write access
+Verifies user -> access property
+access property -> NULL
+Verifies user -> write access
+Verifies user -> access property
+access property -> NULL
+access properties -> edit rule
+edit rule -> NULL
+access properties -> edit rule
+edit rule -> NULL
+access properties -> edit rule
+edit rule -> NULL
+access properties -> edit rule
+edit rule -> NULL
+Inicio -> displays properties
+displays properties -> access property
+Inicio -> confirms command
+confirms command -> Sends notification
+Sends notification -> NULL
+reflect value -> sends notification
+sends notification -> NULL
+Inicio -> updates value
+updates value -> reflect value
+determined order -> receives event
+determined order -> evaluates condition
+receives event -> determined order
+evaluates condition -> determined order
+persists alarm -> receives event
+receives event -> NULL
+persists alarm -> evaluates condition
+evaluates condition -> NULL
+displays Request -> access property
+Inicio -> displays dialog
+displays dialog -> access property
+Inicio -> seeing alarm
+seeing alarm -> selecting button
+Inicio -> update database
+update database -> selecting button
+Inicio -> acknowledges alarm
+acknowledges alarm -> seeing state
+seeing state -> NULL
+Inicio -> acknowledges alarm
+acknowledges alarm -> changes status
+changes status -> NULL
+Inicio -> seeing System
+seeing System -> selecting icon
+selecting icon -> NULL
+Inicio -> dismisses alarm
+dismisses alarm -> acknowledged alarm
+acknowledged alarm -> NULL
+has name -> selects object
+has field -> selects object
+Inicio -> read access
+read access -> selects object
+selects object -> displays name
+displays name -> NULL
+selects object -> displays field
+displays field -> NULL
+selects object -> has name
+selects object -> has field
+collapses node -> hides children
+hides children -> collapses node
+collapses hierarchy -> hides children
+hides children -> NULL
+Inicio -> enters name
+enters name -> selects tab
+Inicio -> enters name
+enters name -> tab screen
+tab screen -> NULL
+Inicio -> persists information
+persists information -> displays screen
+displays hierarchy -> verifies name
+verifies name -> NULL
+displays screen -> displays hierarchy
+displays description -> displays screen
+modify name -> selects button
+modify description -> selects button
+Inicio -> Remove Object
+Remove Object -> selects button
+Inicio -> selects hierarchy
+selects hierarchy -> verifies point
+verifies point -> NULL
+Inicio -> selects hierarchy
+selects hierarchy -> prompts user
+prompts user -> NULL
+Inicio -> confirms deletion
+confirms deletion -> removes node
+Inicio -> confirms deletion
+confirms deletion -> removes children
+removes node -> selects node
+selects node -> NULL
+removes children -> selects node
+selects node -> NULL
+Inicio -> deleted node
+deleted node -> deleted objects
+deleted objects -> NULL
+Inicio -> Add Object
+Add Object -> access property
+Inicio -> Add Object
+Add Object -> adds object
+adds object -> NULL
+Inicio -> enters value
+enters value -> selects type
+selects type -> enables value
+enables value -> NULL
+verifies validity -> configures part
+configures part -> NULL
+verifies validity -> selects object
+selects object -> NULL
+Inicio -> verifies user
+verifies user -> enters value
+enters value -> NULL
+Inicio -> write access
+write access -> enters value
+enters value -> NULL
+Inicio -> verifies correctness
+verifies correctness -> creates rule
+creates rule -> NULL
+Inicio -> verifies correctness
+verifies correctness -> persists “
+persists “ -> NULL
+displays Logic -> selecting button
+selecting button -> NULL
+Inicio -> completes creation
+completes creation -> displays Logic
+Inicio -> completes creation
+completes creation -> displays screen
+Inicio -> modify Condition
+modify Condition -> displays screen
+modifying conditions -> modify name
+modify name -> NULL
+modify part -> modify name
+modify name -> NULL
+completes edition -> displays Logic
+completes edition -> displays screen
+Inicio -> verifies correctness
+verifies correctness -> completes edition
+Inicio -> verifies rule
+verifies rule -> completes edition
+edited button -> completes edition
+modify part -> completes edition
+Inicio -> edit rule
+edit rule -> access properties
+confirms deletion -> removes rule
+confirms deletion -> displays Logic
+displays Logic -> NULL
+confirms deletion -> displays screen
+Inicio -> verifies rule
+verifies rule -> confirms deletion
+removes rule -> selecting button
+selecting button -> NULL
+Inicio -> edit rule
+edit rule -> displays dialog
+displays dialog -> NULL
+combines conditions -> creates rule
+creates rule -> NULL
+selects list -> creates rule
+creates rule -> NULL
+completes creation -> creates rule
+creates rule -> NULL
+combines conditions -> persists the
+persists the -> NULL
+selects list -> persists the
+persists the -> NULL
+completes creation -> persists the
+persists the -> NULL
+Inicio -> write access
+write access -> modifying conditions
+modifying conditions -> NULL
+Inicio -> write access
+write access -> modifying User
+Inicio -> write access
+write access -> modify Alarm
+Inicio -> write access
+write access -> modify reaction
+modifying User -> Verifies user
+modifying User -> access properties
+modify Alarm -> Verifies user
+modify Alarm -> access properties
+modify reaction -> Verifies user
+modify reaction -> access properties
+Inicio -> verifies correctness
+verifies correctness -> completes editing
+completes editing -> NULL
+Inicio -> verifies correctness
+verifies correctness -> editing rule
+editing rule -> NULL
+Inicio -> verifies rule
+verifies rule -> completes editing
+completes editing -> NULL
+Inicio -> verifies rule
+verifies rule -> editing rule
+editing rule -> NULL
+Inicio -> Delete Rule
+Delete Rule -> write access
+Inicio -> Delete Rule
+Delete Rule -> access property
+access property -> NULL
+write access -> edit rule
+edit rule -> NULL
+validates password -> browses page
+browses page -> enters username
+enters username -> NULL
+browses page -> enters password
+enters password -> NULL
+Inicio -> presents screen
+presents screen -> validates password
+Inicio -> containing fields
+containing fields -> validates password
+validates password -> browses user
+browses user -> NULL
+Inicio -> selects field
+selects field -> NULL
+Inicio -> write access
+write access -> NULL
+Inicio -> enables button
+enables button -> NULL
+Inicio -> write access
+write access -> NULL
+Inicio -> selects button
+selects button -> NULL
+Inicio -> selecting button
+selecting button -> NULL
+Inicio -> transmits command
+transmits command -> NULL
+Inicio -> confirming success
+confirming success -> NULL
+Inicio -> displays value
+displays value -> NULL
+Inicio -> prompts user
+prompts user -> NULL
+Inicio -> configured command
+configured command -> NULL
+Inicio -> executes steps
+executes steps -> NULL
+Inicio -> determined order
+determined order -> NULL
+Inicio -> executes steps
+executes steps -> NULL
+Inicio -> determined order
+determined order -> NULL
+Inicio -> assigns user
+assigns user -> NULL
+Inicio -> closes dialog
+closes dialog -> NULL
+Inicio -> removes alarm
+removes alarm -> NULL
+Inicio -> deletes alarm
+deletes alarm -> NULL
+Inicio -> selects Option
+selects Option -> NULL
+Inicio -> displays hierarchies
+displays hierarchies -> NULL
+Inicio -> owns hierarchies
+owns hierarchies -> NULL
+Inicio -> expands level
+expands level -> NULL
+Inicio -> displays children
+displays children -> NULL
+Inicio -> displays description
+displays description -> NULL
+Inicio -> displays name
+displays name -> NULL
+Inicio -> persisted hierarchies
+persisted hierarchies -> NULL
+Inicio -> selected hierarchy
+selected hierarchy -> NULL
+Inicio -> expands node
+expands node -> NULL
+Inicio -> displays name
+displays name -> NULL
+Inicio -> selected node
+selected node -> NULL
+Inicio -> displays children
+displays children -> NULL
+Inicio -> verifies rights
+verifies rights -> NULL
+Inicio -> displays screen
+displays screen -> NULL
+Inicio -> selects button
+selects button -> NULL
+Inicio -> displays screen
+displays screen -> NULL
+Inicio -> Create Node
+Create Node -> NULL
+Inicio -> Delete Node
+Delete Node -> NULL
+Inicio -> Delete Node
+Delete Node -> NULL
+Inicio -> Add Object
+Add Object -> NULL
+Inicio -> Remove Object
+Remove Object -> NULL
+Inicio -> extending cases
+extending cases -> NULL
+Inicio -> selects hierarchy
+selects hierarchy -> NULL
+Inicio -> Create Node
+Create Node -> NULL
+Inicio -> Delete Node
+Delete Node -> NULL
+Inicio -> Delete Node
+Delete Node -> NULL
+Inicio -> Add Object
+Add Object -> NULL
+Inicio -> extending cases
+extending cases -> NULL
+Inicio -> displays screen
+displays screen -> NULL
+Inicio -> displays dialog
+displays dialog -> NULL
+Inicio -> confirms deletion
+confirms deletion -> NULL
+Inicio -> selects hierarchy
+selects hierarchy -> NULL
+Inicio -> displays screen
+displays screen -> NULL
+Inicio -> deleted hierarchy
+deleted hierarchy -> NULL
+Inicio -> deleted objects
+deleted objects -> NULL
+Inicio -> deleted nodes
+deleted nodes -> NULL
+Inicio -> displays screen
+displays screen -> NULL
+Inicio -> displays User
+displays User -> NULL
+Inicio -> sets point
+sets point -> NULL
+Inicio -> enters name
+enters name -> NULL
+Inicio -> creates node
+creates node -> NULL
+Inicio -> verifies node
+verifies node -> NULL
+Inicio -> selects hierarchy
+selects hierarchy -> NULL
+Inicio -> displays description
+displays description -> NULL
+Inicio -> selects button
+selects button -> NULL
+Inicio -> displays dialog
+displays dialog -> NULL
+Inicio -> verifies hierarchy
+verifies hierarchy -> NULL
+Inicio -> removed children
+removed children -> NULL
+Inicio -> deleted nodes
+deleted nodes -> NULL
+Inicio -> selects button
+selects button -> NULL
+Inicio -> displays User
+displays User -> NULL
+Inicio -> selects object
+selects object -> NULL
+Inicio -> displays screen
+displays screen -> NULL
+Inicio -> sets point
+sets point -> NULL
+Inicio -> editing hierarchy
+editing hierarchy -> NULL
+Inicio -> selects hierarchy
+selects hierarchy -> NULL
+Inicio -> selects object
+selects object -> NULL
+Inicio -> selects button
+selects button -> NULL
+Inicio -> editing hierarchy
+editing hierarchy -> NULL
+Inicio -> removes Object
+removes Object -> NULL
+Inicio -> displays Logic
+displays Logic -> NULL
+Inicio -> displays screen
+displays screen -> NULL
+Inicio -> Create button
+Create button -> NULL
+Inicio -> Create screen
+Create screen -> NULL
+Inicio -> enters name
+enters name -> NULL
+Inicio -> configures Condition
+configures Condition -> NULL
+Inicio -> configuring conditions
+configuring conditions -> NULL
+Inicio -> selects object
+selects object -> NULL
+Inicio -> displays properties
+displays properties -> NULL
+Inicio -> selects property
+selects property -> NULL
+Inicio -> configures condition
+configures condition -> NULL
+Inicio -> displays properties
+displays properties -> NULL
+Inicio -> selects property
+selects property -> NULL
+Inicio -> displays Logic
+displays Logic -> NULL
+Inicio -> displays screen
+displays screen -> NULL
+Inicio -> selects rule
+selects rule -> NULL
+Inicio -> selects button
+selects button -> NULL
+Inicio -> Verifies user
+Verifies user -> NULL
+Inicio -> write access
+write access -> NULL
+Inicio -> edit rule
+edit rule -> NULL
+Inicio -> access properties
+access properties -> NULL
+Inicio -> access property
+access property -> NULL
+Inicio -> selects rule
+selects rule -> NULL
+Inicio -> Delete button
+Delete button -> NULL
+Inicio -> write access
+write access -> NULL
+Inicio -> access property
+access property -> NULL
+Inicio -> enters name
+enters name -> NULL
+Inicio -> Create screen
+Create screen -> NULL
+Inicio -> enters name
+enters name -> NULL
+Inicio -> configures condition
+configures condition -> NULL
+Inicio -> configures Condition
+configures Condition -> NULL
+Inicio -> configuring conditions
+configuring conditions -> NULL
+Inicio -> selects object
+selects object -> NULL
+Inicio -> displays properties
+displays properties -> NULL
+Inicio -> selects property
+selects property -> NULL
+Inicio -> Create button
+Create button -> NULL
+Inicio -> enters value
+enters value -> NULL
+Inicio -> selecting button
+selecting button -> NULL
+Inicio -> verifies correctness
+verifies correctness -> NULL
+Inicio -> modify name
+modify name -> NULL
+Inicio -> modify Condition
+modify Condition -> NULL
+Inicio -> displays dialog
+displays dialog -> NULL
+Inicio -> confirms deletion
+confirms deletion -> NULL
+Inicio -> verifies rule
+verifies rule -> NULL

@@ -1,0 +1,206 @@
+have option -> view friends
+view friends -> NULL
+accept request -> added requestor
+added requestor -> NULL
+accept request -> added requestor
+added requestor -> NULL
+implemented paging -> show suggestions
+show suggestions -> NULL
+Inicio -> validated information
+validated information -> registered User
+registered User -> NULL
+Inicio -> locked account
+locked account -> sent e-mail
+sent e-mail -> NULL
+Inicio -> clicks password
+clicks password -> reset link
+reset link -> NULL
+Inicio -> logged User
+logged User -> add education
+add education -> NULL
+Inicio -> logged User
+logged User -> add information
+add information -> NULL
+Inicio -> changed email
+changed email -> email module
+email module -> NULL
+Inicio -> search friend
+search friend -> send request
+send request -> NULL
+Inicio -> gets request
+gets request -> receiving request
+Inicio -> gets request
+gets request -> have option
+receiving request -> accept request
+have option -> accept request
+Inicio -> ignore request
+ignore request -> see status
+see status -> removed request
+removed request -> NULL
+Inicio -> implemented paging
+implemented paging -> show friends
+show friends -> NULL
+Inicio -> implemented paging
+implemented paging -> has friends
+has friends -> NULL
+display people -> put name
+put name -> display people
+Inicio -> displayed results
+displayed results -> implemented paging
+implemented paging -> show results
+show results -> NULL
+Inicio -> given User
+given User -> adding friends
+adding friends -> NULL
+Inicio -> invite friends
+invite friends -> join network
+join network -> NULL
+Inicio -> given User
+given User -> enter address
+enter address -> NULL
+Inicio -> has ability
+has ability -> express opinion
+express opinion -> NULL
+Inicio -> comment scribbles
+comment scribbles -> delete comment
+delete comment -> NULL
+Inicio -> deleting scribble
+deleting scribble -> see link
+see link -> NULL
+Inicio -> authorized deleting
+authorized deleting -> see link
+see link -> NULL
+Inicio -> initiated ChitChat
+initiated ChitChat -> forwarded message
+forwarded message -> NULL
+Inicio -> send message
+send message -> completing conversation
+completing conversation -> NULL
+Inicio -> helps user
+helps user -> share documents
+share documents -> NULL
+Inicio -> keep history
+keep history -> keep to
+keep to -> NULL
+see history -> retrieve ChitChat
+retrieve ChitChat -> see history
+Inicio -> create account
+create account -> NULL
+Inicio -> enter details
+enter details -> NULL
+Inicio -> exceed characters
+exceed characters -> NULL
+Inicio -> sent link
+sent link -> NULL
+Inicio -> re-send link
+re-send link -> NULL
+Inicio -> registered User
+registered User -> NULL
+Inicio -> match hash
+match hash -> NULL
+Inicio -> unlock account
+unlock account -> NULL
+Inicio -> click link
+click link -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> add details
+add details -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> add details
+add details -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> add details
+add details -> NULL
+Inicio -> logged User
+logged User -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> edit details
+edit details -> NULL
+Inicio -> logged User
+logged User -> NULL
+Inicio -> Input field
+Input field -> NULL
+Inicio -> validated Input
+validated Input -> NULL
+Inicio -> upload picture
+upload picture -> NULL
+Inicio -> see profile
+see profile -> NULL
+Inicio -> profile Aloha
+profile Aloha -> NULL
+Inicio -> delete account
+delete account -> NULL
+Inicio -> removed User
+removed User -> NULL
+Inicio -> cleared information
+cleared information -> NULL
+Inicio -> add requests
+add requests -> NULL
+Inicio -> send request
+send request -> NULL
+Inicio -> registered friends
+registered friends -> NULL
+Inicio -> having number
+having number -> NULL
+Inicio -> based suggestions
+based suggestions -> NULL
+Inicio -> invite friend
+invite friend -> NULL
+Inicio -> see friends
+see friends -> NULL
+Inicio -> friends Aloha
+friends Aloha -> NULL
+Inicio -> share scribbles
+share scribbles -> NULL
+Inicio -> enter scribble
+enter scribble -> NULL
+Inicio -> erase scribble
+erase scribble -> NULL
+Inicio -> posted scribble
+posted scribble -> NULL
+Inicio -> remove comments
+remove comments -> NULL
+Inicio -> see listing
+see listing -> NULL
+Inicio -> implemented paging
+implemented paging -> NULL
+Inicio -> contain text
+contain text -> NULL
+Inicio -> exceed characters
+exceed characters -> NULL
+Inicio -> see area
+see area -> NULL
+Inicio -> enter text
+enter text -> NULL
+Inicio -> like scribble
+like scribble -> NULL
+Inicio -> see count
+see count -> NULL
+Inicio -> dislike scribble
+dislike scribble -> NULL
+Inicio -> see count
+see count -> NULL
+Inicio -> initiate ChitChat
+initiate ChitChat -> NULL
+Inicio -> receive ChitChat
+receive ChitChat -> NULL
+Inicio -> send files
+send files -> NULL
+Inicio -> Using user
+Using user -> NULL
+Inicio -> limited size
+limited size -> NULL
+Inicio -> store ChitChat
+store ChitChat -> NULL

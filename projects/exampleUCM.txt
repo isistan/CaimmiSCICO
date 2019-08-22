@@ -1,9 +1,0 @@
-# Comentarios
-
-@ProjectName
-Example UCM
-
-@Requirement
-If a student accesses the system then the student can add a new course or drop an added course.
-After the student adds a course, the system sends the transaction information to the billing system.
-The system shall list the classes that a student can attend.

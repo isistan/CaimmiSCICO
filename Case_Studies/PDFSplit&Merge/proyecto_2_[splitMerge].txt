@@ -1,0 +1,72 @@
+# Proyecto Split merge
+# Nombre: 2010 - split merge
+#
+
+@ProjectName
+2010 - split merge
+
+# Componentes {}
+
+@Requirement
+
+# Split
+The user can divide a pdf document into parts, following some options for how to split the document. Then he can save the output pdf files in a directory he wants.
+The user has to select the Split option from the plugins tree (or press the “S” key) to display the split panel.
+Selection panel: The user selects the document he wants to split from a directory. When the file is imported, some information about the file is displayed (such as pages number, pdf version…). If the document is protected the user have to enter the password to the appropriate field and then reload the pdf.
+Split options: The user can choose between 7 types of splitting: Burst: the input file will be split in single pages; Split every “n” pages: the input file will be split every “n” pages; Split even pages: the input file will be split at every even page; Split odd pages: the input file will be split at every odd page; Split after these pages: the input file will be split at the given pages numbers; Split at this size: the input file will be split in files of the given size (roughly); Split by bookmark level: the input file will be split at every page linked by the bookmarks of the selected level (this can be very useful if you want to split an e-book in chapters).
+Destination folder: The user selects the destination folder for the output files (specific or same as source). Also, he can select whether he wants the output files to be compressed or not, and the pdf version of the generated documents.
+Output options: Here the user can define a pattern that will generate filenames for the output files. If left blank, the output filenames will take the default pattern [CURRENTPAGE] _ [BASENAME].
+RUN button : After the user sets all these parameters, he presses the RUN button and the splitting starts.
+
+# Merge/Extract
+Users can merge many pdf documents or subsections of them together. In the same way, they can extract some sections of a pdf document into a single document.
+The user has to select the Merge/Extract option from the plugins tree (or press the“M” key) to display the merge/extract panel.
+The GUI Merge/Extract panel enables the user to select more than one file to handle. Once the user selects the file/files, they are automatically inserted into the selection table with some specific details. Now, the user can change the order and/or select the pages of the file/files that he wants to be included in the final document.
+In the Page Selection column of the table, user can write: “All”: to merge the whole document; “page - to page”: to merge pages between “page” and “to page” (e.g. 8-15 if he want to merge pages between 8 and 15); “page -”: to merge pages starting from “page” till the end of the document; A single page number, if he wants only that page of the document; Commas (without any blanks) to separate the different values (e.g. “2,12-16,17-” if he wants to merge page 2, pages between 12 and 16, and all the other pages from page17 to the end).
+In the Password column user has to set the password if the document is protected and then reload the file. The user can change the order of the files by using “Move Up” and “Move Down” buttons, or make the list be ordered by the value of a specific column by clicking the header of that column.
+The user has the ability to export the list of the selected files as an xml file that can be used as an input file for the console “concat” command, -l option.
+If the pdf documents contain forms, the user must add that to the merge options.
+Finally, the user selects the output file path or let the PDFsam create one by default to the same folder as one of the imported files. Also, he can select whether he wants the output file to be compressed or not, and the pdf version of the generated document. The user presses the RUN button to start the merging of the files.
+
+# Alternate Mix
+Users may want to combine documents together by taking pages alternatively from two existing pdf documents (e.g. for documents coming from one-sided scanners). The resulting document will be composed by pages taken alternatively from the two input documents.
+Selection panel: The user selects the two documents that he wants to mix from a directory. When the files are imported, some information about the file is displayed to the selection table (such as pages number, pdf version…). If the documents are protected the user has to enter the password to the appropriate field and then reload the pdf. The user can change the order of the two files by using “Move Up” and “Move Down” buttons, or make the list be ordered by the value of a specific column by clicking the header of that column.
+Mix options: The user can modify the following parameters: Reverse first document: if he wants to take pages from the first document in reverse order (starting from the last page); Reverse second document: if he wants to take pages from the second document in reverse order (starting from the last page); Number of pages to switch document: the user with this option can define the step size of the mix. The default behavior is to take one page from the first document and one from the second one. However this step can be configured by this option telling PDFsam how many pages it should take from one document before switching to the other.
+Destination output file: The user selects the destination folder for the output files or let the PDFsam create one by default to the same folder as one of the imported files. Also, he can select whether he wants the output files to be compressed or not, and the pdf version of the generated documents.
+RUN button : After the user sets the parameters, he presses the RUN button and the mixing of the 2 documents starts.
+
+# Rotate
+The users have the ability to bulk rotate pages in different documents. With this plugin they cannot select specific pages that they want to rotate but all the document/documents will be rotated.
+Selection panel: The users select the documents that want to rotate their pages from a directory. When the files are imported, some information about the file is displayed to the selection table (such as pages number, pdf version…). If the documents are protected the users has to enter the password to the appropriate field and then reload the pdf. The users cannot select the pages that they want to rotate, so the whole document/documents will be rotated.
+Rotation options: The user can modify the following parameters: Clockwise rotation (in degrees): the users select the rotation degrees. The rotation will be applied clockwise; Pages: the users select the pages they want to rotate (All, Even or Odd).
+Destination output file: The user selects the destination folder for the output files or let the PDFsam create one by default to the same folder as one of the imported files. Also, he can select whether he wants the output files to be compressed or not, and the pdf version of the generated documents.
+Output options: Here the user can define a pattern that will generate filenames for the output files.
+RUN button : After the user sets the parameters, he presses the RUN button and the rotation of the 2 documents starts.
+
+# Visually reorder
+Users want an easy way to manipulate specific pages of a pdf document through a user friendly graphical interface with simple functions. With this plugin they can rotate, reorder or delete selected pages of a pdf file.
+Selection panel: The users select the document that they want to manipulate from a directory. The program creates thumbnails for each page of the pdf document and presents them into a subpanel. When the thumbnails load, the users have the following abilities. Select specific pages by clicking on them through the graphical interface. Change the order: The user can change pages order by, Dragging them, Using the “Move Up” and “Move Down” functions. Reversing the selected pages: The user can select some pages and reverse their order using the “Reverse” button. Zoom-in/Zoom-out: the user can change the zoom level of the thumbnails preview. Delete/Undelete: these pages won’t be included in the output file. Rotate left/right: the user can rotate the selected pages clockwise or anticlockwise. Reverse selected pages: The user can select some pages and reverse their order. Preview a selected page in a built-in Image viewer. All these conversions can be accessed either by right clicking on the selected pages or by the graphical interface’s buttons. The changes will be applied to the output file.
+Destination output file: The user selects the destination folder for the output file or lets PDFsam create one by default to the same folder of the imported file.
+Also, he can select whether he wants the output file to be compressed or not, and the pdf version of the generated documents.
+RUN button : After the user makes the changes he wants, he can press the RUN button to start the operation.
+
+# Visually compose
+Users can combine multiple pdf documents in a single pdf document through a user friendly graphical interface with simple utilities. They can open one or more pdf documents and compose a single document that consists of parts of the original documents. They can also make all the basic functions (reorder, rotate, reverse...) to the final document.
+Selection panel: The Selection panel is divided into two parts: The panel where the user can open the input pdf documents. The user can open several files together. They can Zoom in/out to change the scale size of the thumbnails and preview any page they want in the Image Viewer; And the panel where the user composes the final document. It offers all the basic utilities: “Move Up” and “Move Down” functions, Delete any page, Rotate clockwise and anticlockwise, Reversing the selected pages, Preview any selected page in the Image Viewer.
+All these conversions can be accessed either by right clicking on the selected pages or by the graphical interface’s buttons. The changes will be applied to the output file.
+Destination output file: The user selects the destination folder for the output file or sets the same output folder of an imported file. Also, he can select whether he wants the output file to be compressed or not, and the pdf version of the generated documents.
+RUN button : After the user makes the changes he wants, he can press the RUN button to start the operation.
+
+# Working environment
+Users have the ability to save the working environment with all the status of every part of the application, so they don’t have to set the options of each plugin every time they open the application. This feature is very useful for repetitive tasks, where users save a lot of time with this possibility.
+The user can access this feature by: Pressing “Alt + S” for save, and “Alt + L” for loading the environment. Pressing the File button at the very top of the window, and then choose Save or Load the environment. Pressing the appropriate icons under the bar menu.
+
+# Log Panel
+Users can understand how PDFsam responds to their actions by viewing the log messages in the log panel.
+Users can discern the proper function of the application by the messages that are displayed in the log panel. There are 3 kinds of message separating by color: Black message (DEBUG or INFO) is just an information about what the application is doing; Blue message (WARNING) is a Warning telling that there’s an unexpected situation that the application can handle; Red message (ERROR or FATAL) is an error that PDFsam can’t handle.
+There is also the possibility to select and copy the log text, clear it, or save the log text to a file.
+
+# Settings
+Users are allowed to make modifications on PDFsam’s working environment, in order to adapt to their preferences and cover their needs more sufficiently. In general, available settings refer on: application language, theme of the application GUI Interface, alert sounds and dialog boxes, the log detail level, the thumbnails creation library, auto update, default working environment and the default working directory.
+The user has to select Settings below the plugins tree and the Settings main panel appears with all the available choices that the user can do. Specifically, in this section a user can modify the following options. Language: The user can select the preferred application language. Look and feel: The user sets his preferred PDFsam’s look and feel and his preferred theme to be used. Log level: The user can set the detail of the log messages that he want to see in the log panel. The thumbnails creation library. Check for updates automatically. Turn on or off alert sounds. Ask for overwrite confirmation: Show a dialogue box asking the user for confirmation when “Overwrite” is selected. Default environment: The user selects a previously saved environment file that will be automatically loaded at start up. Default working directory: The directory where the documents will be saved and loaded by default.
+The user has to click the Save button and restart the application to have his changes applied.

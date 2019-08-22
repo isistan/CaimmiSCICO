@@ -1,0 +1,7 @@
+@Use Case Map
+	 JUCM File : .\UCMs\UCM_2010_-_split_merge_1563201122157.jucm 
+	 Open this JUCM File using the JUCMNav Plugin
+
+	 Conceptual Component : Component 4
+		 Responsibility: [40-3] [handle Red message ( ERROR or FATAL ) is an error that PDFsam ca n’t handle ]
+

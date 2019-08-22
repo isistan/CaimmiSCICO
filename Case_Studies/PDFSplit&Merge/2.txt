@@ -1,0 +1,625 @@
+@Requirement=REQ-1
+The user can divide a pdf document into parts , following some options for how to split the document . Then he can save the output pdf files in a directory he wants . 
+@Responsibilities=3
+	 Resp [1-1] [divide_4_document_7, divide document, divide a pdf document , 4, 7, 7, [divide/verb, a/NULL, pdf/noun, document/noun], ['divide|VB pdf|NN document|NN'], OK]
+	 Resp [1-2] [split_17_document_19, split document, split the document , 17, 19, 19, [split/verb, the/NULL, document/noun], ['split|VB document|NN'], OK]
+	 Resp [1-3] [save_24_files_28, save files, save the output pdf files , 24, 28, 28, [save/verb, the/NULL, output/noun, pdf/noun, files/noun], ['save|VB output|NN pdf|NN files|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : divide document -> split document
+
+	 Causal Relationship : split document -> save files
+
+@Requirement=REQ-2
+The user has to select the Split option from the plugins tree (or press the “S” key) to display the split panel . 
+@Responsibilities=3
+	 Resp [2-1] [select_5_option_8, select option, select the Split option from the plugins tree ( or press the “ S ” key ) to display the split panel , 5, 8, 26, [select/verb, the/NULL, Split/noun, option/noun, from/NULL, the/NULL, plugins/noun, tree/noun, (/NULL, or/NULL, press/verb, the/NULL, “/NULL, S/noun, ”/NULL, key/noun, )/NULL, to/NULL, display/verb, the/NULL, split/noun, panel/noun], ['select|VB Split|NN option|NN plugins|NN tree|NN press|VB S|NN key|NN display|VB split|NN panel|NN'], OK]
+	 Resp [2-2] [press_15_key_20, press key, press the “ S ” key ) to display the split panel , 15, 20, 26, [press/verb, the/NULL, “/NULL, S/noun, ”/NULL, key/noun, )/NULL, to/NULL, display/verb, the/NULL, split/noun, panel/noun], ['press|VB S|NN key|NN display|VB split|NN panel|NN'], OK]
+	 Resp [2-3] [display_23_panel_26, display panel, display the split panel , 23, 26, 26, [display/verb, the/NULL, split/noun, panel/noun], ['display|VB split|NN panel|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : select option -> display panel
+
+	 Causal Relationship : press key -> display panel
+
+@Requirement=REQ-3
+Selection panel: The user selects the document he wants to split from a directory . When the file is imported , some information about the file is displayed (such as pages number , pdf version…) . If the document is protected the user have to enter the password to the appropriate field and then reload the pdf . 
+@Responsibilities=6
+	 Resp [3-1] [selects_6_document_8, selects document, selects the document he wants to split from a directory , 6, 8, 15, [selects/verb, the/NULL, document/noun, he/NULL, wants/verb, to/NULL, split/verb, from/NULL, a/NULL, directory/noun], ['selects|VB document|NN wants|VB split|VB directory|NN'], OK]
+	 Resp [3-2] [displayed_24_information_29, displayed information, displayed some information about the file , 24, 29, 27, [displayed/verb, some/NULL, information/noun, about/NULL, the/NULL, file/noun], ['displayed|VB information|NN file|NN'], OK]
+	 Resp [3-3] [imported_19_file_21, imported file, imported the file , 19, 21, 19, [imported/verb, the/NULL, file/noun], ['imported|VB file|NN'], OK]
+	 Resp [3-4] [enter_50_password_52, enter password, enter the password , 50, 52, 52, [enter/verb, the/NULL, password/noun], ['enter|VB password|NN'], OK]
+	 Resp [3-5] [reload_59_pdf_61, reload pdf, reload the pdf , 59, 61, 61, [reload/verb, the/NULL, pdf/noun], ['reload|VB pdf|NN'], OK]
+	 Resp [3-6] [protected_43_document_45, protected document, protected the document , 43, 45, 43, [protected/verb, the/NULL, document/noun], ['protected|VB document|NN'], OK]
+
+@Causal Relationships=3
+	 Causal Relationship : imported file -> displayed information
+
+	 Causal Relationship : enter password -> reload pdf
+
+	 Causal Relationship : protected document -> enter password
+
+@Requirement=REQ-4
+Split options: The user can choose between 7 types of splitting: Burst: the input file will be split in single pages; Split every “n” pages: the input file will be split every “n” pages; Split even pages: the input file will be split at every even page; Split odd pages: the input file will be split at every odd page; Split after these pages: the input file will be split at the given pages numbers; Split at this size: the input file will be split in files of the given size (roughly); Split by bookmark level: the input file will be split at every page linked by the bookmarks of the selected level (this can be very useful if you want to split an e-book in chapters) . 
+@Responsibilities=9
+	 Resp [4-1] [split_145_e-book_147, split e-book, split an e-book in chapters , 145, 147, 149, [split/verb, an/NULL, e-book/noun, in/NULL, chapters/noun], ['split|VB e-book|NN chapters|NN'], OK]
+	 Resp [4-2] [choose_7_types_10, choose types, choose between 7 types of splitting , 7, 10, 12, [choose/verb, between/NULL, 7/NULL, types/noun, of/NULL, splitting/noun], ['choose|VB types|NN splitting|NN'], OK]
+	 Resp [4-3] [split_18_file_21, split file, split the input file , 18, 21, 18, [split/verb, the/NULL, input/noun, file/noun], ['split|VB input|NN file|NN'], OK]
+	 Resp [4-4] [split_35_file_38, split file, split the input file , 35, 38, 35, [split/verb, the/NULL, input/noun, file/noun], ['split|VB input|NN file|NN'], OK]
+	 Resp [4-5] [split_51_file_54, split file, split the input file , 51, 54, 51, [split/verb, the/NULL, input/noun, file/noun], ['split|VB input|NN file|NN'], OK]
+	 Resp [4-6] [split_66_file_69, split file, split the input file , 66, 69, 66, [split/verb, the/NULL, input/noun, file/noun], ['split|VB input|NN file|NN'], OK]
+	 Resp [4-7] [split_82_file_85, split file, split the input file , 82, 85, 82, [split/verb, the/NULL, input/noun, file/noun], ['split|VB input|NN file|NN'], OK]
+	 Resp [4-8] [split_99_file_102, split file, split the input file , 99, 102, 99, [split/verb, the/NULL, input/noun, file/noun], ['split|VB input|NN file|NN'], OK]
+	 Resp [4-9] [split_120_file_123, split file, split the input file , 120, 123, 120, [split/verb, the/NULL, input/noun, file/noun], ['split|VB input|NN file|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : choose types -> split e-book
+
+@Requirement=REQ-5
+Destination folder: The user selects the destination folder for the output files (specific or same as source) . Also , he can select whether he wants the output files to be compressed or not , and the pdf version of the generated documents . 
+@Responsibilities=2
+	 Resp [5-1] [selects_6_folder_9, selects folder, selects the destination folder for the output files ( specific or same as source ) , 6, 9, 20, [selects/verb, the/NULL, destination/noun, folder/noun, for/NULL, the/NULL, output/noun, files/noun, (/NULL, specific/adjective, or/NULL, same/adjective, as/NULL, source/noun, )/NULL], ['selects|VB destination|NN folder|NN output|NN files|NN specific|ADJ same|ADJ source|NN'], OK]
+	 Resp [5-2] [wants_29_files_32, wants files, wants the output files , 29, 32, 32, [wants/verb, the/NULL, output/noun, files/noun], ['wants|VB output|NN files|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-6
+Output options: Here the user can define a pattern that will generate filenames for the output files . If left blank , the output filenames will take the default pattern [CURRENTPAGE] _ [BASENAME] . 
+@Responsibilities=3
+	 Resp [6-1] [define_8_pattern_10, define pattern, define a pattern that will generate filenames for the output files , 8, 10, 18, [define/verb, a/NULL, pattern/noun, that/NULL, will/NULL, generate/verb, filenames/noun, for/NULL, the/NULL, output/noun, files/noun], ['define|VB pattern|NN generate|VB filenames|NN output|NN files|NN'], OK]
+	 Resp [6-2] [generate_13_filenames_14, generate filenames, generate filenames for the output files , 13, 14, 18, [generate/verb, filenames/noun, for/NULL, the/NULL, output/noun, files/noun], ['generate|VB filenames|NN output|NN files|NN'], OK]
+	 Resp [6-3] [take_28_pattern_31, take pattern, take the default pattern [ CURRENTPAGE ] _ [ BASENAME ] , 28, 31, 38, [take/verb, the/NULL, default/noun, pattern/noun, [/NULL, CURRENTPAGE/noun, ]/NULL, _/NULL, [/NULL, BASENAME/noun, ]/NULL], ['take|VB default|NN pattern|NN CURRENTPAGE|NN BASENAME|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-7
+RUN button : After the user sets all these parameters , he presses the RUN button and the splitting starts . 
+@Responsibilities=1
+	 Resp [7-1] [sets_7_parameters_10, sets parameters, sets all these parameters , 7, 10, 10, [sets/verb, all/NULL, these/NULL, parameters/noun], ['sets|VB parameters|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-8
+Users can merge many pdf documents or subsections of them together . In the same way , they can extract some sections of a pdf document into a single document . 
+@Responsibilities=3
+	 Resp [8-1] [merge_3_documents_6, merge documents, merge many pdf documents or subsections of them , 3, 6, 10, [merge/verb, many/adjective, pdf/noun, documents/noun, or/NULL, subsections/noun, of/NULL, them/NULL], ['merge|VB many|ADJ pdf|NN documents|NN subsections|NN'], OK]
+	 Resp [8-2] [merge_3_subsections_8, merge subsections, merge subsections , 3, 8, 8, [merge/verb, subsections/noun], ['merge|VB subsections|NN'], OK]
+	 Resp [8-3] [extract_20_sections_22, extract sections, extract some sections of a pdf document , 20, 22, 26, [extract/verb, some/NULL, sections/noun, of/NULL, a/NULL, pdf/noun, document/noun], ['extract|VB sections|NN pdf|NN document|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-9
+The user has to select the Merge/Extract option from the plugins tree (or press the“M” key) to display the merge/extract panel . 
+@Responsibilities=3
+	 Resp [9-1] [select_5_option_8, select option, select the Merge/Extract option from the plugins tree ( or press the “ M ” key ) to display the merge/extract panel , 5, 8, 26, [select/verb, the/NULL, Merge/Extract/noun, option/noun, from/NULL, the/NULL, plugins/noun, tree/noun, (/NULL, or/NULL, press/verb, the/NULL, “/NULL, M/noun, ”/NULL, key/noun, )/NULL, to/NULL, display/verb, the/NULL, merge/extract/adjective, panel/noun], ['select|VB Merge/Extract|NN option|NN plugins|NN tree|NN press|VB M|NN key|NN display|VB merge/extract|ADJ panel|NN'], OK]
+	 Resp [9-2] [press_15_key_20, press key, press the “ M ” key ) to display the merge/extract panel , 15, 20, 26, [press/verb, the/NULL, “/NULL, M/noun, ”/NULL, key/noun, )/NULL, to/NULL, display/verb, the/NULL, merge/extract/adjective, panel/noun], ['press|VB M|NN key|NN display|VB merge/extract|ADJ panel|NN'], OK]
+	 Resp [9-3] [display_23_panel_26, display panel, display the merge/extract panel , 23, 26, 26, [display/verb, the/NULL, merge/extract/adjective, panel/noun], ['display|VB merge/extract|ADJ panel|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : select option -> display panel
+
+	 Causal Relationship : press key -> display panel
+
+@Requirement=REQ-10
+The GUI Merge/Extract panel enables the user to select more than one file to handle . Once the user selects the file/files , they are automatically inserted into the selection table with some specific details . Now , the user can change the order and/or select the pages of the file/files that he wants to be included in the final document . 
+@Responsibilities=7
+	 Resp [10-1] [enables_5_user_7, enables user, enables the user , 5, 7, 7, [enables/verb, the/NULL, user/noun], ['enables|VB user|NN'], OK]
+	 Resp [10-2] [select_9_file_13, select file, select more than one file to handle , 9, 13, 15, [select/verb, more/adjective, than/NULL, one/NULL, file/noun, to/NULL, handle/verb], ['select|VB more|ADJ file|NN handle|VB'], OK]
+	 Resp [10-3] [selects_20_file/files_22, selects file/files, selects the file/files , 20, 22, 22, [selects/verb, the/NULL, file/files/noun], ['selects|VB file/files|NN'], OK]
+	 Resp [10-4] [inserted_24_file/files_27, inserted file/files, inserted the file/files , 24, 27, 24, [inserted/verb, the/NULL, file/files/noun], ['inserted|VB file/files|NN'], OK]
+	 Resp [10-5] [change_42_order_44, change order, change the order , 42, 44, 44, [change/verb, the/NULL, order/noun], ['change|VB order|NN'], OK]
+	 Resp [10-6] [select_46_pages_48, select pages, select the pages of the file/files that he wants to be included in the final document , 46, 48, 61, [select/verb, the/NULL, pages/noun, of/NULL, the/NULL, file/files/noun, that/NULL, he/NULL, wants/verb, to/NULL, be/verb, included/verb, in/NULL, the/NULL, final/adjective, document/noun], ['select|VB pages|NN file/files|NN wants|VB be|VB included|VB final|ADJ document|NN'], OK]
+	 Resp [10-7] [wants_54_pages_48, wants pages, wants the pages of the file/files that he wants to be included in the final document , 54, 48, 61, [wants/verb, the/NULL, pages/noun, of/NULL, the/NULL, file/files/noun, that/NULL, he/NULL, wants/verb, to/NULL, be/verb, included/verb, in/NULL, the/NULL, final/adjective, document/noun], ['wants|VB pages|NN file/files|NN wants|VB be|VB included|VB final|ADJ document|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : enables user -> select file
+
+	 Causal Relationship : selects file/files -> inserted file/files
+
+@Requirement=REQ-11
+In the Page Selection column of the table , user can write: “All”: to merge the whole document; “page - to page”: to merge pages between “page” and “to page” (e . g . 8-15 if he want to merge pages between 8 and 15); “page -”: to merge pages starting from “page” till the end of the document; A single page number , if he wants only that page of the document; Commas (without any blanks) to separate the different values (e . g . “2 , 12-16 , 17-” if he wants to merge page 2 , pages between 12 and 16 , and all the other pages from page17 to the end) . 
+@Responsibilities=13
+	 Resp [11-1] [merge_19_document_22, merge document, merge the whole document , 19, 22, 22, [merge/verb, the/NULL, whole/adjective, document/noun], ['merge|VB whole|ADJ document|NN'], OK]
+	 Resp [11-2] [merge_19_page_25, merge page, merge page - to page , 19, 25, 28, [merge/verb, page/noun, -/NULL, to/NULL, page/noun], ['merge|VB page|NN page|NN'], OK]
+	 Resp [11-3] [merge_32_pages_33, merge pages, merge pages pages between “ page ” and “ to page ” ( e . , 32, 33, 45, [merge/verb, pages/noun, pages/noun, between/NULL, “/NULL, page/noun, ”/NULL, and/NULL, “/NULL, to/NULL, page/noun, ”/NULL, (/NULL, e/NULL, ./NULL], ['merge|VB pages|NN pages|NN page|NN page|NN'], OK]
+	 Resp [11-4] [page_25_page_28, page page, page to page , 25, 28, 28, [page/verb, to/NULL, page/noun], ['page|VB page|NN'], OK]
+	 Resp [11-5] [pages_33_page_36, pages page, pages between “ page ” “ ” ( e . , 33, 36, 45, [pages/verb, between/NULL, “/NULL, page/noun, ”/NULL, “/NULL, ”/NULL, (/NULL, e/NULL, ./NULL], ['pages|VB page|NN'], OK]
+	 Resp [11-6] [pages_33_page_41, pages page, pages to page , 33, 41, 41, [pages/verb, to/NULL, page/noun], ['pages|VB page|NN'], OK]
+	 Resp [11-7] [merge_53_pages_54, merge pages, merge pages between 8 and 15 , 53, 54, 58, [merge/verb, pages/noun, between/NULL, 8/NULL, and/NULL, 15/NULL], ['merge|VB pages|NN'], OK]
+	 Resp [11-8] [merge_67_pages_68, merge pages, merge pages starting from “ page ” till the end of the document , 67, 68, 79, [merge/verb, pages/noun, starting/verb, from/NULL, “/NULL, page/noun, ”/NULL, till/NULL, the/NULL, end/noun, of/NULL, the/NULL, document/noun], ['merge|VB pages|NN starting|VB page|NN end|NN document|NN'], OK]
+	 Resp [11-9] [separate_103_values_106, separate values, separate the different values , 103, 106, 106, [separate/verb, the/NULL, different/adjective, values/noun], ['separate|VB different|ADJ values|NN'], OK]
+	 Resp [11-10] [merge_124_page_125, merge page, merge page 2 , 124, 125, 126, [merge/verb, page/noun, 2/NULL], ['merge|VB page|NN'], OK]
+	 Resp [11-11] [merge_124_pages_128, merge pages, merge pages between 12 and 16 , 124, 128, 132, [merge/verb, pages/noun, between/NULL, 12/NULL, and/NULL, 16/NULL], ['merge|VB pages|NN'], OK]
+	 Resp [11-12] [merge_124_pages_138, merge pages, merge all the other pages from page17 to the end , 124, 138, 143, [merge/verb, all/NULL, the/NULL, other/adjective, pages/noun, from/NULL, page17/noun, to/NULL, the/NULL, end/noun], ['merge|VB other|ADJ pages|NN page17|NN end|NN'], OK]
+	 Resp [11-13] [pages_138_end_143, pages end, pages to the end , 138, 143, 143, [pages/verb, to/NULL, the/NULL, end/noun], ['pages|VB end|NN'], OK]
+
+@Causal Relationships=11
+	 Causal Relationship : merge document -> merge pages
+
+	 Causal Relationship : merge page -> merge pages
+
+	 Causal Relationship : merge document -> pages page
+
+	 Causal Relationship : merge page -> pages page
+
+	 Causal Relationship : merge document -> pages page
+
+	 Causal Relationship : merge page -> pages page
+
+	 Causal Relationship : page page -> merge pages
+
+	 Causal Relationship : page page -> pages page
+
+	 Causal Relationship : page page -> pages page
+
+	 Causal Relationship : merge page -> pages end
+
+	 Causal Relationship : merge pages -> pages end
+
+@Requirement=REQ-12
+In the Password column user has to set the password if the document is protected and then reload the file . The user can change the order of the files by using “Move Up” and “Move Down” buttons , or make the list be ordered by the value of a specific column by clicking the header of that column . 
+@Responsibilities=7
+	 Resp [12-1] [set_8_password_10, set password, set the password , 8, 10, 10, [set/verb, the/NULL, password/noun], ['set|VB password|NN'], OK]
+	 Resp [12-2] [reload_18_file_20, reload file, reload the file , 18, 20, 20, [reload/verb, the/NULL, file/noun], ['reload|VB file|NN'], OK]
+	 Resp [12-3] [protected_13_document_15, protected document, protected the document , 13, 15, 13, [protected/verb, the/NULL, document/noun], ['protected|VB document|NN'], OK]
+	 Resp [12-4] [change_25_order_27, change order, change the order of the files , 25, 27, 30, [change/verb, the/NULL, order/noun, of/NULL, the/NULL, files/noun], ['change|VB order|NN files|NN'], OK]
+	 Resp [12-5] [Move_39_buttons_42, Move buttons, Move Down ” buttons , 39, 42, 42, [Move/verb, Down/noun, ”/NULL, buttons/noun], ['Move|VB Down|NN buttons|NN'], OK]
+	 Resp [12-6] [clicking_58_header_60, clicking header, clicking the header of that column , 58, 60, 63, [clicking/verb, the/NULL, header/noun, of/NULL, that/NULL, column/noun], ['clicking|VB header|NN column|NN'], OK]
+	 Resp [12-7] [ordered_47_list_49, ordered list, ordered the list , 47, 49, 47, [ordered/verb, the/NULL, list/noun], ['ordered|VB list|NN'], OK]
+
+@Causal Relationships=7
+	 Causal Relationship : protected document -> reload file
+
+	 Causal Relationship : set password -> reload file
+
+	 Causal Relationship : Move buttons -> change order
+
+	 Causal Relationship : ordered list -> change order
+
+	 Causal Relationship : clicking header -> Move buttons
+
+	 Causal Relationship : clicking header -> ordered list
+
+	 Causal Relationship : change order -> clicking header
+
+@Requirement=REQ-13
+The user has the ability to export the list of the selected files as an xml file that can be used as an input file for the console “concat” command , -l option . 
+@Responsibilities=4
+	 Resp [13-1] [has_3_option_36, has option, has l option , 3, 36, 36, [has/verb, l/noun, option/noun], ['has|VB l|NN option|NN'], OK]
+	 Resp [13-2] [has_3_ability_5, has ability, has the ability to export the list of the selected files as an xml file that can be used as an input file for the console “ concat ” command , 3, 5, 32, [has/verb, the/NULL, ability/noun, to/NULL, export/verb, the/NULL, list/noun, of/NULL, the/NULL, selected/verb, files/noun, as/NULL, an/NULL, xml/noun, file/noun, that/NULL, can/NULL, be/verb, used/verb, as/NULL, an/NULL, input/noun, file/noun, for/NULL, the/NULL, console/noun, “/NULL, concat/noun, ”/NULL, command/noun], ['has|VB ability|NN export|VB list|NN selected|VB files|NN xml|NN file|NN be|VB used|VB input|NN file|NN console|NN concat|NN command|NN'], OK]
+	 Resp [13-3] [export_7_list_9, export list, export the list of the selected files , 7, 9, 13, [export/verb, the/NULL, list/noun, of/NULL, the/NULL, selected/verb, files/noun], ['export|VB list|NN selected|VB files|NN'], OK]
+	 Resp [13-4] [used_17_file_21, used file, used as an xml file that can be used as an input file for the console “ concat ” command , 17, 21, 32, [used/verb, as/NULL, an/NULL, xml/noun, file/noun, that/NULL, can/NULL, be/verb, used/verb, as/NULL, an/NULL, input/noun, file/noun, for/NULL, the/NULL, console/noun, “/NULL, concat/noun, ”/NULL, command/noun], ['used|VB xml|NN file|NN be|VB used|VB input|NN file|NN console|NN concat|NN command|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : has ability -> export list
+
+	 Causal Relationship : has ability -> used file
+
+@Requirement=REQ-14
+If the pdf documents contain forms , the user must add that to the merge options . 
+@Responsibilities=1
+	 Resp [14-1] [contain_5_forms_6, contain forms, contain forms , 5, 6, 6, [contain/verb, forms/noun], ['contain|VB forms|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-15
+Finally , the user selects the output file path or let the PDFsam create one by default to the same folder as one of the imported files . Also , he can select whether he wants the output file to be compressed or not , and the pdf version of the generated document . The user presses the RUN button to start the merging of the files . 
+@Responsibilities=4
+	 Resp [15-1] [selects_5_path_9, selects path, selects the output file path , 5, 9, 9, [selects/verb, the/NULL, output/noun, file/noun, path/noun], ['selects|VB output|NN file|NN path|NN'], OK]
+	 Resp [15-2] [default_17_folder_21, default folder, default to the same folder , 17, 21, 21, [default/verb, to/NULL, the/NULL, same/adjective, folder/noun], ['default|VB same|ADJ folder|NN'], OK]
+	 Resp [15-3] [wants_36_file_39, wants file, wants the output file , 36, 39, 39, [wants/verb, the/NULL, output/noun, file/noun], ['wants|VB output|NN file|NN'], OK]
+	 Resp [15-4] [presses_57_button_60, presses button, presses the RUN button , 57, 60, 60, [presses/verb, the/NULL, RUN/noun, button/noun], ['presses|VB RUN|NN button|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : default folder -> selects path
+
+@Requirement=REQ-16
+Users may want to combine documents together by taking pages alternatively from two existing pdf documents (e . g . for documents coming from one-sided scanners) . The resulting document will be composed by pages taken alternatively from the two input documents . 
+@Responsibilities=3
+	 Resp [16-1] [combine_5_documents_6, combine documents, combine documents , 5, 6, 6, [combine/verb, documents/noun], ['combine|VB documents|NN'], OK]
+	 Resp [16-2] [taking_9_pages_10, taking pages, taking pages , 9, 10, 10, [taking/verb, pages/noun], ['taking|VB pages|NN'], OK]
+	 Resp [16-3] [composed_32_document_35, composed document, composed The resulting document , 32, 35, 32, [composed/verb, The/NULL, resulting/verb, document/noun], ['composed|VB resulting|VB document|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : taking pages -> combine documents
+
+@Requirement=REQ-17
+Selection panel: The user selects the two documents that he wants to mix from a directory . When the files are imported , some information about the file is displayed to the selection table (such as pages number , pdf version…) . If the documents are protected the user has to enter the password to the appropriate field and then reload the pdf . The user can change the order of the two files by using “Move Up” and “Move Down” buttons , or make the list be ordered by the value of a specific column by clicking the header of that column . 
+@Responsibilities=11
+	 Resp [17-1] [selects_6_documents_9, selects documents, selects the two documents that he wants to mix from a directory , 6, 9, 17, [selects/verb, the/NULL, two/NULL, documents/noun, that/NULL, he/NULL, wants/verb, to/NULL, mix/verb, from/NULL, a/NULL, directory/noun], ['selects|VB documents|NN wants|VB mix|VB directory|NN'], OK]
+	 Resp [17-2] [wants_12_documents_9, wants documents, wants the two documents that he wants to mix from a directory , 12, 9, 17, [wants/verb, the/NULL, two/NULL, documents/noun, that/NULL, he/NULL, wants/verb, to/NULL, mix/verb, from/NULL, a/NULL, directory/noun], ['wants|VB documents|NN wants|VB mix|VB directory|NN'], OK]
+	 Resp [17-3] [displayed_26_information_31, displayed information, displayed some information about the file , 26, 31, 29, [displayed/verb, some/NULL, information/noun, about/NULL, the/NULL, file/noun], ['displayed|VB information|NN file|NN'], OK]
+	 Resp [17-4] [imported_21_files_23, imported files, imported the files , 21, 23, 21, [imported/verb, the/NULL, files/noun], ['imported|VB files|NN'], OK]
+	 Resp [17-5] [enter_56_password_58, enter password, enter the password , 56, 58, 58, [enter/verb, the/NULL, password/noun], ['enter|VB password|NN'], OK]
+	 Resp [17-6] [reload_65_pdf_67, reload pdf, reload the pdf , 65, 67, 67, [reload/verb, the/NULL, pdf/noun], ['reload|VB pdf|NN'], OK]
+	 Resp [17-7] [protected_49_documents_51, protected documents, protected the documents , 49, 51, 49, [protected/verb, the/NULL, documents/noun], ['protected|VB documents|NN'], OK]
+	 Resp [17-8] [change_72_order_74, change order, change the order of the two files , 72, 74, 78, [change/verb, the/NULL, order/noun, of/NULL, the/NULL, two/NULL, files/noun], ['change|VB order|NN files|NN'], OK]
+	 Resp [17-9] [Move_87_buttons_90, Move buttons, Move Down ” buttons , 87, 90, 90, [Move/verb, Down/noun, ”/NULL, buttons/noun], ['Move|VB Down|NN buttons|NN'], OK]
+	 Resp [17-10] [clicking_106_header_108, clicking header, clicking the header of that column , 106, 108, 111, [clicking/verb, the/NULL, header/noun, of/NULL, that/NULL, column/noun], ['clicking|VB header|NN column|NN'], OK]
+	 Resp [17-11] [ordered_95_list_97, ordered list, ordered the list , 95, 97, 95, [ordered/verb, the/NULL, list/noun], ['ordered|VB list|NN'], OK]
+
+@Causal Relationships=8
+	 Causal Relationship : imported files -> displayed information
+
+	 Causal Relationship : enter password -> reload pdf
+
+	 Causal Relationship : protected documents -> enter password
+
+	 Causal Relationship : Move buttons -> change order
+
+	 Causal Relationship : ordered list -> change order
+
+	 Causal Relationship : clicking header -> Move buttons
+
+	 Causal Relationship : clicking header -> ordered list
+
+	 Causal Relationship : change order -> clicking header
+
+@Requirement=REQ-18
+Mix options: The user can modify the following parameters: Reverse first document: if he wants to take pages from the first document in reverse order (starting from the last page); Reverse second document: if he wants to take pages from the second document in reverse order (starting from the last page); Number of pages to switch document: the user with this option can define the step size of the mix . The default behavior is to take one page from the first document and one from the second one . However this step can be configured by this option telling PDFsam how many pages it should take from one document before switching to the other . 
+@Responsibilities=10
+	 Resp [18-1] [Mix_1_options_2, Mix options, Mix options , 1, 2, 2, [Mix/verb, options/noun], ['Mix|VB options|NN'], OK]
+	 Resp [18-2] [modify_7_parameters_10, modify parameters, modify the following parameters , 7, 10, 10, [modify/verb, the/NULL, following/verb, parameters/noun], ['modify|VB following|VB parameters|NN'], OK]
+	 Resp [18-3] [switch_66_document_67, switch document, switch document , 66, 67, 67, [switch/verb, document/noun], ['switch|VB document|NN'], OK]
+	 Resp [18-4] [take_45_pages_46, take pages, take pages , 45, 46, 46, [take/verb, pages/noun], ['take|VB pages|NN'], OK]
+	 Resp [18-5] [define_75_size_78, define size, define the step size of the mix , 75, 78, 81, [define/verb, the/NULL, step/noun, size/noun, of/NULL, the/NULL, mix/noun], ['define|VB step|NN size|NN mix|NN'], OK]
+	 Resp [18-6] [take_20_pages_21, take pages, take pages , 20, 21, 21, [take/verb, pages/noun], ['take|VB pages|NN'], OK]
+	 Resp [18-7] [take_88_page_90, take page, take one page , 88, 90, 90, [take/verb, one/NULL, page/noun], ['take|VB page|NN'], OK]
+	 Resp [18-8] [telling_111_PDFsam_112, telling PDFsam, telling PDFsam , 111, 112, 112, [telling/verb, PDFsam/noun], ['telling|VB PDFsam|NN'], OK]
+	 Resp [18-9] [take_118_pages_115, take pages, take how many pages , 118, 115, 115, [take/verb, how/NULL, many/adjective, pages/noun], ['take|VB many|ADJ pages|NN'], OK]
+	 Resp [18-10] [configured_104_step_107, configured step, configured this step , 104, 107, 104, [configured/verb, this/NULL, step/noun], ['configured|VB step|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : telling PDFsam -> configured step
+
+	 Causal Relationship : take pages -> configured step
+
+@Requirement=REQ-19
+Destination output file: The user selects the destination folder for the output files or let the PDFsam create one by default to the same folder as one of the imported files . Also , he can select whether he wants the output files to be compressed or not , and the pdf version of the generated documents . 
+@Responsibilities=3
+	 Resp [19-1] [selects_7_folder_10, selects folder, selects the destination folder for the output files , 7, 10, 14, [selects/verb, the/NULL, destination/noun, folder/noun, for/NULL, the/NULL, output/noun, files/noun], ['selects|VB destination|NN folder|NN output|NN files|NN'], OK]
+	 Resp [19-2] [default_22_folder_26, default folder, default to the same folder , 22, 26, 26, [default/verb, to/NULL, the/NULL, same/adjective, folder/noun], ['default|VB same|ADJ folder|NN'], OK]
+	 Resp [19-3] [wants_41_files_44, wants files, wants the output files , 41, 44, 44, [wants/verb, the/NULL, output/noun, files/noun], ['wants|VB output|NN files|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : selects folder -> default folder
+
+	 Causal Relationship : default folder -> selects folder
+
+@Requirement=REQ-20
+RUN button : After the user sets the parameters , he presses the RUN button and the mixing of the 2 documents starts . 
+@Responsibilities=1
+	 Resp [20-1] [sets_7_parameters_9, sets parameters, sets the parameters , 7, 9, 9, [sets/verb, the/NULL, parameters/noun], ['sets|VB parameters|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-21
+The users have the ability to bulk rotate pages in different documents . With this plugin they cannot select specific pages that they want to rotate but all the document/documents will be rotated . 
+@Responsibilities=5
+	 Resp [21-1] [have_3_ability_5, have ability, have the ability to bulk rotate pages in different documents , 3, 5, 12, [have/verb, the/NULL, ability/noun, to/NULL, bulk/noun, rotate/verb, pages/noun, in/NULL, different/adjective, documents/noun], ['have|VB ability|NN bulk|NN rotate|VB pages|NN different|ADJ documents|NN'], OK]
+	 Resp [21-2] [rotate_8_pages_9, rotate pages, rotate pages in different documents , 8, 9, 12, [rotate/verb, pages/noun, in/NULL, different/adjective, documents/noun], ['rotate|VB pages|NN different|ADJ documents|NN'], OK]
+	 Resp [21-3] [select_20_pages_22, select pages, select specific pages that they want to rotate , 20, 22, 27, [select/verb, specific/adjective, pages/noun, that/NULL, they/NULL, want/verb, to/NULL, rotate/verb], ['select|VB specific|ADJ pages|NN want|VB rotate|VB'], NEGATED]
+	 Resp [21-4] [want_25_pages_22, want pages, want specific pages that they want to rotate , 25, 22, 27, [want/verb, specific/adjective, pages/noun, that/NULL, they/NULL, want/verb, to/NULL, rotate/verb], ['want|VB specific|ADJ pages|NN want|VB rotate|VB'], OK]
+	 Resp [21-5] [rotated_31_document/documents_34, rotated document/documents, rotated all the document/documents , 31, 34, 31, [rotated/verb, all/NULL, the/NULL, document/documents/noun], ['rotated|VB document/documents|NN'], OK]
+
+@Causal Relationships=3
+	 Causal Relationship : have ability -> rotate pages
+
+	 Causal Relationship : select pages -> rotated document/documents
+
+	 Causal Relationship : want pages -> rotated document/documents
+
+@Requirement=REQ-22
+Selection panel: The users select the documents that want to rotate their pages from a directory . When the files are imported , some information about the file is displayed to the selection table (such as pages number , pdf version…) . If the documents are protected the users has to enter the password to the appropriate field and then reload the pdf . The users cannot select the pages that they want to rotate , so the whole document/documents will be rotated . 
+@Responsibilities=10
+	 Resp [22-1] [select_6_documents_8, select documents, select the documents that want to rotate their pages from a directory , 6, 8, 17, [select/verb, the/NULL, documents/noun, that/NULL, want/verb, to/NULL, rotate/verb, their/NULL, pages/noun, from/NULL, a/NULL, directory/noun], ['select|VB documents|NN want|VB rotate|VB pages|NN directory|NN'], OK]
+	 Resp [22-2] [rotate_12_pages_14, rotate pages, rotate their pages , 12, 14, 14, [rotate/verb, their/NULL, pages/noun], ['rotate|VB pages|NN'], OK]
+	 Resp [22-3] [displayed_26_information_31, displayed information, displayed some information about the file , 26, 31, 29, [displayed/verb, some/NULL, information/noun, about/NULL, the/NULL, file/noun], ['displayed|VB information|NN file|NN'], OK]
+	 Resp [22-4] [imported_21_files_23, imported files, imported the files , 21, 23, 21, [imported/verb, the/NULL, files/noun], ['imported|VB files|NN'], OK]
+	 Resp [22-5] [enter_56_password_58, enter password, enter the password , 56, 58, 58, [enter/verb, the/NULL, password/noun], ['enter|VB password|NN'], OK]
+	 Resp [22-6] [reload_65_pdf_67, reload pdf, reload the pdf , 65, 67, 67, [reload/verb, the/NULL, pdf/noun], ['reload|VB pdf|NN'], OK]
+	 Resp [22-7] [protected_49_documents_51, protected documents, protected the documents , 49, 51, 49, [protected/verb, the/NULL, documents/noun], ['protected|VB documents|NN'], OK]
+	 Resp [22-8] [want_78_pages_75, want pages, want the pages that they want to rotate , 78, 75, 80, [want/verb, the/NULL, pages/noun, that/NULL, they/NULL, want/verb, to/NULL, rotate/verb], ['want|VB pages|NN want|VB rotate|VB'], OK]
+	 Resp [22-9] [select_73_pages_75, select pages, select the pages that they want to rotate , 73, 75, 80, [select/verb, the/NULL, pages/noun, that/NULL, they/NULL, want/verb, to/NULL, rotate/verb], ['select|VB pages|NN want|VB rotate|VB'], NEGATED]
+	 Resp [22-10] [rotated_85_document/documents_88, rotated document/documents, rotated the whole document/documents , 85, 88, 85, [rotated/verb, the/NULL, whole/adjective, document/documents/noun], ['rotated|VB whole|ADJ document/documents|NN'], OK]
+
+@Causal Relationships=6
+	 Causal Relationship : select documents -> rotate pages
+
+	 Causal Relationship : imported files -> displayed information
+
+	 Causal Relationship : enter password -> reload pdf
+
+	 Causal Relationship : protected documents -> enter password
+
+	 Causal Relationship : select pages -> rotated document/documents
+
+	 Causal Relationship : want pages -> rotated document/documents
+
+@Requirement=REQ-23
+Rotation options: The user can modify the following parameters: Clockwise rotation (in degrees): the users select the rotation degrees . The rotation will be applied clockwise; Pages: the users select the pages they want to rotate (All , Even or Odd) . 
+@Responsibilities=4
+	 Resp [23-1] [modify_7_parameters_10, modify parameters, modify the following parameters : Clockwise rotation ( in degrees ) : the users select the rotation degrees , 7, 10, 24, [modify/verb, the/NULL, following/verb, parameters/noun, :/NULL, Clockwise/adjective, rotation/noun, (/NULL, in/NULL, degrees/noun, )/NULL, :/NULL, the/NULL, users/noun, select/verb, the/NULL, rotation/noun, degrees/noun], ['modify|VB following|VB parameters|NN Clockwise|ADJ rotation|NN degrees|NN users|NN select|VB rotation|NN degrees|NN'], OK]
+	 Resp [23-2] [select_21_degrees_24, select degrees, select the rotation degrees , 21, 24, 24, [select/verb, the/NULL, rotation/noun, degrees/noun], ['select|VB rotation|NN degrees|NN'], OK]
+	 Resp [23-3] [select_37_pages_39, select pages, select the pages they want to rotate ( All , 37, 39, 45, [select/verb, the/NULL, pages/noun, they/NULL, want/verb, to/NULL, rotate/verb, (/NULL, All/NULL], ['select|VB pages|NN want|VB rotate|VB'], OK]
+	 Resp [23-4] [applied_27_rotation_30, applied rotation, applied The rotation , 27, 30, 27, [applied/verb, The/NULL, rotation/noun], ['applied|VB rotation|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-24
+Destination output file: The user selects the destination folder for the output files or let the PDFsam create one by default to the same folder as one of the imported files . Also , he can select whether he wants the output files to be compressed or not , and the pdf version of the generated documents . 
+@Responsibilities=3
+	 Resp [24-1] [selects_7_folder_10, selects folder, selects the destination folder for the output files , 7, 10, 14, [selects/verb, the/NULL, destination/noun, folder/noun, for/NULL, the/NULL, output/noun, files/noun], ['selects|VB destination|NN folder|NN output|NN files|NN'], OK]
+	 Resp [24-2] [default_22_folder_26, default folder, default to the same folder , 22, 26, 26, [default/verb, to/NULL, the/NULL, same/adjective, folder/noun], ['default|VB same|ADJ folder|NN'], OK]
+	 Resp [24-3] [wants_41_files_44, wants files, wants the output files , 41, 44, 44, [wants/verb, the/NULL, output/noun, files/noun], ['wants|VB output|NN files|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : selects folder -> default folder
+
+	 Causal Relationship : default folder -> selects folder
+
+@Requirement=REQ-25
+Output options: Here the user can define a pattern that will generate filenames for the output files . 
+@Responsibilities=2
+	 Resp [25-1] [define_8_pattern_10, define pattern, define a pattern that will generate filenames for the output files , 8, 10, 18, [define/verb, a/NULL, pattern/noun, that/NULL, will/NULL, generate/verb, filenames/noun, for/NULL, the/NULL, output/noun, files/noun], ['define|VB pattern|NN generate|VB filenames|NN output|NN files|NN'], OK]
+	 Resp [25-2] [generate_13_filenames_14, generate filenames, generate filenames for the output files , 13, 14, 18, [generate/verb, filenames/noun, for/NULL, the/NULL, output/noun, files/noun], ['generate|VB filenames|NN output|NN files|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-26
+RUN button : After the user sets the parameters , he presses the RUN button and the rotation of the 2 documents starts . 
+@Responsibilities=1
+	 Resp [26-1] [sets_7_parameters_9, sets parameters, sets the parameters , 7, 9, 9, [sets/verb, the/NULL, parameters/noun], ['sets|VB parameters|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-27
+Users want an easy way to manipulate specific pages of a pdf document through a user friendly graphical interface with simple functions . With this plugin they can rotate , reorder or delete selected pages of a pdf file . 
+@Responsibilities=3
+	 Resp [27-1] [want_2_way_5, want way, want an easy way to manipulate specific pages of a pdf document through a user friendly graphical interface with simple functions , 2, 5, 22, [want/verb, an/NULL, easy/adjective, way/noun, to/NULL, manipulate/verb, specific/adjective, pages/noun, of/NULL, a/NULL, pdf/noun, document/noun, through/NULL, a/NULL, user/noun, friendly/adjective, graphical/adjective, interface/noun, with/NULL, simple/adjective, functions/noun], ['want|VB easy|ADJ way|NN manipulate|VB specific|ADJ pages|NN pdf|NN document|NN user|NN friendly|ADJ graphical|ADJ interface|NN simple|ADJ functions|NN'], OK]
+	 Resp [27-2] [manipulate_7_pages_9, manipulate pages, manipulate specific pages of a pdf document , 7, 9, 13, [manipulate/verb, specific/adjective, pages/noun, of/NULL, a/NULL, pdf/noun, document/noun], ['manipulate|VB specific|ADJ pages|NN pdf|NN document|NN'], OK]
+	 Resp [27-3] [delete_33_pages_35, delete pages, delete selected pages of a pdf file , 33, 35, 39, [delete/verb, selected/verb, pages/noun, of/NULL, a/NULL, pdf/noun, file/noun], ['delete|VB selected|VB pages|NN pdf|NN file|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : want way -> manipulate pages
+
+@Requirement=REQ-28
+Selection panel: The users select the document that they want to manipulate from a directory . The program creates thumbnails for each page of the pdf document and presents them into a subpanel . When the thumbnails load , the users have the following abilities . Select specific pages by clicking on them through the graphical interface . Change the order: The user can change pages order by , Dragging them , Using the “Move Up” and “Move Down” functions . Reversing the selected pages: The user can select some pages and reverse their order using the “Reverse” button . Zoom-in/Zoom-out: the user can change the zoom level of the thumbnails preview . Delete/Undelete: these pages won’t be included in the output file . Rotate left/right: the user can rotate the selected pages clockwise or anticlockwise . Reverse selected pages: The user can select some pages and reverse their order . Preview a selected page in a built-in Image viewer . All these conversions can be accessed either by right clicking on the selected pages or by the graphical interface’s buttons . The changes will be applied to the output file . 
+@Responsibilities=19
+	 Resp [28-1] [select_6_document_8, select document, select the document that they want to manipulate from a directory , 6, 8, 16, [select/verb, the/NULL, document/noun, that/NULL, they/NULL, want/verb, to/NULL, manipulate/verb, from/NULL, a/NULL, directory/noun], ['select|VB document|NN want|VB manipulate|VB directory|NN'], OK]
+	 Resp [28-2] [creates_20_thumbnails_21, creates thumbnails, creates thumbnails for each page of the pdf document , 20, 21, 28, [creates/verb, thumbnails/noun, for/NULL, each/NULL, page/noun, of/NULL, the/NULL, pdf/noun, document/noun], ['creates|VB thumbnails|NN page|NN pdf|NN document|NN'], OK]
+	 Resp [28-3] [presents_30_for_31, presents for, presents for , 30, 31, 31, [presents/verb, for/NULL], ['presents|VB'], OK]
+	 Resp [28-4] [have_43_abilities_46, have abilities, have the following abilities , 43, 46, 46, [have/verb, the/NULL, following/verb, abilities/noun], ['have|VB following|VB abilities|NN'], OK]
+	 Resp [28-5] [change_67_order_69, change order, change pages order , 67, 69, 69, [change/verb, pages/noun, order/noun], ['change|VB pages|NN order|NN'], OK]
+	 Resp [28-6] [Move_83_functions_86, Move functions, Move Down ” functions , 83, 86, 86, [Move/verb, Down/noun, ”/NULL, functions/noun], ['Move|VB Down|NN functions|NN'], OK]
+	 Resp [28-7] [Dragging_72_The_73, Dragging The, Dragging The , 72, 73, 73, [Dragging/verb, The/NULL], ['Dragging|VB'], OK]
+	 Resp [28-8] [Reversing_88_pages_91, Reversing pages, Reversing the selected pages , 88, 91, 91, [Reversing/verb, the/NULL, selected/verb, pages/noun], ['Reversing|VB selected|VB pages|NN'], OK]
+	 Resp [28-9] [select_96_pages_98, select pages, select some pages , 96, 98, 98, [select/verb, some/NULL, pages/noun], ['select|VB pages|NN'], OK]
+	 Resp [28-10] [reverse_100_order_102, reverse order, reverse their order using the “ Reverse ” button , 100, 102, 108, [reverse/verb, their/NULL, order/noun, using/verb, the/NULL, “/NULL, Reverse/noun, ”/NULL, button/noun], ['reverse|VB order|NN using|VB Reverse|NN button|NN'], OK]
+	 Resp [28-11] [using_103_button_108, using button, using the “ Reverse ” button , 103, 108, 108, [using/verb, the/NULL, “/NULL, Reverse/noun, ”/NULL, button/noun], ['using|VB Reverse|NN button|NN'], OK]
+	 Resp [28-12] [change_115_level_118, change level, change the zoom level of the thumbnails preview , 115, 118, 122, [change/verb, the/NULL, zoom/noun, level/noun, of/NULL, the/NULL, thumbnails/noun, preview/noun], ['change|VB zoom|NN level|NN thumbnails|NN preview|NN'], OK]
+	 Resp [28-13] [Rotate_137_left/right_138, Rotate left/right, Rotate left/right , 137, 138, 138, [Rotate/verb, left/right/noun], ['Rotate|VB left/right|NN'], OK]
+	 Resp [28-14] [rotate_143_pages_146, rotate pages, rotate the selected pages clockwise or anticlockwise , 143, 146, 149, [rotate/verb, the/NULL, selected/verb, pages/noun, clockwise/adjective, or/NULL, anticlockwise/adjective], ['rotate|VB selected|VB pages|NN clockwise|ADJ anticlockwise|ADJ'], OK]
+	 Resp [28-15] [select_158_pages_160, select pages, select some pages , 158, 160, 160, [select/verb, some/NULL, pages/noun], ['select|VB pages|NN'], OK]
+	 Resp [28-16] [reverse_162_order_164, reverse order, reverse their order , 162, 164, 164, [reverse/verb, their/NULL, order/noun], ['reverse|VB order|NN'], OK]
+	 Resp [28-17] [Preview_166_page_169, Preview page, Preview a selected page , 166, 169, 169, [Preview/verb, a/NULL, selected/verb, page/noun], ['Preview|VB selected|VB page|NN'], OK]
+	 Resp [28-18] [accessed_178_conversions_181, accessed conversions, accessed All these conversions , 178, 181, 178, [accessed/verb, All/NULL, these/NULL, conversions/noun], ['accessed|VB conversions|NN'], OK]
+	 Resp [28-19] [applied_199_changes_202, applied changes, applied The changes , 199, 202, 199, [applied/verb, The/NULL, changes/noun], ['applied|VB changes|NN'], OK]
+
+@Causal Relationships=5
+	 Causal Relationship : creates thumbnails -> presents for
+
+	 Causal Relationship : Move functions -> change order
+
+	 Causal Relationship : Dragging The -> Move functions
+
+	 Causal Relationship : select pages -> using button
+
+	 Causal Relationship : select pages -> reverse order
+
+@Requirement=REQ-29
+Destination output file: The user selects the destination folder for the output file or lets PDFsam create one by default to the same folder of the imported file . 
+@Responsibilities=2
+	 Resp [29-1] [selects_7_folder_10, selects folder, selects the destination folder for the output file , 7, 10, 14, [selects/verb, the/NULL, destination/noun, folder/noun, for/NULL, the/NULL, output/noun, file/noun], ['selects|VB destination|NN folder|NN output|NN file|NN'], OK]
+	 Resp [29-2] [default_21_folder_25, default folder, default to the same folder of the imported file , 21, 25, 29, [default/verb, to/NULL, the/NULL, same/adjective, folder/noun, of/NULL, the/NULL, imported/verb, file/noun], ['default|VB same|ADJ folder|NN imported|VB file|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : selects folder -> default folder
+
+	 Causal Relationship : default folder -> selects folder
+
+@Requirement=REQ-30
+Also , he can select whether he wants the output file to be compressed or not , and the pdf version of the generated documents . 
+@Responsibilities=1
+	 Resp [30-1] [wants_8_file_11, wants file, wants the output file , 8, 11, 11, [wants/verb, the/NULL, output/noun, file/noun], ['wants|VB output|NN file|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-31
+RUN button : After the user makes the changes he wants , he can press the RUN button to start the operation . 
+@Responsibilities=3
+	 Resp [31-1] [makes_7_changes_9, makes changes, makes the changes he wants , 7, 9, 11, [makes/verb, the/NULL, changes/noun, he/NULL, wants/verb], ['makes|VB changes|NN wants|VB'], OK]
+	 Resp [31-2] [press_15_button_18, press button, press the RUN button , 15, 18, 18, [press/verb, the/NULL, RUN/noun, button/noun], ['press|VB RUN|NN button|NN'], OK]
+	 Resp [31-3] [start_20_operation_22, start operation, start the operation , 20, 22, 22, [start/verb, the/NULL, operation/noun], ['start|VB operation|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : makes changes -> press button
+
+	 Causal Relationship : press button -> start operation
+
+@Requirement=REQ-32
+Users can combine multiple pdf documents in a single pdf document through a user friendly graphical interface with simple utilities . They can open one or more pdf documents and compose a single document that consists of parts of the original documents . They can also make all the basic functions (reorder , rotate , reverse . . . ) to the final document . 
+@Responsibilities=4
+	 Resp [32-1] [combine_3_documents_6, combine documents, combine multiple pdf documents , 3, 6, 6, [combine/verb, multiple/adjective, pdf/noun, documents/noun], ['combine|VB multiple|ADJ pdf|NN documents|NN'], OK]
+	 Resp [32-2] [open_24_documents_29, open documents, open one or more pdf documents , 24, 29, 29, [open/verb, one/NULL, or/NULL, more/adjective, pdf/noun, documents/noun], ['open|VB more|ADJ pdf|NN documents|NN'], OK]
+	 Resp [32-3] [compose_31_document_34, compose document, compose a single document that consists of parts of the original documents , 31, 34, 42, [compose/verb, a/NULL, single/adjective, document/noun, that/NULL, consists/verb, of/NULL, parts/noun, of/NULL, the/NULL, original/adjective, documents/noun], ['compose|VB single|ADJ document|NN consists|VB parts|NN original|ADJ documents|NN'], OK]
+	 Resp [32-4] [make_47_functions_51, make functions, make the basic functions ( reorder , 47, 51, 53, [make/verb, the/NULL, basic/adjective, functions/noun, (/NULL, reorder/noun], ['make|VB basic|ADJ functions|NN reorder|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : open documents -> compose document
+
+@Requirement=REQ-33
+Selection panel: The Selection panel is divided into two parts: The panel where the user can open the input pdf documents . The user can open several files together . They can Zoom in/out to change the scale size of the thumbnails and preview any page they want in the Image Viewer; And the panel where the user composes the final document . It offers all the basic utilities: “Move Up” and “Move Down” functions , Delete any page , Rotate clockwise and anticlockwise , Reversing the selected pages , Preview any selected page in the Image Viewer . 
+@Responsibilities=10
+	 Resp [33-1] [open_19_documents_23, open documents, open the input pdf documents , 19, 23, 23, [open/verb, the/NULL, input/noun, pdf/noun, documents/noun], ['open|VB input|NN pdf|NN documents|NN'], OK]
+	 Resp [33-2] [divided_6_panel_8, divided panel, divided The Selection panel , 6, 8, 6, [divided/verb, The/NULL, Selection/noun, panel/noun], ['divided|VB Selection|NN panel|NN'], OK]
+	 Resp [33-3] [open_28_files_30, open files, open several files , 28, 30, 30, [open/verb, several/adjective, files/noun], ['open|VB several|ADJ files|NN'], OK]
+	 Resp [33-4] [composes_62_document_65, composes document, composes the final document , 62, 65, 65, [composes/verb, the/NULL, final/adjective, document/noun], ['composes|VB final|ADJ document|NN'], OK]
+	 Resp [33-5] [change_38_size_41, change size, change the scale size of the thumbnails and preview any page they want in the Image Viewer , 38, 41, 54, [change/verb, the/NULL, scale/noun, size/noun, of/NULL, the/NULL, thumbnails/noun, and/NULL, preview/noun, any/NULL, page/noun, they/NULL, want/verb, in/NULL, the/NULL, Image/noun, Viewer/noun], ['change|VB scale|NN size|NN thumbnails|NN preview|NN page|NN want|VB Image|NN Viewer|NN'], OK]
+	 Resp [33-6] [change_38_page_48, change page, change preview any page they want in the Image Viewer , 38, 48, 54, [change/verb, preview/noun, any/NULL, page/noun, they/NULL, want/verb, in/NULL, the/NULL, Image/noun, Viewer/noun], ['change|VB preview|NN page|NN want|VB Image|NN Viewer|NN'], OK]
+	 Resp [33-7] [offers_68_utilities_72, offers utilities, offers all the basic utilities , 68, 72, 72, [offers/verb, all/NULL, the/NULL, basic/adjective, utilities/noun], ['offers|VB basic|ADJ utilities|NN'], OK]
+	 Resp [33-8] [Reversing_94_pages_97, Reversing pages, Reversing the selected pages , 94, 97, 97, [Reversing/verb, the/NULL, selected/verb, pages/noun], ['Reversing|VB selected|VB pages|NN'], OK]
+	 Resp [33-9] [Delete_85_page_87, Delete page, Delete any page , 85, 87, 87, [Delete/verb, any/NULL, page/noun], ['Delete|VB page|NN'], OK]
+	 Resp [33-10] [Move_80_functions_83, Move functions, Move Down ” functions , 80, 83, 83, [Move/verb, Down/noun, ”/NULL, functions/noun], ['Move|VB Down|NN functions|NN'], OK]
+
+@Causal Relationships=4
+	 Causal Relationship : change size -> composes document
+
+	 Causal Relationship : change page -> composes document
+
+	 Causal Relationship : offers utilities -> Reversing pages
+
+	 Causal Relationship : Delete page -> Reversing pages
+
+@Requirement=REQ-34
+All these conversions can be accessed either by right clicking on the selected pages or by the graphical interface’s buttons . The changes will be applied to the output file . 
+@Responsibilities=2
+	 Resp [34-1] [accessed_3_conversions_6, accessed conversions, accessed All these conversions , 3, 6, 3, [accessed/verb, All/NULL, these/NULL, conversions/noun], ['accessed|VB conversions|NN'], OK]
+	 Resp [34-2] [applied_24_changes_27, applied changes, applied The changes , 24, 27, 24, [applied/verb, The/NULL, changes/noun], ['applied|VB changes|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-35
+Destination output file: The user selects the destination folder for the output file or sets the same output folder of an imported file . Also , he can select whether he wants the output file to be compressed or not , and the pdf version of the generated documents . 
+@Responsibilities=3
+	 Resp [35-1] [selects_7_folder_10, selects folder, selects the destination folder for the output file , 7, 10, 14, [selects/verb, the/NULL, destination/noun, folder/noun, for/NULL, the/NULL, output/noun, file/noun], ['selects|VB destination|NN folder|NN output|NN file|NN'], OK]
+	 Resp [35-2] [sets_16_folder_20, sets folder, sets the same output folder of an imported file , 16, 20, 24, [sets/verb, the/NULL, same/adjective, output/noun, folder/noun, of/NULL, an/NULL, imported/verb, file/noun], ['sets|VB same|ADJ output|NN folder|NN imported|VB file|NN'], OK]
+	 Resp [35-3] [wants_33_file_36, wants file, wants the output file , 33, 36, 36, [wants/verb, the/NULL, output/noun, file/noun], ['wants|VB output|NN file|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : selects folder -> sets folder
+
+@Requirement=REQ-36
+RUN button : After the user makes the changes he wants , he can press the RUN button to start the operation . 
+@Responsibilities=3
+	 Resp [36-1] [makes_7_changes_9, makes changes, makes the changes he wants , 7, 9, 11, [makes/verb, the/NULL, changes/noun, he/NULL, wants/verb], ['makes|VB changes|NN wants|VB'], OK]
+	 Resp [36-2] [press_15_button_18, press button, press the RUN button , 15, 18, 18, [press/verb, the/NULL, RUN/noun, button/noun], ['press|VB RUN|NN button|NN'], OK]
+	 Resp [36-3] [start_20_operation_22, start operation, start the operation , 20, 22, 22, [start/verb, the/NULL, operation/noun], ['start|VB operation|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : makes changes -> press button
+
+	 Causal Relationship : press button -> start operation
+
+@Requirement=REQ-37
+Users have the ability to save the working environment with all the status of every part of the application , so they don’t have to set the options of each plugin every time they open the application . This feature is very useful for repetitive tasks , where users save a lot of time with this possibility . 
+@Responsibilities=5
+	 Resp [37-1] [have_2_ability_4, have ability, have the ability to save the working environment with all the status of every part of the application , 2, 4, 19, [have/verb, the/NULL, ability/noun, to/NULL, save/verb, the/NULL, working/verb, environment/noun, with/NULL, all/NULL, the/NULL, status/noun, of/NULL, every/NULL, part/noun, of/NULL, the/NULL, application/noun], ['have|VB ability|NN save|VB working|VB environment|NN status|NN part|NN application|NN'], OK]
+	 Resp [37-2] [set_27_options_29, set options, set the options of each plugin , 27, 29, 32, [set/verb, the/NULL, options/noun, of/NULL, each/NULL, plugin/noun], ['set|VB options|NN plugin|NN'], OK]
+	 Resp [37-3] [open_36_application_38, open application, open the application , 36, 38, 38, [open/verb, the/NULL, application/noun], ['open|VB application|NN'], OK]
+	 Resp [37-4] [save_6_environment_9, save environment, save the working environment , 6, 9, 9, [save/verb, the/NULL, working/verb, environment/noun], ['save|VB working|VB environment|NN'], OK]
+	 Resp [37-5] [save_51_time_55, save time, save a lot of time , 51, 55, 55, [save/verb, a/NULL, lot/noun, of/NULL, time/noun], ['save|VB lot|NN time|NN'], OK]
+
+@Causal Relationships=3
+	 Causal Relationship : have ability -> save environment
+
+	 Causal Relationship : save environment -> set options
+
+	 Causal Relationship : save environment -> open application
+
+@Requirement=REQ-38
+The user can access this feature by: Pressing “Alt + S” for save , and “Alt + L” for loading the environment . Pressing the File button at the very top of the window , and then choose Save or Load the environment . Pressing the appropriate icons under the bar menu . 
+@Responsibilities=8
+	 Resp [38-1] [access_4_feature_6, access feature, access this feature , 4, 6, 6, [access/verb, this/NULL, feature/noun], ['access|VB feature|NN'], OK]
+	 Resp [38-2] [Pressing_9_Alt_11, Pressing Alt, Pressing Alt + S , 9, 11, 13, [Pressing/verb, Alt/noun, +/NULL, S/noun], ['Pressing|VB Alt|NN S|NN'], OK]
+	 Resp [38-3] [Pressing_9_S_13, Pressing S, Pressing S , 9, 13, 13, [Pressing/verb, S/noun], ['Pressing|VB S|NN'], OK]
+	 Resp [38-4] [loading_25_environment_27, loading environment, loading the environment , 25, 27, 27, [loading/verb, the/NULL, environment/noun], ['loading|VB environment|NN'], OK]
+	 Resp [38-5] [Pressing_29_button_32, Pressing button, Pressing the File button , 29, 32, 32, [Pressing/verb, the/NULL, File/noun, button/noun], ['Pressing|VB File|NN button|NN'], OK]
+	 Resp [38-6] [choose_43_Save_44, choose Save, choose Save or Load the environment , 43, 44, 48, [choose/verb, Save/noun, or/NULL, Load/noun, the/NULL, environment/noun], ['choose|VB Save|NN Load|NN environment|NN'], OK]
+	 Resp [38-7] [choose_43_Load_46, choose Load, choose Load , 43, 46, 46, [choose/verb, Load/noun], ['choose|VB Load|NN'], OK]
+	 Resp [38-8] [Pressing_50_icons_53, Pressing icons, Pressing the appropriate icons , 50, 53, 53, [Pressing/verb, the/NULL, appropriate/adjective, icons/noun], ['Pressing|VB appropriate|ADJ icons|NN'], OK]
+
+@Causal Relationships=4
+	 Causal Relationship : access feature -> loading environment
+
+	 Causal Relationship : loading environment -> access feature
+
+	 Causal Relationship : Pressing button -> choose Save
+
+	 Causal Relationship : Pressing button -> choose Load
+
+@Requirement=REQ-39
+Users can understand how PDFsam responds to their actions by viewing the log messages in the log panel . 
+@Responsibilities=2
+	 Resp [39-1] [viewing_11_messages_14, viewing messages, viewing the log messages , 11, 14, 14, [viewing/verb, the/NULL, log/noun, messages/noun], ['viewing|VB log|NN messages|NN'], OK]
+	 Resp [39-2] [responds_6_actions_9, responds actions, responds to their actions , 6, 9, 9, [responds/verb, to/NULL, their/NULL, actions/noun], ['responds|VB actions|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : viewing messages -> responds actions
+
+@Requirement=REQ-40
+Users can discern the proper function of the application by the messages that are displayed in the log panel . There are 3 kinds of message separating by color: Black message (DEBUG or INFO) is just an information about what the application is doing; Blue message (WARNING) is a Warning telling that there’s an unexpected situation that the application can handle; Red message (ERROR or FATAL) is an error that PDFsam can’t handle . 
+@Responsibilities=3
+	 Resp [40-1] [discern_3_function_6, discern function, discern the proper function of the application by the messages that are displayed in the log panel , 3, 6, 19, [discern/verb, the/NULL, proper/adjective, function/noun, of/NULL, the/NULL, application/noun, by/NULL, the/NULL, messages/noun, that/NULL, are/verb, displayed/verb, in/NULL, the/NULL, log/noun, panel/noun], ['discern|VB proper|ADJ function|NN application|NN messages|NN are|VB displayed|VB log|NN panel|NN'], OK]
+	 Resp [40-2] [displayed_12_messages_15, displayed messages, displayed by the messages that are displayed in the log panel , 12, 15, 19, [displayed/verb, by/NULL, the/NULL, messages/noun, that/NULL, are/verb, displayed/verb, in/NULL, the/NULL, log/noun, panel/noun], ['displayed|VB messages|NN are|VB displayed|VB log|NN panel|NN'], OK]
+	 Resp [40-3] [handle_84_error_79, handle error, handle Red message ( ERROR or FATAL ) is an error that PDFsam ca n’t handle , 84, 79, 84, [handle/verb, Red/noun, message/noun, (/NULL, ERROR/noun, or/NULL, FATAL/noun, )/NULL, is/verb, an/NULL, error/noun, that/NULL, PDFsam/noun, ca/NULL, n’t/adverb, handle/verb], ['handle|VB Red|NN message|NN ERROR|NN FATAL|NN is|VB error|NN PDFsam|NN n’t|ADV handle|VB'], NEGATED]
+
+@Causal Relationships=1
+	 Causal Relationship : displayed messages -> discern function
+
+@Requirement=REQ-41
+There is also the possibility to select and copy the log text , clear it , or save the log text to a file . 
+@Responsibilities=2
+	 Resp [41-1] [save_18_text_21, save text, save the log text , 18, 21, 21, [save/verb, the/NULL, log/noun, text/noun], ['save|VB log|NN text|NN'], OK]
+	 Resp [41-2] [select_7_text_12, select text, select the log text , 7, 12, 12, [select/verb, the/NULL, log/noun, text/noun], ['select|VB log|NN text|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-42
+Users are allowed to make modifications on PDFsam’s working environment , in order to adapt to their preferences and cover their needs more sufficiently . In general , available settings refer on: application language , theme of the application GUI Interface , alert sounds and dialog boxes , the log detail level , the thumbnails creation library , auto update , default working environment and the default working directory . 
+@Responsibilities=13
+	 Resp [42-1] [make_5_modifications_6, make modifications, make modifications on PDFsam ’s working environment , 5, 6, 11, [make/verb, modifications/noun, on/NULL, PDFsam/noun, ’s/NULL, working/verb, environment/noun], ['make|VB modifications|NN PDFsam|NN working|VB environment|NN'], OK]
+	 Resp [42-2] [cover_21_needs_23, cover needs, cover their needs , 21, 23, 23, [cover/verb, their/NULL, needs/noun], ['cover|VB needs|NN'], OK]
+	 Resp [42-3] [modifications_6_environment_11, modifications environment, modifications on PDFsam ’s working environment , 6, 11, 11, [modifications/verb, on/NULL, PDFsam/noun, ’s/NULL, working/verb, environment/noun], ['modifications|VB PDFsam|NN working|VB environment|NN'], OK]
+	 Resp [42-4] [adapt_16_preferences_19, adapt preferences, adapt to their preferences , 16, 19, 19, [adapt/verb, to/NULL, their/NULL, preferences/noun], ['adapt|VB preferences|NN'], OK]
+	 Resp [42-5] [allowed_1_Users_3, allowed Users, allowed Users , 1, 3, 1, [allowed/verb, Users/noun], ['allowed|VB Users|NN'], OK]
+	 Resp [42-6] [default_64_environment_66, default environment, default working environment and the default working directory , 64, 66, 71, [default/verb, working/verb, environment/noun, and/NULL, the/NULL, default/noun, working/verb, directory/noun], ['default|VB working|VB environment|NN default|NN working|VB directory|NN'], OK]
+	 Resp [42-7] [default_64_directory_71, default directory, default the default working directory , 64, 71, 71, [default/verb, the/NULL, default/noun, working/verb, directory/noun], ['default|VB default|NN working|VB directory|NN'], OK]
+	 Resp [42-8] [refer_32_sounds_46, refer sounds, refer alert sounds , 32, 46, 46, [refer/verb, alert/adjective, sounds/noun], ['refer|VB alert|ADJ sounds|NN'], OK]
+	 Resp [42-9] [refer_32_boxes_49, refer boxes, refer dialog boxes , 32, 49, 49, [refer/verb, dialog/noun, boxes/noun], ['refer|VB dialog|NN boxes|NN'], OK]
+	 Resp [42-10] [refer_32_language_36, refer language, refer auto update , 32, 36, 62, [refer/verb, auto/noun, update/verb], ['refer|VB auto|NN update|VB'], OK]
+	 Resp [42-11] [refer_32_theme_38, refer theme, refer theme of the application GUI Interface , 32, 38, 43, [refer/verb, theme/noun, of/NULL, the/NULL, application/noun, GUI/noun, Interface/noun], ['refer|VB theme|NN application|NN GUI|NN Interface|NN'], OK]
+	 Resp [42-12] [refer_32_level_54, refer level, refer the log detail level , 32, 54, 54, [refer/verb, the/NULL, log/noun, detail/noun, level/noun], ['refer|VB log|NN detail|NN level|NN'], OK]
+	 Resp [42-13] [refer_32_library_59, refer library, refer the thumbnails creation library , 32, 59, 59, [refer/verb, the/NULL, thumbnails/noun, creation/noun, library/noun], ['refer|VB thumbnails|NN creation|NN library|NN'], OK]
+
+@Causal Relationships=6
+	 Causal Relationship : allowed Users -> make modifications
+
+	 Causal Relationship : allowed Users -> modifications environment
+
+	 Causal Relationship : make modifications -> adapt preferences
+
+	 Causal Relationship : modifications environment -> adapt preferences
+
+	 Causal Relationship : adapt preferences -> cover needs
+
+	 Causal Relationship : refer sounds -> default directory
+
+@Requirement=REQ-43
+The user has to select Settings below the plugins tree and the Settings main panel appears with all the available choices that the user can do . Specifically , in this section a user can modify the following options . Language: The user can select the preferred application language . Look and feel: The user sets his preferred PDFsam’s look and feel and his preferred theme to be used . Log level: The user can set the detail of the log messages that he want to see in the log panel . The thumbnails creation library . Check for updates automatically . Turn on or off alert sounds . Ask for overwrite confirmation: Show a dialogue box asking the user for confirmation when “Overwrite” is selected . Default environment: The user selects a previously saved environment file that will be automatically loaded at start up . Default working directory: The directory where the documents will be saved and loaded by default . 
+@Responsibilities=14
+	 Resp [43-1] [select_5_Settings_6, select Settings, select Settings below the plugins tree and the Settings main panel , 5, 6, 15, [select/verb, Settings/noun, below/NULL, the/NULL, plugins/noun, tree/noun, and/NULL, the/NULL, Settings/noun, main/adjective, panel/noun], ['select|VB Settings|NN plugins|NN tree|NN Settings|NN main|ADJ panel|NN'], OK]
+	 Resp [43-2] [do_26_choices_21, do choices, do with all the available choices that the user can do , 26, 21, 26, [do/verb, with/NULL, all/NULL, the/NULL, available/adjective, choices/noun, that/NULL, the/NULL, user/noun, can/NULL, do/verb], ['do|VB available|ADJ choices|NN user|NN do|VB'], OK]
+	 Resp [43-3] [modify_36_options_39, modify options, modify the following options , 36, 39, 39, [modify/verb, the/NULL, following/verb, options/noun], ['modify|VB following|VB options|NN'], OK]
+	 Resp [43-4] [select_46_language_50, select language, select the preferred application language , 46, 50, 50, [select/verb, the/NULL, preferred/adjective, application/noun, language/noun], ['select|VB preferred|ADJ application|NN language|NN'], OK]
+	 Resp [43-5] [sets_58_look_63, sets look, sets his preferred PDFsam ’s look , 58, 63, 63, [sets/verb, his/NULL, preferred/adjective, PDFsam/noun, ’s/NULL, look/noun], ['sets|VB preferred|ADJ PDFsam|NN look|NN'], OK]
+	 Resp [43-6] [want_89_messages_86, want messages, want of the log messages that he want to see in the log panel , 89, 86, 95, [want/verb, of/NULL, the/NULL, log/noun, messages/noun, that/NULL, he/NULL, want/verb, to/NULL, see/verb, in/NULL, the/NULL, log/noun, panel/noun], ['want|VB log|NN messages|NN want|VB see|VB log|NN panel|NN'], OK]
+	 Resp [43-7] [set_80_detail_82, set detail, set the detail of the log messages that he want to see in the log panel , 80, 82, 95, [set/verb, the/NULL, detail/noun, of/NULL, the/NULL, log/noun, messages/noun, that/NULL, he/NULL, want/verb, to/NULL, see/verb, in/NULL, the/NULL, log/noun, panel/noun], ['set|VB detail|NN log|NN messages|NN want|VB see|VB log|NN panel|NN'], OK]
+	 Resp [43-8] [Turn_107_sounds_112, Turn sounds, Turn on or off alert sounds , 107, 112, 112, [Turn/verb, on/NULL, or/NULL, off/NULL, alert/adjective, sounds/noun], ['Turn|VB alert|ADJ sounds|NN'], OK]
+	 Resp [43-9] [asking_123_user_125, asking user, asking the user , 123, 125, 125, [asking/verb, the/NULL, user/noun], ['asking|VB user|NN'], OK]
+	 Resp [43-10] [selected_122_box_133, selected box, selected a dialogue box asking the user for confirmation when “ Overwrite ” , 122, 133, 131, [selected/verb, a/NULL, dialogue/noun, box/noun, asking/verb, the/NULL, user/noun, for/NULL, confirmation/noun, when/NULL, “/NULL, Overwrite/verb, ”/NULL], ['selected|VB dialogue|NN box|NN asking|VB user|NN confirmation|NN Overwrite|VB'], OK]
+	 Resp [43-11] [selects_140_file_145, selects file, selects a previously saved environment file that will be automatically loaded at start up , 140, 145, 153, [selects/verb, a/NULL, previously/adverb, saved/verb, environment/noun, file/noun, that/NULL, will/NULL, be/verb, automatically/adverb, loaded/verb, at/NULL, start/verb, up/NULL], ['selects|VB previously|ADV saved|VB environment|NN file|NN be|VB automatically|ADV loaded|VB start|VB'], OK]
+	 Resp [43-12] [loaded_145_file_150, loaded file, loaded a previously saved environment file that will be automatically loaded at start up , 145, 150, 153, [loaded/verb, a/NULL, previously/adverb, saved/verb, environment/noun, file/noun, that/NULL, will/NULL, be/verb, automatically/adverb, loaded/verb, at/NULL, start/verb, up/NULL], ['loaded|VB previously|ADV saved|VB environment|NN file|NN be|VB automatically|ADV loaded|VB start|VB'], OK]
+	 Resp [43-13] [saved_163_documents_166, saved documents, saved the documents , 163, 166, 163, [saved/verb, the/NULL, documents/noun], ['saved|VB documents|NN'], OK]
+	 Resp [43-14] [loaded_163_documents_168, loaded documents, loaded the documents , 163, 168, 163, [loaded/verb, the/NULL, documents/noun], ['loaded|VB documents|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : select Settings -> do choices
+
+@Requirement=REQ-44
+The user has to click the Save button and restart the application to have his changes applied . 
+@Responsibilities=2
+	 Resp [44-1] [click_5_button_8, click button, click the Save button , 5, 8, 8, [click/verb, the/NULL, Save/noun, button/noun], ['click|VB Save|NN button|NN'], OK]
+	 Resp [44-2] [restart_10_application_12, restart application, restart the application , 10, 12, 12, [restart/verb, the/NULL, application/noun], ['restart|VB application|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : click button -> restart application
+

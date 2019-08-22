@@ -1,0 +1,78 @@
+Inicio -> clicks button
+clicks button -> skip movie
+skip movie -> proceed menu
+proceed menu -> NULL
+Inicio -> received click
+received click -> terminate movie
+terminate movie -> user component
+user component -> NULL
+Inicio -> click button
+click button -> begin game
+begin game -> NULL
+Inicio -> click button
+click button -> follow link
+follow link -> NULL
+Inicio -> display question
+display question -> chooses answer
+chooses answer -> NULL
+Inicio -> selects answer
+selects answer -> message effect
+message effect -> NULL
+Inicio -> selects answer
+selects answer -> displayed message
+displayed message -> move question
+move question -> NULL
+Inicio -> selected answer
+selected answer -> inform user
+Inicio -> selected answer
+selected answer -> give chance
+inform user -> answer question
+answer question -> NULL
+give chance -> answer question
+answer question -> NULL
+Inicio -> return menu
+return menu -> exit game
+exit game -> NULL
+Inicio -> updated question
+updated question -> progress pages
+progress pages -> NULL
+Inicio -> click button
+click button -> progress pages
+progress pages -> NULL
+Inicio -> clicked button
+clicked button -> makes sense
+makes sense -> NULL
+generate file -> load data
+file server -> load data
+used server -> load data
+load data -> generate file
+load data -> file server
+load data -> used server
+Inicio -> entrance component
+entrance component -> NULL
+Inicio -> continue completion
+continue completion -> NULL
+Inicio -> continue user
+continue user -> NULL
+Inicio -> selects button
+selects button -> NULL
+Inicio -> forwarded user
+forwarded user -> NULL
+Inicio -> displayed movie
+displayed movie -> NULL
+Inicio -> respond questions
+respond questions -> NULL
+Inicio -> count question
+count question -> NULL
+Inicio -> choose directions
+choose directions -> NULL
+Inicio -> answered question
+answered question -> NULL
+Inicio -> end game
+end game -> NULL
+Inicio -> end return
+end return -> NULL
+Inicio -> receiving input
+receiving input -> NULL
+Inicio -> click button
+click button -> NULL

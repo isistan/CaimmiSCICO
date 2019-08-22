@@ -1,0 +1,3 @@
+@Use Case Map
+	 JUCM File : .\UCMs\UCM_2001_-_space_fractions_1563199802746.jucm 
+	 Open this JUCM File using the JUCMNav Plugin

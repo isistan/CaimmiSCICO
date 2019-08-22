@@ -1,0 +1,166 @@
+@Requirement=REQ-1
+If the user clicks a mouse button while in the Introductory Movie component , they will skip the movie and proceed to the main menu . No other input is recognized . 
+@Responsibilities=3
+	 Resp [1-1] [skip_17_movie_19, skip movie, skip the movie , 17, 19, 19, [skip/verb, the/NULL, movie/noun], ['skip|VB movie|NN'], OK]
+	 Resp [1-2] [clicks_4_button_7, clicks button, clicks a mouse button , 4, 7, 7, [clicks/verb, a/NULL, mouse/noun, button/noun], ['clicks|VB mouse|NN button|NN'], OK]
+	 Resp [1-3] [proceed_21_menu_25, proceed menu, proceed to the main menu , 21, 25, 25, [proceed/verb, to/NULL, the/NULL, main/adjective, menu/noun], ['proceed|VB main|ADJ menu|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : clicks button -> skip movie
+
+	 Causal Relationship : skip movie -> proceed menu
+
+@Requirement=REQ-2
+Upon entrance to the movie component , the introductory movie will begin playing . If a mouse click is received , this component will terminate the movie and forward the user to the main menu component . Otherwise , the movie will continue to its completion and the user will be moved to the main menu . 
+@Responsibilities=6
+	 Resp [2-1] [entrance_2_component_6, entrance component, entrance to the movie component , 2, 6, 6, [entrance/verb, to/NULL, the/NULL, movie/noun, component/noun], ['entrance|VB movie|NN component|NN'], OK]
+	 Resp [2-2] [terminate_25_movie_27, terminate movie, terminate the movie , 25, 27, 27, [terminate/verb, the/NULL, movie/noun], ['terminate|VB movie|NN'], OK]
+	 Resp [2-3] [user_31_component_36, user component, user to the main menu component , 31, 36, 36, [user/verb, to/NULL, the/NULL, main/adjective, menu/noun, component/noun], ['user|VB main|ADJ menu|NN component|NN'], OK]
+	 Resp [2-4] [received_18_click_20, received click, received a mouse click , 18, 20, 18, [received/verb, a/NULL, mouse/noun, click/noun], ['received|VB mouse|NN click|NN'], OK]
+	 Resp [2-5] [continue_43_completion_46, continue completion, continue to its completion and the user , 43, 46, 49, [continue/verb, to/NULL, its/NULL, completion/noun, and/NULL, the/NULL, user/noun], ['continue|VB completion|NN user|NN'], OK]
+	 Resp [2-6] [continue_43_user_49, continue user, continue the user , 43, 49, 49, [continue/verb, the/NULL, user/noun], ['continue|VB user|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : received click -> terminate movie
+
+	 Causal Relationship : terminate movie -> user component
+
+@Requirement=REQ-3
+The user can click on the corresponding button to begin the game or follow the link to the Denominators' web page . 
+@Responsibilities=3
+	 Resp [3-1] [begin_10_game_12, begin game, begin the game , 10, 12, 12, [begin/verb, the/NULL, game/noun], ['begin|VB game|NN'], OK]
+	 Resp [3-2] [follow_14_link_16, follow link, follow the link , 14, 16, 16, [follow/verb, the/NULL, link/noun], ['follow|VB link|NN'], OK]
+	 Resp [3-3] [click_4_button_8, click button, click on the corresponding button , 4, 8, 8, [click/verb, on/NULL, the/NULL, corresponding/adjective, button/noun], ['click|VB corresponding|ADJ button|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : click button -> begin game
+
+	 Causal Relationship : click button -> follow link
+
+@Requirement=REQ-4
+This component will wait until the user selects a button . At that time , the user will be forwarded to the game sequence component or the Denominators' web page , depending on the button selected . A movie is displayed on the screen . 
+@Responsibilities=3
+	 Resp [4-1] [selects_8_button_10, selects button, selects a button , 8, 10, 10, [selects/verb, a/NULL, button/noun], ['selects|VB button|NN'], OK]
+	 Resp [4-2] [forwarded_17_user_20, forwarded user, forwarded the user , 17, 20, 17, [forwarded/verb, the/NULL, user/noun], ['forwarded|VB user|NN'], OK]
+	 Resp [4-3] [displayed_40_movie_42, displayed movie, displayed A movie , 40, 42, 40, [displayed/verb, A/NULL, movie/noun], ['displayed|VB movie|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-5
+The user will respond to questions by clicking on the desired answer from a set of choices . 
+@Responsibilities=1
+	 Resp [5-1] [respond_4_questions_6, respond questions, respond to questions , 4, 6, 6, [respond/verb, to/NULL, questions/noun], ['respond|VB questions|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-6
+The Game Sequence component will display a question , and then wait until the user chooses an answer . 
+@Responsibilities=2
+	 Resp [6-1] [display_6_question_8, display question, display a question , 6, 8, 8, [display/verb, a/NULL, question/noun], ['display|VB question|NN'], OK]
+	 Resp [6-2] [chooses_16_answer_18, chooses answer, chooses an answer , 16, 18, 18, [chooses/verb, an/NULL, answer/noun], ['chooses|VB answer|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : display question -> chooses answer
+
+@Requirement=REQ-7
+If the user selects the correct answer , a message to this effect will be displayed and the component will move to the next question . 
+@Responsibilities=4
+	 Resp [7-1] [selects_4_answer_7, selects answer, selects the correct answer , 4, 7, 7, [selects/verb, the/NULL, correct/adjective, answer/noun], ['selects|VB correct|ADJ answer|NN'], OK]
+	 Resp [7-2] [move_21_question_25, move question, move to the next question , 21, 25, 25, [move/verb, to/NULL, the/NULL, next/adjective, question/noun], ['move|VB next|ADJ question|NN'], OK]
+	 Resp [7-3] [message_10_effect_13, message effect, message to this effect , 10, 13, 13, [message/verb, to/NULL, this/NULL, effect/noun], ['message|VB effect|NN'], OK]
+	 Resp [7-4] [displayed_10_message_16, displayed message, displayed a message to this effect , 10, 16, 13, [displayed/verb, a/NULL, message/noun, to/NULL, this/NULL, effect/noun], ['displayed|VB message|NN effect|NN'], OK]
+
+@Causal Relationships=3
+	 Causal Relationship : selects answer -> message effect
+
+	 Causal Relationship : selects answer -> displayed message
+
+	 Causal Relationship : displayed message -> move question
+
+@Requirement=REQ-8
+If the incorrect answer is selected , this component will inform the user of this and give them another chance to answer the question . However , their score will not count this question as being answered correctly . 
+@Responsibilities=5
+	 Resp [8-1] [inform_11_user_13, inform user, inform the user of this , 11, 13, 15, [inform/verb, the/NULL, user/noun, of/NULL, this/NULL], ['inform|VB user|NN'], OK]
+	 Resp [8-2] [give_17_chance_20, give chance, give another chance to answer the question , 17, 20, 24, [give/verb, another/NULL, chance/noun, to/NULL, answer/verb, the/NULL, question/noun], ['give|VB chance|NN answer|VB question|NN'], OK]
+	 Resp [8-3] [answer_22_question_24, answer question, answer the question , 22, 24, 24, [answer/verb, the/NULL, question/noun], ['answer|VB question|NN'], OK]
+	 Resp [8-4] [selected_4_answer_6, selected answer, selected the incorrect answer , 4, 6, 4, [selected/verb, the/NULL, incorrect/adjective, answer/noun], ['selected|VB incorrect|ADJ answer|NN'], OK]
+	 Resp [8-5] [count_32_question_34, count question, count this question , 32, 34, 34, [count/verb, this/NULL, question/noun], ['count|VB question|NN'], NEGATED]
+
+@Causal Relationships=4
+	 Causal Relationship : selected answer -> inform user
+
+	 Causal Relationship : selected answer -> give chance
+
+	 Causal Relationship : inform user -> answer question
+
+	 Causal Relationship : give chance -> answer question
+
+@Requirement=REQ-9
+At certain "critical points , " this component will choose different directions in the plot based on whether the question at the critical point was answered correctly . 
+@Responsibilities=2
+	 Resp [9-1] [choose_11_directions_13, choose directions, choose different directions in the plot based on whether the question at the critical point was answered correctly , 11, 13, 28, [choose/verb, different/adjective, directions/noun, in/NULL, the/NULL, plot/noun, based/verb, on/NULL, whether/NULL, the/NULL, question/noun, at/NULL, the/NULL, critical/adjective, point/noun, was/verb, answered/verb, correctly/adverb], ['choose|VB different|ADJ directions|NN plot|NN based|VB question|NN critical|ADJ point|NN was|VB answered|VB correctly|ADV'], OK]
+	 Resp [9-2] [answered_21_question_27, answered question, answered the question at the critical point , 21, 27, 25, [answered/verb, the/NULL, question/noun, at/NULL, the/NULL, critical/adjective, point/noun], ['answered|VB question|NN critical|ADJ point|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-10
+After the user has proceeded through a set number of questions , they will be directed to the ending scene component . 
+@Responsibilities=0
+
+@Causal Relationships=0
+@Requirement=REQ-11
+The user can select either to end the game or return to the main menu via mouse clicks . 
+@Responsibilities=2
+	 Resp [11-1] [end_7_game_9, end game, end the game or return , 7, 9, 11, [end/verb, the/NULL, game/noun, or/NULL, return/noun], ['end|VB game|NN return|NN'], OK]
+	 Resp [11-2] [end_7_return_11, end return, end return , 7, 11, 11, [end/verb, return/noun], ['end|VB return|NN'], OK]
+
+@Causal Relationships=0
+@Requirement=REQ-12
+This component will wait until the user selects either to return to the main menu or to exit the game . After receiving the user's input , the component will act accordingly . 
+@Responsibilities=3
+	 Resp [12-1] [exit_18_game_20, exit game, exit the game , 18, 20, 20, [exit/verb, the/NULL, game/noun], ['exit|VB game|NN'], OK]
+	 Resp [12-2] [return_11_menu_15, return menu, return to the main menu , 11, 15, 15, [return/verb, to/NULL, the/NULL, main/adjective, menu/noun], ['return|VB main|ADJ menu|NN'], OK]
+	 Resp [12-3] [receiving_23_input_27, receiving input, receiving the user 's input , 23, 27, 27, [receiving/verb, the/NULL, user/noun, 's/NULL, input/noun], ['receiving|VB user|NN input|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : return menu -> exit game
+
+@Requirement=REQ-13
+The user will input new data via pulldown menus and text fields . Each question will be updated on a separate page , and the user will click a button to progress between these pages . 
+@Responsibilities=3
+	 Resp [13-1] [click_28_button_30, click button, click a button to progress between these pages , 28, 30, 35, [click/verb, a/NULL, button/noun, to/NULL, progress/verb, between/NULL, these/NULL, pages/noun], ['click|VB button|NN progress|VB pages|NN'], OK]
+	 Resp [13-2] [progress_32_pages_35, progress pages, progress between these pages , 32, 35, 35, [progress/verb, between/NULL, these/NULL, pages/noun], ['progress|VB pages|NN'], OK]
+	 Resp [13-3] [updated_15_question_18, updated question, updated Each question , 15, 18, 15, [updated/verb, Each/NULL, question/noun], ['updated|VB question|NN'], OK]
+
+@Causal Relationships=2
+	 Causal Relationship : updated question -> progress pages
+
+	 Causal Relationship : click button -> progress pages
+
+@Requirement=REQ-14
+The component will wait for the user to click a submission button for each question . After the button is clicked , the component will check that the inputted data is complete and makes sense in the context of the updated question . 
+@Responsibilities=3
+	 Resp [14-1] [click_9_button_12, click button, click a submission button for each question , 9, 12, 15, [click/verb, a/NULL, submission/noun, button/noun, for/NULL, each/NULL, question/noun], ['click|VB submission|NN button|NN question|NN'], OK]
+	 Resp [14-2] [makes_34_sense_35, makes sense, makes sense , 34, 35, 35, [makes/verb, sense/noun], ['makes|VB sense|NN'], OK]
+	 Resp [14-3] [clicked_19_button_21, clicked button, clicked the button , 19, 21, 19, [clicked/verb, the/NULL, button/noun], ['clicked|VB button|NN'], OK]
+
+@Causal Relationships=1
+	 Causal Relationship : clicked button -> makes sense
+
+@Requirement=REQ-15
+The component will generate a text file on the game server , which is used by the game sequence to dynamically load question data . 
+@Responsibilities=4
+	 Resp [15-1] [generate_4_file_7, generate file, generate a text file on the game server , 4, 7, 11, [generate/verb, a/NULL, text/noun, file/noun, on/NULL, the/NULL, game/noun, server/noun], ['generate|VB text|NN file|NN game|NN server|NN'], OK]
+	 Resp [15-2] [load_22_data_24, load data, load question data , 22, 24, 24, [load/verb, question/noun, data/noun], ['load|VB question|NN data|NN'], OK]
+	 Resp [15-3] [file_7_server_11, file server, file on the game server , 7, 11, 11, [file/verb, on/NULL, the/NULL, game/noun, server/noun], ['file|VB game|NN server|NN'], OK]
+	 Resp [15-4] [used_11_server_15, used server, used on the game server , 11, 15, 11, [used/verb, on/NULL, the/NULL, game/noun, server/noun], ['used|VB game|NN server|NN'], OK]
+
+@Causal Relationships=6
+	 Causal Relationship : generate file -> load data
+
+	 Causal Relationship : file server -> load data
+
+	 Causal Relationship : used server -> load data
+
+	 Causal Relationship : load data -> generate file
+
+	 Causal Relationship : load data -> file server
+
+	 Causal Relationship : load data -> used server
